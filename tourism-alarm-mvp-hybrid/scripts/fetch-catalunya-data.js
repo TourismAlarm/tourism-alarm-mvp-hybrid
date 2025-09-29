@@ -3,6 +3,52 @@ import { writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { generateComplete947Municipalities } from '../data/catalunya-complete.js';
 
+// 🚫 VALIDACIÓN ESTRICTA PARA EVITAR PUNTOS EN EL MAR
+function isValidCatalunyaLandPoint(lat, lng) {
+  // Límites básicos de Catalunya
+  if (lat < 40.52 || lat > 42.86 || lng < 0.16 || lng > 3.33) {
+    return false;
+  }
+
+  // Excluir zonas conocidas del mar Mediterráneo y área francesa
+
+  // Mar al este de la Costa Brava (norte de Girona)
+  if (lat > 42.4 && lng > 3.1) return false;
+
+  // Mar al este de Catalunya (general)
+  if (lng > 3.2 && lat < 42.0) return false;
+
+  // Mar al sur de Tarragona/Delta del Ebro
+  if (lat < 40.6 && lng > 0.8 && lng < 1.5) return false;
+
+  // Zona francesa al norte de los Pirineos
+  if (lat > 42.7 && lng < 1.5) return false;
+
+  // Mar al este del Maresme/Barcelona
+  if (lat > 41.3 && lat < 41.7 && lng > 2.6) return false;
+
+  // Validaciones adicionales por zonas específicas
+
+  // Costa Brava - evitar puntos muy al este
+  if (lat > 41.6 && lat < 42.3 && lng > 3.0) {
+    // Solo permitir muy cerca de la costa
+    return lng < 3.15;
+  }
+
+  // Área metropolitana Barcelona - evitar mar
+  if (lat > 41.2 && lat < 41.5 && lng > 2.3) {
+    return lng < 2.5;
+  }
+
+  // Delta del Ebro - zona compleja
+  if (lat < 40.8 && lng > 0.5 && lng < 1.2) {
+    // Solo permitir puntos terrestres del delta
+    return lat > 40.65;
+  }
+
+  return true;
+}
+
 // 🎯 SISTEMA ULTRA REDUCIDO PARA TRANSPARENCIA - MÁXIMO 4000 PUNTOS TOTAL
 function calculatePointsForMunicipality(municipality) {
   // ULTRA REDUCIDO - máximo 8 puntos por municipio grande
@@ -50,8 +96,8 @@ function generatePointsForMunicipality(municipality, numPoints) {
     lat = municipality.lat + Math.cos(angle) * distance;
     lng = municipality.lng + Math.sin(angle) * distance;
 
-    // Validar que está en Catalunya
-    if (lat >= 40.52 && lat <= 42.86 && lng >= 0.16 && lng <= 3.33) {
+    // Validación estricta para evitar puntos en el mar
+    if (isValidCatalunyaLandPoint(lat, lng)) {
       // INTENSIDAD REDUCIDA para transparencia
       let finalIntensity = municipality.tourism_intensity * 0.6; // Reducir 40%
 
@@ -68,35 +114,7 @@ function generatePointsForMunicipality(municipality, numPoints) {
   return points;
 }
 
-// 🌐 GRID DE FONDO MÍNIMO PARA COBERTURA CON BAJA INTENSIDAD
-function addBackgroundGrid(existingPoints) {
-  const backgroundPoints = [];
-
-  // Grid muy pequeño: 15x10 puntos para toda Catalunya
-  const latStep = (42.86 - 40.52) / 15;
-  const lngStep = (3.33 - 0.16) / 10;
-
-  for (let lat = 40.52; lat <= 42.86; lat += latStep) {
-    for (let lng = 0.16; lng <= 3.33; lng += lngStep) {
-      // Solo añadir si no hay un municipio cerca
-      const nearMunicipality = existingPoints.some(p => {
-        const distance = Math.sqrt(
-          Math.pow(p[0] - lat, 2) +
-          Math.pow(p[1] - lng, 2)
-        );
-        return distance < 0.08; // ~8km de buffer
-      });
-
-      if (!nearMunicipality) {
-        // Intensidad MUY BAJA para el fondo
-        backgroundPoints.push([lat, lng, 0.1]); // Solo 0.1 de intensidad
-      }
-    }
-  }
-
-  console.log(`🌐 Grid de fondo: ${backgroundPoints.length} puntos con intensidad 0.1`);
-  return [...existingPoints, ...backgroundPoints];
-}
+// ❌ GRID DE FONDO ELIMINADO - Causaba rectángulo verde y puntos en el mar
 
 async function generateCatalunyaData() {
   console.log('🎯 Generando sistema TRANSPARENTE de baja densidad...');
@@ -131,18 +149,17 @@ async function generateCatalunyaData() {
 
     console.log(`📊 Puntos de municipios: ${municipalityPoints.length}`);
 
-    // Añadir grid de fondo para cobertura completa
-    const allPoints = addBackgroundGrid(municipalityPoints);
+    // NO usar grid de fondo - solo puntos de municipios para evitar rectángulo
+    console.log(`🎯 TOTAL FINAL: ${municipalityPoints.length} puntos (target < 5000) - SIN GRID DE FONDO`);
 
-    console.log(`🎯 TOTAL FINAL: ${allPoints.length} puntos (target < 5000)`);
-
-    // Crear datos completos con puntos REDUCIDOS para transparencia
+    // Crear datos completos SOLO con puntos de municipios (sin grid rectangular)
     const completeData = {
       ...baseData,
-      points: allPoints,
-      generation_method: 'transparent_low_density',
+      points: municipalityPoints,
+      generation_method: 'municipalities_only_no_grid',
       optimization_date: new Date().toISOString(),
-      transparency_optimized: true
+      transparency_optimized: true,
+      no_sea_coverage: true
     };
 
     // Estadísticas de TRANSPARENCIA
