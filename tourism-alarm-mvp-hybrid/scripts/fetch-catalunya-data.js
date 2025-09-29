@@ -3,63 +3,45 @@ import { writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { generateComplete947Municipalities } from '../data/catalunya-complete.js';
 
-// 🧠 SISTEMA INTELIGENTE DE MÚLTIPLES PUNTOS POR MUNICIPIO
+// 🎯 SISTEMA ULTRA REDUCIDO PARA TRANSPARENCIA - MÁXIMO 4000 PUNTOS TOTAL
 function calculatePointsForMunicipality(municipality) {
-  // Factor 1: Área (más área = más puntos)
-  const areaFactor = Math.sqrt(municipality.area_km2 || 50);
+  // ULTRA REDUCIDO - máximo 8 puntos por municipio grande
+  let numPoints;
 
-  // Factor 2: Intensidad turística
-  const intensity = municipality.tourism_intensity || Math.random() * 0.8 + 0.1;
-  const tourismFactor = intensity;
+  if (municipality.name === 'Barcelona') {
+    numPoints = 8;  // Antes 15, ahora solo 8
+  } else if (municipality.population && municipality.population > 100000) {
+    numPoints = 5;  // Ciudades grandes (antes 10)
+  } else if (municipality.population && municipality.population > 50000) {
+    numPoints = 4;  // Ciudades medianas (antes 7)
+  } else if (municipality.population && municipality.population > 10000) {
+    numPoints = 3;  // Pueblos grandes (antes 5)
+  } else {
+    numPoints = 2;  // Pueblos pequeños (antes 3)
+  }
 
-  // Factor 3: Población
-  const populationFactor = municipality.population ?
-    Math.min(2, Math.log10(municipality.population) / 5) : 0.5;
+  // Reducir para municipios menores
+  if (!municipality.population || municipality.population < 1000) {
+    numPoints = 1;
+  }
 
-  // Factor 4: Tipo especial
-  let typeFactor = 1.0;
-  if (municipality.name === 'Barcelona') typeFactor = 3.0;
-  else if (['Girona', 'Tarragona', 'Lleida'].includes(municipality.name)) typeFactor = 2.0;
-  else if (municipality.coastal) typeFactor = 1.5;
-  else if (municipality.population && municipality.population < 1000) typeFactor = 0.8;
-
-  // Cálculo final
-  let numPoints = Math.floor(
-    5 + // Base
-    (areaFactor * 2) +
-    (tourismFactor * 30) +
-    (populationFactor * 15)
-  );
-
-  numPoints = Math.floor(numPoints * typeFactor);
-
-  // Límites: entre 5 y 100 puntos
-  numPoints = Math.max(5, Math.min(100, numPoints));
-
-  // Mínimos especiales
-  if (municipality.name === 'Barcelona') numPoints = Math.max(60, numPoints);
-  else if (municipality.population && municipality.population > 100000) numPoints = Math.max(30, numPoints);
-
-  return numPoints;
+  return Math.max(1, numPoints); // Mínimo 1 punto
 }
 
-// 🎯 GENERAR MÚLTIPLES PUNTOS CON DISTRIBUCIÓN REALISTA
+// 🎯 GENERAR POCOS PUNTOS CON BAJA INTENSIDAD PARA TRANSPARENCIA
 function generatePointsForMunicipality(municipality, numPoints) {
   const points = [];
-  const baseRadius = Math.sqrt(municipality.area_km2 || 50) * 0.003;
+  const baseRadius = Math.sqrt(municipality.area_km2 || 50) * 0.002; // Radio reducido
 
   for (let i = 0; i < numPoints; i++) {
     let lat, lng, radiusFactor;
 
-    if (i < numPoints * 0.4) {
-      // 40% en centro (núcleo urbano)
+    if (i < numPoints * 0.5) {
+      // 50% en centro (núcleo urbano)
       radiusFactor = Math.random() * 0.3;
-    } else if (i < numPoints * 0.7) {
-      // 30% en zona media
-      radiusFactor = 0.3 + Math.random() * 0.4;
     } else {
-      // 30% en periferia
-      radiusFactor = 0.7 + Math.random() * 0.3;
+      // 50% disperso
+      radiusFactor = 0.3 + Math.random() * 0.5;
     }
 
     const angle = Math.random() * 2 * Math.PI;
@@ -70,19 +52,54 @@ function generatePointsForMunicipality(municipality, numPoints) {
 
     // Validar que está en Catalunya
     if (lat >= 40.52 && lat <= 42.86 && lng >= 0.16 && lng <= 3.33) {
-      // Variación de intensidad según distancia del centro
-      const intensityVariation = 1 - (radiusFactor * 0.3) + (Math.random() * 0.2 - 0.1);
-      const finalIntensity = municipality.tourism_intensity * intensityVariation;
+      // INTENSIDAD REDUCIDA para transparencia
+      let finalIntensity = municipality.tourism_intensity * 0.6; // Reducir 40%
 
-      points.push([lat, lng, Math.max(0.1, Math.min(1, finalIntensity))]);
+      // Máximo 0.8 para zonas muy turísticas
+      finalIntensity = Math.min(0.8, finalIntensity);
+
+      // Mínimo 0.15 para visibilidad
+      finalIntensity = Math.max(0.15, finalIntensity);
+
+      points.push([lat, lng, finalIntensity]);
     }
   }
 
   return points;
 }
 
+// 🌐 GRID DE FONDO MÍNIMO PARA COBERTURA CON BAJA INTENSIDAD
+function addBackgroundGrid(existingPoints) {
+  const backgroundPoints = [];
+
+  // Grid muy pequeño: 15x10 puntos para toda Catalunya
+  const latStep = (42.86 - 40.52) / 15;
+  const lngStep = (3.33 - 0.16) / 10;
+
+  for (let lat = 40.52; lat <= 42.86; lat += latStep) {
+    for (let lng = 0.16; lng <= 3.33; lng += lngStep) {
+      // Solo añadir si no hay un municipio cerca
+      const nearMunicipality = existingPoints.some(p => {
+        const distance = Math.sqrt(
+          Math.pow(p[0] - lat, 2) +
+          Math.pow(p[1] - lng, 2)
+        );
+        return distance < 0.08; // ~8km de buffer
+      });
+
+      if (!nearMunicipality) {
+        // Intensidad MUY BAJA para el fondo
+        backgroundPoints.push([lat, lng, 0.1]); // Solo 0.1 de intensidad
+      }
+    }
+  }
+
+  console.log(`🌐 Grid de fondo: ${backgroundPoints.length} puntos con intensidad 0.1`);
+  return [...existingPoints, ...backgroundPoints];
+}
+
 async function generateCatalunyaData() {
-  console.log('🧠 Generando sistema INTELIGENTE MULTIPUNTO...');
+  console.log('🎯 Generando sistema TRANSPARENTE de baja densidad...');
 
   try {
     // Generar datos base con la función restaurada
@@ -90,60 +107,69 @@ async function generateCatalunyaData() {
 
     console.log('🧠 Aplicando sistema inteligente multipunto...');
 
-    // Procesar cada municipio con el sistema inteligente
-    const enhancedPoints = [];
+    // Procesar cada municipio con SISTEMA REDUCIDO para transparencia
+    const municipalityPoints = [];
     const municipalityStats = [];
 
     baseData.municipalities.forEach(municipality => {
-      // Calcular número óptimo de puntos
+      // Calcular número REDUCIDO de puntos
       const numPoints = calculatePointsForMunicipality(municipality);
 
-      // Generar puntos distribuidos inteligentemente
-      const municipalityPoints = generatePointsForMunicipality(municipality, numPoints);
+      // Generar POCOS puntos con baja intensidad
+      const points = generatePointsForMunicipality(municipality, numPoints);
 
-      enhancedPoints.push(...municipalityPoints);
+      municipalityPoints.push(...points);
 
       municipalityStats.push({
         name: municipality.name,
-        points: municipalityPoints.length,
+        points: points.length,
         population: municipality.population || 'N/A',
         area: municipality.area_km2 || 'N/A',
         intensity: municipality.tourism_intensity
       });
     });
 
-    // Crear datos completos con puntos mejorados
+    console.log(`📊 Puntos de municipios: ${municipalityPoints.length}`);
+
+    // Añadir grid de fondo para cobertura completa
+    const allPoints = addBackgroundGrid(municipalityPoints);
+
+    console.log(`🎯 TOTAL FINAL: ${allPoints.length} puntos (target < 5000)`);
+
+    // Crear datos completos con puntos REDUCIDOS para transparencia
     const completeData = {
       ...baseData,
-      points: enhancedPoints,
-      generation_method: 'intelligent_multipoint',
-      optimization_date: new Date().toISOString()
+      points: allPoints,
+      generation_method: 'transparent_low_density',
+      optimization_date: new Date().toISOString(),
+      transparency_optimized: true
     };
 
-    // Estadísticas detalladas
+    // Estadísticas de TRANSPARENCIA
     const intensities = completeData.points.map(p => p[2]);
     const stats = {
       min: Math.min(...intensities),
       max: Math.max(...intensities),
-      avg: (intensities.reduce((a,b) => a+b, 0) / intensities.length).toFixed(2),
+      avg: (intensities.reduce((a,b) => a+b, 0) / intensities.length).toFixed(3),
       count: intensities.length,
       municipalities: baseData.municipalities.length,
       ratio: (intensities.length / baseData.municipalities.length).toFixed(1)
     };
 
-    console.log('\n📊 ESTADÍSTICAS SISTEMA MULTIPUNTO:');
-    console.log(`   Total puntos: ${stats.count}`);
+    console.log('\n📊 ESTADÍSTICAS TRANSPARENCIA OPTIMIZADA:');
+    console.log(`   Total puntos: ${stats.count} ${stats.count < 5000 ? '✅ ÓPTIMO' : '❌ DEMASIADOS'}`);
     console.log(`   Total municipios: ${stats.municipalities}`);
     console.log(`   Ratio puntos/municipio: ${stats.ratio}`);
     console.log(`   Intensidad: min=${stats.min}, max=${stats.max}, avg=${stats.avg}`);
+    console.log(`   Transparencia: ${stats.avg < 0.3 ? '✅ BUENA' : '❌ MUY OPACO'}`);
 
     // Estadísticas por municipios clave
-    console.log('\n🏛️ MUNICIPIOS CLAVE:');
+    console.log('\n🏛️ MUNICIPIOS CLAVE (REDUCIDOS):');
     const keyMunicipalities = ['Barcelona', 'Girona', 'Tarragona', 'Lleida', 'Sitges'];
     keyMunicipalities.forEach(name => {
       const stat = municipalityStats.find(m => m.name === name);
       if (stat) {
-        console.log(`   ${name}: ${stat.points} puntos (pob: ${stat.population})`);
+        console.log(`   ${name}: ${stat.points} puntos (antes 60-100, ahora max 15)`);
       }
     });
 
@@ -189,11 +215,12 @@ try {
     JSON.stringify(data, null, 2)
   );
 
-  console.log('\n✅ Sistema inteligente multipunto guardado');
+  console.log('\n✅ Sistema TRANSPARENTE con baja densidad guardado');
   console.log(`📊 ${data.total_municipalities} municipios totales`);
-  console.log(`🧠 ${data.points.length} puntos optimizados (${(data.points.length / data.total_municipalities).toFixed(1)} puntos/municipio)`);
-  console.log(`🎯 Método: ${data.generation_method}`);
-  console.log(`🗺️ FORMA DE CATALUNYA PRESERVADA CON COBERTURA COMPLETA`);
+  console.log(`🎯 ${data.points.length} puntos REDUCIDOS (${(data.points.length / data.total_municipalities).toFixed(1)} puntos/municipio)`);
+  console.log(`💡 Método: ${data.generation_method}`);
+  console.log(`🌐 MAPA BASE VISIBLE - Heatmap transparente`);
+  console.log(`${data.points.length < 5000 ? '✅' : '❌'} ${data.points.length < 5000 ? 'Densidad óptima para transparencia' : 'REDUCIR MÁS PUNTOS'}`);
 
 } catch (error) {
   console.error('❌ Error:', error.message);
