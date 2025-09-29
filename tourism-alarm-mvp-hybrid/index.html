@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tourism Alarm Catalunya - MVP</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="icon" href="/assets/favicon.svg" />
+    <style>
+      html, body, #app { height: 100%; margin: 0; font-family: system-ui, -apple-system, sans-serif; }
+      #map { height: 100%; }
+
+      .info-panel {
+        position: absolute; right: 12px; top: 12px; z-index: 1000;
+        background: rgba(255,255,255,0.95); padding: 12px; border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,.15); max-width: 250px;
+      }
+
+      .info-panel h3 { margin: 0 0 8px 0; font-size: 14px; color: #333; }
+      .info-panel .status { font-size: 12px; color: #666; margin-bottom: 8px; }
+      .info-panel .stats { font-size: 11px; color: #888; }
+
+      .legend {
+        position: absolute; left: 12px; bottom: 12px; z-index: 1000;
+        background: rgba(255,255,255,0.95); padding: 10px; border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,.15);
+      }
+
+      .legend h4 { margin: 0 0 6px 0; font-size: 12px; }
+      .legend .bar {
+        width: 140px; height: 12px; border-radius: 6px; margin-top: 4px;
+        background: linear-gradient(to right, #00ff60 0%, #ffff00 40%, #ff8000 70%, #ff0000 100%);
+      }
+      .legend .labels {
+        display: flex; justify-content: space-between; font-size: 10px;
+        margin-top: 2px; color: #666;
+      }
+
+      .controls {
+        position: absolute; left: 12px; top: 12px; z-index: 1000;
+        background: rgba(255,255,255,0.95); padding: 8px; border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,.15);
+      }
+
+      .controls button {
+        background: #007cba; color: white; border: none; padding: 4px 8px;
+        border-radius: 4px; font-size: 11px; margin: 2px; cursor: pointer;
+      }
+      .controls button:hover { background: #005a87; }
+      .controls button.active { background: #ff6b35; }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div id="map"></div>
+
+      <div class="info-panel">
+        <h3>🚨 Tourism Alarm Catalunya</h3>
+        <div class="status" id="status">Cargando datos...</div>
+        <div class="stats" id="stats"></div>
+      </div>
+
+      <div class="controls">
+        <button id="btn-refresh">🔄 Actualizar</button>
+        <button id="btn-info">ℹ️ Info</button>
+      </div>
+
+      <div class="legend">
+        <h4>Intensidad Turística</h4>
+        <div class="bar"></div>
+        <div class="labels">
+          <span>Baja</span><span>Media</span><span>Alta</span><span>Crítica</span>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+    <!-- Fix botón refresh -->
+    <script src="/fix-refresh.js"></script>
+  </body>
+</html>

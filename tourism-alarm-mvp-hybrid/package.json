@@ -1,0 +1,24 @@
+{
+  "name": "tourism-alarm-mvp-hybrid",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "fetch:data": "node scripts/fetch-catalunya-data.js",
+    "fetch:build": "npm run fetch:data && npm run build",
+    "format": "prettier --write .",
+    "test:data": "node scripts/test-data-connection.js",
+    "test:optimized": "node scripts/test-optimized-heatmap.js"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "vite": "^7.1.7"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4",
+    "leaflet.heat": "^0.2.0"
+  }
+}
