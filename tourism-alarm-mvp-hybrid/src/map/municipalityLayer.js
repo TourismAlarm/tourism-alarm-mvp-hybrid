@@ -34,10 +34,10 @@ export async function createMunicipalityLayer(map, municipalitiesData) {
         
         return {
           fillColor: getColor(intensity),
-          weight: 1,
+          weight: 0.5,        // Reducido de 1 para bordes más finos
           opacity: 1,
-          color: 'white',
-          fillOpacity: 0.7
+          color: '#333333',   // Cambiado de 'white' a gris sutil
+          fillOpacity: 0.5    // Reducido de 0.7 para mejor transparencia
         };
       },
       onEachFeature: function(feature, layer) {
@@ -52,11 +52,11 @@ export async function createMunicipalityLayer(map, municipalitiesData) {
           `);
           
           layer.on('mouseover', function() {
-            this.setStyle({ weight: 3, color: '#666' });
+            this.setStyle({ weight: 2, color: '#000' });  // Hover más sutil
           });
-          
+
           layer.on('mouseout', function() {
-            this.setStyle({ weight: 1, color: 'white' });
+            this.setStyle({ weight: 0.5, color: '#333333' });  // Volver al estilo original mejorado
           });
         }
       }

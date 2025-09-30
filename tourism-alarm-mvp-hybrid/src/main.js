@@ -1,8 +1,8 @@
 import L from 'leaflet';
-import 'leaflet.heat';
+// import 'leaflet.heat';  // COMENTADO: Solo usamos mapa coroplético
 import { fetchDataWithFallback } from './data/fetchData.js';
 import { updateInfoPanel } from './ui/infoPanel.js';
-import { createHeatLayer } from './map/heatLayer.js';
+// import { createHeatLayer } from './map/heatLayer.js';  // COMENTADO: Solo coroplético
 import { createMunicipalityLayer } from './map/municipalityLayer.js';
 
 // 🗺️ Configuración mapa Catalunya centrado perfectamente con límites MVP
@@ -26,7 +26,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 // 📊 Variables globales
-let currentHeatLayer = null;
+// let currentHeatLayer = null;  // COMENTADO: Solo usamos coroplético
 let currentChoroLayer = null;
 let municipalitiesData = null;
 
@@ -44,29 +44,31 @@ async function loadTourismData() {
     municipalitiesData = data;
 
     // Limpiar capas anteriores
-    if (currentHeatLayer) {
-      map.removeLayer(currentHeatLayer);
-    }
+    // if (currentHeatLayer) {  // COMENTADO: Solo usamos coroplético
+    //   map.removeLayer(currentHeatLayer);
+    // }
     if (currentChoroLayer) {
       map.removeLayer(currentChoroLayer);
     }
 
-    // Crear mapa coroplético ANTES del heatmap
+    // Crear SOLO mapa coroplético (sin heatmap)
     const choroLayer = await createMunicipalityLayer(map, municipalitiesData.municipalities);
     if (choroLayer) {
       choroLayer.addTo(map);
       currentChoroLayer = choroLayer;
-      console.log('✅ Mapa coroplético cargado');
+      console.log('✅ Mapa coroplético cargado (sin heatmap)');
+    } else {
+        throw new Error('Error creando mapa coroplético');
     }
 
-    // Crear heatmap con coordenadas exactas Catalunya
-    currentHeatLayer = createHeatLayer(data.points, map);
-    if (currentHeatLayer) {
-        currentHeatLayer.addTo(map);
-        console.log('🎯 Heatmap Catalunya cargado correctamente');
-    } else {
-        throw new Error('Error creando heatmap');
-    }
+    // COMENTADO: Ya no usamos heatmap para mejor visualización
+    // currentHeatLayer = createHeatLayer(data.points, map);
+    // if (currentHeatLayer) {
+    //     currentHeatLayer.addTo(map);
+    //     console.log('🎯 Heatmap Catalunya cargado correctamente');
+    // } else {
+    //     throw new Error('Error creando heatmap');
+    // }
 
     // Actualizar UI
     updateInfoPanel(
