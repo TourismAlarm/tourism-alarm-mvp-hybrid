@@ -3,6 +3,7 @@ import 'leaflet.heat';
 import { fetchDataWithFallback } from './data/fetchData.js';
 import { updateInfoPanel } from './ui/infoPanel.js';
 import { createHeatLayer } from './map/heatLayer.js';
+import { createMunicipalityLayer } from './map/municipalityLayer.js';
 
 // 🗺️ Configuración mapa Catalunya centrado perfectamente con límites MVP
 const CATALUNYA_CONFIG = {
@@ -26,6 +27,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // 📊 Variables globales
 let currentHeatLayer = null;
+let currentChoroLayer = null;
 let municipalitiesData = null;
 
 // 🚀 Función principal de carga
@@ -41,9 +43,20 @@ async function loadTourismData() {
 
     municipalitiesData = data;
 
-    // Limpiar heatmap anterior
+    // Limpiar capas anteriores
     if (currentHeatLayer) {
       map.removeLayer(currentHeatLayer);
+    }
+    if (currentChoroLayer) {
+      map.removeLayer(currentChoroLayer);
+    }
+
+    // Crear mapa coroplético ANTES del heatmap
+    const choroLayer = await createMunicipalityLayer(map, municipalitiesData.municipalities);
+    if (choroLayer) {
+      choroLayer.addTo(map);
+      currentChoroLayer = choroLayer;
+      console.log('✅ Mapa coroplético cargado');
     }
 
     // Crear heatmap con coordenadas exactas Catalunya
