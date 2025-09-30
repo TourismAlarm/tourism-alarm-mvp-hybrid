@@ -35,9 +35,9 @@ export async function createMunicipalityLayer(map, municipalitiesData) {
         return {
           fillColor: getColor(intensity),
           weight: 0.5,        // Reducido de 1 para bordes más finos
-          opacity: 1,
+          opacity: 0.8,       // Reducido de 1 para bordes semi-transparentes
           color: '#333333',   // Cambiado de 'white' a gris sutil
-          fillOpacity: 0.5    // Reducido de 0.7 para mejor transparencia
+          fillOpacity: 0.3    // Reducido de 0.5 para mucha más transparencia
         };
       },
       onEachFeature: function(feature, layer) {
