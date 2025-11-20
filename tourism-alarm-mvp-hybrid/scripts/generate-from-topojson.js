@@ -1,104 +1,35 @@
-// 🎯 GENERAR CURRENT.JSON DESDE TOPOJSON - Usar 947 municipios reales
-// Este script extrae datos del TopoJSON oficial y genera current.json limpio
+// 🎯 GENERAR CURRENT.JSON DESDE TOPOJSON CON DATOS REALES
+// Combina TopoJSON oficial con datos reales de turismo
 
-import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
-import { existsSync } from 'node:fs';
 import * as topojson from 'topojson-client';
+import { REAL_TOURISM_DATA, TEMPORAL_MULTIPLIERS } from '../data/real-tourism-data.js';
 
-// 📊 Municipios clave con intensidad turística conocida (20 curados manualmente)
-const CURATED_INTENSITY = {
-  // Costa Brava
-  '170235': { name: 'Blanes', intensity: 0.70 },
-  '171032': { name: 'Lloret de Mar', intensity: 0.95 },
-  '171655': { name: 'Tossa de Mar', intensity: 0.70 },
-  '171330': { name: 'Roses', intensity: 0.65 },
-  '170854': { name: 'L\'Escala', intensity: 0.60 },
-  '080586': { name: 'Cadaqués', intensity: 0.75 },
-
-  // Costa Dorada
-  '431713': { name: 'Salou', intensity: 0.85 },
-  '430385': { name: 'Cambrils', intensity: 0.60 },
-
-  // Área Barcelona
-  '080193': { name: 'Barcelona', intensity: 0.85 },
-  '080586': { name: 'Sitges', intensity: 0.90 },
-
-  // Capitales
-  '170792': { name: 'Girona', intensity: 0.45 },
-  '431481': { name: 'Tarragona', intensity: 0.55 },
-  '250907': { name: 'Lleida', intensity: 0.25 },
-
-  // Pirineos
-  '251750': { name: 'Puigcerdà', intensity: 0.55 },
-  '251027': { name: 'Vielha e Mijaran', intensity: 0.60 }
-};
-
-// 🗺️ Obtener comarca desde código INE
-function getComarcaFromCode(code) {
-  const provincia = code.substring(0, 2);
-
-  const provincias = {
-    '08': 'Barcelona',
-    '17': 'Girona',
-    '25': 'Lleida',
-    '43': 'Tarragona'
-  };
-
-  return provincias[provincia] || 'Catalunya';
+// 📅 Obtener mes actual
+function getCurrentMonth() {
+  return new Date().getMonth() + 1; // 1-12
 }
 
-// 🧮 Estimar intensidad turística basándose en patrones
-function estimateIntensity(municipio, code) {
-  // Si está curado, usar ese valor
-  if (CURATED_INTENSITY[code]) {
-    return CURATED_INTENSITY[code].intensity;
+// 🗺️ Clasificar municipio por geografía
+function clasificarMunicipio(code, centroid) {
+  // Costa: longitud > 2.4 o latitud baja + longitud media
+  if (centroid.lng > 2.4 || (centroid.lat < 41.3 && centroid.lng > 1.0)) {
+    return 'costa';
   }
 
-  // Obtener centroide del municipio (promedio de coordenadas)
-  const bounds = municipio.geometry.coordinates;
-  let avgLat = 0, avgLng = 0, count = 0;
-
-  function processCoords(coords) {
-    if (Array.isArray(coords[0])) {
-      coords.forEach(c => processCoords(c));
-    } else {
-      avgLng += coords[0];
-      avgLat += coords[1];
-      count++;
-    }
+  // Montaña: latitud > 42.1 (Pirineos)
+  if (centroid.lat > 42.1) {
+    return 'montaña';
   }
 
-  processCoords(bounds);
-  avgLat /= count;
-  avgLng /= count;
-
-  // Detectar zona costera (cerca del mar Mediterráneo)
-  const esCosta = avgLng > 2.5 || (avgLat < 41.3 && avgLng > 1.0);
-
-  // Detectar Pirineos (alta latitud)
-  const esMontaña = avgLat > 42.2;
-
-  // Detectar grandes ciudades (área aproximada grande)
-  const areaAprox = Math.abs(bounds[0][0][0][0] - bounds[0][0][bounds[0][0].length - 1][0]) *
-    Math.abs(bounds[0][0][0][1] - bounds[0][0][bounds[0][0].length - 1][1]);
-
-  const esCiudadGrande = areaAprox > 0.1;
-
-  // Asignar intensidad base
-  let intensity;
-
-  if (esCosta) {
-    intensity = 0.55; // Costa general
-  } else if (esMontaña) {
-    intensity = 0.35; // Pirineos
-  } else if (esCiudadGrande) {
-    intensity = 0.30; // Ciudades
-  } else {
-    intensity = 0.20; // Interior rural
+  // Ciudad: códigos específicos de capitales
+  const ciudades = ['080193', '170792', '431481', '250907', '432038', '081213'];
+  if (ciudades.includes(code)) {
+    return 'ciudad';
   }
 
-  return parseFloat(intensity.toFixed(3));
+  return 'interior';
 }
 
 // 📍 Calcular centroide de geometría
@@ -123,40 +54,62 @@ function calculateCentroid(geometry) {
   };
 }
 
-// 📊 Clasificar municipio
-function clasificarMunicipio(code, centroid) {
-  // Costa
-  const comarcasCosteras = ['Baix Empordà', 'Alt Empordà', 'Selva', 'Maresme', 'Barcelonès',
-                             'Baix Llobregat', 'Garraf', 'Baix Penedès', 'Tarragonès',
-                             'Baix Camp', 'Baix Ebre', 'Montsià'];
+// 🧮 Calcular intensidad turística con datos reales
+function calculateTourismIntensity(code, categoria) {
+  const mes = getCurrentMonth();
 
-  if (centroid.lng > 2.5 || (centroid.lat < 41.3 && centroid.lng > 1.0)) {
-    return 'costa';
+  // Si tenemos datos reales, usarlos
+  if (REAL_TOURISM_DATA[code]) {
+    const realData = REAL_TOURISM_DATA[code];
+    let intensity = realData.tourism_intensity;
+
+    // Aplicar multiplicador temporal
+    const multiplicador = TEMPORAL_MULTIPLIERS[categoria][mes] || 1.0;
+    intensity = intensity * multiplicador;
+
+    // Normalizar a 0.0 - 1.0
+    return Math.min(1.0, Math.max(0.0, parseFloat(intensity.toFixed(3))));
   }
 
-  // Montaña
-  if (centroid.lat > 42.2) {
-    return 'montaña';
+  // Si no tenemos datos reales, estimar por categoría
+  let intensityBase;
+
+  switch(categoria) {
+    case 'costa':
+      intensityBase = 0.45; // Costa general
+      break;
+    case 'montaña':
+      intensityBase = 0.30; // Pirineos
+      break;
+    case 'ciudad':
+      intensityBase = 0.25; // Ciudades medianas
+      break;
+    default:
+      intensityBase = 0.15; // Interior rural
   }
 
-  // Provincia
-  const prov = code.substring(0, 2);
-  if (prov === '08') return 'barcelona';
-  if (prov === '17') return 'girona';
-  if (prov === '25') return 'lleida';
-  if (prov === '43') return 'tarragona';
+  // Aplicar multiplicador temporal
+  const multiplicador = TEMPORAL_MULTIPLIERS[categoria][mes] || 1.0;
+  let intensity = intensityBase * multiplicador;
 
-  return 'interior';
+  return Math.min(1.0, Math.max(0.05, parseFloat(intensity.toFixed(3))));
 }
 
 // 🚀 FUNCIÓN PRINCIPAL
 async function main() {
-  console.log('🎯 GENERANDO CURRENT.JSON DESDE TOPOJSON (947 MUNICIPIOS REALES)\n');
-  console.log('=' .repeat(70));
+  console.log('🎯 GENERANDO CURRENT.JSON CON DATOS REALES DE TURISMO\n');
+  console.log('='.repeat(70));
+
+  const mes = getCurrentMonth();
+  const nombreMes = ['', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+                     'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'][mes];
+
+  console.log(`📅 Mes actual: ${nombreMes} (${mes}/12)`);
+  console.log(`📊 Municipios con datos reales: ${Object.keys(REAL_TOURISM_DATA).length}`);
 
   try {
     // Paso 1: Cargar TopoJSON
-    console.log('📥 Cargando TopoJSON...');
+    console.log('\n📥 Cargando TopoJSON...');
     const topoPath = resolve('public/geojson/cat-municipis.json');
     const topoData = JSON.parse(await readFile(topoPath, 'utf-8'));
 
@@ -167,23 +120,33 @@ async function main() {
     console.log(`✅ ${geojson.features.length} municipios encontrados`);
 
     // Paso 3: Procesar cada municipio
-    console.log('\n🧮 Procesando municipios...');
+    console.log('\n🧮 Procesando municipios con datos reales...');
     const municipios = [];
     const heatmapPoints = [];
 
+    let conDatosReales = 0;
+    let estimados = 0;
+
     geojson.features.forEach((feature, index) => {
-      // El ID está en feature.id, no en properties
       const code = String(feature.id || '000000');
-      const name = feature.properties.nom || feature.properties.NOM || feature.properties.name || `Municipio ${code}`;
+      const name = feature.properties.nom || feature.properties.name || `Municipio ${code}`;
 
       // Calcular centroide
       const centroid = calculateCentroid(feature.geometry);
 
-      // Estimar intensidad
-      const intensity = estimateIntensity(feature, code);
-
       // Clasificar
       const categoria = clasificarMunicipio(code, centroid);
+
+      // Calcular intensidad con datos reales
+      const intensity = calculateTourismIntensity(code, categoria);
+
+      // Obtener población y plazas si existen
+      const realData = REAL_TOURISM_DATA[code];
+      const population = realData?.population || 0;
+      const hotelPlaces = realData?.hotel_places || 0;
+
+      if (realData) conDatosReales++;
+      else estimados++;
 
       const municipio = {
         id: code,
@@ -191,9 +154,11 @@ async function main() {
         lat: centroid.lat,
         lng: centroid.lng,
         tourism_intensity: intensity,
-        population: 0, // Se actualizará con datos IDESCAT
-        comarca: getComarcaFromCode(code),
-        categoria: categoria
+        population: population,
+        hotel_places: hotelPlaces,
+        comarca: feature.properties.comarca || '',
+        categoria: categoria,
+        has_real_data: !!realData
       };
 
       municipios.push(municipio);
@@ -201,7 +166,7 @@ async function main() {
 
       // Log progreso
       if ((index + 1) % 100 === 0 || index + 1 === geojson.features.length) {
-        console.log(`   [${index + 1}/${geojson.features.length}] Procesado`);
+        console.log(`   [${index + 1}/${geojson.features.length}] Procesado (${conDatosReales} reales, ${estimados} estimados)`);
       }
     });
 
@@ -212,16 +177,20 @@ async function main() {
       min: Math.min(...intensities).toFixed(3),
       max: Math.max(...intensities).toFixed(3),
       avg: (intensities.reduce((a,b) => a+b, 0) / intensities.length).toFixed(3),
-      count: intensities.length
+      count: intensities.length,
+      with_real_data: conDatosReales,
+      estimated: estimados
     };
 
     // Paso 5: Guardar current.json
     console.log('\n💾 Guardando current.json...');
     const finalData = {
-      version: '5.0_topojson_clean',
+      version: '6.0_real_tourism_data',
       updated_at: new Date().toISOString(),
-      source: 'TopoJSON oficial Catalunya + estimaciones',
-      method: 'Centroid calculation + geographic heuristics',
+      source: `${conDatosReales} municipios con datos reales IDESCAT + ${estimados} estimados`,
+      method: 'Plazas hoteleras per cápita + multiplicadores temporales',
+      current_month: mes,
+      current_month_name: nombreMes,
       total_municipalities: municipios.length,
       municipalities_count: municipios.length,
       real_coordinates_count: municipios.length,
@@ -245,20 +214,23 @@ async function main() {
 
     // Resumen final
     console.log('\n' + '='.repeat(70));
-    console.log('✅ GENERACIÓN COMPLETADA');
+    console.log('✅ GENERACIÓN COMPLETADA CON DATOS REALES');
     console.log('='.repeat(70));
     console.log(`📊 Total municipios: ${finalData.total_municipalities}`);
-    console.log(`📍 Con coordenadas: ${finalData.real_coordinates_count}`);
-    console.log(`📈 Intensity: min=${stats.min} max=${stats.max} avg=${stats.avg}`);
+    console.log(`✨ Con datos reales: ${stats.with_real_data}`);
+    console.log(`📐 Estimados: ${stats.estimated}`);
+    console.log(`📈 Intensidad: min=${stats.min} max=${stats.max} avg=${stats.avg}`);
+    console.log(`📅 Ajuste temporal: ${nombreMes} ${mes}/12`);
 
     // Top 10
-    console.log('\n🔝 TOP 10 MUNICIPIOS MÁS TURÍSTICOS:');
+    console.log('\n🔝 TOP 10 MUNICIPIOS MÁS TURÍSTICOS (${nombreMes} 2024):');
     const top10 = municipios
       .sort((a, b) => b.tourism_intensity - a.tourism_intensity)
       .slice(0, 10);
 
     top10.forEach((m, i) => {
-      console.log(`   ${i + 1}. ${m.name.padEnd(30)} ${(m.tourism_intensity * 100).toFixed(0)}% (${m.categoria})`);
+      const dataType = m.has_real_data ? '✅' : '📐';
+      console.log(`   ${i + 1}. ${dataType} ${m.name.padEnd(28)} ${(m.tourism_intensity * 100).toFixed(0)}% (${m.categoria})`);
     });
 
     // Distribución
@@ -276,10 +248,10 @@ async function main() {
     console.log(`   🟢 Verde (<20%):     ${verde} municipios`);
 
     console.log('\n🎯 PRÓXIMOS PASOS:');
-    console.log('   1. npm run dev → Verificar mapa visualmente');
-    console.log('   2. npm run build → Compilar para producción');
-    console.log('   3. git add . && git commit → Commit cambios');
-    console.log('\n💡 Los datos IDESCAT se pueden integrar más tarde para afinar intensidades');
+    console.log('   1. npm run build → Compilar para producción');
+    console.log('   2. git add . && git commit → Commit cambios');
+    console.log('   3. git push && vercel --prod → Deploy a Vercel');
+    console.log(`\n💡 Datos actualizados para ${nombreMes}. Los colores reflejan estacionalidad real.`);
 
   } catch (error) {
     console.error('\n❌ ERROR FATAL:', error.message);

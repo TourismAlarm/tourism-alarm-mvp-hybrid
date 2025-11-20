@@ -29,9 +29,9 @@ export async function createMunicipalityLayer(map, municipalitiesData) {
     // Crear capa coroplética
     const choroLayer = L.geoJson(geojson, {
       style: function(feature) {
-        const codigo = feature.properties.MUNICIPI;
+        const codigo = String(feature.id);
         const intensity = intensityMap[codigo] || 0.3;
-        
+
         return {
           fillColor: getColor(intensity),
           weight: 0.5,        // Reducido de 1 para bordes más finos
@@ -41,14 +41,19 @@ export async function createMunicipalityLayer(map, municipalitiesData) {
         };
       },
       onEachFeature: function(feature, layer) {
-        const codigo = feature.properties.MUNICIPI;
+        const codigo = String(feature.id);
         const muni = municipalitiesData.find(m => m.id === codigo);
         
         if (muni) {
+          const dataSource = muni.has_real_data ? '✅ Datos reales' : '📐 Estimado';
+          const hotelInfo = muni.hotel_places > 0 ?
+            `<br>Plazas hoteleras: ${muni.hotel_places.toLocaleString()}` : '';
+
           layer.bindPopup(`
             <strong>${muni.name}</strong><br>
-            Intensidad: ${(muni.tourism_intensity * 100).toFixed(0)}%<br>
-            Población: ${muni.population?.toLocaleString() || 'N/A'}
+            Intensidad turística: ${(muni.tourism_intensity * 100).toFixed(0)}%<br>
+            Categoría: ${muni.categoria}<br>
+            ${dataSource}${hotelInfo}${muni.population > 0 ? `<br>Población: ${muni.population.toLocaleString()}` : ''}
           `);
           
           layer.on('mouseover', function() {
