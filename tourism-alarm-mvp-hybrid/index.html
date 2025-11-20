@@ -3,79 +3,273 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tourism Alarm Catalunya - MVP</title>
+    <title>Tourism Alarm Catalunya - Mapa de Saturación Turística</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="icon" href="/assets/favicon.svg" />
     <style>
-      html, body, #app { height: 100%; margin: 0; font-family: system-ui, -apple-system, sans-serif; }
+      * { box-sizing: border-box; }
+      html, body, #app { height: 100%; margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
       #map { height: 100%; }
 
+      /* Panel de Información Principal */
       .info-panel {
-        position: absolute; right: 12px; top: 12px; z-index: 1000;
-        background: rgba(255,255,255,0.95); padding: 12px; border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0,0,0,.15); max-width: 250px;
+        position: absolute; right: 16px; top: 16px; z-index: 1000;
+        background: rgba(255,255,255,0.98); padding: 16px; border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,.2); max-width: 320px; min-width: 280px;
       }
 
-      .info-panel h3 { margin: 0 0 8px 0; font-size: 14px; color: #333; }
-      .info-panel .status { font-size: 12px; color: #666; margin-bottom: 8px; }
-      .info-panel .stats { font-size: 11px; color: #888; }
+      .info-panel h2 {
+        margin: 0 0 8px 0; font-size: 18px; color: #1a1a1a;
+        display: flex; align-items: center; gap: 8px;
+      }
 
+      .info-panel .emoji { font-size: 22px; }
+
+      .info-panel .date {
+        font-size: 13px; color: #666; margin-bottom: 12px;
+        padding: 8px; background: #f5f5f5; border-radius: 6px;
+        display: flex; align-items: center; gap: 6px;
+      }
+
+      .info-panel .stats {
+        margin-top: 12px; padding-top: 12px; border-top: 1px solid #e0e0e0;
+      }
+
+      .stat-row {
+        display: flex; justify-content: space-between; align-items: center;
+        padding: 6px 0; font-size: 13px;
+      }
+
+      .stat-label { color: #666; }
+      .stat-value { font-weight: 600; color: #1a1a1a; }
+
+      .top-municipalities {
+        margin-top: 12px; padding-top: 12px; border-top: 1px solid #e0e0e0;
+      }
+
+      .top-municipalities h4 {
+        margin: 0 0 8px 0; font-size: 13px; color: #333;
+      }
+
+      .top-muni {
+        font-size: 12px; padding: 4px 0; color: #555;
+        display: flex; justify-content: space-between;
+      }
+
+      .top-muni .name { flex: 1; }
+      .top-muni .value { font-weight: 600; }
+
+      /* Leyenda Mejorada */
       .legend {
-        position: absolute; left: 12px; bottom: 12px; z-index: 1000;
-        background: rgba(255,255,255,0.95); padding: 10px; border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0,0,0,.15);
+        position: absolute; left: 16px; bottom: 16px; z-index: 1000;
+        background: rgba(255,255,255,0.98); padding: 14px; border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,.2); min-width: 200px;
       }
 
-      .legend h4 { margin: 0 0 6px 0; font-size: 12px; }
-      .legend .bar {
-        width: 140px; height: 12px; border-radius: 6px; margin-top: 4px;
-        background: linear-gradient(to right, #00ff60 0%, #ffff00 40%, #ff8000 70%, #ff0000 100%);
-      }
-      .legend .labels {
-        display: flex; justify-content: space-between; font-size: 10px;
-        margin-top: 2px; color: #666;
+      .legend h4 {
+        margin: 0 0 10px 0; font-size: 14px; font-weight: 600; color: #1a1a1a;
       }
 
+      .legend-item {
+        display: flex; align-items: center; margin: 6px 0; font-size: 12px;
+      }
+
+      .legend-color {
+        width: 28px; height: 18px; border-radius: 4px; margin-right: 8px;
+        border: 1px solid rgba(0,0,0,0.1);
+      }
+
+      .legend-label {
+        flex: 1; color: #555;
+      }
+
+      .legend-range {
+        font-size: 11px; color: #888; margin-left: auto;
+      }
+
+      .legend-footer {
+        margin-top: 10px; padding-top: 10px; border-top: 1px solid #e0e0e0;
+        font-size: 11px; color: #888;
+      }
+
+      /* Panel de Contexto */
+      .context-panel {
+        position: absolute; left: 16px; top: 16px; z-index: 1000;
+        background: rgba(255,255,255,0.98); padding: 14px; border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,.2); max-width: 280px;
+      }
+
+      .context-panel h4 {
+        margin: 0 0 8px 0; font-size: 13px; font-weight: 600; color: #1a1a1a;
+      }
+
+      .context-panel p {
+        margin: 0; font-size: 12px; color: #555; line-height: 1.5;
+      }
+
+      .season-badge {
+        display: inline-block; padding: 4px 8px; border-radius: 4px;
+        font-size: 11px; font-weight: 600; margin-top: 8px;
+        background: #e3f2fd; color: #1976d2;
+      }
+
+      /* Controles */
       .controls {
-        position: absolute; left: 12px; top: 12px; z-index: 1000;
-        background: rgba(255,255,255,0.95); padding: 8px; border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0,0,0,.15);
+        position: absolute; right: 16px; bottom: 16px; z-index: 1000;
+        display: flex; gap: 8px;
       }
 
       .controls button {
-        background: #007cba; color: white; border: none; padding: 4px 8px;
-        border-radius: 4px; font-size: 11px; margin: 2px; cursor: pointer;
+        background: white; color: #333; border: 1px solid #ddd;
+        padding: 10px 14px; border-radius: 8px; font-size: 13px;
+        cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,.1);
+        transition: all 0.2s;
       }
-      .controls button:hover { background: #005a87; }
-      .controls button.active { background: #ff6b35; }
+
+      .controls button:hover {
+        background: #f5f5f5; box-shadow: 0 4px 12px rgba(0,0,0,.15);
+      }
+
+      .controls button.active {
+        background: #1976d2; color: white; border-color: #1976d2;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .info-panel, .context-panel, .legend {
+          max-width: calc(100% - 32px);
+        }
+
+        .context-panel {
+          position: static;
+          margin: 16px;
+        }
+      }
+
+      /* Loading */
+      .loading {
+        position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+        z-index: 2000; background: white; padding: 20px 40px; border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,.2); text-align: center;
+      }
+
+      .loading .spinner {
+        width: 40px; height: 40px; margin: 0 auto 12px;
+        border: 3px solid #f3f3f3; border-top: 3px solid #1976d2;
+        border-radius: 50%; animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
     </style>
   </head>
   <body>
     <div id="app">
       <div id="map"></div>
 
+      <!-- Panel de Información Principal -->
       <div class="info-panel">
-        <h3>🚨 Tourism Alarm Catalunya</h3>
-        <div class="status" id="status">Cargando datos...</div>
-        <div class="stats" id="stats"></div>
-      </div>
+        <h2>
+          <span class="emoji">🗺️</span>
+          <span>Tourism Alarm</span>
+        </h2>
 
-      <div class="controls">
-        <button id="btn-refresh">🔄 Actualizar</button>
-        <button id="btn-info">ℹ️ Info</button>
-      </div>
-
-      <div class="legend">
-        <h4>Intensidad Turística</h4>
-        <div class="bar"></div>
-        <div class="labels">
-          <span>Baja</span><span>Media</span><span>Alta</span><span>Crítica</span>
+        <div class="date" id="date-info">
+          📅 <span id="current-date">Cargando...</span>
         </div>
+
+        <div class="stats">
+          <div class="stat-row">
+            <span class="stat-label">Total municipios:</span>
+            <span class="stat-value" id="total-munis">947</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">Con datos reales:</span>
+            <span class="stat-value" id="real-data">44</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">Intensidad media:</span>
+            <span class="stat-value" id="avg-intensity">15%</span>
+          </div>
+        </div>
+
+        <div class="top-municipalities">
+          <h4>🔝 Top 5 Más Turísticos</h4>
+          <div id="top-list">
+            <div class="top-muni">
+              <span class="name">Cargando...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel de Contexto -->
+      <div class="context-panel" id="context-panel">
+        <h4>ℹ️ Información</h4>
+        <p id="context-text">
+          Mapa de saturación turística de Catalunya con datos reales y estimaciones.
+          Los colores indican el nivel de presión turística actual.
+        </p>
+        <div class="season-badge" id="season-badge">
+          🍂 Temporada Baja
+        </div>
+      </div>
+
+      <!-- Leyenda -->
+      <div class="legend">
+        <h4>📊 Nivel de Saturación</h4>
+
+        <div class="legend-item">
+          <div class="legend-color" style="background: #ff0000;"></div>
+          <span class="legend-label">Crítica</span>
+          <span class="legend-range">>80%</span>
+        </div>
+
+        <div class="legend-item">
+          <div class="legend-color" style="background: #ff8000;"></div>
+          <span class="legend-label">Alta</span>
+          <span class="legend-range">60-80%</span>
+        </div>
+
+        <div class="legend-item">
+          <div class="legend-color" style="background: #ffff00;"></div>
+          <span class="legend-label">Media</span>
+          <span class="legend-range">40-60%</span>
+        </div>
+
+        <div class="legend-item">
+          <div class="legend-color" style="background: #66ff00;"></div>
+          <span class="legend-label">Moderada</span>
+          <span class="legend-range">20-40%</span>
+        </div>
+
+        <div class="legend-item">
+          <div class="legend-color" style="background: #00ff60;"></div>
+          <span class="legend-label">Baja</span>
+          <span class="legend-range">&lt;20%</span>
+        </div>
+
+        <div class="legend-footer" id="legend-footer">
+          Actualizado: <span id="update-time">Ahora</span>
+        </div>
+      </div>
+
+      <!-- Controles -->
+      <div class="controls">
+        <button id="btn-refresh" title="Actualizar datos">🔄</button>
+        <button id="btn-info" title="Mostrar/ocultar información">ℹ️</button>
+      </div>
+
+      <!-- Loading -->
+      <div class="loading" id="loading" style="display: none;">
+        <div class="spinner"></div>
+        <div>Cargando mapa...</div>
       </div>
     </div>
 
     <script type="module" src="/src/main.js"></script>
-    <!-- Fix botón refresh -->
     <script src="/fix-refresh.js"></script>
   </body>
 </html>
