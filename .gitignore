@@ -1,0 +1,6 @@
+# Root level gitignore (workspace level)
+node_modules/
+package.json
+package-lock.json
+.env
+*.log
