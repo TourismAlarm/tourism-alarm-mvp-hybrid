@@ -1,7 +1,7 @@
 {
   "version": "6.0_real_tourism_data",
-  "updated_at": "2025-11-20T12:12:28.778Z",
-  "source": "33 municipios con datos reales IDESCAT + 914 estimados",
+  "updated_at": "2025-11-20T13:42:25.127Z",
+  "source": "41 municipios con datos reales IDESCAT + 906 estimados",
   "method": "Plazas hoteleras per cápita + multiplicadores temporales",
   "current_month": 11,
   "current_month_name": "Noviembre",
@@ -506,12 +506,12 @@
       "name": "Setcases",
       "lat": 42.400681,
       "lng": 2.291528,
-      "tourism_intensity": 0.33,
-      "population": 0,
-      "hotel_places": 0,
+      "tourism_intensity": 0.715,
+      "population": 184,
+      "hotel_places": 200,
       "comarca": 31,
       "categoria": "montaña",
-      "has_real_data": false
+      "has_real_data": true
     },
     {
       "id": "170010",
@@ -590,12 +590,12 @@
       "name": "Queralbs",
       "lat": 42.377808,
       "lng": 2.172572,
-      "tourism_intensity": 0.33,
-      "population": 0,
-      "hotel_places": 0,
+      "tourism_intensity": 0.605,
+      "population": 212,
+      "hotel_places": 150,
       "comarca": 31,
       "categoria": "montaña",
-      "has_real_data": false
+      "has_real_data": true
     },
     {
       "id": "250886",
@@ -1118,12 +1118,12 @@
       "name": "el Port de la Selva",
       "lat": 42.327255,
       "lng": 3.202762,
-      "tourism_intensity": 0.158,
-      "population": 0,
-      "hotel_places": 0,
+      "tourism_intensity": 0.252,
+      "population": 960,
+      "hotel_places": 800,
       "comarca": 2,
       "categoria": "costa",
-      "has_real_data": false
+      "has_real_data": true
     },
     {
       "id": "171096",
@@ -1226,24 +1226,24 @@
       "name": "Castellar de n'Hug",
       "lat": 42.286202,
       "lng": 1.983641,
-      "tourism_intensity": 0.09,
-      "population": 0,
-      "hotel_places": 0,
+      "tourism_intensity": 0.462,
+      "population": 156,
+      "hotel_places": 50,
       "comarca": 14,
-      "categoria": "interior",
-      "has_real_data": false
+      "categoria": "montaña",
+      "has_real_data": true
     },
     {
       "id": "80996",
       "name": "Guardiola de Berguedà",
       "lat": 42.256539,
       "lng": 1.874181,
-      "tourism_intensity": 0.09,
-      "population": 0,
-      "hotel_places": 0,
+      "tourism_intensity": 0.385,
+      "population": 964,
+      "hotel_places": 120,
       "comarca": 14,
-      "categoria": "interior",
-      "has_real_data": false
+      "categoria": "montaña",
+      "has_real_data": true
     },
     {
       "id": "170372",
@@ -2030,12 +2030,12 @@
       "name": "Besalú",
       "lat": 42.20358,
       "lng": 2.695632,
-      "tourism_intensity": 0.09,
-      "population": 0,
-      "hotel_places": 0,
+      "tourism_intensity": 0.27,
+      "population": 2482,
+      "hotel_places": 300,
       "comarca": 19,
       "categoria": "interior",
-      "has_real_data": false
+      "has_real_data": true
     },
     {
       "id": "172082",
@@ -2150,12 +2150,12 @@
       "name": "Santa Pau",
       "lat": 42.150597,
       "lng": 2.563057,
-      "tourism_intensity": 0.09,
-      "population": 0,
-      "hotel_places": 0,
+      "tourism_intensity": 0.228,
+      "population": 1745,
+      "hotel_places": 200,
       "comarca": 19,
       "categoria": "interior",
-      "has_real_data": false
+      "has_real_data": true
     },
     {
       "id": "251484",
@@ -2450,12 +2450,12 @@
       "name": "Alpens",
       "lat": 42.119776,
       "lng": 2.093629,
-      "tourism_intensity": 0.09,
-      "population": 0,
-      "hotel_places": 0,
+      "tourism_intensity": 0.15,
+      "population": 387,
+      "hotel_places": 30,
       "comarca": 24,
       "categoria": "interior",
-      "has_real_data": false
+      "has_real_data": true
     },
     {
       "id": "82536",
@@ -11583,7 +11583,7 @@
     [
       42.400681,
       2.291528,
-      0.33
+      0.715
     ],
     [
       42.402954,
@@ -11618,7 +11618,7 @@
     [
       42.377808,
       2.172572,
-      0.33
+      0.605
     ],
     [
       42.379773,
@@ -11838,7 +11838,7 @@
     [
       42.327255,
       3.202762,
-      0.158
+      0.252
     ],
     [
       42.269009,
@@ -11883,12 +11883,12 @@
     [
       42.286202,
       1.983641,
-      0.09
+      0.462
     ],
     [
       42.256539,
       1.874181,
-      0.09
+      0.385
     ],
     [
       42.284517,
@@ -12218,7 +12218,7 @@
     [
       42.20358,
       2.695632,
-      0.09
+      0.27
     ],
     [
       42.232129,
@@ -12268,7 +12268,7 @@
     [
       42.150597,
       2.563057,
-      0.09
+      0.228
     ],
     [
       42.116225,
@@ -12393,7 +12393,7 @@
     [
       42.119776,
       2.093629,
-      0.09
+      0.15
     ],
     [
       42.124243,
@@ -16114,9 +16114,9 @@
   "statistics": {
     "min": "0.090",
     "max": "0.779",
-    "avg": "0.155",
+    "avg": "0.156",
     "count": 947,
-    "with_real_data": 33,
-    "estimated": 914
+    "with_real_data": 41,
+    "estimated": 906
   }
 }

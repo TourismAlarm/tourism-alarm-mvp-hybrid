@@ -55,7 +55,17 @@ export const REAL_TOURISM_DATA = {
 
   // === DELTA DEL EBRO ===
   '439018': { name: 'Deltebre', population: 11544, hotel_places: 800, tourism_intensity: 0.35, categoria: 'costa' },
-  '430014': { name: 'Amposta', population: 20895, hotel_places: 600, tourism_intensity: 0.28, categoria: 'interior' }
+  '430014': { name: 'Amposta', population: 20895, hotel_places: 600, tourism_intensity: 0.28, categoria: 'interior' },
+
+  // === DATOS ADICIONALES ENRICHED (Testing) ===
+  '80522': { name: 'Castellar de n\'Hug', population: 156, hotel_places: 50, tourism_intensity: 0.42, categoria: 'montaña' },
+  '80996': { name: 'Guardiola de Berguedà', population: 964, hotel_places: 120, tourism_intensity: 0.35, categoria: 'montaña' },
+  '80044': { name: 'Alpens', population: 387, hotel_places: 30, tourism_intensity: 0.25, categoria: 'interior' },
+  '171925': { name: 'Setcases', population: 184, hotel_places: 200, tourism_intensity: 0.65, categoria: 'montaña' },
+  '170433': { name: 'Queralbs', population: 212, hotel_places: 150, tourism_intensity: 0.55, categoria: 'montaña' },
+  '170195': { name: 'Besalú', population: 2482, hotel_places: 300, tourism_intensity: 0.45, categoria: 'interior' },
+  '171848': { name: 'Santa Pau', population: 1745, hotel_places: 200, tourism_intensity: 0.38, categoria: 'interior' },
+  '171404': { name: 'El Port de la Selva', population: 960, hotel_places: 800, tourism_intensity: 0.72, categoria: 'costa' }
 };
 
 // 🗓️ Multiplicadores temporales por mes
