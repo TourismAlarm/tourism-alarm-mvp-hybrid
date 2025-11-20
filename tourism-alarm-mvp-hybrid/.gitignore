@@ -15,6 +15,11 @@ dist-ssr
 .env
 public/data/current.json
 
+# Agent outputs (review before committing)
+agents/enriched-data.json
+agents/*.json
+!agents/README.md
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
