@@ -1,21 +1,42 @@
 # 🤖 Agentes IA para Tourism Alarm
 
-Sistema de agentes autónomos que usan Claude AI para enriquecer datos turísticos automáticamente.
+Sistema de agentes autónomos que usan **Gemini** (gratis) o **Claude** (pago) para enriquecer datos turísticos automáticamente.
+
+## ⚡ Recomendación: Usa Gemini (GRATIS)
+
+**Google Gemini** es más rápido y completamente gratuito:
+- ✅ **Sin costo** (vs $1-3 por 100 municipios en Claude)
+- ✅ **60 requests/minuto** (vs 5/min gratis en Claude)
+- ✅ **Ultra rápido** - Gemini 1.5 Flash
+- ✅ **Excelente precisión** para extracción de datos
+
+**Ver guía completa**: [GEMINI-SETUP.md](./GEMINI-SETUP.md)
 
 ## 🚀 Quick Start
 
-### 1. Configurar API Key
+### 1. Configurar API Key (Elige UNA)
 
-Obtén tu API key de Anthropic: https://console.anthropic.com/settings/keys
-
+**Opción A: Gemini (Recomendado - Gratis)**
 ```bash
-# Opción A: Variable de entorno temporal
+# 1. Obtén key: https://aistudio.google.com/apikey
+# 2. Configura:
+export GEMINI_API_KEY="AIzaSy..."
+
+# O crea archivo .env
+echo "GEMINI_API_KEY=AIzaSy..." > .env
+```
+
+**Opción B: Claude (De pago)**
+```bash
+# 1. Obtén key: https://console.anthropic.com/settings/keys
+# 2. Configura:
 export ANTHROPIC_API_KEY="sk-ant-api03-..."
 
-# Opción B: Archivo .env persistente (recomendado)
-cp .env.example .env
-# Edita .env y añade tu API key
+# O crea archivo .env
+echo "ANTHROPIC_API_KEY=sk-ant-api03-..." > .env
 ```
+
+**Nota**: El agente usa automáticamente Gemini si ambas están configuradas (preferencia por gratuita)
 
 ### 2. Ejecutar el Agente de Scraping
 
