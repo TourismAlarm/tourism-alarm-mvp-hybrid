@@ -134,6 +134,103 @@
         background: #1976d2; color: white; border-color: #1976d2;
       }
 
+      /* Panel de Filtros y Búsqueda */
+      .filter-panel {
+        position: absolute; left: 16px; top: 150px; z-index: 1000;
+        background: rgba(255,255,255,0.98); padding: 14px; border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,.2); min-width: 220px;
+      }
+
+      .filter-panel h4 {
+        margin: 0 0 10px 0; font-size: 13px; font-weight: 600; color: #1a1a1a;
+      }
+
+      .search-box {
+        width: 100%; padding: 8px 10px; border: 1px solid #ddd;
+        border-radius: 6px; font-size: 12px; margin-bottom: 12px;
+      }
+
+      .search-box:focus {
+        outline: none; border-color: #1976d2;
+      }
+
+      .filter-group {
+        margin-bottom: 10px;
+      }
+
+      .filter-group label {
+        font-size: 11px; color: #666; display: block; margin-bottom: 6px;
+      }
+
+      .filter-buttons {
+        display: flex; flex-wrap: wrap; gap: 4px;
+      }
+
+      .filter-btn {
+        padding: 5px 10px; border: 1px solid #ddd; border-radius: 4px;
+        font-size: 11px; cursor: pointer; background: white;
+        transition: all 0.2s;
+      }
+
+      .filter-btn:hover {
+        background: #f5f5f5;
+      }
+
+      .filter-btn.active {
+        background: #1976d2; color: white; border-color: #1976d2;
+      }
+
+      .filter-btn.costa { border-left: 3px solid #0288d1; }
+      .filter-btn.montana { border-left: 3px solid #7b1fa2; }
+      .filter-btn.ciudad { border-left: 3px solid #f57c00; }
+      .filter-btn.interior { border-left: 3px solid #388e3c; }
+
+      /* Coverage Dashboard */
+      .coverage-bar {
+        margin-top: 12px; padding-top: 12px; border-top: 1px solid #e0e0e0;
+      }
+
+      .coverage-bar label {
+        font-size: 11px; color: #666; display: block; margin-bottom: 4px;
+      }
+
+      .progress-container {
+        height: 8px; background: #e0e0e0; border-radius: 4px; overflow: hidden;
+      }
+
+      .progress-bar {
+        height: 100%; background: linear-gradient(90deg, #4caf50, #8bc34a);
+        border-radius: 4px; transition: width 0.3s;
+      }
+
+      .coverage-stats {
+        display: flex; justify-content: space-between; margin-top: 4px;
+        font-size: 10px; color: #888;
+      }
+
+      /* Search Results */
+      .search-results {
+        max-height: 150px; overflow-y: auto; margin-top: 8px;
+        border-top: 1px solid #e0e0e0; padding-top: 8px;
+        display: none;
+      }
+
+      .search-result-item {
+        padding: 6px 8px; font-size: 11px; cursor: pointer;
+        border-radius: 4px; margin-bottom: 2px;
+        display: flex; justify-content: space-between;
+        align-items: center;
+      }
+
+      .search-result-item:hover {
+        background: #f5f5f5;
+      }
+
+      .search-result-item .intensity {
+        font-size: 10px; font-weight: 600; padding: 2px 6px;
+        border-radius: 3px;
+      }
+
       /* Responsive */
       @media (max-width: 768px) {
         .info-panel, .context-panel, .legend {
@@ -214,6 +311,48 @@
         </p>
         <div class="season-badge" id="season-badge">
           🍂 Temporada Baja
+        </div>
+      </div>
+
+      <!-- Panel de Filtros y Búsqueda -->
+      <div class="filter-panel" id="filter-panel">
+        <h4>🔍 Buscar y Filtrar</h4>
+
+        <input type="text" class="search-box" id="search-input"
+               placeholder="Buscar municipio..." autocomplete="off">
+
+        <div class="search-results" id="search-results"></div>
+
+        <div class="filter-group">
+          <label>Categoría:</label>
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn costa" data-filter="costa">🏖️ Costa</button>
+            <button class="filter-btn montana" data-filter="montaña">⛷️ Montaña</button>
+            <button class="filter-btn ciudad" data-filter="ciudad">🏙️ Ciudad</button>
+            <button class="filter-btn interior" data-filter="interior">🌲 Interior</button>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <label>Nivel de saturación:</label>
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-level="all">Todos</button>
+            <button class="filter-btn" data-level="high" style="border-left: 3px solid #ff0000;">Alto</button>
+            <button class="filter-btn" data-level="medium" style="border-left: 3px solid #ffff00;">Medio</button>
+            <button class="filter-btn" data-level="low" style="border-left: 3px solid #00ff60;">Bajo</button>
+          </div>
+        </div>
+
+        <div class="coverage-bar">
+          <label>📊 Cobertura de datos reales:</label>
+          <div class="progress-container">
+            <div class="progress-bar" id="coverage-bar" style="width: 4.6%;"></div>
+          </div>
+          <div class="coverage-stats">
+            <span id="coverage-count">44 / 947 municipios</span>
+            <span id="coverage-percent">4.6%</span>
+          </div>
         </div>
       </div>
 
