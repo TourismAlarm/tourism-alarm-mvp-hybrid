@@ -4,7 +4,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import * as topojson from 'topojson-client';
-import { REAL_TOURISM_DATA, TEMPORAL_MULTIPLIERS } from '../data/real-tourism-data.js';
+import { REAL_TOURISM_DATA, TEMPORAL_MULTIPLIERS, COMARCA_CATEGORIES } from '../data/real-tourism-data.js';
 
 // 📅 Obtener mes actual
 function getCurrentMonth() {
@@ -12,7 +12,17 @@ function getCurrentMonth() {
 }
 
 // 🗺️ Clasificar municipio por geografía
-function clasificarMunicipio(code, centroid) {
+function clasificarMunicipio(code, comarca, centroid) {
+  // Si tenemos datos reales con categoría, usarla
+  if (REAL_TOURISM_DATA[code] && REAL_TOURISM_DATA[code].categoria) {
+    return REAL_TOURISM_DATA[code].categoria;
+  }
+
+  // Si tenemos mapeo de comarca, usarlo
+  if (COMARCA_CATEGORIES[comarca]) {
+    return COMARCA_CATEGORIES[comarca];
+  }
+
   // Costa: longitud > 2.4 o latitud baja + longitud media
   if (centroid.lng > 2.4 || (centroid.lat < 41.3 && centroid.lng > 1.0)) {
     return 'costa';
@@ -24,7 +34,7 @@ function clasificarMunicipio(code, centroid) {
   }
 
   // Ciudad: códigos específicos de capitales
-  const ciudades = ['080193', '170792', '431481', '250907', '432038', '081213'];
+  const ciudades = ['80193', '170792', '431482', '251207', '431233', '81213'];
   if (ciudades.includes(code)) {
     return 'ciudad';
   }
@@ -130,12 +140,13 @@ async function main() {
     geojson.features.forEach((feature, index) => {
       const code = String(feature.id || '000000');
       const name = feature.properties.nom || feature.properties.name || `Municipio ${code}`;
+      const comarca = feature.properties.comarca || 0;
 
       // Calcular centroide
       const centroid = calculateCentroid(feature.geometry);
 
-      // Clasificar
-      const categoria = clasificarMunicipio(code, centroid);
+      // Clasificar (usa datos reales si disponibles)
+      const categoria = clasificarMunicipio(code, comarca, centroid);
 
       // Calcular intensidad con datos reales
       const intensity = calculateTourismIntensity(code, categoria);

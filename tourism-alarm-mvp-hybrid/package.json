@@ -11,7 +11,10 @@
     "fetch:build": "npm run fetch:data && npm run build",
     "format": "prettier --write .",
     "test:data": "node scripts/test-data-connection.js",
-    "test:optimized": "node scripts/test-optimized-heatmap.js"
+    "test:optimized": "node scripts/test-optimized-heatmap.js",
+    "agent:scrape": "node agents/universal-agent.js --limit=50",
+    "agent:test": "node agents/universal-agent.js --limit=5",
+    "agent:big": "node agents/universal-agent.js --limit=100"
   },
   "devDependencies": {
     "prettier": "^3.6.2",

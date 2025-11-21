@@ -1,7 +1,7 @@
 {
   "version": "6.0_real_tourism_data",
-  "updated_at": "2025-11-20T10:47:18.586Z",
-  "source": "17 municipios con datos reales IDESCAT + 930 estimados",
+  "updated_at": "2025-11-20T13:42:25.127Z",
+  "source": "41 municipios con datos reales IDESCAT + 906 estimados",
   "method": "Plazas hoteleras per cápita + multiplicadores temporales",
   "current_month": 11,
   "current_month_name": "Noviembre",
@@ -506,12 +506,12 @@
       "name": "Setcases",
       "lat": 42.400681,
       "lng": 2.291528,
-      "tourism_intensity": 0.33,
-      "population": 0,
-      "hotel_places": 0,
+      "tourism_intensity": 0.715,
+      "population": 184,
+      "hotel_places": 200,
       "comarca": 31,
       "categoria": "montaña",
-      "has_real_data": false
+      "has_real_data": true
     },
     {
       "id": "170010",
@@ -590,12 +590,12 @@
       "name": "Queralbs",
       "lat": 42.377808,
       "lng": 2.172572,
-      "tourism_intensity": 0.33,
-      "population": 0,
-      "hotel_places": 0,
+      "tourism_intensity": 0.605,
+      "population": 212,
+      "hotel_places": 150,
       "comarca": 31,
       "categoria": "montaña",
-      "has_real_data": false
+      "has_real_data": true
     },
     {
       "id": "250886",
@@ -662,11 +662,11 @@
       "name": "Molló",
       "lat": 42.369243,
       "lng": 2.404428,
-      "tourism_intensity": 0.158,
+      "tourism_intensity": 0.33,
       "population": 0,
       "hotel_places": 0,
       "comarca": 31,
-      "categoria": "costa",
+      "categoria": "montaña",
       "has_real_data": false
     },
     {
@@ -842,11 +842,11 @@
       "name": "Camprodon",
       "lat": 42.308831,
       "lng": 2.425825,
-      "tourism_intensity": 0.158,
+      "tourism_intensity": 0.33,
       "population": 0,
       "hotel_places": 0,
       "comarca": 31,
-      "categoria": "costa",
+      "categoria": "montaña",
       "has_real_data": false
     },
     {
@@ -1118,23 +1118,23 @@
       "name": "el Port de la Selva",
       "lat": 42.327255,
       "lng": 3.202762,
-      "tourism_intensity": 0.158,
-      "population": 0,
-      "hotel_places": 0,
+      "tourism_intensity": 0.252,
+      "population": 960,
+      "hotel_places": 800,
       "comarca": 2,
       "categoria": "costa",
-      "has_real_data": false
+      "has_real_data": true
     },
     {
       "id": "171096",
       "name": "Montagut i Oix",
       "lat": 42.269009,
       "lng": 2.553509,
-      "tourism_intensity": 0.158,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 19,
-      "categoria": "costa",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -1226,24 +1226,24 @@
       "name": "Castellar de n'Hug",
       "lat": 42.286202,
       "lng": 1.983641,
-      "tourism_intensity": 0.33,
-      "population": 0,
-      "hotel_places": 0,
+      "tourism_intensity": 0.462,
+      "population": 156,
+      "hotel_places": 50,
       "comarca": 14,
       "categoria": "montaña",
-      "has_real_data": false
+      "has_real_data": true
     },
     {
       "id": "80996",
       "name": "Guardiola de Berguedà",
       "lat": 42.256539,
       "lng": 1.874181,
-      "tourism_intensity": 0.33,
-      "population": 0,
-      "hotel_places": 0,
+      "tourism_intensity": 0.385,
+      "population": 964,
+      "hotel_places": 120,
       "comarca": 14,
       "categoria": "montaña",
-      "has_real_data": false
+      "has_real_data": true
     },
     {
       "id": "170372",
@@ -1298,11 +1298,11 @@
       "name": "Gisclareny",
       "lat": 42.266296,
       "lng": 1.784218,
-      "tourism_intensity": 0.33,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 14,
-      "categoria": "montaña",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -1310,11 +1310,11 @@
       "name": "Sales de Llierca",
       "lat": 42.25917,
       "lng": 2.633189,
-      "tourism_intensity": 0.158,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 19,
-      "categoria": "costa",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -1370,11 +1370,11 @@
       "name": "Bagà",
       "lat": 42.28179,
       "lng": 1.840229,
-      "tourism_intensity": 0.33,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 14,
-      "categoria": "montaña",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -1406,11 +1406,11 @@
       "name": "Figueres",
       "lat": 42.270662,
       "lng": 2.984309,
-      "tourism_intensity": 0.122,
+      "tourism_intensity": 0.332,
       "population": 47762,
       "hotel_places": 1800,
       "comarca": 2,
-      "categoria": "costa",
+      "categoria": "ciudad",
       "has_real_data": true
     },
     {
@@ -1442,11 +1442,11 @@
       "name": "Saldes",
       "lat": 42.227295,
       "lng": 1.733639,
-      "tourism_intensity": 0.33,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 14,
-      "categoria": "montaña",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -1562,11 +1562,11 @@
       "name": "Beuda",
       "lat": 42.237652,
       "lng": 2.712147,
-      "tourism_intensity": 0.158,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 19,
-      "categoria": "costa",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -1574,11 +1574,11 @@
       "name": "Tortellà",
       "lat": 42.241246,
       "lng": 2.622713,
-      "tourism_intensity": 0.158,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 19,
-      "categoria": "costa",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -1598,11 +1598,11 @@
       "name": "la Pobla de Lillet",
       "lat": 42.22667,
       "lng": 1.973316,
-      "tourism_intensity": 0.33,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 14,
-      "categoria": "montaña",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -1610,11 +1610,11 @@
       "name": "Gósol",
       "lat": 42.198006,
       "lng": 1.679999,
-      "tourism_intensity": 0.33,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 14,
-      "categoria": "montaña",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -1658,11 +1658,11 @@
       "name": "Vallcebre",
       "lat": 42.207846,
       "lng": 1.812388,
-      "tourism_intensity": 0.33,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 14,
-      "categoria": "montaña",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -1682,11 +1682,11 @@
       "name": "Ripoll",
       "lat": 42.178378,
       "lng": 2.214455,
-      "tourism_intensity": 0.275,
+      "tourism_intensity": 0.15,
       "population": 10896,
       "hotel_places": 600,
       "comarca": 31,
-      "categoria": "montaña",
+      "categoria": "interior",
       "has_real_data": true
     },
     {
@@ -1694,23 +1694,23 @@
       "name": "Roses",
       "lat": 42.265581,
       "lng": 3.201038,
-      "tourism_intensity": 0.158,
-      "population": 0,
-      "hotel_places": 0,
+      "tourism_intensity": 0.297,
+      "population": 19370,
+      "hotel_places": 12000,
       "comarca": 2,
       "categoria": "costa",
-      "has_real_data": false
+      "has_real_data": true
     },
     {
       "id": "89030",
       "name": "Sant Julià de Cerdanyola",
       "lat": 42.216248,
       "lng": 1.912252,
-      "tourism_intensity": 0.33,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 14,
-      "categoria": "montaña",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -1766,11 +1766,11 @@
       "name": "Maià de Montcal",
       "lat": 42.204122,
       "lng": 2.754414,
-      "tourism_intensity": 0.158,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 19,
-      "categoria": "costa",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -1802,11 +1802,11 @@
       "name": "Sant Joan les Fonts",
       "lat": 42.206074,
       "lng": 2.537031,
-      "tourism_intensity": 0.158,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 19,
-      "categoria": "costa",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -1838,23 +1838,23 @@
       "name": "Sant Jaume de Llierca",
       "lat": 42.206004,
       "lng": 2.593383,
-      "tourism_intensity": 0.28,
-      "population": 5730,
-      "hotel_places": 8000,
+      "tourism_intensity": 0.09,
+      "population": 0,
+      "hotel_places": 0,
       "comarca": 19,
-      "categoria": "costa",
-      "has_real_data": true
+      "categoria": "interior",
+      "has_real_data": false
     },
     {
       "id": "171621",
       "name": "Sant Ferriol",
       "lat": 42.186232,
       "lng": 2.675497,
-      "tourism_intensity": 0.158,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 19,
-      "categoria": "costa",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -1862,11 +1862,11 @@
       "name": "Argelaguer",
       "lat": 42.208296,
       "lng": 2.62058,
-      "tourism_intensity": 0.158,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 19,
-      "categoria": "costa",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -1886,11 +1886,11 @@
       "name": "Sant Jaume de Frontanyà",
       "lat": 42.188734,
       "lng": 2.024946,
-      "tourism_intensity": 0.33,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 14,
-      "categoria": "montaña",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -1910,11 +1910,11 @@
       "name": "Castellfollit de la Roca",
       "lat": 42.217932,
       "lng": 2.54521,
-      "tourism_intensity": 0.158,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 19,
-      "categoria": "costa",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -1922,11 +1922,11 @@
       "name": "la Coma i la Pedra",
       "lat": 42.169818,
       "lng": 1.57325,
-      "tourism_intensity": 0.33,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 35,
-      "categoria": "montaña",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -1946,11 +1946,11 @@
       "name": "Riudaura",
       "lat": 42.190195,
       "lng": 2.387384,
-      "tourism_intensity": 0.33,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 19,
-      "categoria": "montaña",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -1970,11 +1970,11 @@
       "name": "la Nou de Berguedà",
       "lat": 42.176974,
       "lng": 1.894132,
-      "tourism_intensity": 0.33,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 14,
-      "categoria": "montaña",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -2030,23 +2030,23 @@
       "name": "Besalú",
       "lat": 42.20358,
       "lng": 2.695632,
-      "tourism_intensity": 0.158,
-      "population": 0,
-      "hotel_places": 0,
+      "tourism_intensity": 0.27,
+      "population": 2482,
+      "hotel_places": 300,
       "comarca": 19,
-      "categoria": "costa",
-      "has_real_data": false
+      "categoria": "interior",
+      "has_real_data": true
     },
     {
       "id": "172082",
       "name": "la Vall de Bianya",
       "lat": 42.232129,
       "lng": 2.443938,
-      "tourism_intensity": 0.158,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 19,
-      "categoria": "costa",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -2054,11 +2054,11 @@
       "name": "Castell de l'Areny",
       "lat": 42.178611,
       "lng": 1.940465,
-      "tourism_intensity": 0.33,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 14,
-      "categoria": "montaña",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -2078,11 +2078,11 @@
       "name": "Olot",
       "lat": 42.180012,
       "lng": 2.492512,
-      "tourism_intensity": 0.105,
+      "tourism_intensity": 0.18,
       "population": 34693,
       "hotel_places": 1200,
       "comarca": 19,
-      "categoria": "costa",
+      "categoria": "interior",
       "has_real_data": true
     },
     {
@@ -2102,11 +2102,11 @@
       "name": "Cercs",
       "lat": 42.136645,
       "lng": 1.855291,
-      "tourism_intensity": 0.33,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 14,
-      "categoria": "montaña",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -2138,11 +2138,11 @@
       "name": "Fígols",
       "lat": 42.166137,
       "lng": 1.784916,
-      "tourism_intensity": 0.33,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 14,
-      "categoria": "montaña",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -2150,23 +2150,23 @@
       "name": "Santa Pau",
       "lat": 42.150597,
       "lng": 2.563057,
-      "tourism_intensity": 0.158,
-      "population": 0,
-      "hotel_places": 0,
+      "tourism_intensity": 0.228,
+      "population": 1745,
+      "hotel_places": 200,
       "comarca": 19,
-      "categoria": "costa",
-      "has_real_data": false
+      "categoria": "interior",
+      "has_real_data": true
     },
     {
       "id": "251484",
       "name": "Odèn",
       "lat": 42.116225,
       "lng": 1.437986,
-      "tourism_intensity": 0.33,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 35,
-      "categoria": "montaña",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -2174,11 +2174,11 @@
       "name": "Guixers",
       "lat": 42.142142,
       "lng": 1.6436,
-      "tourism_intensity": 0.33,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 35,
-      "categoria": "montaña",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -2198,11 +2198,11 @@
       "name": "la Vall d'en Bas",
       "lat": 42.126479,
       "lng": 2.428529,
-      "tourism_intensity": 0.158,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 19,
-      "categoria": "costa",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -2258,11 +2258,11 @@
       "name": "Vidrà",
       "lat": 42.144409,
       "lng": 2.32449,
-      "tourism_intensity": 0.33,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 24,
-      "categoria": "montaña",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -2282,11 +2282,11 @@
       "name": "Vilada",
       "lat": 42.140053,
       "lng": 1.930746,
-      "tourism_intensity": 0.33,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 14,
-      "categoria": "montaña",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -2294,11 +2294,11 @@
       "name": "Borredà",
       "lat": 42.122918,
       "lng": 2.015552,
-      "tourism_intensity": 0.33,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 14,
-      "categoria": "montaña",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -2306,11 +2306,11 @@
       "name": "les Preses",
       "lat": 42.144709,
       "lng": 2.475042,
-      "tourism_intensity": 0.158,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 19,
-      "categoria": "costa",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -2342,11 +2342,11 @@
       "name": "Oliana",
       "lat": 42.097428,
       "lng": 1.322446,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.33,
       "population": 0,
       "hotel_places": 0,
       "comarca": 4,
-      "categoria": "interior",
+      "categoria": "montaña",
       "has_real_data": false
     },
     {
@@ -2354,11 +2354,11 @@
       "name": "Castellar del Riu",
       "lat": 42.128351,
       "lng": 1.753682,
-      "tourism_intensity": 0.33,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 14,
-      "categoria": "montaña",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -2390,11 +2390,11 @@
       "name": "Gavet de la Conca",
       "lat": 42.081476,
       "lng": 0.980776,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.33,
       "population": 0,
       "hotel_places": 0,
       "comarca": 25,
-      "categoria": "interior",
+      "categoria": "montaña",
       "has_real_data": false
     },
     {
@@ -2414,11 +2414,11 @@
       "name": "Mieres",
       "lat": 42.125023,
       "lng": 2.633538,
-      "tourism_intensity": 0.158,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 19,
-      "categoria": "costa",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -2438,11 +2438,11 @@
       "name": "Sant Esteve de la Sarga",
       "lat": 42.082389,
       "lng": 0.768181,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.33,
       "population": 0,
       "hotel_places": 0,
       "comarca": 25,
-      "categoria": "interior",
+      "categoria": "montaña",
       "has_real_data": false
     },
     {
@@ -2450,23 +2450,23 @@
       "name": "Alpens",
       "lat": 42.119776,
       "lng": 2.093629,
-      "tourism_intensity": 0.33,
-      "population": 0,
-      "hotel_places": 0,
+      "tourism_intensity": 0.15,
+      "population": 387,
+      "hotel_places": 30,
       "comarca": 24,
-      "categoria": "montaña",
-      "has_real_data": false
+      "categoria": "interior",
+      "has_real_data": true
     },
     {
       "id": "82536",
       "name": "Santa Maria de Besora",
       "lat": 42.124243,
       "lng": 2.260954,
-      "tourism_intensity": 0.33,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 24,
-      "categoria": "montaña",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -2510,11 +2510,11 @@
       "name": "Peramola",
       "lat": 42.082569,
       "lng": 1.258589,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.33,
       "population": 0,
       "hotel_places": 0,
       "comarca": 4,
-      "categoria": "interior",
+      "categoria": "montaña",
       "has_real_data": false
     },
     {
@@ -2534,11 +2534,11 @@
       "name": "Sora",
       "lat": 42.104008,
       "lng": 2.173234,
-      "tourism_intensity": 0.33,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 24,
-      "categoria": "montaña",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -2546,11 +2546,11 @@
       "name": "Sant Feliu de Pallerols",
       "lat": 42.098997,
       "lng": 2.508271,
-      "tourism_intensity": 0.158,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 19,
-      "categoria": "costa",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -2558,11 +2558,11 @@
       "name": "la Baronia de Rialb",
       "lat": 42.02147,
       "lng": 1.185966,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 23,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -2594,11 +2594,11 @@
       "name": "Montesquiu",
       "lat": 42.121374,
       "lng": 2.209989,
-      "tourism_intensity": 0.33,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 24,
-      "categoria": "montaña",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -2618,11 +2618,11 @@
       "name": "Sant Llorenç de Morunys",
       "lat": 42.129439,
       "lng": 1.585156,
-      "tourism_intensity": 0.33,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 35,
-      "categoria": "montaña",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -2630,11 +2630,11 @@
       "name": "Sant Quirze de Besora",
       "lat": 42.102969,
       "lng": 2.235943,
-      "tourism_intensity": 0.33,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 24,
-      "categoria": "montaña",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -2642,11 +2642,11 @@
       "name": "Berga",
       "lat": 42.100582,
       "lng": 1.852334,
-      "tourism_intensity": 0.33,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 14,
-      "categoria": "montaña",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -2666,11 +2666,11 @@
       "name": "Sant Aniol de Finestres",
       "lat": 42.066952,
       "lng": 2.601364,
-      "tourism_intensity": 0.158,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 19,
-      "categoria": "costa",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -2762,11 +2762,11 @@
       "name": "Llimiana",
       "lat": 42.066203,
       "lng": 0.933674,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.33,
       "population": 0,
       "hotel_places": 0,
       "comarca": 25,
-      "categoria": "interior",
+      "categoria": "montaña",
       "has_real_data": false
     },
     {
@@ -2774,11 +2774,11 @@
       "name": "les Planes d'Hostoles",
       "lat": 42.062935,
       "lng": 2.544518,
-      "tourism_intensity": 0.158,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 19,
-      "categoria": "costa",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -2882,11 +2882,11 @@
       "name": "Àger",
       "lat": 42.004059,
       "lng": 0.753332,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 23,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -2978,11 +2978,11 @@
       "name": "Bassella",
       "lat": 42.001095,
       "lng": 1.300606,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.33,
       "population": 0,
       "hotel_places": 0,
       "comarca": 4,
-      "categoria": "interior",
+      "categoria": "montaña",
       "has_real_data": false
     },
     {
@@ -3062,11 +3062,11 @@
       "name": "Rupit i Pruit",
       "lat": 42.028124,
       "lng": 2.467447,
-      "tourism_intensity": 0.158,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 24,
-      "categoria": "costa",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -3110,11 +3110,11 @@
       "name": "Artesa de Segre",
       "lat": 41.938724,
       "lng": 1.07494,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 23,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -3278,11 +3278,11 @@
       "name": "Vilanova de Meià",
       "lat": 41.989152,
       "lng": 0.985971,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 23,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -3338,11 +3338,11 @@
       "name": "Camarasa",
       "lat": 41.9237,
       "lng": 0.864482,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 23,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -3410,11 +3410,11 @@
       "name": "Tavertet",
       "lat": 42.002633,
       "lng": 2.403269,
-      "tourism_intensity": 0.158,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 24,
-      "categoria": "costa",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -3482,11 +3482,11 @@
       "name": "Girona",
       "lat": 41.986328,
       "lng": 2.835514,
-      "tourism_intensity": 0.168,
+      "tourism_intensity": 0.456,
       "population": 103369,
       "hotel_places": 5500,
       "comarca": 20,
-      "categoria": "costa",
+      "categoria": "ciudad",
       "has_real_data": true
     },
     {
@@ -3566,11 +3566,11 @@
       "name": "Os de Balaguer",
       "lat": 41.893724,
       "lng": 0.70067,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 23,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -3650,11 +3650,11 @@
       "name": "Tiurana",
       "lat": 41.952559,
       "lng": 1.233874,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 23,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -3746,11 +3746,11 @@
       "name": "les Avellanes i Santa Linya",
       "lat": 41.908786,
       "lng": 0.784832,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 23,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -3770,11 +3770,11 @@
       "name": "Alòs de Balaguer",
       "lat": 41.918928,
       "lng": 0.955837,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 23,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -3782,11 +3782,11 @@
       "name": "Vilanova de Sau",
       "lat": 41.946971,
       "lng": 2.419054,
-      "tourism_intensity": 0.158,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 24,
-      "categoria": "costa",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -3938,11 +3938,11 @@
       "name": "Sant Feliu Sasserra",
       "lat": 41.935603,
       "lng": 2.010498,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 7,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -3962,11 +3962,11 @@
       "name": "Gaià",
       "lat": 41.922319,
       "lng": 1.920676,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 7,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -3986,11 +3986,11 @@
       "name": "Vilanova de l'Aguda",
       "lat": 41.891425,
       "lng": 1.256918,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 23,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -3998,11 +3998,11 @@
       "name": "Cardona",
       "lat": 41.907709,
       "lng": 1.648016,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 7,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -4034,11 +4034,11 @@
       "name": "Ponts",
       "lat": 41.919822,
       "lng": 1.171274,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 23,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -4094,11 +4094,11 @@
       "name": "Oliola",
       "lat": 41.860191,
       "lng": 1.173861,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 23,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -4214,11 +4214,11 @@
       "name": "Navàs",
       "lat": 41.890482,
       "lng": 1.764641,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 7,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -4250,11 +4250,11 @@
       "name": "Ivars de Noguera",
       "lat": 41.868628,
       "lng": 0.612006,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 23,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -4262,11 +4262,11 @@
       "name": "Avinyó",
       "lat": 41.857519,
       "lng": 1.983943,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 7,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -4274,11 +4274,11 @@
       "name": "Foradada",
       "lat": 41.872341,
       "lng": 1.011186,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 23,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -4394,11 +4394,11 @@
       "name": "Sallent",
       "lat": 41.839846,
       "lng": 1.912813,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 7,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -4418,11 +4418,11 @@
       "name": "Algerri",
       "lat": 41.830049,
       "lng": 0.639855,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 23,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -4442,11 +4442,11 @@
       "name": "Balsareny",
       "lat": 41.871034,
       "lng": 1.867391,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 7,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -4466,11 +4466,11 @@
       "name": "Espinelves",
       "lat": 41.874074,
       "lng": 2.422225,
-      "tourism_intensity": 0.158,
+      "tourism_intensity": 0.09,
       "population": 0,
       "hotel_places": 0,
       "comarca": 24,
-      "categoria": "costa",
+      "categoria": "interior",
       "has_real_data": false
     },
     {
@@ -4478,11 +4478,11 @@
       "name": "Cubells",
       "lat": 41.82658,
       "lng": 0.952105,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 23,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -4514,11 +4514,11 @@
       "name": "Cabanabona",
       "lat": 41.833308,
       "lng": 1.200748,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 23,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -4550,11 +4550,11 @@
       "name": "Castellnou de Bages",
       "lat": 41.832165,
       "lng": 1.816428,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 7,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -4574,11 +4574,11 @@
       "name": "Sant Mateu de Bages",
       "lat": 41.805956,
       "lng": 1.667527,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 7,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -4598,11 +4598,11 @@
       "name": "Castelló de Farfanya",
       "lat": 41.811995,
       "lng": 0.718173,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 23,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -4634,11 +4634,11 @@
       "name": "Súria",
       "lat": 41.837108,
       "lng": 1.764372,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 7,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -4718,11 +4718,11 @@
       "name": "Preixens",
       "lat": 41.807384,
       "lng": 1.035959,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 23,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -4730,11 +4730,11 @@
       "name": "Montgai",
       "lat": 41.792552,
       "lng": 0.966544,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 23,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -4754,11 +4754,11 @@
       "name": "la Sentiu de Sió",
       "lat": 41.802655,
       "lng": 0.874913,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 23,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -4790,11 +4790,11 @@
       "name": "Balaguer",
       "lat": 41.787687,
       "lng": 0.823318,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 23,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -4838,11 +4838,11 @@
       "name": "Callús",
       "lat": 41.800816,
       "lng": 1.781044,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 7,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -4886,11 +4886,11 @@
       "name": "Artés",
       "lat": 41.799646,
       "lng": 1.961481,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 7,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -4898,11 +4898,11 @@
       "name": "Vallfogona de Balaguer",
       "lat": 41.751035,
       "lng": 0.836052,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 23,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -4910,11 +4910,11 @@
       "name": "Albesa",
       "lat": 41.760488,
       "lng": 0.666676,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 23,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -4934,11 +4934,11 @@
       "name": "Santpedor",
       "lat": 41.786713,
       "lng": 1.829079,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 7,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -4958,11 +4958,11 @@
       "name": "Castellfollit de Riubregós",
       "lat": 41.765696,
       "lng": 1.440957,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 6,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -5018,11 +5018,11 @@
       "name": "Fonollosa",
       "lat": 41.76408,
       "lng": 1.71143,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 7,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -5054,11 +5054,11 @@
       "name": "Bellcaire d'Urgell",
       "lat": 41.761204,
       "lng": 0.890314,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 23,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -5114,11 +5114,11 @@
       "name": "Calonge de Segarra",
       "lat": 41.748378,
       "lng": 1.478218,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 6,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -5138,11 +5138,11 @@
       "name": "Sant Joan de Vilatorrada",
       "lat": 41.764819,
       "lng": 1.798875,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 7,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -5174,11 +5174,11 @@
       "name": "Bellmunt d'Urgell",
       "lat": 41.758855,
       "lng": 0.943889,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 23,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -5186,11 +5186,11 @@
       "name": "Menàrguens",
       "lat": 41.732221,
       "lng": 0.737211,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 23,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -5210,11 +5210,11 @@
       "name": "Penelles",
       "lat": 41.739187,
       "lng": 0.952664,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 23,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -5246,11 +5246,11 @@
       "name": "Sant Pere Sallavinera",
       "lat": 41.756158,
       "lng": 1.563142,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 6,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -5270,11 +5270,11 @@
       "name": "Sant Fruitós de Bages",
       "lat": 41.750971,
       "lng": 1.875882,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 7,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -5318,11 +5318,11 @@
       "name": "Navarcles",
       "lat": 41.758703,
       "lng": 1.909029,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 7,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -5330,11 +5330,11 @@
       "name": "Aguilar de Segarra",
       "lat": 41.723025,
       "lng": 1.61213,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 7,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -5342,11 +5342,11 @@
       "name": "Térmens",
       "lat": 41.717738,
       "lng": 0.78962,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 23,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -5378,12 +5378,12 @@
       "name": "Lleida",
       "lat": 41.62465,
       "lng": 0.59171,
-      "tourism_intensity": 0.09,
-      "population": 0,
-      "hotel_places": 0,
+      "tourism_intensity": 0.237,
+      "population": 137387,
+      "hotel_places": 2000,
       "comarca": 33,
-      "categoria": "interior",
-      "has_real_data": false
+      "categoria": "ciudad",
+      "has_real_data": true
     },
     {
       "id": "251945",
@@ -5402,11 +5402,11 @@
       "name": "Manresa",
       "lat": 41.717993,
       "lng": 1.817128,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 7,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -5426,11 +5426,11 @@
       "name": "Rajadell",
       "lat": 41.723524,
       "lng": 1.710967,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 7,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -5462,11 +5462,11 @@
       "name": "Talamanca",
       "lat": 41.732063,
       "lng": 1.935928,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 7,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -5522,11 +5522,11 @@
       "name": "Torrelameu",
       "lat": 41.708164,
       "lng": 0.706928,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 23,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -5582,11 +5582,11 @@
       "name": "Pujalt",
       "lat": 41.706779,
       "lng": 1.438429,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 6,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -5606,11 +5606,11 @@
       "name": "Calaf",
       "lat": 41.719361,
       "lng": 1.500313,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 6,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -5690,11 +5690,11 @@
       "name": "els Prats de Rei",
       "lat": 41.70591,
       "lng": 1.552152,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 6,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -5702,11 +5702,11 @@
       "name": "el Pont de Vilomara i Rocafort",
       "lat": 41.702103,
       "lng": 1.905153,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 7,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -5750,11 +5750,11 @@
       "name": "Mura",
       "lat": 41.681421,
       "lng": 1.980369,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 7,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -5822,11 +5822,11 @@
       "name": "Sant Martí Sesgueioles",
       "lat": 41.7051,
       "lng": 1.504383,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 6,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -5834,11 +5834,11 @@
       "name": "Castellfollit del Boix",
       "lat": 41.670969,
       "lng": 1.671997,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 7,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -5918,23 +5918,23 @@
       "name": "Tossa de Mar",
       "lat": 41.736891,
       "lng": 2.90656,
-      "tourism_intensity": 0.158,
-      "population": 0,
-      "hotel_places": 0,
+      "tourism_intensity": 0.28,
+      "population": 5730,
+      "hotel_places": 8000,
       "comarca": 34,
       "categoria": "costa",
-      "has_real_data": false
+      "has_real_data": true
     },
     {
       "id": "80983",
       "name": "Sant Salvador de Guardiola",
       "lat": 41.6732,
       "lng": 1.761686,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 7,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -6026,11 +6026,11 @@
       "name": "Rubió",
       "lat": 41.656646,
       "lng": 1.576288,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 6,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -6050,11 +6050,11 @@
       "name": "Castellgalí",
       "lat": 41.67505,
       "lng": 1.825703,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 7,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -6086,11 +6086,11 @@
       "name": "Sant Vicenç de Castellet",
       "lat": 41.66773,
       "lng": 1.86678,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 7,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -6194,12 +6194,12 @@
       "name": "Lloret de Mar",
       "lat": 41.72243,
       "lng": 2.840123,
-      "tourism_intensity": 0.158,
-      "population": 0,
-      "hotel_places": 0,
+      "tourism_intensity": 0.332,
+      "population": 39363,
+      "hotel_places": 30000,
       "comarca": 34,
       "categoria": "costa",
-      "has_real_data": false
+      "has_real_data": true
     },
     {
       "id": "250485",
@@ -6266,23 +6266,23 @@
       "name": "Blanes",
       "lat": 41.691154,
       "lng": 2.783438,
-      "tourism_intensity": 0.158,
-      "population": 0,
-      "hotel_places": 0,
+      "tourism_intensity": 0.262,
+      "population": 39834,
+      "hotel_places": 15000,
       "comarca": 34,
       "categoria": "costa",
-      "has_real_data": false
+      "has_real_data": true
     },
     {
       "id": "80538",
       "name": "Castellbell i el Vilar",
       "lat": 41.637652,
       "lng": 1.852783,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 7,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -6314,11 +6314,11 @@
       "name": "Copons",
       "lat": 41.644324,
       "lng": 1.49997,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 6,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -6326,11 +6326,11 @@
       "name": "Òdena",
       "lat": 41.61639,
       "lng": 1.630457,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 6,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -6386,11 +6386,11 @@
       "name": "Marganell",
       "lat": 41.633429,
       "lng": 1.80632,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 7,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -6422,12 +6422,12 @@
       "name": "Monistrol de Montserrat",
       "lat": 41.618051,
       "lng": 1.833565,
-      "tourism_intensity": 0.09,
-      "population": 0,
-      "hotel_places": 0,
+      "tourism_intensity": 0.24,
+      "population": 3000,
+      "hotel_places": 400,
       "comarca": 7,
       "categoria": "interior",
-      "has_real_data": false
+      "has_real_data": true
     },
     {
       "id": "81206",
@@ -6470,11 +6470,11 @@
       "name": "el Bruc",
       "lat": 41.606407,
       "lng": 1.763463,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 6,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -6530,11 +6530,11 @@
       "name": "Veciana",
       "lat": 41.656619,
       "lng": 1.477171,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 6,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -6614,11 +6614,11 @@
       "name": "Argençola",
       "lat": 41.593324,
       "lng": 1.445651,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 6,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -6626,11 +6626,11 @@
       "name": "Montmaneu",
       "lat": 41.618097,
       "lng": 1.396301,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 6,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -6638,11 +6638,11 @@
       "name": "Jorba",
       "lat": 41.607705,
       "lng": 1.533214,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 6,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -6794,11 +6794,11 @@
       "name": "Castellolí",
       "lat": 41.593178,
       "lng": 1.711123,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 6,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -6866,12 +6866,12 @@
       "name": "Canet de Mar",
       "lat": 41.598896,
       "lng": 2.578667,
-      "tourism_intensity": 0.158,
-      "population": 0,
-      "hotel_places": 0,
+      "tourism_intensity": 0.122,
+      "population": 14569,
+      "hotel_places": 600,
       "comarca": 21,
       "categoria": "costa",
-      "has_real_data": false
+      "has_real_data": true
     },
     {
       "id": "252108",
@@ -6938,11 +6938,11 @@
       "name": "Igualada",
       "lat": 41.585915,
       "lng": 1.615214,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 6,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -6950,11 +6950,11 @@
       "name": "Arbeca",
       "lat": 41.538946,
       "lng": 0.93487,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 18,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -6998,11 +6998,11 @@
       "name": "Juneda",
       "lat": 41.535377,
       "lng": 0.8261,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 18,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -7034,11 +7034,11 @@
       "name": "Puiggròs",
       "lat": 41.55991,
       "lng": 0.872725,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 18,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -7082,12 +7082,12 @@
       "name": "Arenys de Mar",
       "lat": 41.582692,
       "lng": 2.547658,
-      "tourism_intensity": 0.158,
-      "population": 0,
-      "hotel_places": 0,
+      "tourism_intensity": 0.14,
+      "population": 15632,
+      "hotel_places": 800,
       "comarca": 21,
       "categoria": "costa",
-      "has_real_data": false
+      "has_real_data": true
     },
     {
       "id": "80095",
@@ -7106,11 +7106,11 @@
       "name": "Santa Margarida de Montbui",
       "lat": 41.559899,
       "lng": 1.573013,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 6,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -7118,11 +7118,11 @@
       "name": "Sant Martí de Tous",
       "lat": 41.550496,
       "lng": 1.503114,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 6,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -7154,11 +7154,11 @@
       "name": "la Pobla de Claramunt",
       "lat": 41.558478,
       "lng": 1.680568,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 6,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -7166,11 +7166,11 @@
       "name": "Vilanova del Camí",
       "lat": 41.562202,
       "lng": 1.631038,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 6,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -7202,11 +7202,11 @@
       "name": "Piera",
       "lat": 41.509598,
       "lng": 1.747115,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 6,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -7286,11 +7286,11 @@
       "name": "els Hostalets de Pierola",
       "lat": 41.538876,
       "lng": 1.804435,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 6,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -7298,12 +7298,12 @@
       "name": "Mataró",
       "lat": 41.553607,
       "lng": 2.444641,
-      "tourism_intensity": 0.158,
-      "population": 0,
-      "hotel_places": 0,
+      "tourism_intensity": 0.332,
+      "population": 129749,
+      "hotel_places": 3000,
       "comarca": 21,
-      "categoria": "costa",
-      "has_real_data": false
+      "categoria": "ciudad",
+      "has_real_data": true
     },
     {
       "id": "81672",
@@ -7359,11 +7359,11 @@
       "lat": 41.571291,
       "lng": 2.525932,
       "tourism_intensity": 0.158,
-      "population": 0,
-      "hotel_places": 0,
+      "population": 2834,
+      "hotel_places": 500,
       "comarca": 21,
       "categoria": "costa",
-      "has_real_data": false
+      "has_real_data": true
     },
     {
       "id": "81350",
@@ -7478,11 +7478,11 @@
       "name": "Vallbona d'Anoia",
       "lat": 41.529078,
       "lng": 1.70623,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 6,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -7490,11 +7490,11 @@
       "name": "Castelldans",
       "lat": 41.491093,
       "lng": 0.770972,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 18,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -7502,11 +7502,11 @@
       "name": "Carme",
       "lat": 41.528493,
       "lng": 1.61539,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 6,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -7526,11 +7526,11 @@
       "name": "les Borges Blanques",
       "lat": 41.498557,
       "lng": 0.86113,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 18,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -7550,11 +7550,11 @@
       "name": "la Torre de Claramunt",
       "lat": 41.526313,
       "lng": 1.666392,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 6,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -7562,11 +7562,11 @@
       "name": "Santa Maria de Miralles",
       "lat": 41.504361,
       "lng": 1.509017,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 6,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -7574,11 +7574,11 @@
       "name": "Orpí",
       "lat": 41.525371,
       "lng": 1.574707,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 6,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -7586,11 +7586,11 @@
       "name": "Bellprat",
       "lat": 41.514964,
       "lng": 1.447346,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 6,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -7598,11 +7598,11 @@
       "name": "Capellades",
       "lat": 41.526057,
       "lng": 1.686,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 6,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -7670,11 +7670,11 @@
       "name": "la Floresta",
       "lat": 41.48321,
       "lng": 0.930997,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 18,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -7766,11 +7766,11 @@
       "name": "els Omellons",
       "lat": 41.496792,
       "lng": 0.963025,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 18,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -7778,11 +7778,11 @@
       "name": "Masquefa",
       "lat": 41.502799,
       "lng": 1.805626,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 6,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -7802,11 +7802,11 @@
       "name": "l'Espluga Calba",
       "lat": 41.495801,
       "lng": 1.007822,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 18,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -7862,11 +7862,11 @@
       "name": "Cabrera d'Anoia",
       "lat": 41.49329,
       "lng": 1.710017,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 6,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -7946,11 +7946,11 @@
       "name": "la Llacuna",
       "lat": 41.466815,
       "lng": 1.544195,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 6,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -8174,11 +8174,11 @@
       "name": "el Cogul",
       "lat": 41.453031,
       "lng": 0.696731,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 18,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -8198,11 +8198,11 @@
       "name": "Vinaixa",
       "lat": 41.436655,
       "lng": 0.978123,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 18,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -8210,11 +8210,11 @@
       "name": "Fulleda",
       "lat": 41.458571,
       "lng": 1.036208,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 18,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -8234,23 +8234,23 @@
       "name": "Badalona",
       "lat": 41.459793,
       "lng": 2.23215,
-      "tourism_intensity": 0.09,
-      "population": 0,
-      "hotel_places": 0,
+      "tourism_intensity": 0.285,
+      "population": 220977,
+      "hotel_places": 2500,
       "comarca": 13,
-      "categoria": "interior",
-      "has_real_data": false
+      "categoria": "ciudad",
+      "has_real_data": true
     },
     {
       "id": "250061",
       "name": "l'Albagés",
       "lat": 41.442036,
       "lng": 0.753505,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 18,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -8282,11 +8282,11 @@
       "name": "Querol",
       "lat": 41.417393,
       "lng": 1.426888,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 1,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -8294,11 +8294,11 @@
       "name": "l'Albi",
       "lat": 41.432859,
       "lng": 0.91664,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 18,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -8306,11 +8306,11 @@
       "name": "Cervià de les Garrigues",
       "lat": 41.433799,
       "lng": 0.843515,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 18,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -8354,11 +8354,11 @@
       "name": "Granyena de les Garrigues",
       "lat": 41.43091,
       "lng": 0.652711,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 18,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -8378,11 +8378,11 @@
       "name": "Santa Coloma de Gramenet",
       "lat": 41.452964,
       "lng": 2.207111,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 13,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -8426,11 +8426,11 @@
       "name": "Tarrés",
       "lat": 41.428891,
       "lng": 1.016792,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 18,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -8486,11 +8486,11 @@
       "name": "el Soleràs",
       "lat": 41.419876,
       "lng": 0.700832,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 18,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -8498,11 +8498,11 @@
       "name": "Juncosa",
       "lat": 41.388265,
       "lng": 0.781988,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 18,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -8534,11 +8534,11 @@
       "name": "el Pont d'Armentera",
       "lat": 41.403106,
       "lng": 1.343408,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 1,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -8582,11 +8582,11 @@
       "name": "la Pobla de Cérvoles",
       "lat": 41.389144,
       "lng": 0.876108,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 18,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -8666,11 +8666,11 @@
       "name": "la Granadella",
       "lat": 41.352808,
       "lng": 0.64596,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 18,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -8702,11 +8702,11 @@
       "name": "Cabra del Camp",
       "lat": 41.394832,
       "lng": 1.305197,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 1,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -8714,11 +8714,11 @@
       "name": "els Torms",
       "lat": 41.395908,
       "lng": 0.72129,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 18,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -8726,11 +8726,11 @@
       "name": "Sant Adrià de Besòs",
       "lat": 41.423193,
       "lng": 2.221148,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 13,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -8738,11 +8738,11 @@
       "name": "el Vilosell",
       "lat": 41.384791,
       "lng": 0.94757,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 18,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -8810,11 +8810,11 @@
       "name": "Aiguamúrcia",
       "lat": 41.367346,
       "lng": 1.42181,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 1,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -8942,11 +8942,11 @@
       "name": "Figuerola del Camp",
       "lat": 41.363608,
       "lng": 1.255557,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 1,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -8954,11 +8954,11 @@
       "name": "el Pla de Santa Maria",
       "lat": 41.350079,
       "lng": 1.311116,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 1,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -8978,11 +8978,11 @@
       "name": "Bellaguarda",
       "lat": 41.338298,
       "lng": 0.735852,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 18,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -9026,11 +9026,11 @@
       "name": "l'Hospitalet de Llobregat",
       "lat": 41.360936,
       "lng": 2.107846,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 13,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -9158,11 +9158,11 @@
       "name": "Prades",
       "lat": 41.31747,
       "lng": 0.99269,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 8,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -9182,11 +9182,11 @@
       "name": "Bovera",
       "lat": 41.317834,
       "lng": 0.635657,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.237,
       "population": 0,
       "hotel_places": 0,
       "comarca": 18,
-      "categoria": "interior",
+      "categoria": "ciudad",
       "has_real_data": false
     },
     {
@@ -9194,12 +9194,12 @@
       "name": "Barcelona",
       "lat": 41.40061,
       "lng": 2.126625,
-      "tourism_intensity": 0.09,
-      "population": 0,
-      "hotel_places": 0,
+      "tourism_intensity": 0.779,
+      "population": 1686208,
+      "hotel_places": 75000,
       "comarca": 13,
-      "categoria": "interior",
-      "has_real_data": false
+      "categoria": "ciudad",
+      "has_real_data": true
     },
     {
       "id": "82009",
@@ -9326,11 +9326,11 @@
       "name": "Vila-rodona",
       "lat": 41.306834,
       "lng": 1.369914,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 1,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -9398,11 +9398,11 @@
       "name": "la Riba",
       "lat": 41.308924,
       "lng": 1.170473,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 1,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -9591,11 +9591,11 @@
       "lat": 41.276255,
       "lng": 1.962339,
       "tourism_intensity": 0.158,
-      "population": 0,
-      "hotel_places": 0,
+      "population": 66556,
+      "hotel_places": 4000,
       "comarca": 11,
       "categoria": "costa",
-      "has_real_data": false
+      "has_real_data": true
     },
     {
       "id": "82310",
@@ -9722,11 +9722,11 @@
       "name": "Arbolí",
       "lat": 41.236881,
       "lng": 0.961842,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 8,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -9878,11 +9878,11 @@
       "name": "Alforja",
       "lat": 41.204179,
       "lng": 0.951279,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 8,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -10010,12 +10010,12 @@
       "name": "Sitges",
       "lat": 41.25521,
       "lng": 1.846345,
-      "tourism_intensity": 0.158,
-      "population": 0,
-      "hotel_places": 0,
+      "tourism_intensity": 0.308,
+      "population": 29010,
+      "hotel_places": 12000,
       "comarca": 17,
       "categoria": "costa",
-      "has_real_data": false
+      "has_real_data": true
     },
     {
       "id": "431665",
@@ -10286,11 +10286,11 @@
       "name": "Riudecols",
       "lat": 41.170315,
       "lng": 0.965209,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 8,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -10358,23 +10358,23 @@
       "name": "Reus",
       "lat": 41.149036,
       "lng": 1.124928,
-      "tourism_intensity": 0.158,
-      "population": 0,
-      "hotel_places": 0,
+      "tourism_intensity": 0.285,
+      "population": 107211,
+      "hotel_places": 2500,
       "comarca": 8,
-      "categoria": "costa",
-      "has_real_data": false
+      "categoria": "ciudad",
+      "has_real_data": true
     },
     {
       "id": "430537",
       "name": "Duesaigües",
       "lat": 41.158217,
       "lng": 0.926673,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 8,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -10478,12 +10478,12 @@
       "name": "Tarragona",
       "lat": 41.128269,
       "lng": 1.26807,
-      "tourism_intensity": 0.158,
-      "population": 0,
-      "hotel_places": 0,
+      "tourism_intensity": 0.475,
+      "population": 132199,
+      "hotel_places": 8000,
       "comarca": 36,
-      "categoria": "costa",
-      "has_real_data": false
+      "categoria": "ciudad",
+      "has_real_data": true
     },
     {
       "id": "431536",
@@ -10514,11 +10514,11 @@
       "name": "Riudecanyes",
       "lat": 41.133175,
       "lng": 0.955387,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 8,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -10526,11 +10526,11 @@
       "name": "l'Argentera",
       "lat": 41.128136,
       "lng": 0.901682,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 8,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -10610,11 +10610,11 @@
       "name": "Vilanova d'Escornalbou",
       "lat": 41.106033,
       "lng": 0.935363,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 8,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -10682,11 +10682,11 @@
       "name": "Colldejou",
       "lat": 41.102628,
       "lng": 0.865432,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 8,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -10706,11 +10706,11 @@
       "name": "Mont-roig del Camp",
       "lat": 41.063091,
       "lng": 0.950091,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 8,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -10742,12 +10742,12 @@
       "name": "Salou",
       "lat": 41.075544,
       "lng": 1.143436,
-      "tourism_intensity": 0.158,
-      "population": 0,
-      "hotel_places": 0,
+      "tourism_intensity": 0.322,
+      "population": 26645,
+      "hotel_places": 35000,
       "comarca": 36,
       "categoria": "costa",
-      "has_real_data": false
+      "has_real_data": true
     },
     {
       "id": "430419",
@@ -10766,11 +10766,11 @@
       "name": "Pratdip",
       "lat": 41.060313,
       "lng": 0.877901,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 8,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -10814,11 +10814,11 @@
       "name": "Vandellòs i l'Hospitalet de l'Infant",
       "lat": 40.999399,
       "lng": 0.846078,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 8,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -10874,11 +10874,11 @@
       "name": "Benifallet",
       "lat": 40.967624,
       "lng": 0.523483,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 9,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -10898,11 +10898,11 @@
       "name": "Paüls",
       "lat": 40.92271,
       "lng": 0.404696,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 9,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -10910,11 +10910,11 @@
       "name": "Tivenys",
       "lat": 40.911344,
       "lng": 0.553746,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 9,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -10922,11 +10922,11 @@
       "name": "Xerta",
       "lat": 40.896563,
       "lng": 0.462245,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 9,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -10934,11 +10934,11 @@
       "name": "el Perelló",
       "lat": 40.876594,
       "lng": 0.670479,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 9,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -10958,11 +10958,11 @@
       "name": "l'Ametlla de Mar",
       "lat": 40.900357,
       "lng": 0.767011,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 9,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -10970,11 +10970,11 @@
       "name": "Alfara de Carles",
       "lat": 40.844197,
       "lng": 0.358679,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 9,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -10982,11 +10982,11 @@
       "name": "Tortosa",
       "lat": 40.811206,
       "lng": 0.467888,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 9,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -10994,11 +10994,11 @@
       "name": "Aldover",
       "lat": 40.865037,
       "lng": 0.462509,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 9,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -11006,11 +11006,11 @@
       "name": "Roquetes",
       "lat": 40.782387,
       "lng": 0.396277,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 9,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -11018,11 +11018,11 @@
       "name": "l'Ampolla",
       "lat": 40.810857,
       "lng": 0.691431,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 9,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -11030,11 +11030,11 @@
       "name": "Camarles",
       "lat": 40.777897,
       "lng": 0.651139,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 9,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -11042,11 +11042,11 @@
       "name": "l'Aldea",
       "lat": 40.751142,
       "lng": 0.60926,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.158,
       "population": 0,
       "hotel_places": 0,
       "comarca": 9,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": false
     },
     {
@@ -11054,11 +11054,11 @@
       "name": "Deltebre",
       "lat": 40.739147,
       "lng": 0.740554,
-      "tourism_intensity": 0.21,
+      "tourism_intensity": 0.122,
       "population": 11544,
       "hotel_places": 800,
       "comarca": 9,
-      "categoria": "interior",
+      "categoria": "costa",
       "has_real_data": true
     },
     {
@@ -11234,11 +11234,11 @@
       "name": "Castell de Mur",
       "lat": 42.094841,
       "lng": 0.851834,
-      "tourism_intensity": 0.09,
+      "tourism_intensity": 0.33,
       "population": 0,
       "hotel_places": 0,
       "comarca": 25,
-      "categoria": "interior",
+      "categoria": "montaña",
       "has_real_data": false
     },
     {
@@ -11583,7 +11583,7 @@
     [
       42.400681,
       2.291528,
-      0.33
+      0.715
     ],
     [
       42.402954,
@@ -11618,7 +11618,7 @@
     [
       42.377808,
       2.172572,
-      0.33
+      0.605
     ],
     [
       42.379773,
@@ -11648,7 +11648,7 @@
     [
       42.369243,
       2.404428,
-      0.158
+      0.33
     ],
     [
       42.361284,
@@ -11723,7 +11723,7 @@
     [
       42.308831,
       2.425825,
-      0.158
+      0.33
     ],
     [
       42.322714,
@@ -11838,12 +11838,12 @@
     [
       42.327255,
       3.202762,
-      0.158
+      0.252
     ],
     [
       42.269009,
       2.553509,
-      0.158
+      0.09
     ],
     [
       42.31601,
@@ -11883,12 +11883,12 @@
     [
       42.286202,
       1.983641,
-      0.33
+      0.462
     ],
     [
       42.256539,
       1.874181,
-      0.33
+      0.385
     ],
     [
       42.284517,
@@ -11913,12 +11913,12 @@
     [
       42.266296,
       1.784218,
-      0.33
+      0.09
     ],
     [
       42.25917,
       2.633189,
-      0.158
+      0.09
     ],
     [
       42.241623,
@@ -11943,7 +11943,7 @@
     [
       42.28179,
       1.840229,
-      0.33
+      0.09
     ],
     [
       42.236154,
@@ -11958,7 +11958,7 @@
     [
       42.270662,
       2.984309,
-      0.122
+      0.332
     ],
     [
       42.262587,
@@ -11973,7 +11973,7 @@
     [
       42.227295,
       1.733639,
-      0.33
+      0.09
     ],
     [
       42.259322,
@@ -12023,12 +12023,12 @@
     [
       42.237652,
       2.712147,
-      0.158
+      0.09
     ],
     [
       42.241246,
       2.622713,
-      0.158
+      0.09
     ],
     [
       42.245845,
@@ -12038,12 +12038,12 @@
     [
       42.22667,
       1.973316,
-      0.33
+      0.09
     ],
     [
       42.198006,
       1.679999,
-      0.33
+      0.09
     ],
     [
       42.242101,
@@ -12063,7 +12063,7 @@
     [
       42.207846,
       1.812388,
-      0.33
+      0.09
     ],
     [
       42.174687,
@@ -12073,17 +12073,17 @@
     [
       42.178378,
       2.214455,
-      0.275
+      0.15
     ],
     [
       42.265581,
       3.201038,
-      0.158
+      0.297
     ],
     [
       42.216248,
       1.912252,
-      0.33
+      0.09
     ],
     [
       42.23258,
@@ -12108,7 +12108,7 @@
     [
       42.204122,
       2.754414,
-      0.158
+      0.09
     ],
     [
       42.151493,
@@ -12123,7 +12123,7 @@
     [
       42.206074,
       2.537031,
-      0.158
+      0.09
     ],
     [
       42.166335,
@@ -12138,17 +12138,17 @@
     [
       42.206004,
       2.593383,
-      0.28
+      0.09
     ],
     [
       42.186232,
       2.675497,
-      0.158
+      0.09
     ],
     [
       42.208296,
       2.62058,
-      0.158
+      0.09
     ],
     [
       42.16162,
@@ -12158,7 +12158,7 @@
     [
       42.188734,
       2.024946,
-      0.33
+      0.09
     ],
     [
       42.12171,
@@ -12168,12 +12168,12 @@
     [
       42.217932,
       2.54521,
-      0.158
+      0.09
     ],
     [
       42.169818,
       1.57325,
-      0.33
+      0.09
     ],
     [
       42.180196,
@@ -12183,7 +12183,7 @@
     [
       42.190195,
       2.387384,
-      0.33
+      0.09
     ],
     [
       42.186868,
@@ -12193,7 +12193,7 @@
     [
       42.176974,
       1.894132,
-      0.33
+      0.09
     ],
     [
       42.176911,
@@ -12218,17 +12218,17 @@
     [
       42.20358,
       2.695632,
-      0.158
+      0.27
     ],
     [
       42.232129,
       2.443938,
-      0.158
+      0.09
     ],
     [
       42.178611,
       1.940465,
-      0.33
+      0.09
     ],
     [
       42.18602,
@@ -12238,7 +12238,7 @@
     [
       42.180012,
       2.492512,
-      0.105
+      0.18
     ],
     [
       42.242441,
@@ -12248,7 +12248,7 @@
     [
       42.136645,
       1.855291,
-      0.33
+      0.09
     ],
     [
       42.134736,
@@ -12263,22 +12263,22 @@
     [
       42.166137,
       1.784916,
-      0.33
+      0.09
     ],
     [
       42.150597,
       2.563057,
-      0.158
+      0.228
     ],
     [
       42.116225,
       1.437986,
-      0.33
+      0.09
     ],
     [
       42.142142,
       1.6436,
-      0.33
+      0.09
     ],
     [
       42.172602,
@@ -12288,7 +12288,7 @@
     [
       42.126479,
       2.428529,
-      0.158
+      0.09
     ],
     [
       42.168556,
@@ -12313,7 +12313,7 @@
     [
       42.144409,
       2.32449,
-      0.33
+      0.09
     ],
     [
       42.132953,
@@ -12323,17 +12323,17 @@
     [
       42.140053,
       1.930746,
-      0.33
+      0.09
     ],
     [
       42.122918,
       2.015552,
-      0.33
+      0.09
     ],
     [
       42.144709,
       2.475042,
-      0.158
+      0.09
     ],
     [
       42.155535,
@@ -12348,12 +12348,12 @@
     [
       42.097428,
       1.322446,
-      0.09
+      0.33
     ],
     [
       42.128351,
       1.753682,
-      0.33
+      0.09
     ],
     [
       42.123851,
@@ -12368,7 +12368,7 @@
     [
       42.081476,
       0.980776,
-      0.09
+      0.33
     ],
     [
       42.209077,
@@ -12378,7 +12378,7 @@
     [
       42.125023,
       2.633538,
-      0.158
+      0.09
     ],
     [
       42.140318,
@@ -12388,17 +12388,17 @@
     [
       42.082389,
       0.768181,
-      0.09
+      0.33
     ],
     [
       42.119776,
       2.093629,
-      0.33
+      0.15
     ],
     [
       42.124243,
       2.260954,
-      0.33
+      0.09
     ],
     [
       42.126013,
@@ -12418,7 +12418,7 @@
     [
       42.082569,
       1.258589,
-      0.09
+      0.33
     ],
     [
       42.108801,
@@ -12428,17 +12428,17 @@
     [
       42.104008,
       2.173234,
-      0.33
+      0.09
     ],
     [
       42.098997,
       2.508271,
-      0.158
+      0.09
     ],
     [
       42.02147,
       1.185966,
-      0.09
+      0.237
     ],
     [
       42.123136,
@@ -12453,7 +12453,7 @@
     [
       42.121374,
       2.209989,
-      0.33
+      0.09
     ],
     [
       42.03788,
@@ -12463,17 +12463,17 @@
     [
       42.129439,
       1.585156,
-      0.33
+      0.09
     ],
     [
       42.102969,
       2.235943,
-      0.33
+      0.09
     ],
     [
       42.100582,
       1.852334,
-      0.33
+      0.09
     ],
     [
       42.106822,
@@ -12483,7 +12483,7 @@
     [
       42.066952,
       2.601364,
-      0.158
+      0.09
     ],
     [
       42.105669,
@@ -12523,12 +12523,12 @@
     [
       42.066203,
       0.933674,
-      0.09
+      0.33
     ],
     [
       42.062935,
       2.544518,
-      0.158
+      0.09
     ],
     [
       42.095847,
@@ -12573,7 +12573,7 @@
     [
       42.004059,
       0.753332,
-      0.09
+      0.237
     ],
     [
       42.071976,
@@ -12613,7 +12613,7 @@
     [
       42.001095,
       1.300606,
-      0.09
+      0.33
     ],
     [
       42.064024,
@@ -12648,7 +12648,7 @@
     [
       42.028124,
       2.467447,
-      0.158
+      0.09
     ],
     [
       42.053571,
@@ -12668,7 +12668,7 @@
     [
       41.938724,
       1.07494,
-      0.09
+      0.237
     ],
     [
       42.051544,
@@ -12738,7 +12738,7 @@
     [
       41.989152,
       0.985971,
-      0.09
+      0.237
     ],
     [
       42.029104,
@@ -12763,7 +12763,7 @@
     [
       41.9237,
       0.864482,
-      0.09
+      0.237
     ],
     [
       42.022205,
@@ -12793,7 +12793,7 @@
     [
       42.002633,
       2.403269,
-      0.158
+      0.09
     ],
     [
       42.0105,
@@ -12823,7 +12823,7 @@
     [
       41.986328,
       2.835514,
-      0.168
+      0.456
     ],
     [
       42.017424,
@@ -12858,7 +12858,7 @@
     [
       41.893724,
       0.70067,
-      0.09
+      0.237
     ],
     [
       41.998771,
@@ -12893,7 +12893,7 @@
     [
       41.952559,
       1.233874,
-      0.09
+      0.237
     ],
     [
       41.951918,
@@ -12933,7 +12933,7 @@
     [
       41.908786,
       0.784832,
-      0.09
+      0.237
     ],
     [
       41.93975,
@@ -12943,12 +12943,12 @@
     [
       41.918928,
       0.955837,
-      0.09
+      0.237
     ],
     [
       41.946971,
       2.419054,
-      0.158
+      0.09
     ],
     [
       41.975899,
@@ -13013,7 +13013,7 @@
     [
       41.935603,
       2.010498,
-      0.09
+      0.158
     ],
     [
       41.922565,
@@ -13023,7 +13023,7 @@
     [
       41.922319,
       1.920676,
-      0.09
+      0.158
     ],
     [
       41.916317,
@@ -13033,12 +13033,12 @@
     [
       41.891425,
       1.256918,
-      0.09
+      0.237
     ],
     [
       41.907709,
       1.648016,
-      0.09
+      0.158
     ],
     [
       41.949343,
@@ -13053,7 +13053,7 @@
     [
       41.919822,
       1.171274,
-      0.09
+      0.237
     ],
     [
       41.943827,
@@ -13078,7 +13078,7 @@
     [
       41.860191,
       1.173861,
-      0.09
+      0.237
     ],
     [
       41.927815,
@@ -13128,7 +13128,7 @@
     [
       41.890482,
       1.764641,
-      0.09
+      0.158
     ],
     [
       41.907235,
@@ -13143,17 +13143,17 @@
     [
       41.868628,
       0.612006,
-      0.09
+      0.237
     ],
     [
       41.857519,
       1.983943,
-      0.09
+      0.158
     ],
     [
       41.872341,
       1.011186,
-      0.09
+      0.237
     ],
     [
       41.892319,
@@ -13203,7 +13203,7 @@
     [
       41.839846,
       1.912813,
-      0.09
+      0.158
     ],
     [
       41.87639,
@@ -13213,7 +13213,7 @@
     [
       41.830049,
       0.639855,
-      0.09
+      0.237
     ],
     [
       41.870452,
@@ -13223,7 +13223,7 @@
     [
       41.871034,
       1.867391,
-      0.09
+      0.158
     ],
     [
       41.88611,
@@ -13233,12 +13233,12 @@
     [
       41.874074,
       2.422225,
-      0.158
+      0.09
     ],
     [
       41.82658,
       0.952105,
-      0.09
+      0.237
     ],
     [
       41.842177,
@@ -13253,7 +13253,7 @@
     [
       41.833308,
       1.200748,
-      0.09
+      0.237
     ],
     [
       41.818334,
@@ -13268,7 +13268,7 @@
     [
       41.832165,
       1.816428,
-      0.09
+      0.158
     ],
     [
       41.828169,
@@ -13278,7 +13278,7 @@
     [
       41.805956,
       1.667527,
-      0.09
+      0.158
     ],
     [
       41.799396,
@@ -13288,7 +13288,7 @@
     [
       41.811995,
       0.718173,
-      0.09
+      0.237
     ],
     [
       41.857689,
@@ -13303,7 +13303,7 @@
     [
       41.837108,
       1.764372,
-      0.09
+      0.158
     ],
     [
       41.790696,
@@ -13338,12 +13338,12 @@
     [
       41.807384,
       1.035959,
-      0.09
+      0.237
     ],
     [
       41.792552,
       0.966544,
-      0.09
+      0.237
     ],
     [
       41.818501,
@@ -13353,7 +13353,7 @@
     [
       41.802655,
       0.874913,
-      0.09
+      0.237
     ],
     [
       41.781001,
@@ -13368,7 +13368,7 @@
     [
       41.787687,
       0.823318,
-      0.09
+      0.237
     ],
     [
       41.814244,
@@ -13388,7 +13388,7 @@
     [
       41.800816,
       1.781044,
-      0.09
+      0.158
     ],
     [
       41.775882,
@@ -13408,17 +13408,17 @@
     [
       41.799646,
       1.961481,
-      0.09
+      0.158
     ],
     [
       41.751035,
       0.836052,
-      0.09
+      0.237
     ],
     [
       41.760488,
       0.666676,
-      0.09
+      0.237
     ],
     [
       41.770646,
@@ -13428,7 +13428,7 @@
     [
       41.786713,
       1.829079,
-      0.09
+      0.158
     ],
     [
       41.781229,
@@ -13438,7 +13438,7 @@
     [
       41.765696,
       1.440957,
-      0.09
+      0.158
     ],
     [
       41.782706,
@@ -13463,7 +13463,7 @@
     [
       41.76408,
       1.71143,
-      0.09
+      0.158
     ],
     [
       41.729754,
@@ -13478,7 +13478,7 @@
     [
       41.761204,
       0.890314,
-      0.09
+      0.237
     ],
     [
       41.784315,
@@ -13503,7 +13503,7 @@
     [
       41.748378,
       1.478218,
-      0.09
+      0.158
     ],
     [
       41.753886,
@@ -13513,7 +13513,7 @@
     [
       41.764819,
       1.798875,
-      0.09
+      0.158
     ],
     [
       41.762093,
@@ -13528,12 +13528,12 @@
     [
       41.758855,
       0.943889,
-      0.09
+      0.237
     ],
     [
       41.732221,
       0.737211,
-      0.09
+      0.237
     ],
     [
       41.725685,
@@ -13543,7 +13543,7 @@
     [
       41.739187,
       0.952664,
-      0.09
+      0.237
     ],
     [
       41.75599,
@@ -13558,7 +13558,7 @@
     [
       41.756158,
       1.563142,
-      0.09
+      0.158
     ],
     [
       41.736872,
@@ -13568,7 +13568,7 @@
     [
       41.750971,
       1.875882,
-      0.09
+      0.158
     ],
     [
       41.728928,
@@ -13588,17 +13588,17 @@
     [
       41.758703,
       1.909029,
-      0.09
+      0.158
     ],
     [
       41.723025,
       1.61213,
-      0.09
+      0.158
     ],
     [
       41.717738,
       0.78962,
-      0.09
+      0.237
     ],
     [
       41.740204,
@@ -13613,7 +13613,7 @@
     [
       41.62465,
       0.59171,
-      0.09
+      0.237
     ],
     [
       41.731902,
@@ -13623,7 +13623,7 @@
     [
       41.717993,
       1.817128,
-      0.09
+      0.158
     ],
     [
       41.704979,
@@ -13633,7 +13633,7 @@
     [
       41.723524,
       1.710967,
-      0.09
+      0.158
     ],
     [
       41.696063,
@@ -13648,7 +13648,7 @@
     [
       41.732063,
       1.935928,
-      0.09
+      0.158
     ],
     [
       41.677344,
@@ -13673,7 +13673,7 @@
     [
       41.708164,
       0.706928,
-      0.09
+      0.237
     ],
     [
       41.677185,
@@ -13698,7 +13698,7 @@
     [
       41.706779,
       1.438429,
-      0.09
+      0.158
     ],
     [
       41.694919,
@@ -13708,7 +13708,7 @@
     [
       41.719361,
       1.500313,
-      0.09
+      0.158
     ],
     [
       41.729446,
@@ -13743,12 +13743,12 @@
     [
       41.70591,
       1.552152,
-      0.09
+      0.158
     ],
     [
       41.702103,
       1.905153,
-      0.09
+      0.158
     ],
     [
       41.714703,
@@ -13768,7 +13768,7 @@
     [
       41.681421,
       1.980369,
-      0.09
+      0.158
     ],
     [
       41.682861,
@@ -13798,12 +13798,12 @@
     [
       41.7051,
       1.504383,
-      0.09
+      0.158
     ],
     [
       41.670969,
       1.671997,
-      0.09
+      0.158
     ],
     [
       41.678216,
@@ -13838,12 +13838,12 @@
     [
       41.736891,
       2.90656,
-      0.158
+      0.28
     ],
     [
       41.6732,
       1.761686,
-      0.09
+      0.158
     ],
     [
       41.685525,
@@ -13883,7 +13883,7 @@
     [
       41.656646,
       1.576288,
-      0.09
+      0.158
     ],
     [
       41.642782,
@@ -13893,7 +13893,7 @@
     [
       41.67505,
       1.825703,
-      0.09
+      0.158
     ],
     [
       41.655961,
@@ -13908,7 +13908,7 @@
     [
       41.66773,
       1.86678,
-      0.09
+      0.158
     ],
     [
       41.631408,
@@ -13953,7 +13953,7 @@
     [
       41.72243,
       2.840123,
-      0.158
+      0.332
     ],
     [
       41.626543,
@@ -13983,12 +13983,12 @@
     [
       41.691154,
       2.783438,
-      0.158
+      0.262
     ],
     [
       41.637652,
       1.852783,
-      0.09
+      0.158
     ],
     [
       41.648878,
@@ -14003,12 +14003,12 @@
     [
       41.644324,
       1.49997,
-      0.09
+      0.158
     ],
     [
       41.61639,
       1.630457,
-      0.09
+      0.158
     ],
     [
       41.639631,
@@ -14033,7 +14033,7 @@
     [
       41.633429,
       1.80632,
-      0.09
+      0.158
     ],
     [
       41.624602,
@@ -14048,7 +14048,7 @@
     [
       41.618051,
       1.833565,
-      0.09
+      0.24
     ],
     [
       41.630577,
@@ -14068,7 +14068,7 @@
     [
       41.606407,
       1.763463,
-      0.09
+      0.158
     ],
     [
       41.623659,
@@ -14093,7 +14093,7 @@
     [
       41.656619,
       1.477171,
-      0.09
+      0.158
     ],
     [
       41.602895,
@@ -14128,17 +14128,17 @@
     [
       41.593324,
       1.445651,
-      0.09
+      0.158
     ],
     [
       41.618097,
       1.396301,
-      0.09
+      0.158
     ],
     [
       41.607705,
       1.533214,
-      0.09
+      0.158
     ],
     [
       41.609318,
@@ -14203,7 +14203,7 @@
     [
       41.593178,
       1.711123,
-      0.09
+      0.158
     ],
     [
       41.607416,
@@ -14233,7 +14233,7 @@
     [
       41.598896,
       2.578667,
-      0.158
+      0.122
     ],
     [
       41.538224,
@@ -14263,12 +14263,12 @@
     [
       41.585915,
       1.615214,
-      0.09
+      0.158
     ],
     [
       41.538946,
       0.93487,
-      0.09
+      0.237
     ],
     [
       41.556601,
@@ -14288,7 +14288,7 @@
     [
       41.535377,
       0.8261,
-      0.09
+      0.237
     ],
     [
       41.574829,
@@ -14303,7 +14303,7 @@
     [
       41.55991,
       0.872725,
-      0.09
+      0.237
     ],
     [
       41.551792,
@@ -14323,7 +14323,7 @@
     [
       41.582692,
       2.547658,
-      0.158
+      0.14
     ],
     [
       41.561001,
@@ -14333,12 +14333,12 @@
     [
       41.559899,
       1.573013,
-      0.09
+      0.158
     ],
     [
       41.550496,
       1.503114,
-      0.09
+      0.158
     ],
     [
       41.554185,
@@ -14353,12 +14353,12 @@
     [
       41.558478,
       1.680568,
-      0.09
+      0.158
     ],
     [
       41.562202,
       1.631038,
-      0.09
+      0.158
     ],
     [
       41.541193,
@@ -14373,7 +14373,7 @@
     [
       41.509598,
       1.747115,
-      0.09
+      0.158
     ],
     [
       41.541882,
@@ -14408,12 +14408,12 @@
     [
       41.538876,
       1.804435,
-      0.09
+      0.158
     ],
     [
       41.553607,
       2.444641,
-      0.158
+      0.332
     ],
     [
       41.56131,
@@ -14488,17 +14488,17 @@
     [
       41.529078,
       1.70623,
-      0.09
+      0.158
     ],
     [
       41.491093,
       0.770972,
-      0.09
+      0.237
     ],
     [
       41.528493,
       1.61539,
-      0.09
+      0.158
     ],
     [
       41.517855,
@@ -14508,7 +14508,7 @@
     [
       41.498557,
       0.86113,
-      0.09
+      0.237
     ],
     [
       41.504038,
@@ -14518,27 +14518,27 @@
     [
       41.526313,
       1.666392,
-      0.09
+      0.158
     ],
     [
       41.504361,
       1.509017,
-      0.09
+      0.158
     ],
     [
       41.525371,
       1.574707,
-      0.09
+      0.158
     ],
     [
       41.514964,
       1.447346,
-      0.09
+      0.158
     ],
     [
       41.526057,
       1.686,
-      0.09
+      0.158
     ],
     [
       41.528814,
@@ -14568,7 +14568,7 @@
     [
       41.48321,
       0.930997,
-      0.09
+      0.237
     ],
     [
       41.531202,
@@ -14608,12 +14608,12 @@
     [
       41.496792,
       0.963025,
-      0.09
+      0.237
     ],
     [
       41.502799,
       1.805626,
-      0.09
+      0.158
     ],
     [
       41.495765,
@@ -14623,7 +14623,7 @@
     [
       41.495801,
       1.007822,
-      0.09
+      0.237
     ],
     [
       41.514469,
@@ -14648,7 +14648,7 @@
     [
       41.49329,
       1.710017,
-      0.09
+      0.158
     ],
     [
       41.495433,
@@ -14683,7 +14683,7 @@
     [
       41.466815,
       1.544195,
-      0.09
+      0.158
     ],
     [
       41.480574,
@@ -14778,7 +14778,7 @@
     [
       41.453031,
       0.696731,
-      0.09
+      0.237
     ],
     [
       41.492185,
@@ -14788,12 +14788,12 @@
     [
       41.436655,
       0.978123,
-      0.09
+      0.237
     ],
     [
       41.458571,
       1.036208,
-      0.09
+      0.237
     ],
     [
       41.444262,
@@ -14803,12 +14803,12 @@
     [
       41.459793,
       2.23215,
-      0.09
+      0.285
     ],
     [
       41.442036,
       0.753505,
-      0.09
+      0.237
     ],
     [
       41.482596,
@@ -14823,17 +14823,17 @@
     [
       41.417393,
       1.426888,
-      0.09
+      0.158
     ],
     [
       41.432859,
       0.91664,
-      0.09
+      0.237
     ],
     [
       41.433799,
       0.843515,
-      0.09
+      0.237
     ],
     [
       41.472111,
@@ -14853,7 +14853,7 @@
     [
       41.43091,
       0.652711,
-      0.09
+      0.237
     ],
     [
       41.417984,
@@ -14863,7 +14863,7 @@
     [
       41.452964,
       2.207111,
-      0.09
+      0.237
     ],
     [
       41.437958,
@@ -14883,7 +14883,7 @@
     [
       41.428891,
       1.016792,
-      0.09
+      0.237
     ],
     [
       41.433607,
@@ -14908,12 +14908,12 @@
     [
       41.419876,
       0.700832,
-      0.09
+      0.237
     ],
     [
       41.388265,
       0.781988,
-      0.09
+      0.237
     ],
     [
       41.441535,
@@ -14928,7 +14928,7 @@
     [
       41.403106,
       1.343408,
-      0.09
+      0.158
     ],
     [
       41.416968,
@@ -14948,7 +14948,7 @@
     [
       41.389144,
       0.876108,
-      0.09
+      0.237
     ],
     [
       41.421205,
@@ -14983,7 +14983,7 @@
     [
       41.352808,
       0.64596,
-      0.09
+      0.237
     ],
     [
       41.406681,
@@ -14998,22 +14998,22 @@
     [
       41.394832,
       1.305197,
-      0.09
+      0.158
     ],
     [
       41.395908,
       0.72129,
-      0.09
+      0.237
     ],
     [
       41.423193,
       2.221148,
-      0.09
+      0.237
     ],
     [
       41.384791,
       0.94757,
-      0.09
+      0.237
     ],
     [
       41.409134,
@@ -15043,7 +15043,7 @@
     [
       41.367346,
       1.42181,
-      0.09
+      0.158
     ],
     [
       41.40039,
@@ -15098,12 +15098,12 @@
     [
       41.363608,
       1.255557,
-      0.09
+      0.158
     ],
     [
       41.350079,
       1.311116,
-      0.09
+      0.158
     ],
     [
       41.351612,
@@ -15113,7 +15113,7 @@
     [
       41.338298,
       0.735852,
-      0.09
+      0.237
     ],
     [
       41.324376,
@@ -15133,7 +15133,7 @@
     [
       41.360936,
       2.107846,
-      0.09
+      0.237
     ],
     [
       41.365824,
@@ -15188,7 +15188,7 @@
     [
       41.31747,
       0.99269,
-      0.09
+      0.158
     ],
     [
       41.322456,
@@ -15198,12 +15198,12 @@
     [
       41.317834,
       0.635657,
-      0.09
+      0.237
     ],
     [
       41.40061,
       2.126625,
-      0.09
+      0.779
     ],
     [
       41.329452,
@@ -15258,7 +15258,7 @@
     [
       41.306834,
       1.369914,
-      0.09
+      0.158
     ],
     [
       41.268055,
@@ -15288,7 +15288,7 @@
     [
       41.308924,
       1.170473,
-      0.09
+      0.158
     ],
     [
       41.261345,
@@ -15423,7 +15423,7 @@
     [
       41.236881,
       0.961842,
-      0.09
+      0.158
     ],
     [
       41.244547,
@@ -15488,7 +15488,7 @@
     [
       41.204179,
       0.951279,
-      0.09
+      0.158
     ],
     [
       41.220252,
@@ -15543,7 +15543,7 @@
     [
       41.25521,
       1.846345,
-      0.158
+      0.308
     ],
     [
       41.208266,
@@ -15658,7 +15658,7 @@
     [
       41.170315,
       0.965209,
-      0.09
+      0.158
     ],
     [
       41.160445,
@@ -15688,12 +15688,12 @@
     [
       41.149036,
       1.124928,
-      0.158
+      0.285
     ],
     [
       41.158217,
       0.926673,
-      0.09
+      0.158
     ],
     [
       41.147502,
@@ -15738,7 +15738,7 @@
     [
       41.128269,
       1.26807,
-      0.158
+      0.475
     ],
     [
       41.150333,
@@ -15753,12 +15753,12 @@
     [
       41.133175,
       0.955387,
-      0.09
+      0.158
     ],
     [
       41.128136,
       0.901682,
-      0.09
+      0.158
     ],
     [
       41.094371,
@@ -15793,7 +15793,7 @@
     [
       41.106033,
       0.935363,
-      0.09
+      0.158
     ],
     [
       41.100341,
@@ -15823,7 +15823,7 @@
     [
       41.102628,
       0.865432,
-      0.09
+      0.158
     ],
     [
       41.057146,
@@ -15833,7 +15833,7 @@
     [
       41.063091,
       0.950091,
-      0.09
+      0.158
     ],
     [
       41.034828,
@@ -15848,7 +15848,7 @@
     [
       41.075544,
       1.143436,
-      0.158
+      0.322
     ],
     [
       41.04042,
@@ -15858,7 +15858,7 @@
     [
       41.060313,
       0.877901,
-      0.09
+      0.158
     ],
     [
       41.041251,
@@ -15878,7 +15878,7 @@
     [
       40.999399,
       0.846078,
-      0.09
+      0.158
     ],
     [
       41.009281,
@@ -15903,7 +15903,7 @@
     [
       40.967624,
       0.523483,
-      0.09
+      0.158
     ],
     [
       40.972182,
@@ -15913,22 +15913,22 @@
     [
       40.92271,
       0.404696,
-      0.09
+      0.158
     ],
     [
       40.911344,
       0.553746,
-      0.09
+      0.158
     ],
     [
       40.896563,
       0.462245,
-      0.09
+      0.158
     ],
     [
       40.876594,
       0.670479,
-      0.09
+      0.158
     ],
     [
       40.866004,
@@ -15938,47 +15938,47 @@
     [
       40.900357,
       0.767011,
-      0.09
+      0.158
     ],
     [
       40.844197,
       0.358679,
-      0.09
+      0.158
     ],
     [
       40.811206,
       0.467888,
-      0.09
+      0.158
     ],
     [
       40.865037,
       0.462509,
-      0.09
+      0.158
     ],
     [
       40.782387,
       0.396277,
-      0.09
+      0.158
     ],
     [
       40.810857,
       0.691431,
-      0.09
+      0.158
     ],
     [
       40.777897,
       0.651139,
-      0.09
+      0.158
     ],
     [
       40.751142,
       0.60926,
-      0.09
+      0.158
     ],
     [
       40.739147,
       0.740554,
-      0.21
+      0.122
     ],
     [
       40.708698,
@@ -16053,7 +16053,7 @@
     [
       42.094841,
       0.851834,
-      0.09
+      0.33
     ],
     [
       41.331609,
@@ -16113,10 +16113,10 @@
   ],
   "statistics": {
     "min": "0.090",
-    "max": "0.770",
-    "avg": "0.143",
+    "max": "0.779",
+    "avg": "0.156",
     "count": 947,
-    "with_real_data": 17,
-    "estimated": 930
+    "with_real_data": 41,
+    "estimated": 906
   }
 }
