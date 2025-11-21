@@ -9,6 +9,21 @@
     <style>
       * { box-sizing: border-box; }
       html, body, #app { height: 100%; margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+
+      /* Screen reader only - ocultar visualmente pero mantener para lectores */
+      .sr-only {
+        position: absolute; width: 1px; height: 1px;
+        padding: 0; margin: -1px; overflow: hidden;
+        clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+      }
+
+      /* Skip link for keyboard navigation */
+      .skip-link {
+        position: absolute; top: -40px; left: 0; padding: 8px;
+        background: #1976d2; color: white; z-index: 9999;
+        transition: top 0.3s;
+      }
+      .skip-link:focus { top: 0; }
       #map { height: 100%; }
 
       /* Panel de Información Principal */
@@ -84,12 +99,12 @@
       }
 
       .legend-range {
-        font-size: 11px; color: #888; margin-left: auto;
+        font-size: 11px; color: #555; margin-left: auto; /* Mejorado contraste WCAG */
       }
 
       .legend-footer {
         margin-top: 10px; padding-top: 10px; border-top: 1px solid #e0e0e0;
-        font-size: 11px; color: #888;
+        font-size: 11px; color: #666; /* Mejorado contraste WCAG */
       }
 
       /* Panel de Contexto */
@@ -121,13 +136,18 @@
 
       .controls button {
         background: white; color: #333; border: 1px solid #ddd;
-        padding: 10px 14px; border-radius: 8px; font-size: 13px;
+        padding: 12px 16px; border-radius: 8px; font-size: 14px;
         cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,.1);
         transition: all 0.2s;
+        min-height: 44px; min-width: 44px; /* WCAG 2.5.5 touch target */
       }
 
       .controls button:hover {
         background: #f5f5f5; box-shadow: 0 4px 12px rgba(0,0,0,.15);
+      }
+
+      .controls button:focus-visible {
+        outline: 3px solid #1976d2; outline-offset: 2px;
       }
 
       .controls button.active {
@@ -167,13 +187,18 @@
       }
 
       .filter-btn {
-        padding: 5px 10px; border: 1px solid #ddd; border-radius: 4px;
-        font-size: 11px; cursor: pointer; background: white;
+        padding: 10px 14px; border: 1px solid #ddd; border-radius: 6px;
+        font-size: 12px; cursor: pointer; background: white;
         transition: all 0.2s;
+        min-height: 40px; /* Touch target cercano a 44px */
       }
 
       .filter-btn:hover {
         background: #f5f5f5;
+      }
+
+      .filter-btn:focus-visible {
+        outline: 3px solid #1976d2; outline-offset: 2px;
       }
 
       .filter-btn.active {
@@ -216,14 +241,20 @@
       }
 
       .search-result-item {
-        padding: 6px 8px; font-size: 11px; cursor: pointer;
-        border-radius: 4px; margin-bottom: 2px;
+        padding: 12px 10px; font-size: 12px; cursor: pointer;
+        border-radius: 6px; margin-bottom: 4px;
         display: flex; justify-content: space-between;
         align-items: center;
+        min-height: 44px; /* WCAG 2.5.5 touch target */
       }
 
       .search-result-item:hover {
         background: #f5f5f5;
+      }
+
+      .search-result-item:focus-visible {
+        outline: 2px solid #1976d2; outline-offset: 1px;
+        background: #e3f2fd;
       }
 
       .search-result-item .intensity {
@@ -263,8 +294,11 @@
     </style>
   </head>
   <body>
+    <!-- Skip link para navegación con teclado -->
+    <a href="#map" class="skip-link">Saltar al mapa</a>
+
     <div id="app">
-      <div id="map"></div>
+      <div id="map" role="application" aria-label="Mapa interactivo de saturación turística de Catalunya" tabindex="0"></div>
 
       <!-- Panel de Información Principal -->
       <div class="info-panel">
@@ -315,32 +349,37 @@
       </div>
 
       <!-- Panel de Filtros y Búsqueda -->
-      <div class="filter-panel" id="filter-panel">
+      <div class="filter-panel" id="filter-panel" role="search" aria-label="Buscar y filtrar municipios">
         <h4>🔍 Buscar y Filtrar</h4>
 
+        <label for="search-input" class="sr-only">Buscar municipio</label>
         <input type="text" class="search-box" id="search-input"
-               placeholder="Buscar municipio..." autocomplete="off">
+               placeholder="Buscar municipio..." autocomplete="off"
+               maxlength="100" aria-label="Buscar municipio por nombre"
+               aria-describedby="search-hint" aria-autocomplete="list"
+               aria-controls="search-results">
+        <span id="search-hint" class="sr-only">Escribe al menos 2 caracteres para buscar</span>
 
-        <div class="search-results" id="search-results"></div>
+        <div class="search-results" id="search-results" role="listbox" aria-label="Resultados de búsqueda"></div>
 
-        <div class="filter-group">
-          <label>Categoría:</label>
-          <div class="filter-buttons">
-            <button class="filter-btn active" data-filter="all">Todos</button>
-            <button class="filter-btn costa" data-filter="costa">🏖️ Costa</button>
-            <button class="filter-btn montana" data-filter="montaña">⛷️ Montaña</button>
-            <button class="filter-btn ciudad" data-filter="ciudad">🏙️ Ciudad</button>
-            <button class="filter-btn interior" data-filter="interior">🌲 Interior</button>
+        <div class="filter-group" role="group" aria-label="Filtrar por categoría">
+          <label id="category-label">Categoría:</label>
+          <div class="filter-buttons" role="radiogroup" aria-labelledby="category-label">
+            <button class="filter-btn active" data-filter="all" role="radio" aria-checked="true" aria-label="Mostrar todos los municipios">Todos</button>
+            <button class="filter-btn costa" data-filter="costa" role="radio" aria-checked="false" aria-label="Filtrar solo municipios de costa">🏖️ Costa</button>
+            <button class="filter-btn montana" data-filter="montaña" role="radio" aria-checked="false" aria-label="Filtrar solo municipios de montaña">⛷️ Montaña</button>
+            <button class="filter-btn ciudad" data-filter="ciudad" role="radio" aria-checked="false" aria-label="Filtrar solo ciudades">🏙️ Ciudad</button>
+            <button class="filter-btn interior" data-filter="interior" role="radio" aria-checked="false" aria-label="Filtrar solo municipios de interior">🌲 Interior</button>
           </div>
         </div>
 
-        <div class="filter-group">
-          <label>Nivel de saturación:</label>
-          <div class="filter-buttons">
-            <button class="filter-btn active" data-level="all">Todos</button>
-            <button class="filter-btn" data-level="high" style="border-left: 3px solid #ff0000;">Alto</button>
-            <button class="filter-btn" data-level="medium" style="border-left: 3px solid #ffff00;">Medio</button>
-            <button class="filter-btn" data-level="low" style="border-left: 3px solid #00ff60;">Bajo</button>
+        <div class="filter-group" role="group" aria-label="Filtrar por nivel de saturación">
+          <label id="level-label">Nivel de saturación:</label>
+          <div class="filter-buttons" role="radiogroup" aria-labelledby="level-label">
+            <button class="filter-btn active" data-level="all" role="radio" aria-checked="true" aria-label="Mostrar todos los niveles">Todos</button>
+            <button class="filter-btn" data-level="high" style="border-left: 3px solid #ff0000;" role="radio" aria-checked="false" aria-label="Solo saturación alta, más de 60 por ciento">Alto</button>
+            <button class="filter-btn" data-level="medium" style="border-left: 3px solid #ffff00;" role="radio" aria-checked="false" aria-label="Solo saturación media, entre 30 y 60 por ciento">Medio</button>
+            <button class="filter-btn" data-level="low" style="border-left: 3px solid #00ff60;" role="radio" aria-checked="false" aria-label="Solo saturación baja, menos de 30 por ciento">Bajo</button>
           </div>
         </div>
 
@@ -396,9 +435,9 @@
       </div>
 
       <!-- Controles -->
-      <div class="controls">
-        <button id="btn-refresh" title="Actualizar datos">🔄</button>
-        <button id="btn-info" title="Mostrar/ocultar información">ℹ️</button>
+      <div class="controls" role="group" aria-label="Controles del mapa">
+        <button id="btn-refresh" title="Actualizar datos" aria-label="Actualizar datos del mapa">🔄</button>
+        <button id="btn-info" title="Mostrar/ocultar información" aria-label="Mostrar u ocultar panel de información" aria-expanded="true" aria-controls="context-panel">ℹ️</button>
       </div>
 
       <!-- Loading -->

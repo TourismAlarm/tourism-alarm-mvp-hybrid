@@ -31,6 +31,14 @@ let activeFilters = {
 };
 let allLayers = new Map(); // Mapa de código -> layer
 
+// 🔒 Función de seguridad para escapar HTML (prevenir XSS)
+function escapeHtml(text) {
+  if (!text) return '';
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
 // 📅 Función para obtener mes actual
 function getCurrentMonth() {
   const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
@@ -77,22 +85,31 @@ function updateUI(data) {
   document.getElementById('real-data').textContent = realDataCount;
   document.getElementById('avg-intensity').textContent = `${(avgIntensity * 100).toFixed(1)}%`;
 
-  // Top 5 municipios
+  // Top 5 municipios (usando DOM seguro para prevenir XSS)
   const top5 = [...data.municipalities]
     .sort((a, b) => b.tourism_intensity - a.tourism_intensity)
     .slice(0, 5);
 
-  const topListHTML = top5.map((m, index) => {
-    const emoji = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : `${index + 1}.`;
-    return `
-      <div class="top-muni">
-        <span class="name">${emoji} ${m.name}</span>
-        <span class="value">${(m.tourism_intensity * 100).toFixed(0)}%</span>
-      </div>
-    `;
-  }).join('');
+  const topList = document.getElementById('top-list');
+  topList.textContent = ''; // Limpiar de forma segura
 
-  document.getElementById('top-list').innerHTML = topListHTML;
+  top5.forEach((m, index) => {
+    const emoji = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : `${index + 1}.`;
+    const div = document.createElement('div');
+    div.className = 'top-muni';
+
+    const nameSpan = document.createElement('span');
+    nameSpan.className = 'name';
+    nameSpan.textContent = `${emoji} ${escapeHtml(m.name)}`;
+
+    const valueSpan = document.createElement('span');
+    valueSpan.className = 'value';
+    valueSpan.textContent = `${(m.tourism_intensity * 100).toFixed(0)}%`;
+
+    div.appendChild(nameSpan);
+    div.appendChild(valueSpan);
+    topList.appendChild(div);
+  });
 
   // Contexto de temporada
   const month = getCurrentMonth();
@@ -174,7 +191,13 @@ async function loadTourismData() {
     console.error('❌ Error cargando datos:', error);
     const loading = document.getElementById('loading');
     if (loading) {
-      loading.innerHTML = '<div style="color: #c62828;">⚠️ Error cargando datos</div>';
+      // Usar DOM seguro para mensajes de error (prevenir XSS)
+      loading.textContent = '';
+      const errorDiv = document.createElement('div');
+      errorDiv.style.color = '#c62828';
+      errorDiv.setAttribute('role', 'alert');
+      errorDiv.textContent = '⚠️ Error cargando datos';
+      loading.appendChild(errorDiv);
       setTimeout(() => loading.style.display = 'none', 3000);
     }
   }
@@ -194,6 +217,7 @@ document.getElementById('btn-info').addEventListener('click', () => {
   } else {
     contextPanel.style.display = 'none';
   }
+  updateInfoButtonAria();
 });
 
 // 🔍 BÚSQUEDA DE MUNICIPIOS
@@ -218,39 +242,46 @@ if (searchInput) {
       return;
     }
 
-    const resultsHTML = matches.map(m => {
-      const intensity = (m.tourism_intensity * 100).toFixed(0);
-      const color = getIntensityColor(m.tourism_intensity);
-      return `
-        <div class="search-result-item" data-code="${m.code}" data-lat="${m.centroid?.lat || 41.5}" data-lng="${m.centroid?.lng || 2.0}">
-          <span>${m.name}</span>
-          <span class="intensity" style="background: ${color}; color: ${intensity > 50 ? '#000' : '#fff'};">${intensity}%</span>
-        </div>
-      `;
-    }).join('');
-
-    searchResults.innerHTML = resultsHTML;
+    // Crear resultados de forma segura (prevenir XSS)
+    searchResults.textContent = '';
     searchResults.style.display = 'block';
 
-    // Event listeners para resultados
-    searchResults.querySelectorAll('.search-result-item').forEach(item => {
-      item.addEventListener('click', () => {
-        const lat = parseFloat(item.dataset.lat);
-        const lng = parseFloat(item.dataset.lng);
-        const code = item.dataset.code;
+    matches.forEach(m => {
+      const intensity = (m.tourism_intensity * 100).toFixed(0);
+      const color = getIntensityColor(m.tourism_intensity);
 
-        // Centrar mapa en el municipio
-        map.setView([lat, lng], 11);
+      const item = document.createElement('div');
+      item.className = 'search-result-item';
+      item.dataset.code = String(m.code);
+      item.dataset.lat = String(m.centroid?.lat || 41.5);
+      item.dataset.lng = String(m.centroid?.lng || 2.0);
+      item.setAttribute('role', 'option');
+      item.setAttribute('tabindex', '0');
 
-        // Abrir popup si existe la capa
-        if (allLayers.has(code)) {
-          allLayers.get(code).openPopup();
+      const nameSpan = document.createElement('span');
+      nameSpan.textContent = m.name; // textContent es seguro
+
+      const intensitySpan = document.createElement('span');
+      intensitySpan.className = 'intensity';
+      intensitySpan.style.background = color;
+      intensitySpan.style.color = intensity > 50 ? '#000' : '#fff';
+      intensitySpan.textContent = `${intensity}%`;
+
+      item.appendChild(nameSpan);
+      item.appendChild(intensitySpan);
+
+      // Click handler
+      item.addEventListener('click', () => handleSearchResultClick(item));
+
+      // Keyboard handler (accesibilidad)
+      item.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          handleSearchResultClick(item);
         }
-
-        // Limpiar búsqueda
-        searchInput.value = '';
-        searchResults.style.display = 'none';
       });
+
+      searchResults.appendChild(item);
     });
   });
 
@@ -271,14 +302,39 @@ function getIntensityColor(intensity) {
   return '#00ff60';
 }
 
+// 🔍 Handler para click en resultado de búsqueda
+function handleSearchResultClick(item) {
+  const lat = parseFloat(item.dataset.lat);
+  const lng = parseFloat(item.dataset.lng);
+  const code = item.dataset.code;
+
+  // Centrar mapa en el municipio
+  map.setView([lat, lng], 11);
+
+  // Abrir popup si existe la capa
+  if (allLayers.has(code)) {
+    allLayers.get(code).openPopup();
+  }
+
+  // Limpiar búsqueda
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  if (searchInput) searchInput.value = '';
+  if (searchResults) searchResults.style.display = 'none';
+}
+
 // 🎛️ FILTROS
 function setupFilters() {
   // Filtros de categoría
   document.querySelectorAll('[data-filter]').forEach(btn => {
     btn.addEventListener('click', () => {
-      // Actualizar botón activo
-      document.querySelectorAll('[data-filter]').forEach(b => b.classList.remove('active'));
+      // Actualizar botón activo y aria-checked
+      document.querySelectorAll('[data-filter]').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-checked', 'false');
+      });
       btn.classList.add('active');
+      btn.setAttribute('aria-checked', 'true');
 
       activeFilters.category = btn.dataset.filter;
       applyFilters();
@@ -288,14 +344,27 @@ function setupFilters() {
   // Filtros de nivel
   document.querySelectorAll('[data-level]').forEach(btn => {
     btn.addEventListener('click', () => {
-      // Actualizar botón activo
-      document.querySelectorAll('[data-level]').forEach(b => b.classList.remove('active'));
+      // Actualizar botón activo y aria-checked
+      document.querySelectorAll('[data-level]').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-checked', 'false');
+      });
       btn.classList.add('active');
+      btn.setAttribute('aria-checked', 'true');
 
       activeFilters.level = btn.dataset.level;
       applyFilters();
     });
   });
+}
+
+// 🔄 Actualizar aria-expanded del botón info
+function updateInfoButtonAria() {
+  const btn = document.getElementById('btn-info');
+  const panel = document.getElementById('context-panel');
+  if (btn && panel) {
+    btn.setAttribute('aria-expanded', panel.style.display !== 'none' ? 'true' : 'false');
+  }
 }
 
 // 🔄 Aplicar filtros al mapa
