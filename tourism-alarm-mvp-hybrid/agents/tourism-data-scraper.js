@@ -2,6 +2,7 @@
 // 🤖 AGENTE DE SCRAPING DE DATOS TURÍSTICOS CON IA
 // Usa Claude para buscar, validar y estructurar datos automáticamente
 
+import 'dotenv/config';
 import Anthropic from '@anthropic-ai/sdk';
 import axios from 'axios';
 import * as cheerio from 'cheerio';

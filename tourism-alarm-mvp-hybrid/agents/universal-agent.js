@@ -2,6 +2,7 @@
 // 🤖 AGENTE UNIVERSAL DE SCRAPING - Soporta Claude Y Gemini
 // Usa automáticamente la API disponible (Gemini preferido si ambas están configuradas)
 
+import 'dotenv/config';
 import { readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 

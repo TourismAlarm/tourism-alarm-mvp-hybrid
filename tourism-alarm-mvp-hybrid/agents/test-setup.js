@@ -1,66 +1,84 @@
 #!/usr/bin/env node
-// 🧪 Script de verificación de configuración del agente
+// 🧪 Script de verificación de configuración del agente (Universal: Gemini + Claude)
 
-import Anthropic from '@anthropic-ai/sdk';
+import 'dotenv/config';
 
 async function testSetup() {
-  console.log('🧪 VERIFICANDO CONFIGURACIÓN DEL AGENTE\n');
+  console.log('🧪 VERIFICANDO CONFIGURACIÓN DEL AGENTE UNIVERSAL\n');
   console.log('='.repeat(70));
 
-  // Test 1: API Key
-  console.log('\n1️⃣  Verificando ANTHROPIC_API_KEY...');
-  const apiKey = process.env.ANTHROPIC_API_KEY;
+  let hasValidAPI = false;
 
-  if (!apiKey) {
-    console.log('   ❌ No configurada');
-    console.log('\n💡 SOLUCIÓN:');
-    console.log('   1. Ve a: https://console.anthropic.com/settings/keys');
-    console.log('   2. Crea una API key');
-    console.log('   3. Configúrala:');
-    console.log('      export ANTHROPIC_API_KEY="sk-ant-api03-..."');
-    console.log('   O crea archivo .env con:');
-    console.log('      ANTHROPIC_API_KEY=sk-ant-api03-...\n');
-    return false;
+  // Test 1: Gemini API Key
+  console.log('\n1️⃣  Verificando GEMINI_API_KEY...');
+  const geminiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY;
+
+  if (geminiKey && !geminiKey.includes('your-') && geminiKey.length > 10) {
+    console.log(`   ✅ Configurada: ${geminiKey.substring(0, 15)}...`);
+
+    // Test conexión Gemini
+    console.log('\n   📡 Probando conexión con Gemini...');
+    try {
+      const { GoogleGenerativeAI } = await import('@google/generative-ai');
+      const genAI = new GoogleGenerativeAI(geminiKey);
+      const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+
+      const result = await model.generateContent('Responde solo "OK"');
+      const response = await result.response;
+      const text = response.text();
+
+      if (text.includes('OK')) {
+        console.log('   ✅ Conexión exitosa con Gemini API');
+        hasValidAPI = true;
+      } else {
+        console.log('   ✅ Gemini responde:', text.substring(0, 50));
+        hasValidAPI = true;
+      }
+    } catch (error) {
+      console.log('   ❌ Error de conexión Gemini:', error.message);
+    }
+  } else {
+    console.log('   ⚪ No configurada (opcional si tienes Claude)');
+    console.log('   💡 Obtén tu key gratis en: https://aistudio.google.com/apikey');
   }
 
-  console.log(`   ✅ Configurada: ${apiKey.substring(0, 20)}...${apiKey.substring(apiKey.length - 4)}`);
+  // Test 2: Anthropic API Key
+  console.log('\n2️⃣  Verificando ANTHROPIC_API_KEY...');
+  const anthropicKey = process.env.ANTHROPIC_API_KEY;
 
-  // Test 2: Conexión a Claude
-  console.log('\n2️⃣  Verificando conexión con Claude API...');
+  if (anthropicKey && !anthropicKey.includes('your-') && anthropicKey.length > 10) {
+    console.log(`   ✅ Configurada: ${anthropicKey.substring(0, 20)}...`);
 
-  try {
-    const client = new Anthropic({ apiKey });
+    // Test conexión Claude
+    console.log('\n   📡 Probando conexión con Claude...');
+    try {
+      const Anthropic = (await import('@anthropic-ai/sdk')).default;
+      const client = new Anthropic({ apiKey: anthropicKey });
 
-    const response = await client.messages.create({
-      model: 'claude-3-5-haiku-20241022',
-      max_tokens: 50,
-      messages: [{
-        role: 'user',
-        content: 'Responde solo con "OK" si me recibes correctamente.'
-      }]
-    });
+      const response = await client.messages.create({
+        model: 'claude-3-5-haiku-20241022',
+        max_tokens: 50,
+        messages: [{
+          role: 'user',
+          content: 'Responde solo con "OK"'
+        }]
+      });
 
-    const text = response.content[0].text.trim();
-
-    if (text.includes('OK')) {
+      const text = response.content[0].text.trim();
       console.log('   ✅ Conexión exitosa con Claude API');
-      console.log(`   📊 Modelo usado: ${response.model}`);
-      console.log(`   💰 Tokens usados: ${response.usage.input_tokens} input + ${response.usage.output_tokens} output`);
-    } else {
-      console.log('   ⚠️  Respuesta inesperada:', text);
+      console.log(`   📊 Modelo: ${response.model}`);
+      console.log(`   💰 Tokens: ${response.usage.input_tokens} in + ${response.usage.output_tokens} out`);
+      hasValidAPI = true;
+
+    } catch (error) {
+      console.log('   ❌ Error de conexión Claude:', error.message);
+      if (error.status === 401) {
+        console.log('   💡 API key inválida - verifica que no ha expirado');
+      }
     }
-
-  } catch (error) {
-    console.log('   ❌ Error de conexión:', error.message);
-
-    if (error.status === 401) {
-      console.log('\n💡 API key inválida. Verifica que:');
-      console.log('   1. La copiaste correctamente (sin espacios)');
-      console.log('   2. No ha expirado');
-      console.log('   3. Tienes créditos en tu cuenta Anthropic\n');
-    }
-
-    return false;
+  } else {
+    console.log('   ⚪ No configurada (opcional si tienes Gemini)');
+    console.log('   💡 Obtén tu key en: https://console.anthropic.com/settings/keys');
   }
 
   // Test 3: Archivos necesarios
@@ -81,15 +99,28 @@ async function testSetup() {
     return false;
   }
 
-  // Todo OK
+  // Resultado final
   console.log('\n' + '='.repeat(70));
-  console.log('✅ CONFIGURACIÓN COMPLETA Y FUNCIONANDO\n');
-  console.log('🚀 Puedes ejecutar el agente con:');
-  console.log('   npm run agent:test        # Test con 5 municipios');
-  console.log('   npm run agent:scrape      # Procesar 50 municipios');
-  console.log('   node agents/tourism-data-scraper.js --limit=100\n');
 
-  return true;
+  if (hasValidAPI) {
+    console.log('✅ CONFIGURACIÓN COMPLETA Y FUNCIONANDO\n');
+    console.log('🚀 Puedes ejecutar el agente con:');
+    console.log('   npm run agent:test        # Test con 5 municipios');
+    console.log('   npm run agent:scrape      # Procesar 50 municipios');
+    console.log('   npm run agent:big         # Procesar 100 municipios\n');
+    return true;
+  } else {
+    console.log('❌ NO HAY API KEYS VÁLIDAS CONFIGURADAS\n');
+    console.log('💡 SOLUCIÓN:');
+    console.log('   1. Crea archivo .env en la raíz del proyecto');
+    console.log('   2. Copia desde .env.example');
+    console.log('   3. Añade al menos una API key:\n');
+    console.log('   # Gemini (GRATIS - Recomendado)');
+    console.log('   GEMINI_API_KEY=AIzaSy...\n');
+    console.log('   # O Claude (De pago)');
+    console.log('   ANTHROPIC_API_KEY=sk-ant-...\n');
+    return false;
+  }
 }
 
 testSetup().catch(error => {

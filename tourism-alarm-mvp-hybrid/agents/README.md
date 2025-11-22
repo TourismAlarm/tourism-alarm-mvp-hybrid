@@ -38,7 +38,14 @@ echo "ANTHROPIC_API_KEY=sk-ant-api03-..." > .env
 
 **Nota**: El agente usa automáticamente Gemini si ambas están configuradas (preferencia por gratuita)
 
-### 2. Ejecutar el Agente de Scraping
+### 2. Verificar Configuración
+
+```bash
+# Verificar que todo está configurado correctamente
+npm run agent:setup
+```
+
+### 3. Ejecutar el Agente de Scraping
 
 ```bash
 # Test rápido con 5 municipios
@@ -47,8 +54,11 @@ npm run agent:test
 # Procesar 50 municipios (default)
 npm run agent:scrape
 
-# Procesar cantidad personalizada
-node agents/tourism-data-scraper.js --limit=100
+# Procesar 100 municipios
+npm run agent:big
+
+# Probar con datos mock (sin API key)
+npm run agent:mock
 ```
 
 ## 📊 Agentes Disponibles
