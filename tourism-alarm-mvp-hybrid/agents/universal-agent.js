@@ -337,14 +337,8 @@ async function main() {
   console.log('   4. Ejecuta: npm run build\n');
 }
 
-// Ejecutar - Compatible con Windows y Unix
-const isMainModule = import.meta.url.endsWith(process.argv[1].replace(/\\/g, '/').split('/').pop());
-
-if (isMainModule || process.argv[1]?.includes('universal-agent')) {
-  main().catch(error => {
-    console.error('❌ Error fatal:', error);
-    process.exit(1);
-  });
-}
-
-export default UniversalTourismAgent;
+// Ejecutar directamente
+main().catch(error => {
+  console.error('❌ Error fatal:', error);
+  process.exit(1);
+});
