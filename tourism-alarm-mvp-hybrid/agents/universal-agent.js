@@ -31,7 +31,7 @@ class UniversalTourismAgent {
       console.log('🤖 Usando Google Gemini AI');
       const { GoogleGenerativeAI } = await import('@google/generative-ai');
       this.client = new GoogleGenerativeAI(geminiKey);
-      this.model = this.client.getGenerativeModel({ model: 'gemini-1.5-flash' });
+      this.model = this.client.getGenerativeModel({ model: 'gemini-2.0-flash' });
       this.provider = 'gemini';
       return true;
     }
