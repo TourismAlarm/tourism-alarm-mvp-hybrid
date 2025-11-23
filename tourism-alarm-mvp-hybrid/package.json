@@ -21,6 +21,7 @@
     "db:generate": "node scripts/generate-static-database.js",
     "daily:snapshot": "node agents/daily-occupation-agent.js",
     "daily:compare": "node scripts/compare-historical.js",
+    "daily:full": "node scripts/daily-full-update.js",
     "daily": "node scripts/daily-update.js --limit=50",
     "daily:big": "node scripts/daily-update.js --limit=100"
   },
