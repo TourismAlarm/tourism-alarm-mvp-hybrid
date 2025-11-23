@@ -141,25 +141,57 @@ Responde SOLO con JSON válido:
   }
 
   /**
-   * Parsear respuesta de IA
+   * Parsear respuesta de IA (robusto)
    */
   parseResponse(text) {
     try {
-      // Limpiar markdown si existe
-      const jsonMatch = text.match(/\{[\s\S]*\}/);
-      const jsonText = jsonMatch ? jsonMatch[0] : text;
+      // 1. Limpiar markdown code blocks
+      let cleanText = text
+        .replace(/```json\s*/gi, '')
+        .replace(/```\s*/g, '')
+        .trim();
 
-      // Parsear
+      // 2. Extraer JSON (buscar el objeto más completo)
+      const jsonMatch = cleanText.match(/\{[\s\S]*\}/);
+      if (!jsonMatch) {
+        throw new Error('No JSON object found in response');
+      }
+
+      let jsonText = jsonMatch[0];
+
+      // 3. Limpiar caracteres problemáticos comunes de IAs
+      jsonText = jsonText
+        .replace(/[\u201C\u201D]/g, '"')  // Comillas tipográficas
+        .replace(/[\u2018\u2019]/g, "'")  // Apóstrofes tipográficos
+        .replace(/,\s*}/g, '}')           // Trailing commas
+        .replace(/,\s*]/g, ']')           // Trailing commas en arrays
+        .replace(/\n/g, ' ')              // Newlines dentro del JSON
+        .replace(/\t/g, ' ');             // Tabs
+
+      // 4. Parsear
       const data = JSON.parse(jsonText);
 
-      // Validar
-      if (!data.population || !data.categoria || data.tourism_intensity === undefined) {
-        throw new Error('Invalid response structure');
+      // 5. Validar campos requeridos
+      if (data.population === undefined || data.categoria === undefined || data.tourism_intensity === undefined) {
+        throw new Error('Missing required fields: population, categoria, or tourism_intensity');
+      }
+
+      // 6. Sanitizar valores
+      data.population = Math.max(0, parseInt(data.population) || 0);
+      data.hotel_places = Math.max(0, parseInt(data.hotel_places) || 0);
+      data.tourism_intensity = Math.max(0, Math.min(1, parseFloat(data.tourism_intensity) || 0.2));
+      data.confidence = Math.max(0, Math.min(1, parseFloat(data.confidence) || 0.5));
+
+      // 7. Validar categoría
+      const validCategories = ['costa', 'montaña', 'ciudad', 'interior'];
+      if (!validCategories.includes(data.categoria)) {
+        data.categoria = 'interior';
       }
 
       return data;
     } catch (error) {
       console.error(`    Error parsing response:`, error.message);
+      console.error(`    Raw text (first 200 chars):`, text.substring(0, 200));
       return null;
     }
   }
