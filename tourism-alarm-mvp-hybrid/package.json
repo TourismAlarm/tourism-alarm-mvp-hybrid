@@ -16,7 +16,10 @@
     "agent:scrape": "node agents/universal-agent.js --limit=50",
     "agent:test": "node agents/universal-agent.js --limit=5",
     "agent:big": "node agents/universal-agent.js --limit=100",
-    "agent:mock": "node agents/mock-data.js"
+    "agent:mock": "node agents/mock-data.js",
+    "agent:integrate": "node scripts/integrate-enriched-data.js",
+    "daily": "node scripts/daily-update.js --limit=50",
+    "daily:big": "node scripts/daily-update.js --limit=100"
   },
   "devDependencies": {
     "prettier": "^3.6.2",
