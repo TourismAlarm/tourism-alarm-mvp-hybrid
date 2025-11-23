@@ -20,6 +20,8 @@
     "agent:integrate": "node scripts/integrate-enriched-data.js",
     "db:generate": "node scripts/generate-static-database.js",
     "daily:snapshot": "node agents/daily-occupation-agent.js",
+    "daily:municipalities": "node agents/municipality-occupation-agent.js",
+    "daily:municipalities:test": "node agents/municipality-occupation-agent.js --limit=10",
     "daily:compare": "node scripts/compare-historical.js",
     "daily:full": "node scripts/daily-full-update.js",
     "daily": "node scripts/daily-update.js --limit=50",
