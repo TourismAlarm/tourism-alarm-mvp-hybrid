@@ -18,6 +18,9 @@
     "agent:big": "node agents/universal-agent.js --limit=100",
     "agent:mock": "node agents/mock-data.js",
     "agent:integrate": "node scripts/integrate-enriched-data.js",
+    "db:generate": "node scripts/generate-static-database.js",
+    "daily:snapshot": "node agents/daily-occupation-agent.js",
+    "daily:compare": "node scripts/compare-historical.js",
     "daily": "node scripts/daily-update.js --limit=50",
     "daily:big": "node scripts/daily-update.js --limit=100"
   },
