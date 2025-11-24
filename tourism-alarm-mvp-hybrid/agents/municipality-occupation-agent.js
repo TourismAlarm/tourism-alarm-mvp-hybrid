@@ -74,47 +74,55 @@ class MunicipalityOccupationAgent {
    * Obtener ocupación de un municipio específico
    */
   async getMunicipalityOccupation(municipality) {
-    const prompt = `Eres un experto en turismo de Catalunya. Fecha: ${this.today} (${this.getDayOfWeek()}).
+    const prompt = `Para "${municipality.name}" en Catalunya (${this.today}), estima:
 
-Para el municipio "${municipality.name}" (categoría: ${municipality.categoria}), estima la situación turística ACTUAL:
+occupation_percentage: 0-100 (ocupación hotelera)
+tourist_pressure: 0.0-1.0 (presión turística)
+trend: "subiendo", "estable" o "bajando"
 
-1. **occupation_percentage**: Ocupación hotelera estimada (0-100%)
-   - Considera: noviembre es temporada baja excepto puentes
-   - Fin de semana suele tener más ocupación
-   - ${municipality.categoria === 'montaña' ? 'Pre-temporada de esquí puede atraer visitantes' : ''}
-   - ${municipality.categoria === 'costa' ? 'Costa en noviembre tiene baja ocupación' : ''}
-
-2. **tourist_pressure**: Presión turística (0.0-1.0)
-   - Relación turistas/residentes
-   - Saturación de espacios públicos
-
-3. **trend**: Tendencia ("subiendo", "estable", "bajando")
-
-Responde SOLO con JSON:
-{"occupation_percentage": 0, "tourist_pressure": 0.0, "trend": "estable"}`;
+Responde SOLO este JSON válido sin explicaciones:
+{"occupation_percentage": 30, "tourist_pressure": 0.3, "trend": "estable"}`;
 
     try {
       const result = await this.model.generateContent(prompt);
       const response = await result.response;
-      const text = response.text();
+      let text = response.text();
 
-      // Parsear JSON robusto
-      const jsonMatch = text.match(/\{[\s\S]*\}/);
-      if (!jsonMatch) throw new Error('No JSON found');
+      // Limpiar respuesta
+      text = text
+        .replace(/```json\s*/gi, '')
+        .replace(/```\s*/g, '')
+        .replace(/[\u201C\u201D]/g, '"')
+        .replace(/[\u2018\u2019]/g, "'")
+        .trim();
 
-      const data = JSON.parse(
-        jsonMatch[0]
-          .replace(/,\s*}/g, '}')
-          .replace(/[\u201C\u201D]/g, '"')
-      );
+      // Buscar JSON
+      const jsonMatch = text.match(/\{[^{}]*"occupation_percentage"[^{}]*\}/);
+      if (!jsonMatch) {
+        console.log(`      ⚠️ No JSON: ${text.substring(0, 100)}`);
+        return null;
+      }
+
+      let jsonText = jsonMatch[0]
+        .replace(/,\s*}/g, '}')
+        .replace(/,\s*]/g, ']');
+
+      const data = JSON.parse(jsonText);
+
+      // Validar y sanitizar
+      if (data.occupation_percentage === undefined) {
+        console.log(`      ⚠️ Falta occupation_percentage`);
+        return null;
+      }
 
       return {
-        occupation_percentage: Math.max(0, Math.min(100, data.occupation_percentage || 0)),
-        tourist_pressure: Math.max(0, Math.min(1, data.tourist_pressure || 0)),
-        trend: data.trend || 'estable'
+        occupation_percentage: Math.max(0, Math.min(100, parseInt(data.occupation_percentage) || 0)),
+        tourist_pressure: Math.max(0, Math.min(1, parseFloat(data.tourist_pressure) || 0)),
+        trend: ['subiendo', 'estable', 'bajando'].includes(data.trend) ? data.trend : 'estable'
       };
 
     } catch (error) {
+      console.log(`      ⚠️ Error: ${error.message}`);
       return null;
     }
   }
