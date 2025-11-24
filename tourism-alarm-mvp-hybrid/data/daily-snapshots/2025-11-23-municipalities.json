@@ -1,0 +1,167 @@
+{
+  "date": "2025-11-23",
+  "timestamp": "2025-11-23T17:40:39.332Z",
+  "type": "municipality",
+  "municipalities": {
+    "80155": {
+      "name": "Badalona",
+      "categoria": "ciudad",
+      "occupation_percentage": 65,
+      "tourist_pressure": 0.15,
+      "trend": "estable",
+      "fetched_at": "2025-11-23T17:41:09.316Z"
+    },
+    "80193": {
+      "name": "Barcelona",
+      "categoria": "ciudad",
+      "occupation_percentage": 75,
+      "tourist_pressure": 0.6,
+      "trend": "estable",
+      "fetched_at": "2025-11-23T17:41:02.901Z"
+    },
+    "80569": {
+      "name": "Castelldefels",
+      "categoria": "costa",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.2,
+      "trend": "estable",
+      "fetched_at": "2025-11-23T17:41:06.054Z"
+    },
+    "81213": {
+      "name": "Mataró",
+      "categoria": "ciudad",
+      "occupation_percentage": 45,
+      "tourist_pressure": 0.2,
+      "trend": "estable",
+      "fetched_at": "2025-11-23T17:41:07.594Z"
+    },
+    "82704": {
+      "name": "Sitges",
+      "categoria": "costa",
+      "occupation_percentage": 45,
+      "tourist_pressure": 0.3,
+      "trend": "estable",
+      "fetched_at": "2025-11-23T17:41:04.551Z"
+    },
+    "170237": {
+      "name": "Blanes",
+      "categoria": "costa",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.2,
+      "trend": "estable",
+      "fetched_at": "2025-11-23T17:40:41.706Z"
+    },
+    "170329": {
+      "name": "Cadaqués",
+      "categoria": "costa",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.25,
+      "trend": "estable",
+      "fetched_at": "2025-11-23T17:40:48.429Z"
+    },
+    "170486": {
+      "name": "Platja d",
+      "categoria": "costa",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.15,
+      "trend": "estable",
+      "fetched_at": "2025-11-23T17:40:53.420Z"
+    },
+    "170854": {
+      "name": "L",
+      "categoria": "costa",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.15,
+      "trend": "estable",
+      "fetched_at": "2025-11-23T17:40:46.724Z"
+    },
+    "170950": {
+      "name": "Lloret de Mar",
+      "categoria": "costa",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.2,
+      "trend": "estable",
+      "fetched_at": "2025-11-23T17:40:40.164Z"
+    },
+    "171181": {
+      "name": "Palamós",
+      "categoria": "costa",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.2,
+      "trend": "estable",
+      "fetched_at": "2025-11-23T17:40:51.666Z"
+    },
+    "171411": {
+      "name": "Puigcerdà",
+      "categoria": "montaña",
+      "occupation_percentage": 45,
+      "tourist_pressure": 0.3,
+      "trend": "estable",
+      "fetched_at": "2025-11-23T17:41:11.035Z"
+    },
+    "171523": {
+      "name": "Roses",
+      "categoria": "costa",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.15,
+      "trend": "estable",
+      "fetched_at": "2025-11-23T17:40:45.185Z"
+    },
+    "171609": {
+      "name": "Sant Feliu de Guíxols",
+      "categoria": "costa",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.2,
+      "trend": "estable",
+      "fetched_at": "2025-11-23T17:40:50.145Z"
+    },
+    "172023": {
+      "name": "Tossa de Mar",
+      "categoria": "costa",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.2,
+      "trend": "estable",
+      "fetched_at": "2025-11-23T17:40:43.427Z"
+    },
+    "430379": {
+      "name": "Calafell",
+      "categoria": "costa",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.2,
+      "trend": "estable",
+      "fetched_at": "2025-11-23T17:41:01.340Z"
+    },
+    "430385": {
+      "name": "Cambrils",
+      "categoria": "costa",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.2,
+      "trend": "estable",
+      "fetched_at": "2025-11-23T17:40:56.770Z"
+    },
+    "431482": {
+      "name": "Tarragona",
+      "categoria": "ciudad",
+      "occupation_percentage": 65,
+      "tourist_pressure": 0.3,
+      "trend": "estable",
+      "fetched_at": "2025-11-23T17:40:58.235Z"
+    },
+    "431634": {
+      "name": "El Vendrell",
+      "categoria": "costa",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.15,
+      "trend": "estable",
+      "fetched_at": "2025-11-23T17:40:59.835Z"
+    },
+    "439057": {
+      "name": "Salou",
+      "categoria": "costa",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.2,
+      "trend": "estable",
+      "fetched_at": "2025-11-23T17:40:55.074Z"
+    }
+  }
+}

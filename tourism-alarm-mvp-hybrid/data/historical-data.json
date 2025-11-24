@@ -1,0 +1,14 @@
+{
+  "years": {
+    "2025": {
+      "snapshots": [
+        {
+          "date": "2025-11-23",
+          "avg_occupation": 33,
+          "avg_pressure": 0.28,
+          "zones_count": 12
+        }
+      ]
+    }
+  }
+}

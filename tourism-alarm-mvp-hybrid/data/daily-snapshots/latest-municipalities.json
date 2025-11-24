@@ -1,0 +1,263 @@
+{
+  "date": "2025-11-24",
+  "timestamp": "2025-11-24T19:54:32.346Z",
+  "type": "municipality",
+  "municipalities": {
+    "80044": {
+      "name": "Alpens",
+      "categoria": "interior",
+      "occupation_percentage": 15,
+      "tourist_pressure": 0.03,
+      "trend": "estable",
+      "fetched_at": "2025-11-24T19:54:33.393Z"
+    },
+    "80060": {
+      "name": "Arenys de Mar",
+      "categoria": "costa",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.15,
+      "trend": "estable",
+      "fetched_at": "2025-11-24T19:54:35.139Z"
+    },
+    "80155": {
+      "name": "Badalona",
+      "categoria": "ciudad",
+      "occupation_percentage": 45,
+      "tourist_pressure": 0.15,
+      "trend": "estable",
+      "fetched_at": "2025-11-24T19:54:36.795Z"
+    },
+    "80193": {
+      "name": "Barcelona",
+      "categoria": "ciudad",
+      "occupation_percentage": 75,
+      "tourist_pressure": 0.6,
+      "trend": "estable",
+      "fetched_at": "2025-11-24T19:54:38.533Z"
+    },
+    "80327": {
+      "name": "Caldes d'Estrac",
+      "categoria": "costa",
+      "occupation_percentage": 25,
+      "tourist_pressure": 0.15,
+      "trend": "estable",
+      "fetched_at": "2025-11-24T19:54:40.056Z"
+    },
+    "80403": {
+      "name": "Canet de Mar",
+      "categoria": "costa",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.15,
+      "trend": "estable",
+      "fetched_at": "2025-11-24T19:54:41.637Z"
+    },
+    "80522": {
+      "name": "Castellar de n'Hug",
+      "categoria": "montaña",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.15,
+      "trend": "estable",
+      "fetched_at": "2025-11-24T19:54:43.393Z"
+    },
+    "80569": {
+      "name": "Castelldefels",
+      "categoria": "costa",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.15,
+      "trend": "estable",
+      "fetched_at": "2025-11-24T19:54:45.030Z"
+    },
+    "80996": {
+      "name": "Guardiola de Berguedà",
+      "categoria": "montaña",
+      "occupation_percentage": 25,
+      "tourist_pressure": 0.1,
+      "trend": "estable",
+      "fetched_at": "2025-11-24T19:54:46.616Z"
+    },
+    "81213": {
+      "name": "Mataró",
+      "categoria": "ciudad",
+      "occupation_percentage": 45,
+      "tourist_pressure": 0.15,
+      "trend": "estable",
+      "fetched_at": "2025-11-24T19:54:48.083Z"
+    },
+    "81271": {
+      "name": "Monistrol de Montserrat",
+      "categoria": "interior",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.2,
+      "trend": "estable",
+      "fetched_at": "2025-11-24T19:54:49.772Z"
+    },
+    "82704": {
+      "name": "Sitges",
+      "categoria": "costa",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.2,
+      "trend": "estable",
+      "fetched_at": "2025-11-24T19:54:51.261Z"
+    },
+    "170010": {
+      "name": "Agullana",
+      "categoria": "interior",
+      "occupation_percentage": 15,
+      "tourist_pressure": 0.03,
+      "trend": "estable",
+      "fetched_at": "2025-11-24T19:54:52.791Z"
+    },
+    "170062": {
+      "name": "Alp",
+      "categoria": "montaña",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.15,
+      "trend": "estable",
+      "fetched_at": "2025-11-24T19:54:54.313Z"
+    },
+    "170195": {
+      "name": "Besalú",
+      "categoria": "interior",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.3,
+      "trend": "estable",
+      "fetched_at": "2025-11-24T19:54:55.844Z"
+    },
+    "170237": {
+      "name": "Blanes",
+      "categoria": "costa",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.15,
+      "trend": "estable",
+      "fetched_at": "2025-11-24T19:54:57.365Z"
+    },
+    "250306": {
+      "name": "el Pont de Bar",
+      "categoria": "montaña",
+      "occupation_percentage": 15,
+      "tourist_pressure": 0.1,
+      "trend": "estable",
+      "fetched_at": "2025-11-24T19:55:33.470Z"
+    },
+    "250432": {
+      "name": "la Vall de Boí",
+      "categoria": "montaña",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.2,
+      "trend": "estable",
+      "fetched_at": "2025-11-24T19:55:36.077Z"
+    },
+    "250576": {
+      "name": "Es Bòrdes",
+      "categoria": "montaña",
+      "occupation_percentage": 15,
+      "tourist_pressure": 0.05,
+      "trend": "estable",
+      "fetched_at": "2025-11-24T19:55:37.702Z"
+    },
+    "250595": {
+      "name": "Bossòst",
+      "categoria": "montaña",
+      "occupation_percentage": 25,
+      "tourist_pressure": 0.15,
+      "trend": "estable",
+      "fetched_at": "2025-11-24T19:55:39.178Z"
+    },
+    "250637": {
+      "name": "Canejan",
+      "categoria": "montaña",
+      "occupation_percentage": 25,
+      "tourist_pressure": 0.1,
+      "trend": "estable",
+      "fetched_at": "2025-11-24T19:55:40.913Z"
+    },
+    "250864": {
+      "name": "Esterri d'Àneu",
+      "categoria": "montaña",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.15,
+      "trend": "estable",
+      "fetched_at": "2025-11-24T19:55:42.499Z"
+    },
+    "251207": {
+      "name": "Lleida",
+      "categoria": "ciudad",
+      "occupation_percentage": 45,
+      "tourist_pressure": 0.15,
+      "trend": "estable",
+      "fetched_at": "2025-11-24T19:55:44.191Z"
+    },
+    "251214": {
+      "name": "Les",
+      "categoria": "montaña",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.15,
+      "trend": "estable",
+      "fetched_at": "2025-11-24T19:55:45.934Z"
+    },
+    "251235": {
+      "name": "Lladorre",
+      "categoria": "montaña",
+      "occupation_percentage": 15,
+      "tourist_pressure": 0.05,
+      "trend": "estable",
+      "fetched_at": "2025-11-24T19:55:47.572Z"
+    },
+    "251713": {
+      "name": "la Pobla de Segur",
+      "categoria": "montaña",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.15,
+      "trend": "estable",
+      "fetched_at": "2025-11-24T19:55:49.196Z"
+    },
+    "251790": {
+      "name": "Prullans",
+      "categoria": "montaña",
+      "occupation_percentage": 15,
+      "tourist_pressure": 0.05,
+      "trend": "estable",
+      "fetched_at": "2025-11-24T19:55:50.728Z"
+    },
+    "252038": {
+      "name": "la Seu d'Urgell",
+      "categoria": "montaña",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.2,
+      "trend": "estable",
+      "fetched_at": "2025-11-24T19:55:52.470Z"
+    },
+    "252430": {
+      "name": "Vielha e Mijaran",
+      "categoria": "montaña",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.2,
+      "trend": "estable",
+      "fetched_at": "2025-11-24T19:55:54.210Z"
+    },
+    "252458": {
+      "name": "Vilaller",
+      "categoria": "montaña",
+      "occupation_percentage": 15,
+      "tourist_pressure": 0.05,
+      "trend": "estable",
+      "fetched_at": "2025-11-24T19:55:56.015Z"
+    },
+    "252477": {
+      "name": "Vilamòs",
+      "categoria": "montaña",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.15,
+      "trend": "estable",
+      "fetched_at": "2025-11-24T19:55:57.819Z"
+    },
+    "259010": {
+      "name": "Vall de Cardós",
+      "categoria": "montaña",
+      "occupation_percentage": 25,
+      "tourist_pressure": 0.15,
+      "trend": "estable",
+      "fetched_at": "2025-11-24T19:55:59.347Z"
+    }
+  }
+}

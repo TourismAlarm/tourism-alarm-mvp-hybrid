@@ -1,0 +1,165 @@
+{
+  "date": "2025-11-23",
+  "timestamp": "2025-11-23T17:24:13.878Z",
+  "provider": "gemini",
+  "zones": {
+    "costa_brava_norte": {
+      "id": "costa_brava_norte",
+      "name": "Costa Brava Norte",
+      "description": "Roses, Cadaqués, L'Escala, Empuriabrava",
+      "occupation_percentage": 25,
+      "tourist_pressure": 0.2,
+      "active_events": [],
+      "weather_impact": 0,
+      "trend": "estable",
+      "reasoning": "Es noviembre, temporada baja en la Costa Brava Norte. No hay eventos importantes registrados para esta fecha, y el clima no tiene un impacto significativo.",
+      "fetched_at": "2025-11-23T17:24:15.562Z"
+    },
+    "costa_brava_centro": {
+      "id": "costa_brava_centro",
+      "name": "Costa Brava Centro",
+      "description": "Lloret de Mar, Tossa de Mar, Blanes",
+      "occupation_percentage": 25,
+      "tourist_pressure": 0.2,
+      "active_events": [],
+      "weather_impact": 0.1,
+      "trend": "estable",
+      "reasoning": "Siendo noviembre y un domingo, la ocupación es baja. El tiempo relativamente bueno podría atraer algún visitante de proximidad, manteniendo la tendencia estable.",
+      "fetched_at": "2025-11-23T17:24:17.668Z"
+    },
+    "costa_brava_sur": {
+      "id": "costa_brava_sur",
+      "name": "Costa Brava Sur",
+      "description": "Palamós, Sant Feliu de Guíxols, Platja d'Aro",
+      "occupation_percentage": 25,
+      "tourist_pressure": 0.2,
+      "active_events": [],
+      "weather_impact": 0,
+      "trend": "estable",
+      "reasoning": "Finales de noviembre es temporada baja en la Costa Brava Sur. No hay eventos significativos que aumenten el turismo y el clima no tiene un impacto notable.",
+      "fetched_at": "2025-11-23T17:24:19.751Z"
+    },
+    "costa_dorada": {
+      "id": "costa_dorada",
+      "name": "Costa Dorada",
+      "description": "Salou, Cambrils, Tarragona, PortAventura",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.3,
+      "active_events": [
+        {
+          "name": "Salou Christmas Market (próximamente)",
+          "impact": "medio"
+        }
+      ],
+      "weather_impact": 0,
+      "trend": "estable",
+      "reasoning": "Noviembre es temporada baja en la Costa Dorada. La ocupación hotelera es moderada gracias a visitantes de fin de semana y algunas familias, y el tiempo acompaña sin ser un factor determinante.",
+      "fetched_at": "2025-11-23T17:24:21.883Z"
+    },
+    "barcelona_ciudad": {
+      "id": "barcelona_ciudad",
+      "name": "Barcelona Ciudad",
+      "description": "Barcelona centro, Gràcia, Barceloneta",
+      "occupation_percentage": 65,
+      "tourist_pressure": 0.5,
+      "active_events": [
+        {
+          "name": "Barcelona Christmas Market (Fira de Nadal a la Sagrada Familia)",
+          "impact": "medio"
+        },
+        {
+          "name": "Festival de Jazz de Barcelona (finalizando)",
+          "impact": "bajo"
+        }
+      ],
+      "weather_impact": 0.1,
+      "trend": "subiendo",
+      "reasoning": "Noviembre es temporada baja pero la cercanía de Navidad y un clima relativamente benigno (positivo weather_impact) están incrementando ligeramente la ocupación y presión turística. El inicio del mercado navideño contribuye a la afluencia.",
+      "fetched_at": "2025-11-23T17:24:24.239Z"
+    },
+    "barcelona_costa": {
+      "id": "barcelona_costa",
+      "name": "Costa Barcelona",
+      "description": "Sitges, Castelldefels, Vilanova",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.3,
+      "active_events": [],
+      "weather_impact": 0.1,
+      "trend": "estable",
+      "reasoning": "Noviembre es temporada baja, pero el fin de semana atrae a visitantes locales y el clima soleado suma un poco. No hay eventos importantes que impulsen el turismo significativamente.",
+      "fetched_at": "2025-11-23T17:24:26.112Z"
+    },
+    "pirineos_aran": {
+      "id": "pirineos_aran",
+      "name": "Val d'Aran",
+      "description": "Vielha, Baqueira-Beret, Naut Aran",
+      "occupation_percentage": 25,
+      "tourist_pressure": 0.2,
+      "active_events": [],
+      "weather_impact": 0,
+      "trend": "estable",
+      "reasoning": "Noviembre es temporada baja en Val d'Aran. No hay eventos significativos reportados para esta fecha, lo que mantiene la ocupación y la presión turística bajas.",
+      "fetched_at": "2025-11-23T17:24:28.225Z"
+    },
+    "pirineos_cerdanya": {
+      "id": "pirineos_cerdanya",
+      "name": "Cerdanya",
+      "description": "Puigcerdà, La Molina, Masella, Alp",
+      "occupation_percentage": 30,
+      "tourist_pressure": 0.3,
+      "active_events": [],
+      "weather_impact": 0,
+      "trend": "estable",
+      "reasoning": "Actualmente es temporada baja en la Cerdanya, al no ser fin de semana y no haber eventos significativos, la ocupación es moderada. No hay un impacto climático notable en este momento.",
+      "fetched_at": "2025-11-23T17:24:30.627Z"
+    },
+    "pirineos_pallars": {
+      "id": "pirineos_pallars",
+      "name": "Pallars-Ribagorça",
+      "description": "Sort, Vall de Boí, Aigüestortes",
+      "occupation_percentage": 25,
+      "tourist_pressure": 0.2,
+      "active_events": [],
+      "weather_impact": -0.1,
+      "trend": "estable",
+      "reasoning": "Siendo noviembre y fuera de puentes, la ocupación es baja. El clima, aunque puede ser variable, no está incentivando grandes visitas.",
+      "fetched_at": "2025-11-23T17:24:32.825Z"
+    },
+    "interior_garrotxa": {
+      "id": "interior_garrotxa",
+      "name": "Garrotxa",
+      "description": "Olot, Besalú, Zona Volcánica",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.3,
+      "active_events": [],
+      "weather_impact": 0.1,
+      "trend": "estable",
+      "reasoning": "Es temporada baja en Garrotxa, un domingo de noviembre sin eventos especiales. El clima relativamente bueno puede atraer a algunos visitantes locales para excursiones de un día.",
+      "fetched_at": "2025-11-23T17:24:35.015Z"
+    },
+    "interior_penedes": {
+      "id": "interior_penedes",
+      "name": "Penedès",
+      "description": "Vilafranca, Sant Sadurní, Bodegas",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.35,
+      "active_events": [],
+      "weather_impact": 0.05,
+      "trend": "estable",
+      "reasoning": "Noviembre es temporada baja en el Penedès, aunque las bodegas siempre atraen un cierto número de visitantes. El clima suave de finales de noviembre contribuye ligeramente a la afluencia.",
+      "fetched_at": "2025-11-23T17:24:37.218Z"
+    },
+    "montserrat": {
+      "id": "montserrat",
+      "name": "Montserrat",
+      "description": "Monasterio de Montserrat y alrededores",
+      "occupation_percentage": 35,
+      "tourist_pressure": 0.35,
+      "active_events": [],
+      "weather_impact": 0,
+      "trend": "estable",
+      "reasoning": "Hoy es domingo de noviembre fuera de puentes festivos, por lo que la afluencia es moderada. El clima no tiene un impacto significativo, ya que Montserrat atrae visitantes independientemente del tiempo.",
+      "fetched_at": "2025-11-23T17:24:39.363Z"
+    }
+  }
+}

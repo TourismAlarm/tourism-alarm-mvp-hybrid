@@ -1,0 +1,1954 @@
+{
+  "version": "1.0_monthly_historical_data",
+  "updated_at": "2025-10-08T16:59:45.472Z",
+  "generation_method": "turhot_10292_series_processing",
+  "description": "Datos históricos mensuales de pernoctaciones hoteleras por zona turística 2024-2025",
+  "period": {
+    "start": 2023,
+    "end": 2025,
+    "total_months": 21
+  },
+  "raw_monthly_data": {
+    "2025-agosto": {
+      "month": "agosto",
+      "year": 2025,
+      "zones": {
+        "Barcelona": 2338.9,
+        "Costa Brava": 2288.2,
+        "Costa Daurada": 1932.4,
+        "Costa Barcelona": 1658.6,
+        "Paisatges Barcelona": 65.9,
+        "Pirineus": 252.4,
+        "Terres de Lleida": 51.1,
+        "Terres de l'Ebre": 123.5,
+        "Val d'Aran": 103.4
+      },
+      "filename": "idescat-turhot-10292-1.csv"
+    },
+    "2024-diciembre": {
+      "month": "diciembre",
+      "year": 2024,
+      "zones": {
+        "Barcelona": 1527.5,
+        "Costa Brava": 192.5,
+        "Costa Daurada": 137.2,
+        "Costa Barcelona": 338.7,
+        "Paisatges Barcelona": 29.2,
+        "Pirineus": 113.5,
+        "Terres de Lleida": 38.6,
+        "Terres de l'Ebre": 17,
+        "Val d'Aran": 83
+      },
+      "filename": "idescat-turhot-10292-1 (10).csv"
+    },
+    "2024-noviembre": {
+      "month": "noviembre",
+      "year": 2024,
+      "zones": {
+        "Barcelona": 1700.9,
+        "Costa Brava": 257,
+        "Costa Daurada": 172.4,
+        "Costa Barcelona": 415,
+        "Paisatges Barcelona": 40.2,
+        "Pirineus": 58.7,
+        "Terres de Lleida": 40.5,
+        "Terres de l'Ebre": 16.5,
+        "Val d'Aran": 15.2
+      },
+      "filename": "idescat-turhot-10292-1 (11).csv"
+    },
+    "2024-octubre": {
+      "month": "octubre",
+      "year": 2024,
+      "zones": {
+        "Barcelona": 2060.9,
+        "Costa Brava": 1045.7,
+        "Costa Daurada": 824.1,
+        "Costa Barcelona": 1043.1,
+        "Paisatges Barcelona": 45.9,
+        "Pirineus": 95.7,
+        "Terres de Lleida": 49.8,
+        "Terres de l'Ebre": 44.9,
+        "Val d'Aran": 18.3
+      },
+      "filename": "idescat-turhot-10292-1 (12).csv"
+    },
+    "2024-septiembre": {
+      "month": "septiembre",
+      "year": 2024,
+      "zones": {
+        "Barcelona": 1974.8,
+        "Costa Brava": 1590.6,
+        "Costa Daurada": 1436.1,
+        "Costa Barcelona": 1343.7,
+        "Paisatges Barcelona": 40.2,
+        "Pirineus": 111.9,
+        "Terres de Lleida": 45.6,
+        "Terres de l'Ebre": 80.5,
+        "Val d'Aran": 43.8
+      },
+      "filename": "idescat-turhot-10292-1 (13).csv"
+    },
+    "2024-agosto": {
+      "month": "agosto",
+      "year": 2024,
+      "zones": {
+        "Barcelona": 2319.6,
+        "Costa Brava": 2300.5,
+        "Costa Daurada": 2004.8,
+        "Costa Barcelona": 1694.6,
+        "Paisatges Barcelona": 40.9,
+        "Pirineus": 258.1,
+        "Terres de Lleida": 51.1,
+        "Terres de l'Ebre": 133.3,
+        "Val d'Aran": 97.1
+      },
+      "filename": "idescat-turhot-10292-1 (14).csv"
+    },
+    "2024-julio": {
+      "month": "julio",
+      "year": 2024,
+      "zones": {
+        "Barcelona": 2263.7,
+        "Costa Brava": 2133.7,
+        "Costa Daurada": 1770.4,
+        "Costa Barcelona": 1571.9,
+        "Paisatges Barcelona": 42.2,
+        "Pirineus": 187.1,
+        "Terres de Lleida": 49.3,
+        "Terres de l'Ebre": 113,
+        "Val d'Aran": 70
+      },
+      "filename": "idescat-turhot-10292-1 (15).csv"
+    },
+    "2024-junio": {
+      "month": "junio",
+      "year": 2024,
+      "zones": {
+        "Barcelona": 2089.5,
+        "Costa Brava": 1551.9,
+        "Costa Daurada": 1549.9,
+        "Costa Barcelona": 1357.6,
+        "Paisatges Barcelona": 47.6,
+        "Pirineus": 130.6,
+        "Terres de Lleida": 50.7,
+        "Terres de l'Ebre": 93.1,
+        "Val d'Aran": 36
+      },
+      "filename": "idescat-turhot-10292-1 (16).csv"
+    },
+    "2024-mayo": {
+      "month": "mayo",
+      "year": 2024,
+      "zones": {
+        "Barcelona": 2190.5,
+        "Costa Brava": 1318.7,
+        "Costa Daurada": 1261.9,
+        "Costa Barcelona": 1195.9,
+        "Paisatges Barcelona": 42,
+        "Pirineus": 94.4,
+        "Terres de Lleida": 49.8,
+        "Terres de l'Ebre": 75.8,
+        "Val d'Aran": 14.5
+      },
+      "filename": "idescat-turhot-10292-1 (17).csv"
+    },
+    "2024-abril": {
+      "month": "abril",
+      "year": 2024,
+      "zones": {
+        "Barcelona": 2018.6,
+        "Costa Brava": 852.4,
+        "Costa Daurada": 614.4,
+        "Costa Barcelona": 746.2,
+        "Paisatges Barcelona": 38.2,
+        "Pirineus": 67.9,
+        "Terres de Lleida": 43.1,
+        "Terres de l'Ebre": 47.9,
+        "Val d'Aran": 16.2
+      },
+      "filename": "idescat-turhot-10292-1 (18).csv"
+    },
+    "2025-julio": {
+      "month": "julio",
+      "year": 2025,
+      "zones": {
+        "Barcelona": 2234.1,
+        "Costa Brava": 2098.2,
+        "Costa Daurada": 1801.9,
+        "Costa Barcelona": 1597.4,
+        "Paisatges Barcelona": 66,
+        "Pirineus": 175.5,
+        "Terres de Lleida": 51.3,
+        "Terres de l'Ebre": 118.9,
+        "Val d'Aran": 74.1
+      },
+      "filename": "idescat-turhot-10292-1 (2).csv"
+    },
+    "2024-febrero": {
+      "month": "febrero",
+      "year": 2024,
+      "zones": {
+        "Barcelona": 1642.7,
+        "Costa Brava": 218,
+        "Costa Daurada": 71.8,
+        "Costa Barcelona": 406,
+        "Paisatges Barcelona": 27.7,
+        "Pirineus": 136.2,
+        "Terres de Lleida": 36,
+        "Terres de l'Ebre": 21.7,
+        "Val d'Aran": 135
+      },
+      "filename": "idescat-turhot-10292-1 (20).csv"
+    },
+    "2024-enero": {
+      "month": "enero",
+      "year": 2024,
+      "zones": {
+        "Barcelona": 1449.4,
+        "Costa Brava": 161.9,
+        "Costa Daurada": 73.5,
+        "Costa Barcelona": 304.2,
+        "Paisatges Barcelona": 20.5,
+        "Pirineus": 112.4,
+        "Terres de Lleida": 31.1,
+        "Terres de l'Ebre": 11.3,
+        "Val d'Aran": 132.3
+      },
+      "filename": "idescat-turhot-10292-1 (21).csv"
+    },
+    "2023-diciembre": {
+      "month": "diciembre",
+      "year": 2023,
+      "zones": {
+        "Barcelona": 1503.7,
+        "Costa Brava": 246.4,
+        "Costa Daurada": 147.2,
+        "Costa Barcelona": 319.2,
+        "Paisatges Barcelona": 28,
+        "Pirineus": 128.6,
+        "Terres de Lleida": 33.5,
+        "Terres de l'Ebre": 19.4,
+        "Val d'Aran": 90.2
+      },
+      "filename": "idescat-turhot-10292-1 (22).csv"
+    },
+    "2023-noviembre": {
+      "month": "noviembre",
+      "year": 2023,
+      "zones": {
+        "Barcelona": 1723.2,
+        "Costa Brava": 268.8,
+        "Costa Daurada": 132.6,
+        "Costa Barcelona": 378.4,
+        "Paisatges Barcelona": 34.2,
+        "Pirineus": 59,
+        "Terres de Lleida": 36.6,
+        "Terres de l'Ebre": 31.6,
+        "Val d'Aran": 11.3
+      },
+      "filename": "idescat-turhot-10292-1 (23).csv"
+    },
+    "2023-octubre": {
+      "month": "octubre",
+      "year": 2023,
+      "zones": {
+        "Barcelona": 2097.6,
+        "Costa Brava": 1026.3,
+        "Costa Daurada": 797.8,
+        "Costa Barcelona": 1024.3,
+        "Paisatges Barcelona": 41.1,
+        "Pirineus": 107.6,
+        "Terres de Lleida": 46.6,
+        "Terres de l'Ebre": 44.4,
+        "Val d'Aran": 23.5
+      },
+      "filename": "idescat-turhot-10292-1 (24).csv"
+    },
+    "2025-junio": {
+      "month": "junio",
+      "year": 2025,
+      "zones": {
+        "Barcelona": 2056.6,
+        "Costa Brava": 1594.3,
+        "Costa Daurada": 1516.1,
+        "Costa Barcelona": 1353.7,
+        "Paisatges Barcelona": 66.8,
+        "Pirineus": 132.4,
+        "Terres de Lleida": 48.3,
+        "Terres de l'Ebre": 86.5,
+        "Val d'Aran": 35.7
+      },
+      "filename": "idescat-turhot-10292-1 (4).csv"
+    },
+    "2025-mayo": {
+      "month": "mayo",
+      "year": 2025,
+      "zones": {
+        "Barcelona": 2080.1,
+        "Costa Brava": 1281.1,
+        "Costa Daurada": 1221,
+        "Costa Barcelona": 1174.4,
+        "Paisatges Barcelona": 61.8,
+        "Pirineus": 96.2,
+        "Terres de Lleida": 47.2,
+        "Terres de l'Ebre": 68.1,
+        "Val d'Aran": 26.4
+      },
+      "filename": "idescat-turhot-10292-1 (5).csv"
+    },
+    "2025-abril": {
+      "month": "abril",
+      "year": 2025,
+      "zones": {
+        "Barcelona": 2073.3,
+        "Costa Brava": 1028.7,
+        "Costa Daurada": 807.1,
+        "Costa Barcelona": 781.4,
+        "Paisatges Barcelona": 36.8,
+        "Pirineus": 107.6,
+        "Terres de Lleida": 44.2,
+        "Terres de l'Ebre": 68,
+        "Val d'Aran": 43.1
+      },
+      "filename": "idescat-turhot-10292-1 (6).csv"
+    },
+    "2025-febrero": {
+      "month": "febrero",
+      "year": 2025,
+      "zones": {
+        "Barcelona": 1555.1,
+        "Costa Brava": 228.2,
+        "Costa Daurada": 71.3,
+        "Costa Barcelona": 358.8,
+        "Paisatges Barcelona": 32.9,
+        "Pirineus": 156.7,
+        "Terres de Lleida": 35.1,
+        "Terres de l'Ebre": 17.8,
+        "Val d'Aran": 128.6
+      },
+      "filename": "idescat-turhot-10292-1 (8).csv"
+    },
+    "2025-enero": {
+      "month": "enero",
+      "year": 2025,
+      "zones": {
+        "Barcelona": 1466.6,
+        "Costa Brava": 180.6,
+        "Costa Daurada": 57.9,
+        "Costa Barcelona": 352.8,
+        "Paisatges Barcelona": 24.1,
+        "Pirineus": 139.4,
+        "Terres de Lleida": 29.4,
+        "Terres de l'Ebre": 15.2,
+        "Val d'Aran": 126.8
+      },
+      "filename": "idescat-turhot-10292-1 (9).csv"
+    }
+  },
+  "zone_monthly_averages": {
+    "Barcelona": {
+      "enero": {
+        "average": 1458,
+        "samples": 2,
+        "values": [
+          1449.4,
+          1466.6
+        ]
+      },
+      "febrero": {
+        "average": 1598.9,
+        "samples": 2,
+        "values": [
+          1642.7,
+          1555.1
+        ]
+      },
+      "abril": {
+        "average": 2045.95,
+        "samples": 2,
+        "values": [
+          2018.6,
+          2073.3
+        ]
+      },
+      "mayo": {
+        "average": 2135.3,
+        "samples": 2,
+        "values": [
+          2190.5,
+          2080.1
+        ]
+      },
+      "junio": {
+        "average": 2073.05,
+        "samples": 2,
+        "values": [
+          2089.5,
+          2056.6
+        ]
+      },
+      "julio": {
+        "average": 2248.8999999999996,
+        "samples": 2,
+        "values": [
+          2263.7,
+          2234.1
+        ]
+      },
+      "agosto": {
+        "average": 2329.25,
+        "samples": 2,
+        "values": [
+          2338.9,
+          2319.6
+        ]
+      },
+      "septiembre": {
+        "average": 1974.8,
+        "samples": 1,
+        "values": [
+          1974.8
+        ]
+      },
+      "octubre": {
+        "average": 2079.25,
+        "samples": 2,
+        "values": [
+          2060.9,
+          2097.6
+        ]
+      },
+      "noviembre": {
+        "average": 1712.0500000000002,
+        "samples": 2,
+        "values": [
+          1700.9,
+          1723.2
+        ]
+      },
+      "diciembre": {
+        "average": 1515.6,
+        "samples": 2,
+        "values": [
+          1527.5,
+          1503.7
+        ]
+      }
+    },
+    "Costa Brava": {
+      "enero": {
+        "average": 171.25,
+        "samples": 2,
+        "values": [
+          161.9,
+          180.6
+        ]
+      },
+      "febrero": {
+        "average": 223.1,
+        "samples": 2,
+        "values": [
+          218,
+          228.2
+        ]
+      },
+      "abril": {
+        "average": 940.55,
+        "samples": 2,
+        "values": [
+          852.4,
+          1028.7
+        ]
+      },
+      "mayo": {
+        "average": 1299.9,
+        "samples": 2,
+        "values": [
+          1318.7,
+          1281.1
+        ]
+      },
+      "junio": {
+        "average": 1573.1,
+        "samples": 2,
+        "values": [
+          1551.9,
+          1594.3
+        ]
+      },
+      "julio": {
+        "average": 2115.95,
+        "samples": 2,
+        "values": [
+          2133.7,
+          2098.2
+        ]
+      },
+      "agosto": {
+        "average": 2294.35,
+        "samples": 2,
+        "values": [
+          2288.2,
+          2300.5
+        ]
+      },
+      "septiembre": {
+        "average": 1590.6,
+        "samples": 1,
+        "values": [
+          1590.6
+        ]
+      },
+      "octubre": {
+        "average": 1036,
+        "samples": 2,
+        "values": [
+          1045.7,
+          1026.3
+        ]
+      },
+      "noviembre": {
+        "average": 262.9,
+        "samples": 2,
+        "values": [
+          257,
+          268.8
+        ]
+      },
+      "diciembre": {
+        "average": 219.45,
+        "samples": 2,
+        "values": [
+          192.5,
+          246.4
+        ]
+      }
+    },
+    "Costa Daurada": {
+      "enero": {
+        "average": 65.7,
+        "samples": 2,
+        "values": [
+          73.5,
+          57.9
+        ]
+      },
+      "febrero": {
+        "average": 71.55,
+        "samples": 2,
+        "values": [
+          71.8,
+          71.3
+        ]
+      },
+      "abril": {
+        "average": 710.75,
+        "samples": 2,
+        "values": [
+          614.4,
+          807.1
+        ]
+      },
+      "mayo": {
+        "average": 1241.45,
+        "samples": 2,
+        "values": [
+          1261.9,
+          1221
+        ]
+      },
+      "junio": {
+        "average": 1533,
+        "samples": 2,
+        "values": [
+          1549.9,
+          1516.1
+        ]
+      },
+      "julio": {
+        "average": 1786.15,
+        "samples": 2,
+        "values": [
+          1770.4,
+          1801.9
+        ]
+      },
+      "agosto": {
+        "average": 1968.6,
+        "samples": 2,
+        "values": [
+          1932.4,
+          2004.8
+        ]
+      },
+      "septiembre": {
+        "average": 1436.1,
+        "samples": 1,
+        "values": [
+          1436.1
+        ]
+      },
+      "octubre": {
+        "average": 810.95,
+        "samples": 2,
+        "values": [
+          824.1,
+          797.8
+        ]
+      },
+      "noviembre": {
+        "average": 152.5,
+        "samples": 2,
+        "values": [
+          172.4,
+          132.6
+        ]
+      },
+      "diciembre": {
+        "average": 142.2,
+        "samples": 2,
+        "values": [
+          137.2,
+          147.2
+        ]
+      }
+    },
+    "Costa Barcelona": {
+      "enero": {
+        "average": 328.5,
+        "samples": 2,
+        "values": [
+          304.2,
+          352.8
+        ]
+      },
+      "febrero": {
+        "average": 382.4,
+        "samples": 2,
+        "values": [
+          406,
+          358.8
+        ]
+      },
+      "abril": {
+        "average": 763.8,
+        "samples": 2,
+        "values": [
+          746.2,
+          781.4
+        ]
+      },
+      "mayo": {
+        "average": 1185.15,
+        "samples": 2,
+        "values": [
+          1195.9,
+          1174.4
+        ]
+      },
+      "junio": {
+        "average": 1355.65,
+        "samples": 2,
+        "values": [
+          1357.6,
+          1353.7
+        ]
+      },
+      "julio": {
+        "average": 1584.65,
+        "samples": 2,
+        "values": [
+          1571.9,
+          1597.4
+        ]
+      },
+      "agosto": {
+        "average": 1676.6,
+        "samples": 2,
+        "values": [
+          1658.6,
+          1694.6
+        ]
+      },
+      "septiembre": {
+        "average": 1343.7,
+        "samples": 1,
+        "values": [
+          1343.7
+        ]
+      },
+      "octubre": {
+        "average": 1033.6999999999998,
+        "samples": 2,
+        "values": [
+          1043.1,
+          1024.3
+        ]
+      },
+      "noviembre": {
+        "average": 396.7,
+        "samples": 2,
+        "values": [
+          415,
+          378.4
+        ]
+      },
+      "diciembre": {
+        "average": 328.95,
+        "samples": 2,
+        "values": [
+          338.7,
+          319.2
+        ]
+      }
+    },
+    "Paisatges Barcelona": {
+      "enero": {
+        "average": 22.3,
+        "samples": 2,
+        "values": [
+          20.5,
+          24.1
+        ]
+      },
+      "febrero": {
+        "average": 30.299999999999997,
+        "samples": 2,
+        "values": [
+          27.7,
+          32.9
+        ]
+      },
+      "abril": {
+        "average": 37.5,
+        "samples": 2,
+        "values": [
+          38.2,
+          36.8
+        ]
+      },
+      "mayo": {
+        "average": 51.9,
+        "samples": 2,
+        "values": [
+          42,
+          61.8
+        ]
+      },
+      "junio": {
+        "average": 57.2,
+        "samples": 2,
+        "values": [
+          47.6,
+          66.8
+        ]
+      },
+      "julio": {
+        "average": 54.1,
+        "samples": 2,
+        "values": [
+          42.2,
+          66
+        ]
+      },
+      "agosto": {
+        "average": 53.400000000000006,
+        "samples": 2,
+        "values": [
+          65.9,
+          40.9
+        ]
+      },
+      "septiembre": {
+        "average": 40.2,
+        "samples": 1,
+        "values": [
+          40.2
+        ]
+      },
+      "octubre": {
+        "average": 43.5,
+        "samples": 2,
+        "values": [
+          45.9,
+          41.1
+        ]
+      },
+      "noviembre": {
+        "average": 37.2,
+        "samples": 2,
+        "values": [
+          40.2,
+          34.2
+        ]
+      },
+      "diciembre": {
+        "average": 28.6,
+        "samples": 2,
+        "values": [
+          29.2,
+          28
+        ]
+      }
+    },
+    "Pirineus": {
+      "enero": {
+        "average": 125.9,
+        "samples": 2,
+        "values": [
+          112.4,
+          139.4
+        ]
+      },
+      "febrero": {
+        "average": 146.45,
+        "samples": 2,
+        "values": [
+          136.2,
+          156.7
+        ]
+      },
+      "abril": {
+        "average": 87.75,
+        "samples": 2,
+        "values": [
+          67.9,
+          107.6
+        ]
+      },
+      "mayo": {
+        "average": 95.30000000000001,
+        "samples": 2,
+        "values": [
+          94.4,
+          96.2
+        ]
+      },
+      "junio": {
+        "average": 131.5,
+        "samples": 2,
+        "values": [
+          130.6,
+          132.4
+        ]
+      },
+      "julio": {
+        "average": 181.3,
+        "samples": 2,
+        "values": [
+          187.1,
+          175.5
+        ]
+      },
+      "agosto": {
+        "average": 255.25,
+        "samples": 2,
+        "values": [
+          252.4,
+          258.1
+        ]
+      },
+      "septiembre": {
+        "average": 111.9,
+        "samples": 1,
+        "values": [
+          111.9
+        ]
+      },
+      "octubre": {
+        "average": 101.65,
+        "samples": 2,
+        "values": [
+          95.7,
+          107.6
+        ]
+      },
+      "noviembre": {
+        "average": 58.85,
+        "samples": 2,
+        "values": [
+          58.7,
+          59
+        ]
+      },
+      "diciembre": {
+        "average": 121.05,
+        "samples": 2,
+        "values": [
+          113.5,
+          128.6
+        ]
+      }
+    },
+    "Terres de Lleida": {
+      "enero": {
+        "average": 30.25,
+        "samples": 2,
+        "values": [
+          31.1,
+          29.4
+        ]
+      },
+      "febrero": {
+        "average": 35.55,
+        "samples": 2,
+        "values": [
+          36,
+          35.1
+        ]
+      },
+      "abril": {
+        "average": 43.650000000000006,
+        "samples": 2,
+        "values": [
+          43.1,
+          44.2
+        ]
+      },
+      "mayo": {
+        "average": 48.5,
+        "samples": 2,
+        "values": [
+          49.8,
+          47.2
+        ]
+      },
+      "junio": {
+        "average": 49.5,
+        "samples": 2,
+        "values": [
+          50.7,
+          48.3
+        ]
+      },
+      "julio": {
+        "average": 50.3,
+        "samples": 2,
+        "values": [
+          49.3,
+          51.3
+        ]
+      },
+      "agosto": {
+        "average": 51.1,
+        "samples": 2,
+        "values": [
+          51.1,
+          51.1
+        ]
+      },
+      "septiembre": {
+        "average": 45.6,
+        "samples": 1,
+        "values": [
+          45.6
+        ]
+      },
+      "octubre": {
+        "average": 48.2,
+        "samples": 2,
+        "values": [
+          49.8,
+          46.6
+        ]
+      },
+      "noviembre": {
+        "average": 38.55,
+        "samples": 2,
+        "values": [
+          40.5,
+          36.6
+        ]
+      },
+      "diciembre": {
+        "average": 36.05,
+        "samples": 2,
+        "values": [
+          38.6,
+          33.5
+        ]
+      }
+    },
+    "Terres de l'Ebre": {
+      "enero": {
+        "average": 13.25,
+        "samples": 2,
+        "values": [
+          11.3,
+          15.2
+        ]
+      },
+      "febrero": {
+        "average": 19.75,
+        "samples": 2,
+        "values": [
+          21.7,
+          17.8
+        ]
+      },
+      "abril": {
+        "average": 57.95,
+        "samples": 2,
+        "values": [
+          47.9,
+          68
+        ]
+      },
+      "mayo": {
+        "average": 71.94999999999999,
+        "samples": 2,
+        "values": [
+          75.8,
+          68.1
+        ]
+      },
+      "junio": {
+        "average": 89.8,
+        "samples": 2,
+        "values": [
+          93.1,
+          86.5
+        ]
+      },
+      "julio": {
+        "average": 115.95,
+        "samples": 2,
+        "values": [
+          113,
+          118.9
+        ]
+      },
+      "agosto": {
+        "average": 128.4,
+        "samples": 2,
+        "values": [
+          123.5,
+          133.3
+        ]
+      },
+      "septiembre": {
+        "average": 80.5,
+        "samples": 1,
+        "values": [
+          80.5
+        ]
+      },
+      "octubre": {
+        "average": 44.65,
+        "samples": 2,
+        "values": [
+          44.9,
+          44.4
+        ]
+      },
+      "noviembre": {
+        "average": 24.05,
+        "samples": 2,
+        "values": [
+          16.5,
+          31.6
+        ]
+      },
+      "diciembre": {
+        "average": 18.2,
+        "samples": 2,
+        "values": [
+          17,
+          19.4
+        ]
+      }
+    },
+    "Val d'Aran": {
+      "enero": {
+        "average": 129.55,
+        "samples": 2,
+        "values": [
+          132.3,
+          126.8
+        ]
+      },
+      "febrero": {
+        "average": 131.8,
+        "samples": 2,
+        "values": [
+          135,
+          128.6
+        ]
+      },
+      "abril": {
+        "average": 29.65,
+        "samples": 2,
+        "values": [
+          16.2,
+          43.1
+        ]
+      },
+      "mayo": {
+        "average": 20.45,
+        "samples": 2,
+        "values": [
+          14.5,
+          26.4
+        ]
+      },
+      "junio": {
+        "average": 35.85,
+        "samples": 2,
+        "values": [
+          36,
+          35.7
+        ]
+      },
+      "julio": {
+        "average": 72.05,
+        "samples": 2,
+        "values": [
+          70,
+          74.1
+        ]
+      },
+      "agosto": {
+        "average": 100.25,
+        "samples": 2,
+        "values": [
+          103.4,
+          97.1
+        ]
+      },
+      "septiembre": {
+        "average": 43.8,
+        "samples": 1,
+        "values": [
+          43.8
+        ]
+      },
+      "octubre": {
+        "average": 20.9,
+        "samples": 2,
+        "values": [
+          18.3,
+          23.5
+        ]
+      },
+      "noviembre": {
+        "average": 13.25,
+        "samples": 2,
+        "values": [
+          15.2,
+          11.3
+        ]
+      },
+      "diciembre": {
+        "average": 86.6,
+        "samples": 2,
+        "values": [
+          83,
+          90.2
+        ]
+      }
+    }
+  },
+  "seasonal_factors": {
+    "Barcelona": {
+      "enero": {
+        "factor": 0.7575439101981244,
+        "raw_average": 1458,
+        "annual_average": 1924.640909090909
+      },
+      "febrero": {
+        "factor": 0.8307523717529363,
+        "raw_average": 1598.9,
+        "annual_average": 1924.640909090909
+      },
+      "abril": {
+        "factor": 1.0630294671260991,
+        "raw_average": 2045.95,
+        "annual_average": 1924.640909090909
+      },
+      "mayo": {
+        "factor": 1.1094537115542216,
+        "raw_average": 2135.3,
+        "annual_average": 1924.640909090909
+      },
+      "junio": {
+        "factor": 1.0771100157998779,
+        "raw_average": 2073.05,
+        "annual_average": 1924.640909090909
+      },
+      "julio": {
+        "factor": 1.1684777089468872,
+        "raw_average": 2248.8999999999996,
+        "annual_average": 1924.640909090909
+      },
+      "agosto": {
+        "factor": 1.2102257563984782,
+        "raw_average": 2329.25,
+        "annual_average": 1924.640909090909
+      },
+      "septiembre": {
+        "factor": 1.0260615321394073,
+        "raw_average": 1974.8,
+        "annual_average": 1924.640909090909
+      },
+      "octubre": {
+        "factor": 1.0803313959392662,
+        "raw_average": 2079.25,
+        "annual_average": 1924.640909090909
+      },
+      "noviembre": {
+        "factor": 0.8895425592967757,
+        "raw_average": 1712.0500000000002,
+        "annual_average": 1924.640909090909
+      },
+      "diciembre": {
+        "factor": 0.7874715708479267,
+        "raw_average": 1515.6,
+        "annual_average": 1924.640909090909
+      }
+    },
+    "Costa Brava": {
+      "enero": {
+        "factor": 0.16063152598883787,
+        "raw_average": 171.25,
+        "annual_average": 1066.1045454545454
+      },
+      "febrero": {
+        "factor": 0.20926653108385243,
+        "raw_average": 223.1,
+        "annual_average": 1066.1045454545454
+      },
+      "abril": {
+        "factor": 0.8822305504747531,
+        "raw_average": 940.55,
+        "annual_average": 1066.1045454545454
+      },
+      "mayo": {
+        "factor": 1.2192988066154182,
+        "raw_average": 1299.9,
+        "annual_average": 1066.1045454545454
+      },
+      "junio": {
+        "factor": 1.475558852747684,
+        "raw_average": 1573.1,
+        "annual_average": 1066.1045454545454
+      },
+      "julio": {
+        "factor": 1.9847490652033954,
+        "raw_average": 2115.95,
+        "annual_average": 1066.1045454545454
+      },
+      "agosto": {
+        "factor": 2.15208725052549,
+        "raw_average": 2294.35,
+        "annual_average": 1066.1045454545454
+      },
+      "septiembre": {
+        "factor": 1.4919737532136965,
+        "raw_average": 1590.6,
+        "annual_average": 1066.1045454545454
+      },
+      "octubre": {
+        "factor": 0.9717621075879477,
+        "raw_average": 1036,
+        "annual_average": 1066.1045454545454
+      },
+      "noviembre": {
+        "factor": 0.24659870471512688,
+        "raw_average": 262.9,
+        "annual_average": 1066.1045454545454
+      },
+      "diciembre": {
+        "factor": 0.20584285184379839,
+        "raw_average": 219.45,
+        "annual_average": 1066.1045454545454
+      }
+    },
+    "Costa Daurada": {
+      "enero": {
+        "factor": 0.07286053463320209,
+        "raw_average": 65.7,
+        "annual_average": 901.7227272727275
+      },
+      "febrero": {
+        "factor": 0.07934811648410363,
+        "raw_average": 71.55,
+        "annual_average": 901.7227272727275
+      },
+      "abril": {
+        "factor": 0.7882134701757745,
+        "raw_average": 710.75,
+        "annual_average": 901.7227272727275
+      },
+      "mayo": {
+        "factor": 1.3767535878293566,
+        "raw_average": 1241.45,
+        "annual_average": 901.7227272727275
+      },
+      "junio": {
+        "factor": 1.7000791414413818,
+        "raw_average": 1533,
+        "annual_average": 901.7227272727275
+      },
+      "julio": {
+        "factor": 1.9808195423910793,
+        "raw_average": 1786.15,
+        "annual_average": 901.7227272727275
+      },
+      "agosto": {
+        "factor": 2.183154466954667,
+        "raw_average": 1968.6,
+        "annual_average": 901.7227272727275
+      },
+      "septiembre": {
+        "factor": 1.5926181702700382,
+        "raw_average": 1436.1,
+        "annual_average": 901.7227272727275
+      },
+      "octubre": {
+        "factor": 0.899334102904037,
+        "raw_average": 810.95,
+        "annual_average": 901.7227272727275
+      },
+      "noviembre": {
+        "factor": 0.16912072346367302,
+        "raw_average": 152.5,
+        "annual_average": 901.7227272727275
+      },
+      "diciembre": {
+        "factor": 0.15769814345268396,
+        "raw_average": 142.2,
+        "annual_average": 901.7227272727275
+      }
+    },
+    "Costa Barcelona": {
+      "enero": {
+        "factor": 0.34812809495365993,
+        "raw_average": 328.5,
+        "annual_average": 943.618181818182
+      },
+      "febrero": {
+        "factor": 0.40524865604346894,
+        "raw_average": 382.4,
+        "annual_average": 943.618181818182
+      },
+      "abril": {
+        "factor": 0.8094375614173681,
+        "raw_average": 763.8,
+        "annual_average": 943.618181818182
+      },
+      "mayo": {
+        "factor": 1.2559635060405785,
+        "raw_average": 1185.15,
+        "annual_average": 943.618181818182
+      },
+      "junio": {
+        "factor": 1.4366509952022195,
+        "raw_average": 1355.65,
+        "annual_average": 943.618181818182
+      },
+      "julio": {
+        "factor": 1.67933389853369,
+        "raw_average": 1584.65,
+        "annual_average": 943.618181818182
+      },
+      "agosto": {
+        "factor": 1.7767779726006276,
+        "raw_average": 1676.6,
+        "annual_average": 943.618181818182
+      },
+      "septiembre": {
+        "factor": 1.4239869747008609,
+        "raw_average": 1343.7,
+        "annual_average": 943.618181818182
+      },
+      "octubre": {
+        "factor": 1.095464267134241,
+        "raw_average": 1033.6999999999998,
+        "annual_average": 943.618181818182
+      },
+      "noviembre": {
+        "factor": 0.4204030906183162,
+        "raw_average": 396.7,
+        "annual_average": 943.618181818182
+      },
+      "diciembre": {
+        "factor": 0.34860498275496626,
+        "raw_average": 328.95,
+        "annual_average": 943.618181818182
+      }
+    },
+    "Paisatges Barcelona": {
+      "enero": {
+        "factor": 0.5377027619465148,
+        "raw_average": 22.3,
+        "annual_average": 41.47272727272727
+      },
+      "febrero": {
+        "factor": 0.7306006137658921,
+        "raw_average": 30.299999999999997,
+        "annual_average": 41.47272727272727
+      },
+      "abril": {
+        "factor": 0.9042086804033319,
+        "raw_average": 37.5,
+        "annual_average": 41.47272727272727
+      },
+      "mayo": {
+        "factor": 1.2514248136782113,
+        "raw_average": 51.9,
+        "annual_average": 41.47272727272727
+      },
+      "junio": {
+        "factor": 1.379219640508549,
+        "raw_average": 57.2,
+        "annual_average": 41.47272727272727
+      },
+      "julio": {
+        "factor": 1.3044717229285403,
+        "raw_average": 54.1,
+        "annual_average": 41.47272727272727
+      },
+      "agosto": {
+        "factor": 1.287593160894345,
+        "raw_average": 53.400000000000006,
+        "annual_average": 41.47272727272727
+      },
+      "septiembre": {
+        "factor": 0.9693117053923719,
+        "raw_average": 40.2,
+        "annual_average": 41.47272727272727
+      },
+      "octubre": {
+        "factor": 1.048882069267865,
+        "raw_average": 43.5,
+        "annual_average": 41.47272727272727
+      },
+      "noviembre": {
+        "factor": 0.8969750109601053,
+        "raw_average": 37.2,
+        "annual_average": 41.47272727272727
+      },
+      "diciembre": {
+        "factor": 0.6896098202542745,
+        "raw_average": 28.6,
+        "annual_average": 41.47272727272727
+      }
+    },
+    "Pirineus": {
+      "enero": {
+        "factor": 0.977415484508434,
+        "raw_average": 125.9,
+        "annual_average": 128.8090909090909
+      },
+      "febrero": {
+        "factor": 1.1369539134730748,
+        "raw_average": 146.45,
+        "annual_average": 128.8090909090909
+      },
+      "abril": {
+        "factor": 0.6812407368198179,
+        "raw_average": 87.75,
+        "annual_average": 128.8090909090909
+      },
+      "mayo": {
+        "factor": 0.7398546121815232,
+        "raw_average": 95.30000000000001,
+        "annual_average": 128.8090909090909
+      },
+      "junio": {
+        "factor": 1.0208906768296986,
+        "raw_average": 131.5,
+        "annual_average": 128.8090909090909
+      },
+      "julio": {
+        "factor": 1.4075093514009458,
+        "raw_average": 181.3,
+        "annual_average": 128.8090909090909
+      },
+      "agosto": {
+        "factor": 1.9816147928576469,
+        "raw_average": 255.25,
+        "annual_average": 128.8090909090909
+      },
+      "septiembre": {
+        "factor": 0.8687275037052721,
+        "raw_average": 111.9,
+        "annual_average": 128.8090909090909
+      },
+      "octubre": {
+        "factor": 0.7891523749029572,
+        "raw_average": 101.65,
+        "annual_average": 128.8090909090909
+      },
+      "noviembre": {
+        "factor": 0.456877690733291,
+        "raw_average": 58.85,
+        "annual_average": 128.8090909090909
+      },
+      "diciembre": {
+        "factor": 0.9397628625873385,
+        "raw_average": 121.05,
+        "annual_average": 128.8090909090909
+      }
+    },
+    "Terres de Lleida": {
+      "enero": {
+        "factor": 0.6972236773179674,
+        "raw_average": 30.25,
+        "annual_average": 43.38636363636364
+      },
+      "febrero": {
+        "factor": 0.8193818753273964,
+        "raw_average": 35.55,
+        "annual_average": 43.38636363636364
+      },
+      "abril": {
+        "factor": 1.006076479832373,
+        "raw_average": 43.650000000000006,
+        "annual_average": 43.38636363636364
+      },
+      "mayo": {
+        "factor": 1.1178627553693032,
+        "raw_average": 48.5,
+        "annual_average": 43.38636363636364
+      },
+      "junio": {
+        "factor": 1.1409114719748559,
+        "raw_average": 49.5,
+        "annual_average": 43.38636363636364
+      },
+      "julio": {
+        "factor": 1.159350445259298,
+        "raw_average": 50.3,
+        "annual_average": 43.38636363636364
+      },
+      "agosto": {
+        "factor": 1.17778941854374,
+        "raw_average": 51.1,
+        "annual_average": 43.38636363636364
+      },
+      "septiembre": {
+        "factor": 1.0510214772132005,
+        "raw_average": 45.6,
+        "annual_average": 43.38636363636364
+      },
+      "octubre": {
+        "factor": 1.1109481403876376,
+        "raw_average": 48.2,
+        "annual_average": 43.38636363636364
+      },
+      "noviembre": {
+        "factor": 0.8885280251440544,
+        "raw_average": 38.55,
+        "annual_average": 43.38636363636364
+      },
+      "diciembre": {
+        "factor": 0.8309062336301727,
+        "raw_average": 36.05,
+        "annual_average": 43.38636363636364
+      }
+    },
+    "Terres de l'Ebre": {
+      "enero": {
+        "factor": 0.2193543532244714,
+        "raw_average": 13.25,
+        "annual_average": 60.40454545454545
+      },
+      "febrero": {
+        "factor": 0.3269621491459102,
+        "raw_average": 19.75,
+        "annual_average": 60.40454545454545
+      },
+      "abril": {
+        "factor": 0.9593648882534428,
+        "raw_average": 57.95,
+        "annual_average": 60.40454545454545
+      },
+      "mayo": {
+        "factor": 1.1911355256226954,
+        "raw_average": 71.94999999999999,
+        "annual_average": 60.40454545454545
+      },
+      "junio": {
+        "factor": 1.486643088268493,
+        "raw_average": 89.8,
+        "annual_average": 60.40454545454545
+      },
+      "julio": {
+        "factor": 1.9195575287832043,
+        "raw_average": 115.95,
+        "annual_average": 60.40454545454545
+      },
+      "agosto": {
+        "factor": 2.125667845586576,
+        "raw_average": 128.4,
+        "annual_average": 60.40454545454545
+      },
+      "septiembre": {
+        "factor": 1.3326811648732035,
+        "raw_average": 80.5,
+        "annual_average": 60.40454545454545
+      },
+      "octubre": {
+        "factor": 0.7391827827526526,
+        "raw_average": 44.65,
+        "annual_average": 60.40454545454545
+      },
+      "noviembre": {
+        "factor": 0.39814884490932356,
+        "raw_average": 24.05,
+        "annual_average": 60.40454545454545
+      },
+      "diciembre": {
+        "factor": 0.30130182858002863,
+        "raw_average": 18.2,
+        "annual_average": 60.40454545454545
+      }
+    },
+    "Val d'Aran": {
+      "enero": {
+        "factor": 2.082949645545568,
+        "raw_average": 129.55,
+        "annual_average": 62.195454545454545
+      },
+      "febrero": {
+        "factor": 2.1191259226777754,
+        "raw_average": 131.8,
+        "annual_average": 62.195454545454545
+      },
+      "abril": {
+        "factor": 0.47672294087553896,
+        "raw_average": 29.65,
+        "annual_average": 62.195454545454545
+      },
+      "mayo": {
+        "factor": 0.3288021632682891,
+        "raw_average": 20.45,
+        "annual_average": 62.195454545454545
+      },
+      "junio": {
+        "factor": 0.5764086823065118,
+        "raw_average": 35.85,
+        "annual_average": 62.195454545454545
+      },
+      "julio": {
+        "factor": 1.1584447855002558,
+        "raw_average": 72.05,
+        "annual_average": 62.195454545454545
+      },
+      "agosto": {
+        "factor": 1.611854125557261,
+        "raw_average": 100.25,
+        "annual_average": 62.195454545454545
+      },
+      "septiembre": {
+        "factor": 0.7042315281736461,
+        "raw_average": 43.8,
+        "annual_average": 62.195454545454545
+      },
+      "octubre": {
+        "factor": 0.33603741869473064,
+        "raw_average": 20.9,
+        "annual_average": 62.195454545454545
+      },
+      "noviembre": {
+        "factor": 0.213038076445224,
+        "raw_average": 13.25,
+        "annual_average": 62.195454545454545
+      },
+      "diciembre": {
+        "factor": 1.3923847109552,
+        "raw_average": 86.6,
+        "annual_average": 62.195454545454545
+      }
+    }
+  },
+  "simple_seasonal_multipliers": {
+    "Barcelona": {
+      "enero": 0.7575439101981244,
+      "febrero": 0.8307523717529363,
+      "abril": 1.0630294671260991,
+      "mayo": 1.1094537115542216,
+      "junio": 1.0771100157998779,
+      "julio": 1.1684777089468872,
+      "agosto": 1.2102257563984782,
+      "septiembre": 1.0260615321394073,
+      "octubre": 1.0803313959392662,
+      "noviembre": 0.8895425592967757,
+      "diciembre": 0.7874715708479267
+    },
+    "Costa Brava": {
+      "enero": 0.16063152598883787,
+      "febrero": 0.20926653108385243,
+      "abril": 0.8822305504747531,
+      "mayo": 1.2192988066154182,
+      "junio": 1.475558852747684,
+      "julio": 1.9847490652033954,
+      "agosto": 2.15208725052549,
+      "septiembre": 1.4919737532136965,
+      "octubre": 0.9717621075879477,
+      "noviembre": 0.24659870471512688,
+      "diciembre": 0.20584285184379839
+    },
+    "Costa Daurada": {
+      "enero": 0.07286053463320209,
+      "febrero": 0.07934811648410363,
+      "abril": 0.7882134701757745,
+      "mayo": 1.3767535878293566,
+      "junio": 1.7000791414413818,
+      "julio": 1.9808195423910793,
+      "agosto": 2.183154466954667,
+      "septiembre": 1.5926181702700382,
+      "octubre": 0.899334102904037,
+      "noviembre": 0.16912072346367302,
+      "diciembre": 0.15769814345268396
+    },
+    "Costa Barcelona": {
+      "enero": 0.34812809495365993,
+      "febrero": 0.40524865604346894,
+      "abril": 0.8094375614173681,
+      "mayo": 1.2559635060405785,
+      "junio": 1.4366509952022195,
+      "julio": 1.67933389853369,
+      "agosto": 1.7767779726006276,
+      "septiembre": 1.4239869747008609,
+      "octubre": 1.095464267134241,
+      "noviembre": 0.4204030906183162,
+      "diciembre": 0.34860498275496626
+    },
+    "Paisatges Barcelona": {
+      "enero": 0.5377027619465148,
+      "febrero": 0.7306006137658921,
+      "abril": 0.9042086804033319,
+      "mayo": 1.2514248136782113,
+      "junio": 1.379219640508549,
+      "julio": 1.3044717229285403,
+      "agosto": 1.287593160894345,
+      "septiembre": 0.9693117053923719,
+      "octubre": 1.048882069267865,
+      "noviembre": 0.8969750109601053,
+      "diciembre": 0.6896098202542745
+    },
+    "Pirineus": {
+      "enero": 0.977415484508434,
+      "febrero": 1.1369539134730748,
+      "abril": 0.6812407368198179,
+      "mayo": 0.7398546121815232,
+      "junio": 1.0208906768296986,
+      "julio": 1.4075093514009458,
+      "agosto": 1.9816147928576469,
+      "septiembre": 0.8687275037052721,
+      "octubre": 0.7891523749029572,
+      "noviembre": 0.456877690733291,
+      "diciembre": 0.9397628625873385
+    },
+    "Terres de Lleida": {
+      "enero": 0.6972236773179674,
+      "febrero": 0.8193818753273964,
+      "abril": 1.006076479832373,
+      "mayo": 1.1178627553693032,
+      "junio": 1.1409114719748559,
+      "julio": 1.159350445259298,
+      "agosto": 1.17778941854374,
+      "septiembre": 1.0510214772132005,
+      "octubre": 1.1109481403876376,
+      "noviembre": 0.8885280251440544,
+      "diciembre": 0.8309062336301727
+    },
+    "Terres de l'Ebre": {
+      "enero": 0.2193543532244714,
+      "febrero": 0.3269621491459102,
+      "abril": 0.9593648882534428,
+      "mayo": 1.1911355256226954,
+      "junio": 1.486643088268493,
+      "julio": 1.9195575287832043,
+      "agosto": 2.125667845586576,
+      "septiembre": 1.3326811648732035,
+      "octubre": 0.7391827827526526,
+      "noviembre": 0.39814884490932356,
+      "diciembre": 0.30130182858002863
+    },
+    "Val d'Aran": {
+      "enero": 2.082949645545568,
+      "febrero": 2.1191259226777754,
+      "abril": 0.47672294087553896,
+      "mayo": 0.3288021632682891,
+      "junio": 0.5764086823065118,
+      "julio": 1.1584447855002558,
+      "agosto": 1.611854125557261,
+      "septiembre": 0.7042315281736461,
+      "octubre": 0.33603741869473064,
+      "noviembre": 0.213038076445224,
+      "diciembre": 1.3923847109552
+    }
+  },
+  "metadata": {
+    "files_processed": 25,
+    "zones_identified": 9,
+    "file_details": [
+      {
+        "file": "idescat-turhot-10292-1 (1).csv",
+        "month": "agosto",
+        "year": 2025,
+        "zones": 9,
+        "total": 8814.4
+      },
+      {
+        "file": "idescat-turhot-10292-1 (10).csv",
+        "month": "diciembre",
+        "year": 2024,
+        "zones": 9,
+        "total": 2477.2
+      },
+      {
+        "file": "idescat-turhot-10292-1 (11).csv",
+        "month": "noviembre",
+        "year": 2024,
+        "zones": 9,
+        "total": 2716.3999999999996
+      },
+      {
+        "file": "idescat-turhot-10292-1 (12).csv",
+        "month": "octubre",
+        "year": 2024,
+        "zones": 9,
+        "total": 5228.4
+      },
+      {
+        "file": "idescat-turhot-10292-1 (13).csv",
+        "month": "septiembre",
+        "year": 2024,
+        "zones": 9,
+        "total": 6667.2
+      },
+      {
+        "file": "idescat-turhot-10292-1 (14).csv",
+        "month": "agosto",
+        "year": 2024,
+        "zones": 9,
+        "total": 8900
+      },
+      {
+        "file": "idescat-turhot-10292-1 (15).csv",
+        "month": "julio",
+        "year": 2024,
+        "zones": 9,
+        "total": 8201.3
+      },
+      {
+        "file": "idescat-turhot-10292-1 (16).csv",
+        "month": "junio",
+        "year": 2024,
+        "zones": 9,
+        "total": 6906.900000000001
+      },
+      {
+        "file": "idescat-turhot-10292-1 (17).csv",
+        "month": "mayo",
+        "year": 2024,
+        "zones": 9,
+        "total": 6243.5
+      },
+      {
+        "file": "idescat-turhot-10292-1 (18).csv",
+        "month": "abril",
+        "year": 2024,
+        "zones": 9,
+        "total": 4444.9
+      },
+      {
+        "file": "idescat-turhot-10292-1 (2).csv",
+        "month": "julio",
+        "year": 2025,
+        "zones": 9,
+        "total": 8217.399999999998
+      },
+      {
+        "file": "idescat-turhot-10292-1 (20).csv",
+        "month": "febrero",
+        "year": 2024,
+        "zones": 9,
+        "total": 2695.0999999999995
+      },
+      {
+        "file": "idescat-turhot-10292-1 (21).csv",
+        "month": "enero",
+        "year": 2024,
+        "zones": 9,
+        "total": 2296.6000000000004
+      },
+      {
+        "file": "idescat-turhot-10292-1 (22).csv",
+        "month": "diciembre",
+        "year": 2023,
+        "zones": 9,
+        "total": 2516.2
+      },
+      {
+        "file": "idescat-turhot-10292-1 (23).csv",
+        "month": "noviembre",
+        "year": 2023,
+        "zones": 9,
+        "total": 2675.7
+      },
+      {
+        "file": "idescat-turhot-10292-1 (24).csv",
+        "month": "octubre",
+        "year": 2023,
+        "zones": 9,
+        "total": 5209.200000000001
+      },
+      {
+        "file": "idescat-turhot-10292-1 (3).csv",
+        "month": "junio",
+        "year": 2025,
+        "zones": 9,
+        "total": 6890.4
+      },
+      {
+        "file": "idescat-turhot-10292-1 (4).csv",
+        "month": "junio",
+        "year": 2025,
+        "zones": 9,
+        "total": 6890.4
+      },
+      {
+        "file": "idescat-turhot-10292-1 (5).csv",
+        "month": "mayo",
+        "year": 2025,
+        "zones": 9,
+        "total": 6056.3
+      },
+      {
+        "file": "idescat-turhot-10292-1 (6).csv",
+        "month": "abril",
+        "year": 2025,
+        "zones": 9,
+        "total": 4990.200000000001
+      },
+      {
+        "file": "idescat-turhot-10292-1 (8).csv",
+        "month": "febrero",
+        "year": 2025,
+        "zones": 9,
+        "total": 2584.5
+      },
+      {
+        "file": "idescat-turhot-10292-1 (9).csv",
+        "month": "enero",
+        "year": 2025,
+        "zones": 9,
+        "total": 2392.8
+      },
+      {
+        "file": "idescat-turhot-10292-1.csv",
+        "month": "agosto",
+        "year": 2025,
+        "zones": 9,
+        "total": 8814.4
+      }
+    ],
+    "calculated_at": "2025-10-08T16:59:45.472Z"
+  }
+}
