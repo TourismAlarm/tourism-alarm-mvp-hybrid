@@ -1,44 +1,80 @@
-export async function fetchDataWithFallback(primaryUrl, fallbackUrl) {
-  try {
-    const response = await fetch(primaryUrl, {
-      cache: 'no-store',
-      headers: { 'Cache-Control': 'no-cache' }
-    });
+// 📥 Carga de los datos del mapa con degradación controlada.
+//
+// El formato que espera el frontend es el que genera scripts/build-map-data.js:
+//   { metadata, distribution, occupancy_by_brand, municipalities: [...] }
+//
+// Antes se validaba `data.points`, un formato de heatmap que ya no genera
+// ningún script: eso hacía que TODA respuesta válida se descartase y la app
+// cayese siempre al fichero de respaldo.
 
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}`);
-    }
+const REQUIRED_FIELDS = ['id', 'name', 'monthly_intensity'];
 
-    const data = await response.json();
-
-    if (!data.points || !Array.isArray(data.points)) {
-      throw new Error('Formato de datos inválido');
-    }
-
-    return data;
-
-  } catch (error) {
-    console.warn('⚠️ Fallback a datos de respaldo:', error.message);
-
-    try {
-      const fallbackResponse = await fetch(fallbackUrl);
-      if (fallbackResponse.ok) {
-        return await fallbackResponse.json();
-      }
-    } catch (fallbackError) {
-      console.error('❌ Fallback falló:', fallbackError.message);
-    }
-
-    // Último recurso: datos mínimos
-    return {
-      updated_at: new Date().toISOString(),
-      municipalities_count: 3,
-      real_coordinates_count: 3,
-      points: [
-        [41.3851, 2.1734, 0.8], // Barcelona
-        [41.9794, 2.8214, 0.4], // Girona
-        [41.1189, 1.2445, 0.6]  // Tarragona
-      ]
-    };
+export class DataLoadError extends Error {
+  constructor(message, attempts) {
+    super(message);
+    this.name = 'DataLoadError';
+    this.attempts = attempts;
   }
+}
+
+function validate(data) {
+  if (!data || typeof data !== 'object') {
+    throw new Error('la respuesta no es un objeto JSON');
+  }
+
+  if (!Array.isArray(data.municipalities) || data.municipalities.length === 0) {
+    throw new Error('falta el array "municipalities"');
+  }
+
+  const sample = data.municipalities[0];
+  const missing = REQUIRED_FIELDS.filter(field => sample[field] === undefined);
+  if (missing.length) {
+    throw new Error(`los municipios no tienen los campos: ${missing.join(', ')}`);
+  }
+
+  return data;
+}
+
+async function loadFrom(url, { bustCache }) {
+  const target = bustCache ? `${url}${url.includes('?') ? '&' : '?'}t=${Date.now()}` : url;
+
+  const response = await fetch(target, {
+    cache: 'no-store',
+    headers: { 'Cache-Control': 'no-cache' }
+  });
+
+  if (!response.ok) {
+    throw new Error(`HTTP ${response.status}`);
+  }
+
+  return validate(await response.json());
+}
+
+/**
+ * Intenta cargar los datos de las URLs indicadas, en orden.
+ * Devuelve { data, source, degraded, attempts } para que la interfaz pueda
+ * avisar de que está mostrando datos de respaldo en vez de fallar en silencio.
+ */
+export async function loadTourismData(urls, { bustCache = false } = {}) {
+  const attempts = [];
+
+  for (const url of urls) {
+    try {
+      const data = await loadFrom(url, { bustCache });
+      return {
+        data,
+        source: url,
+        degraded: attempts.length > 0,
+        attempts
+      };
+    } catch (error) {
+      attempts.push({ url, message: error.message });
+      console.warn(`⚠️ No se pudo cargar ${url}: ${error.message}`);
+    }
+  }
+
+  throw new DataLoadError(
+    `No se pudieron cargar los datos del mapa (${attempts.length} intentos fallidos)`,
+    attempts
+  );
 }

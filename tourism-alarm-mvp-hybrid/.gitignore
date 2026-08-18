@@ -13,7 +13,7 @@ dist-ssr
 *.local
 .vercel
 .env
-public/data/current.json
+# public/data/current.json se versiona: la app debe funcionar sin ejecutar scripts
 
 # Agent outputs (review before committing)
 agents/enriched-data.json
