@@ -1,22 +1,19 @@
 # 🚨 Tourism Alarm Catalunya
 
-Mapa de **presión turística de los 947 municipios de Catalunya**, calculado a
-partir de datos oficiales del IDESCAT. Cada municipio se colorea según cuánta
-capacidad turística soporta su territorio y cuánta de esa capacidad está
-realmente ocupada en el mes que se consulte.
+**¿Cuánta gente hay hoy y mañana en cada municipio de Catalunya, y a qué playa
+conviene ir?** Eso es lo único que responde la aplicación. Se abre, se mira, se
+decide.
 
-![Coropleta de Catalunya con la costa en rojo y el interior en verde](https://img.shields.io/badge/municipios-947%2F947-brightgreen)
+## Qué muestra
 
-## ¿Qué muestra el mapa?
-
-- **Coropleta de los 947 municipios**, sin huecos: cada polígono tiene datos.
-- **Selector de mes**: la intensidad se recalcula para los 12 meses del año con
-  la estacionalidad real de cada marca turística. En agosto la costa se pone en
-  rojo; en enero solo Barcelona y el Pirineo mantienen presión.
-- **Ranking de los 8 municipios con más presión** en el mes seleccionado; al
-  hacer clic el mapa hace zoom sobre el municipio.
-- **Ficha por municipio**: plazas hoteleras, de camping y de turismo rural,
-  plazas por km², superficie y comarca.
+- **Hoy / Mañana**: dos pestañas, horizonte de 48 horas. Nada más.
+- **Coropleta de los 947 municipios**, coloreada por la afluencia prevista de
+  ese día.
+- **🏖️ Mejores playas**: los municipios costeros ordenados por buen tiempo y
+  poca gente. Es la respuesta directa a "¿a qué playa voy?".
+- **Más saturados**: dónde no ir ese día.
+- **Ficha por municipio**: previsión meteorológica, afluencia prevista y de qué
+  se compone.
 
 ## Arranque rápido
 
@@ -25,65 +22,91 @@ npm install
 npm run dev        # http://localhost:5173
 ```
 
-Los datos del mapa (`public/data/current.json`) están versionados, así que la
-aplicación funciona sin ejecutar ningún script previo.
+Los datos (`public/data/current.json`) están versionados: la aplicación
+funciona sin ejecutar ningún script previo. La previsión meteorológica se pide
+desde el navegador al abrir la página.
 
 ## Comandos
 
 | Comando | Qué hace |
 | --- | --- |
 | `npm run dev` | Servidor de desarrollo |
-| `npm run build` | Regenera los datos y compila a `dist/` |
-| `npm run preview` | Sirve el build de producción |
+| `npm run build` | Genera datos → verifica → promueve respaldo → compila |
 | `npm run data:build` | Regenera `public/data/current.json` desde los CSV del IDESCAT |
-| `npm run data:verify` | Comprueba que los datos cubren los 947 municipios (`npm run test:data`) |
+| `npm run data:verify` | Comprueba cobertura, costa y coherencia (`npm run test:data`) |
+| `npm run data:promote` | Copia `current.json` a `last-good.json` |
 
-## De dónde salen los datos
+## Qué es dato y qué es estimación
 
-Todo el contenido del mapa procede de ficheros oficiales que están en el
-repositorio, en `dataidescat-csv/Capacidad hotelera/`:
+Esto importa: la aplicación mezcla una base estadística sólida con capas
+modeladas, y conviene saber cuál es cuál.
 
-| Fuente | Fichero | Qué aporta |
+| Capa | Origen | Solidez |
 | --- | --- | --- |
-| IDESCAT t6031 (2023) | `t6031mun202300.csv` | Plazas hoteleras por municipio |
-| IDESCAT t6036 (2024) | `t6036mun202400.csv` | Plazas de camping por municipio |
-| IDESCAT t6039 (2024) | `t6039mun202400.csv` | Plazas de turismo rural por municipio |
-| IDESCAT turhot | `idescat-turhot-*.csv` | Pernoctaciones mensuales por marca turística (2023-2025) |
-| ICGC / IDESCAT | `public/geojson/cat-municipis.json` | Límites municipales, comarca, provincia y superficie |
+| **Capacidad turística** por municipio | IDESCAT: plazas hoteleras (t6031, 2023), camping (t6036, 2024) y turismo rural (t6039, 2024) | 🟢 Dato oficial, 947/947 municipios |
+| **Estacionalidad** por marca turística | IDESCAT turhot: 207 periodos mensuales de pernoctaciones (2023-2025) | 🟢 Dato oficial |
+| **Geometría, comarca, superficie** | ICGC/IDESCAT (TopoJSON) | 🟢 Dato oficial |
+| **Municipios costeros** | Deducido de la topología (ver abajo) | 🟢 70 municipios, verificado |
+| **Meteorología de hoy y mañana** | Open-Meteo, en vivo desde el navegador | 🟢 Previsión real |
+| **Día de la semana y festivos** | Modelo propio; festivos de Catalunya con Pascua calculada | 🟡 Modelo documentado |
+| **Turismo de día (excursionistas)** | Modelo propio por distancia a núcleos urbanos | 🟠 Estimación |
 
-## Cómo se calcula la intensidad
+### La limitación importante
 
-No hay población oficial por municipio en el repositorio, así que el índice se
-apoya en dos magnitudes que sí son verificables:
+El IDESCAT solo publica **plazas de alojamiento**, es decir, turismo que
+pernocta. Para "¿a qué playa voy hoy?" eso se queda corto: Montgat o
+Castelldefels apenas tienen hoteles y un sábado de agosto están llenas de gente
+que va y vuelve desde Barcelona en el mismo día.
 
-1. **Densidad** — plazas turísticas por km². Es lo que mide la saturación real
-   del territorio (Salou: 2.452 plazas/km²).
-2. **Volumen** — plazas turísticas totales. Evita que Barcelona quede
-   infravalorada por su superficie (82.470 plazas).
-
-Ambas se escalan logarítmicamente contra anclas **absolutas** —no contra el
-máximo observado— para que el índice siga significando lo mismo cuando el
-IDESCAT publique datos nuevos:
-
-```
-intensidad = 0,62 × log(plazas/km², 1→800) + 0,38 × log(plazas totales, 50→25.000)
-```
-
-La **estacionalidad** se aplica antes de escalar, como tasa de ocupación: las
-plazas existen todo el año, lo que cambia es cuántas están ocupadas. La
-ocupación de cada mes sale de las pernoctaciones reales de su marca turística,
-normalizadas contra su propio mes punta:
+Si solo mirásemos plazas hoteleras, esas playas saldrían como vacías, que es
+justo lo contrario de la realidad. Por eso hay una capa de **turismo de día**
+estimada a partir de la distancia a los grandes núcleos urbanos. Es un modelo,
+no una medición, y la ficha de cada municipio muestra las dos cifras por
+separado para que se vea qué parte es qué:
 
 ```
-ocupación(marca, mes) = pernoctaciones(mes) / pernoctaciones(mes punta) × 0,85
+Pernocta 100% (IDESCAT) · excursión 21% (estimado)
 ```
 
-Por eso Val d'Aran alcanza su máximo en enero y febrero (esquí) mientras la
-Costa Daurada lo hace en agosto.
+Tampoco hay **población municipal** en el repositorio, así que el índice usa
+densidad de plazas por km² en lugar de plazas por habitante, que sería el
+indicador estándar de presión turística.
 
-Cada municipio se asigna a una de las **9 marcas turísticas oficiales** según su
-comarca (`scripts/lib/comarques.js`). Barcelona ciudad es marca propia, igual
-que en las estadísticas del IDESCAT.
+## Cómo se calcula la afluencia
+
+```
+afluencia = máx( turismo que pernocta , turismo de día )
+```
+
+**Turismo que pernocta** — capacidad real modulada por la ocupación esperada:
+
+```
+ocupación(día) = curva estacional de la marca  ×  factor de calendario  ×  factor meteorológico
+
+intensidad = 0,62 × log(plazas/km²  × ocupación, 1→800)
+           + 0,38 × log(plazas totales × ocupación, 50→25.000)
+```
+
+Las escalas logarítmicas van contra anclas **absolutas**, no contra el máximo
+observado, para que el índice siga significando lo mismo cuando el IDESCAT
+publique datos nuevos.
+
+**Curva estacional**: los valores mensuales de pernoctaciones se anclan a
+mediados de mes y se interpolan de forma continua, cerrando el círculo entre
+diciembre y enero. Por eso Val d'Aran alcanza su máximo en enero y febrero
+(esquí) mientras la Costa Daurada lo hace en agosto.
+
+**Factor de calendario**: pesos por día de la semana normalizados para que la
+media semanal sea exactamente 1 (no infla ni desinfla la ocupación anual del
+IDESCAT), más los festivos de Catalunya. La Pascua se calcula con el algoritmo
+de Meeus en vez de escribirse a mano, así que el calendario no caduca.
+
+**Factor meteorológico**: un día de sol y 28° llena las playas; uno de lluvia y
+viento las vacía. Sale de la previsión diaria de Open-Meteo.
+
+**Turismo de día**: decae exponencialmente con la distancia a Barcelona
+(dominante), Tarragona-Reus y Girona, y se modula con la misma estacionalidad y
+el mismo tiempo. En enero nadie va a la playa aunque viva al lado.
 
 ### Niveles
 
@@ -98,22 +121,45 @@ que en las estadísticas del IDESCAT.
 La mayor parte de Catalunya sale en el nivel más bajo, y es correcto: la
 capacidad turística está muy concentrada en el litoral y en el Pirineo.
 
+## Detección de municipios costeros
+
+No hay ningún campo "es costero" en el TopoJSON, así que se deduce en dos pasos
+(`scripts/lib/coastline.js`):
+
+1. Un arco que pertenece a **un solo** municipio es frontera exterior de
+   Catalunya. Los compartidos por dos son fronteras interiores.
+2. De esas fronteras exteriores, la costa es la **envolvente oriental** del
+   territorio. La frontera francesa se descarta porque queda al norte de
+   Portbou (42,44 N), el punto costero más septentrional.
+
+La distancia se mide **punto a segmento**, no punto a vértice: es lo que hace
+que Cambrils cuente como costero, porque su litoral queda retranqueado respecto
+al saliente de Salou y el vértice más cercano está a 7 km.
+
+Resultado: **70 municipios costeros**, sin falsos positivos ni ausencias.
+`npm run data:verify` lo comprueba en cada build.
+
 ## Estructura
 
 ```
 src/
-  main.js                  arranque, panel lateral, selector de mes
+  main.js                  arranque, panel, pestañas hoy/mañana
+  lib/pressure.js          fórmula de intensidad (la comparten build y navegador)
+  lib/calendar.js          festivos de Catalunya y día de la semana
   data/fetchData.js        carga con respaldo y validación de formato
-  map/municipalityLayer.js coropleta Leaflet + paleta + fichas
+  data/weather.js          cliente de Open-Meteo y derivadas
+  map/municipalityLayer.js coropleta Leaflet
   style.css                estilos
 scripts/
   build-map-data.js        genera public/data/current.json
-  verify-map-data.js       valida cobertura y coherencia de los datos
+  verify-map-data.js       valida cobertura, costa y coherencia
+  promote-fallback.js      current.json → last-good.json
   lib/comarques.js         comarcas, provincias y marcas turísticas
   lib/idescat-csv.js       lectores de los CSV del IDESCAT
+  lib/coastline.js         detección de municipios costeros
 public/
   data/current.json        datos que consume el mapa (versionados)
-  data/last-good.json      copia de respaldo
+  data/last-good.json      última versión que pasó la verificación
   geojson/cat-municipis.json  geometría de los 947 municipios
 ```
 
@@ -124,11 +170,13 @@ provincia de Barcelona pierden el cero inicial (`080193` → `80193`). Todo el
 código normaliza los identificadores con `normalizeId()` antes de cruzarlos;
 saltarse ese paso deja el mapa sin colorear.
 
-## Pipelines auxiliares
+## Siguiente paso
 
-`agents/` y el resto de `scripts/` contienen experimentos de enriquecimiento con
-LLM y snapshots diarios. **No alimentan el mapa**: la aplicación solo lee
-`public/data/current.json`, que genera `scripts/build-map-data.js`.
+Los agentes de `agents/` (enriquecimiento con LLM, snapshots diarios) **no
+alimentan el mapa** todavía: la aplicación solo lee `public/data/current.json`.
+La idea es que más adelante recopilen datos diarios reales de ocupación y
+sustituyan las capas modeladas —el factor de calendario y el turismo de día—
+por mediciones.
 
 ## Licencia
 

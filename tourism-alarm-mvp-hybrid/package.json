@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run data:build && vite build",
+    "build": "npm run data:build && npm run data:verify && npm run data:promote && vite build",
     "preview": "vite preview",
     "data:build": "node scripts/build-map-data.js",
     "data:verify": "node scripts/verify-map-data.js",
+    "data:promote": "node scripts/promote-fallback.js",
     "fetch:data": "node scripts/build-map-data.js",
     "test:data": "node scripts/verify-map-data.js",
     "format": "prettier --write .",
