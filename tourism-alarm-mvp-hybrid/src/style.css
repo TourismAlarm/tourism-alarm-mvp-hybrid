@@ -281,6 +281,49 @@ html, body, #app {
   line-height: 1.5;
 }
 
+/* Antigüedad de los datos reales: distingue "hay señal" de "solo modelo". */
+.freshness {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 4px;
+}
+
+.freshness::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  flex: none;
+}
+
+.freshness[data-state='fresh'] { color: #15803d; }
+.freshness[data-state='aging'] { color: #a16207; }
+.freshness[data-state='stale'] { color: #b45309; }
+.freshness[data-state='model'] { color: var(--text-muted); }
+
+.muni-popup .delta {
+  margin: 8px 0 0;
+  padding: 6px 9px;
+  border-radius: 7px;
+  font-size: 11.5px;
+  line-height: 1.45;
+}
+
+.muni-popup .delta.below { background: #ecfdf5; color: #166534; }
+.muni-popup .delta.above { background: #fef2f2; color: #991b1b; }
+
+.muni-popup .provenance {
+  margin: 8px 0 0;
+  padding-top: 7px;
+  border-top: 1px solid var(--panel-border);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.muni-popup .provenance a { color: var(--accent); }
+
 /* ─────────────────────────────────────────────── controles ───────────── */
 
 .controls {

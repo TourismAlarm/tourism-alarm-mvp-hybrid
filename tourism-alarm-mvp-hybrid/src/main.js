@@ -12,6 +12,7 @@ import {
   daytripPressure, combinedPressure, PEAK_OCCUPANCY
 } from './lib/pressure.js';
 import { calendarFactor, dayOfYear } from './lib/calendar.js';
+import { applySignals, indexSignals, CONFIDENCE_LABELS } from './lib/signals.js';
 
 const DATA_URLS = ['/data/current.json', '/data/last-good.json'];
 const HORIZON_DAYS = 2; // hoy y mañana
@@ -51,7 +52,8 @@ const state = {
   day: 0,             // 0 = hoy, 1 = mañana
   weather: null,      // array paralelo a data.weather_points
   intensities: new Map(),
-  breakdown: new Map()
+  breakdown: new Map(),
+  confidence: new Map()
 };
 
 function dateForDay(offset) {
@@ -60,6 +62,9 @@ function dateForDay(offset) {
   date.setDate(date.getDate() + offset);
   return date;
 }
+
+const pad = n => String(n).padStart(2, '0');
+const isoDay = date => `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
 
 // ────────────────────────────────────────────────────────────── cálculo ──
 
@@ -80,16 +85,30 @@ function computeIntensities() {
   const doy = dayOfYear(date);
   const calendar = calendarFactor(date);
 
+  // Señales aprobadas para ese día, si las hay.
+  const signalsByMunicipality = indexSignals(
+    data.signals?.days?.[isoDay(date)] || [],
+    isoDay(date)
+  );
+
   state.intensities = new Map();
   state.breakdown = new Map();
+  state.confidence = new Map();
 
   for (const municipality of data.municipalities) {
     const seasonal = occupancyOnDay(data.occupancy_by_brand?.[municipality.brand], doy);
     const weather = weatherFor(municipality, day);
     const dayFactor = calendar.factor * crowdFactor(weather);
 
-    // Turismo que pernocta: plazas del IDESCAT × ocupación esperada.
-    const overnight = intensityFor(municipality, clamp(seasonal * dayFactor, 0.02, 1));
+    // Ocupación estimada por el modelo, antes de cualquier dato real.
+    const estimated = clamp(seasonal * dayFactor, 0.02, 1);
+
+    // Si hay señales aprobadas, corrigen la ocupación estimada.
+    const signals = signalsByMunicipality.get(municipality.id) || [];
+    const resolved = applySignals(municipality, estimated, signals);
+
+    // Turismo que pernocta: plazas del IDESCAT × ocupación resultante.
+    const overnight = resolved.intensity;
 
     // Turismo de día: no aparece en ninguna estadística de alojamiento, pero
     // es lo que llena las playas cercanas a Barcelona.
@@ -97,6 +116,7 @@ function computeIntensities() {
 
     state.intensities.set(municipality.id, combinedPressure(overnight, daytrip));
     state.breakdown.set(municipality.id, { overnight, daytrip });
+    state.confidence.set(municipality.id, resolved);
   }
 
   return calendar;
@@ -320,6 +340,38 @@ function popupHtml(municipality) {
        </p>`
     : '';
 
+  // De qué está hecha la cifra: modelo, o modelo corregido con datos reales.
+  const resolved = state.confidence.get(municipality.id);
+  const badge = CONFIDENCE_LABELS[resolved?.confidence || 'estimated'];
+  const sources = (resolved?.provenance.sources || [])
+    .filter(source => source.url)
+    .map(source => `<a href="${source.url}" target="_blank" rel="noopener">${source.source_id}</a>`)
+    .join(' · ');
+
+  // El color mide saturación ABSOLUTA. Cuando además hay una medición, se
+  // muestra aparte cuánto se desvía de lo normal para ese día: son dos
+  // preguntas distintas ("¿estará lleno?" y "¿está más vacío que de
+  // costumbre?") y mezclarlas en un solo número las estropea las dos.
+  const measured = resolved?.provenance.measured;
+  const expected = resolved?.provenance.base;
+  let delta = '';
+  if (measured !== null && measured !== undefined && expected !== undefined) {
+    const diff = measured - expected;
+    if (Math.abs(diff) >= 0.1) {
+      delta = `<p class="delta ${diff < 0 ? 'below' : 'above'}">
+        Ocupación medida ${(measured * 100).toFixed(0)}% ·
+        ${diff < 0 ? 'por debajo' : 'por encima'} de lo normal
+        (el modelo esperaba ${(expected * 100).toFixed(0)}%)
+      </p>`;
+    }
+  }
+
+  const provenance = `
+    ${delta}
+    <p class="provenance" title="${badge.note}">
+      ${badge.icon} ${badge.label}${sources ? ` — ${sources}` : ''}
+    </p>`;
+
   return `
     <div class="muni-popup">
       <h4>${municipality.coastal ? '🏖️ ' : ''}${municipality.name}</h4>
@@ -330,7 +382,34 @@ function popupHtml(municipality) {
       </div>
       ${capacity}
       ${split}
+      ${provenance}
     </div>`;
+}
+
+/**
+ * Antigüedad de los datos reales. Que el mapa funcione sin agentes es una
+ * virtud, pero el usuario tiene que poder distinguir "hay señal fresca" de
+ * "esto es solo el modelo".
+ */
+function renderFreshness() {
+  const box = el('freshness');
+  const asOf = state.data?.signals?.as_of;
+
+  if (!asOf) {
+    box.textContent = 'Solo modelo · sin datos de agentes';
+    box.dataset.state = 'model';
+    return;
+  }
+
+  const ageHours = (Date.now() - new Date(asOf).getTime()) / 3600000;
+  const age = ageHours < 1
+    ? 'hace menos de 1 h'
+    : ageHours < 24
+      ? `hace ${Math.round(ageHours)} h`
+      : `hace ${Math.round(ageHours / 24)} d`;
+
+  box.textContent = `Datos de agentes · ${age}`;
+  box.dataset.state = ageHours < 12 ? 'fresh' : ageHours < 48 ? 'aging' : 'stale';
 }
 
 // ───────────────────────────────────────────────────────────── carga ─────
@@ -381,6 +460,8 @@ async function load({ bustCache = false } = {}) {
 
     el('legend-coverage').textContent =
       `${state.choropleth.matched}/${state.choropleth.total} municipios`;
+
+    renderFreshness();
 
     setStatus(degraded ? 'warning' : null,
       degraded ? 'Mostrando datos de respaldo: no se pudo leer el fichero actual.' : '');

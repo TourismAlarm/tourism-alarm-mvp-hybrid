@@ -35,6 +35,7 @@ desde el navegador al abrir la página.
 | `npm run data:build` | Regenera `public/data/current.json` desde los CSV del IDESCAT |
 | `npm run data:verify` | Comprueba cobertura, costa y coherencia (`npm run test:data`) |
 | `npm run data:promote` | Copia `current.json` a `last-good.json` |
+| `npm test` | Pruebas de la lógica de señales + verificación de datos |
 
 ## Qué es dato y qué es estimación
 
@@ -169,6 +170,84 @@ El TopoJSON guarda el código IDESCAT como número, así que los municipios de l
 provincia de Barcelona pierden el cero inicial (`080193` → `80193`). Todo el
 código normaliza los identificadores con `normalizeId()` antes de cruzarlos;
 saltarse ese paso deja el mapa sin colorear.
+
+## Señales: cómo un dato real corrige una estimación
+
+El mapa parte de una base estimada. Cuando un agente trae una medición de
+verdad, esa señal la corrige — pero sin que se pierda de vista qué parte es
+medición y qué parte sigue siendo modelo.
+
+**Reglas** (`src/lib/signals.js`, 26 pruebas en `npm run test:signals`):
+
+1. Una ocupación **medida sustituye a la ocupación estimada**, no a la
+   intensidad final. Así la fórmula sigue aplicando densidad y volumen igual
+   para todos y las cifras siguen siendo comparables.
+2. Una medición **envejece**. La de esta mañana manda del todo; a partir de
+   6 h se va mezclando con la base, y a las 48 h conserva un peso mínimo. Una
+   medición de anteayer sobre hoy no es una medición, es un pronóstico.
+3. Los **eventos suman**, no sustituyen, y con tope (+0,35 como mucho entre
+   todos). Un concierto se añade a lo que ya hubiera.
+4. **Prioridad**: medido > derivado > estimado. A igual método, gana el más
+   reciente.
+5. Cada resultado dice de qué está hecho: 🟢 Medido, 🟡 Mixto, ⚪ Estimado, con
+   enlace a la fuente.
+
+### Absoluto frente a "lo normal"
+
+El color del mapa mide **saturación absoluta**. Si un agente mide que Salou
+está al 30% cuando el modelo esperaba 74%, el municipio *sigue* saliendo en
+rojo: 30% de Salou son 736 plazas ocupadas por km², más que muchos pueblos al
+100%. Para decidir a qué playa ir, lo que importa es que estará lleno.
+
+"Está más vacío de lo normal" es una pregunta distinta, y se responde aparte,
+en la ficha:
+
+```
+Ocupación medida 30% · por debajo de lo normal (el modelo esperaba 74%)
+🟢 Medido — ajuntament-salou
+```
+
+Mezclar las dos en un solo número estropearía las dos.
+
+### Límite conocido de la escala
+
+Los destinos más densos **saturan el índice**. Salou (2.452 plazas/km²) llega
+al tope del término de densidad en cuanto pasa del 33% de ocupación, y del de
+volumen sobre el 67%. Es decir: entre "Salou al 70%" y "Salou al 100%" el color
+apenas cambia.
+
+Subir los topes lo mejora poco —satura por las dos vías— y a cambio baja los
+municipios en nivel crítico de 22 a 10 en agosto, debilitando la alarma para
+todos los demás. Por eso se mantiene la calibración actual y la desviación
+respecto a lo normal se muestra por separado.
+
+## Base de datos (Supabase)
+
+Los agentes escriben en Supabase; **el mapa público no la lee nunca** — lee el
+snapshot estático. Por eso no hay ningún acceso anónimo: todas las tablas son
+solo para el usuario autenticado.
+
+| Tabla | Para qué |
+| --- | --- |
+| `sources` | Fuentes registradas y su solidez (`measured`/`derived`/`estimated`) |
+| `signals` | Cola de señales con procedencia y estado `pending`/`approved`/`rejected` |
+| `agent_runs` | Ejecuciones de agentes: alimenta el "ver a los agentes trabajar" |
+
+La regla "sin procedencia no hay señal" está impuesta **en el esquema**, no por
+convenio:
+
+```sql
+constraint signals_need_provenance
+  check (method = 'derived' or source_url is not null)
+```
+
+La base de datos rechaza una cifra medida sin enlace a su fuente, un valor
+fuera de 0..1, un `method` inventado o un duplicado. No depende de que ningún
+agente se porte bien.
+
+`signals.baseline_value` guarda lo que predecía el modelo cuando llegó la
+señal. Acumulado, es lo que permitirá recalibrar las capas estimadas con datos
+reales en vez de con suposiciones.
 
 ## Siguiente paso
 

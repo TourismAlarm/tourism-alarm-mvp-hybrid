@@ -273,6 +273,10 @@ async function main() {
       }
     },
     distribution,
+    // Señales aprobadas que corrigen la estimación. Lo rellena
+    // scripts/publish-snapshot.js con lo que haya pasado la revisión; vacío
+    // significa "solo modelo", que es un estado válido y honesto.
+    signals: { as_of: null, days: {} },
     occupancy_by_brand: occupancy,
     weather_points: weatherPoints,
     municipalities
