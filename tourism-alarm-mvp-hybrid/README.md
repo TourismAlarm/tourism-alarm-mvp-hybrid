@@ -35,7 +35,10 @@ desde el navegador al abrir la página.
 | `npm run data:build` | Regenera `public/data/current.json` desde los CSV del IDESCAT |
 | `npm run data:verify` | Comprueba cobertura, costa y coherencia (`npm run test:data`) |
 | `npm run data:promote` | Copia `current.json` a `last-good.json` |
-| `npm test` | Pruebas de la lógica de señales + verificación de datos |
+| `npm test` | Todas las pruebas (señales, publicación, datos) |
+| `npm run collect:check` | Comprueba credenciales y permisos de Supabase |
+| `npm run collect` | Lanza los recolectores |
+| `npm run publish` | Publica en el snapshot lo que hayas aprobado |
 
 ## Qué es dato y qué es estimación
 
@@ -150,8 +153,17 @@ src/
   data/fetchData.js        carga con respaldo y validación de formato
   data/weather.js          cliente de Open-Meteo y derivadas
   map/municipalityLayer.js coropleta Leaflet
+  lib/signals.js           cómo un dato real corrige una estimación
+  review.js                lógica de la página de revisión
   style.css                estilos
+openclaw/tourism-alarm/    skill lista para OpenClaw (SKILL.md + .ps1)
+revisar.html               página privada de revisión (login Supabase)
 scripts/
+  collect/lib.js           marco de recolectores
+  collect/run-all.js       orquestador que llama el cron
+  collect/check.js         comprobación de conexión
+  collect/template.js      plantilla para una fuente nueva
+  publish-snapshot.js      aprobadas → snapshot
   build-map-data.js        genera public/data/current.json
   verify-map-data.js       valida cobertura, costa y coherencia
   promote-fallback.js      current.json → last-good.json
@@ -232,6 +244,7 @@ solo para el usuario autenticado.
 | `sources` | Fuentes registradas y su solidez (`measured`/`derived`/`estimated`) |
 | `signals` | Cola de señales con procedencia y estado `pending`/`approved`/`rejected` |
 | `agent_runs` | Ejecuciones de agentes: alimenta el "ver a los agentes trabajar" |
+| `run_requests` | Buzón para el botón "Lanzar ahora" de la página privada |
 
 La regla "sin procedencia no hay señal" está impuesta **en el esquema**, no por
 convenio:
@@ -249,13 +262,87 @@ agente se porte bien.
 señal. Acumulado, es lo que permitirá recalibrar las capas estimadas con datos
 reales en vez de con suposiciones.
 
+## Recolección de datos con agentes
+
+Los agentes corren en el ordenador de casa (OpenClaw), no en CI: desde una IP
+doméstica los portales bloquean mucho menos, y así hay control manual.
+
+```
+agente (PC) → recoge con su fuente → Supabase: estado "pendiente"
+                                          ↓
+                    página privada /revisar.html: dato + enlace a la fuente
+                                          ↓
+                                  apruebas / rechazas
+                                          ↓
+              publish-snapshot.js → current.json → mapa público (estático)
+```
+
+### Puesta en marcha
+
+```bash
+cp .env.example .env          # y rellena SUPABASE_SERVICE_KEY
+npm run collect:check         # comprueba credenciales, tablas y permisos
+npm run collect               # lanza los recolectores
+npm run publish               # lo aprobado pasa al snapshot
+```
+
+Para entrar en `/revisar.html` hace falta un usuario: Supabase → Authentication
+→ Add user.
+
+### Escribir un recolector
+
+Copia `scripts/collect/template.js` con otro nombre en el mismo directorio;
+`run-all.js` lo encuentra solo. Tiene que exportar `SOURCE_ID` y `collect()`, y
+el `SOURCE_ID` debe existir en la tabla `sources`.
+
+**Los recolectores son scripts, no turnos del LLM.** Para APIs y páginas
+estáticas sale más barato, rápido y controlable. Si un LLM interviene, es solo
+para normalizar texto que ya existe ("Festa Major, 12-15 agost" → fechas
+estructuradas), nunca para producir un número que la fuente no diga.
+
+### Disparo manual
+
+La página de revisión y los agentes no pueden hablarse directamente (una está
+en Vercel, los otros en casa). El botón "Lanzar ahora" deja una fila en
+`run_requests`; el cron la recoge en su siguiente pasada y la marca como
+atendida.
+
+### Integración con OpenClaw
+
+En `openclaw/tourism-alarm/` hay una skill lista: `SKILL.md` con las
+instrucciones y la entrada de `cron/jobs.json`, más `run-collectors.ps1`.
+
+A diferencia del patrón habitual de este sistema, la credencial **no va dentro
+del script**: es la `service_role` de Supabase, que salta todas las políticas
+de seguridad, así que vive en `.env` (ignorado por git) y no en un fichero que
+pueda acabar publicado.
+
+## Por qué los agentes de `agents/` no alimentan el mapa
+
+`agents/daily-occupation-agent.js` le pide a Gemini que **estime** la ocupación
+de cada zona. El modelo no tiene datos: se inventa la cifra y le añade una
+justificación que suena creíble. En `data/daily-snapshots/latest.json` quedó
+así:
+
+```json
+"occupation_percentage": 25,
+"weather_impact": 0,
+"reasoning": "Es noviembre, temporada baja... el clima no tiene impacto significativo."
+```
+
+Ese 25% no salió de ninguna parte, y `weather_impact: 0` porque no consultó
+ningún parte meteorológico. Es el mismo mecanismo que llenó el mapa de
+municipios inventados.
+
+Esos scripts se conservan como referencia histórica, pero no tocan
+`public/data/current.json`. La cola de señales existe precisamente para que eso
+no pueda repetirse.
+
 ## Siguiente paso
 
-Los agentes de `agents/` (enriquecimiento con LLM, snapshots diarios) **no
-alimentan el mapa** todavía: la aplicación solo lee `public/data/current.json`.
-La idea es que más adelante recopilen datos diarios reales de ocupación y
-sustituyan las capas modeladas —el factor de calendario y el turismo de día—
-por mediciones.
+Cuando haya semanas de mediciones acumuladas, `signals.baseline_value` permite
+comparar lo que predijo el modelo con lo que pasó de verdad, y sustituir las
+capas estimadas —el factor de calendario y el turismo de día— por datos.
 
 ## Licencia
 
