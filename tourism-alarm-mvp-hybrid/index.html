@@ -2,7 +2,8 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#f4f6f8" />
     <title>Tourism Alarm Catalunya — Saturación turística hoy y mañana</title>
     <meta
       name="description"
@@ -24,7 +25,21 @@
         <button id="btn-reset" type="button" title="Volver a la vista de Catalunya">🗺️ Catalunya</button>
       </div>
 
-      <aside class="panel info-panel">
+      <aside class="panel info-panel" id="info-panel" data-sheet="peek">
+        <!-- En móvil el panel es una hoja inferior: el asa la despliega para
+             leerlo entero y la repliega para recuperar el mapa. En escritorio
+             está oculta. -->
+        <button
+          class="sheet-handle"
+          id="sheet-handle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="info-panel"
+        >
+          <span class="grabber" aria-hidden="true"></span>
+          <span class="sr-only">Desplegar el panel</span>
+        </button>
+
         <header>
           <span class="mark" aria-hidden="true">🚨</span>
           <h2>Tourism Alarm</h2>
@@ -37,6 +52,23 @@
         </div>
         <p class="day-date" id="day-date">—</p>
         <p class="day-note" id="day-note"></p>
+
+        <!-- Buscador: son 947 municipios y el mapa solo deja llegar a los que
+             se ven. Es la vía para "¿cómo está mi pueblo hoy?". -->
+        <div class="search">
+          <input
+            id="search-input"
+            type="search"
+            class="search-input"
+            placeholder="Buscar un municipio…"
+            aria-label="Buscar un municipio"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+            maxlength="60"
+          />
+          <div class="search-results" id="search-results" role="listbox" aria-label="Municipios encontrados" hidden></div>
+        </div>
 
         <section class="section">
           <h3>🏖️ Mejores playas</h3>
@@ -65,7 +97,7 @@
         </section>
       </aside>
 
-      <aside class="panel legend">
+      <aside class="panel legend" id="legend">
         <h3>Afluencia prevista</h3>
         <div id="legend-items"></div>
         <div class="legend-footer">

@@ -12,8 +12,19 @@ decide.
 - **🏖️ Mejores playas**: los municipios costeros ordenados por buen tiempo y
   poca gente. Es la respuesta directa a "¿a qué playa voy?".
 - **Más saturados**: dónde no ir ese día.
+- **Buscador de municipio**: son 947 y por el mapa solo se llega a los que se
+  ven. Es la vía para "¿cómo está mi pueblo hoy?" — se escribe el nombre (sin
+  importar acentos) y el mapa se sitúa encima con su ficha abierta.
 - **Ficha por municipio**: previsión meteorológica, afluencia prevista y de qué
   se compone.
+
+### En el móvil
+
+La pregunta se hace desde el teléfono, así que el panel es una hoja inferior
+con dos posiciones: replegada deja el mapa a la vista y ya muestra el día y el
+ranking de playas; el asa la despliega para leerla entera. Al elegir un
+municipio —del ranking o del buscador— se repliega sola y el mapa hace zoom
+sobre él.
 
 ## Arranque rápido
 
@@ -147,7 +158,7 @@ Resultado: **70 municipios costeros**, sin falsos positivos ni ausencias.
 
 ```
 src/
-  main.js                  arranque, panel, pestañas hoy/mañana
+  main.js                  arranque, panel, pestañas hoy/mañana, buscador
   lib/pressure.js          fórmula de intensidad (la comparten build y navegador)
   lib/calendar.js          festivos de Catalunya y día de la semana
   data/fetchData.js        carga con respaldo y validación de formato

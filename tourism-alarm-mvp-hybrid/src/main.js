@@ -8,8 +8,7 @@ import { loadTourismData, DataLoadError } from './data/fetchData.js';
 import { fetchForecast, crowdFactor, beachScore, describeWeather } from './data/weather.js';
 import { createMunicipalityLayer } from './map/municipalityLayer.js';
 import {
-  LEVELS, levelFor, intensityFor, occupancyOnDay, clamp,
-  daytripPressure, combinedPressure, PEAK_OCCUPANCY
+  LEVELS, levelFor, occupancyOnDay, clamp, daytripPressure, combinedPressure
 } from './lib/pressure.js';
 import { calendarFactor, dayOfYear } from './lib/calendar.js';
 import { applySignals, indexSignals, CONFIDENCE_LABELS } from './lib/signals.js';
@@ -141,18 +140,35 @@ function initMap() {
   return map;
 }
 
-// El panel derecho tapa el mapa en escritorio; en móvil ocupa la franja
-// inferior. El hueco a reservar cambia de lado.
+const isNarrow = () => window.innerWidth <= 820;
+
+// El panel derecho tapa el mapa en escritorio; en móvil es la hoja inferior y
+// su alto cambia según esté replegada o desplegada, así que se mide en vez de
+// darlo por supuesto: con un porcentaje fijo Catalunya quedaba descentrada.
 function fitPadding() {
-  const narrow = window.innerWidth <= 820;
-  return narrow
-    ? { paddingTopLeft: [16, 128], paddingBottomRight: [16, Math.round(window.innerHeight * 0.44)] }
-    : { paddingTopLeft: [24, 24], paddingBottomRight: [330, 24] };
+  if (!isNarrow()) return { paddingTopLeft: [24, 24], paddingBottomRight: [330, 24] };
+
+  const height = box => Math.round(box?.getBoundingClientRect().height || 0);
+  const top = height(el('legend')) + 62;   // 62: los controles y sus márgenes
+  const bottom = Math.min(height(el('info-panel')), Math.round(window.innerHeight * 0.55));
+
+  return { paddingTopLeft: [16, top + 12], paddingBottomRight: [16, bottom + 12] };
 }
 
 function fitCatalunya() {
-  if (state.bounds) state.map.fitBounds(state.bounds, fitPadding());
-  else state.map.setView(CATALUNYA_VIEW.center, CATALUNYA_VIEW.zoom);
+  if (!state.bounds) {
+    state.map.setView(CATALUNYA_VIEW.center, CATALUNYA_VIEW.zoom);
+    return;
+  }
+
+  // `maxBounds` impide que el mapa se pierda por el Atlántico, pero cuando la
+  // caja resultante es más pequeña que la ventana Leaflet la centra a la
+  // fuerza y anula el desplazamiento que pide el encuadre. En móvil eso dejaba
+  // media Catalunya debajo de la hoja. Se libera antes de encajar y se vuelve
+  // a poner englobando la vista que ha quedado.
+  state.map.setMaxBounds(null);
+  state.map.fitBounds(state.bounds, { ...fitPadding(), animate: false });
+  state.map.setMaxBounds(state.bounds.pad(0.35).extend(state.map.getBounds()));
 }
 
 // ──────────────────────────────────────────────────────── estado visual ──
@@ -300,6 +316,100 @@ function renderAll() {
   renderStats();
   renderBeaches();
   renderBusiest();
+
+  // Con la lista de búsqueda abierta, cambiar de día dejaría porcentajes de
+  // ayer a la vista.
+  if (!el('search-results').hidden) renderSearch(el('search-input').value);
+}
+
+// ──────────────────────────────────────────────────────────── buscador ───
+
+// Son 947 municipios y el mapa solo permite llegar a los que se ven. Sin
+// buscador no hay forma de responder a "¿cómo está mi pueblo hoy?".
+
+// Sin acentos y en minúsculas: quien busca "berga" o "Bergà" espera lo mismo,
+// y en un teclado de móvil nadie pone la diéresis de "Lloçà".
+const normalize = text =>
+  text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+
+const SEARCH_LIMIT = 8;
+
+function matchMunicipalities(query) {
+  const needle = normalize(query.trim());
+  if (needle.length < 2) return [];
+
+  const starts = [];
+  const contains = [];
+
+  for (const municipality of state.data.municipalities) {
+    const name = normalize(municipality.name);
+    if (name.startsWith(needle)) starts.push(municipality);
+    else if (name.includes(needle)) contains.push(municipality);
+    if (starts.length >= SEARCH_LIMIT) break;
+  }
+
+  // Los que empiezan por lo tecleado van primero: "Sant" debe ofrecer
+  // "Sant Adrià" antes que "Vilassar de Mar" por contener "sant".
+  return [...starts, ...contains].slice(0, SEARCH_LIMIT);
+}
+
+function closeSearch() {
+  const results = el('search-results');
+  results.hidden = true;
+  results.innerHTML = '';
+}
+
+function renderSearch(query) {
+  const results = el('search-results');
+
+  if (!state.data || normalize(query.trim()).length < 2) {
+    closeSearch();
+    return;
+  }
+
+  const found = matchMunicipalities(query);
+
+  if (!found.length) {
+    results.innerHTML = '<p class="search-empty">Ningún municipio con ese nombre.</p>';
+    results.hidden = false;
+    return;
+  }
+
+  results.innerHTML = found.map(municipality => {
+    const intensity = intensityOf(municipality.id);
+    const level = levelFor(intensity);
+    return `
+      <button class="search-result" type="button" role="option" aria-selected="false"
+              data-id="${municipality.id}">
+        <span class="name">${municipality.coastal ? '🏖️ ' : ''}${municipality.name}</span>
+        <span class="where">${municipality.comarca}</span>
+        <span class="value" style="color:${TEXT_COLOR[level.key]}">${(intensity * 100).toFixed(0)}%</span>
+      </button>`;
+  }).join('');
+
+  results.hidden = false;
+}
+
+// ────────────────────────────────────────────── hoja inferior (móvil) ────
+
+function setSheet(open, { refit = true } = {}) {
+  el('info-panel').dataset.sheet = open ? 'full' : 'peek';
+
+  const handle = el('sheet-handle');
+  handle.setAttribute('aria-expanded', String(open));
+  handle.querySelector('.sr-only').textContent =
+    open ? 'Replegar el panel' : 'Desplegar el panel';
+
+  // El hueco libre del mapa cambia, así que Catalunya se recoloca. Se espera a
+  // que acabe la transición de 220 ms: antes, la hoja aún tapa lo que no toca.
+  if (refit) setTimeout(fitCatalunya, 240);
+}
+
+/** Lleva el mapa a un municipio; en móvil repliega la hoja para que se vea. */
+function focusMunicipality(id) {
+  // Sin `refit`: el encuadre lo manda el municipio, no Catalunya entera.
+  if (isNarrow()) setSheet(false, { refit: false });
+  state.choropleth?.focus(state.map, id);
 }
 
 // ───────────────────────────────────────────────────── ficha de municipio ─
@@ -453,8 +563,7 @@ async function load({ bustCache = false } = {}) {
     state.choropleth.layer.addTo(state.map);
 
     state.bounds = state.choropleth.layer.getBounds();
-    state.map.setMaxBounds(state.bounds.pad(0.35));
-    fitCatalunya();
+    fitCatalunya(); // fija también el límite de desplazamiento
 
     renderAll();
 
@@ -503,9 +612,54 @@ function bindEvents() {
   for (const listId of ['beach-list', 'busiest-list']) {
     el(listId).addEventListener('click', event => {
       const item = event.target.closest('.rank-item');
-      if (item) state.choropleth?.focus(state.map, item.dataset.id);
+      if (item) focusMunicipality(item.dataset.id);
     });
   }
+
+  // ── buscador ──
+  const search = el('search-input');
+
+  search.addEventListener('input', () => renderSearch(search.value));
+
+  search.addEventListener('focus', () => {
+    // Con la hoja replegada la lista de resultados caería fuera de pantalla.
+    if (isNarrow()) setSheet(true, { refit: false });
+    renderSearch(search.value);
+  });
+
+  search.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+      search.value = '';
+      closeSearch();
+      search.blur();
+      return;
+    }
+    // Enter sin elegir nada va al primer resultado: es lo que espera quien
+    // escribe el nombre entero y pulsa intro.
+    if (event.key === 'Enter') {
+      const first = el('search-results').querySelector('.search-result');
+      if (first) first.click();
+    }
+  });
+
+  el('search-results').addEventListener('click', event => {
+    const item = event.target.closest('.search-result');
+    if (!item) return;
+    search.value = '';
+    closeSearch();
+    search.blur();
+    focusMunicipality(item.dataset.id);
+  });
+
+  // Un clic fuera cierra la lista; si no, se queda flotando sobre el ranking.
+  document.addEventListener('click', event => {
+    if (!event.target.closest('.search')) closeSearch();
+  });
+
+  // ── hoja inferior (móvil) ──
+  el('sheet-handle').addEventListener('click', () => {
+    setSheet(el('info-panel').dataset.sheet !== 'full');
+  });
 
   let resizeTimer;
   window.addEventListener('resize', () => {
