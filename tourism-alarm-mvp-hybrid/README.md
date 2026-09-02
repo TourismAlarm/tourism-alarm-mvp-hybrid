@@ -1,22 +1,19 @@
 # 🚨 Tourism Alarm Catalunya
 
-Mapa de **presión turística de los 947 municipios de Catalunya**, calculado a
-partir de datos oficiales del IDESCAT. Cada municipio se colorea según cuánta
-capacidad turística soporta su territorio y cuánta de esa capacidad está
-realmente ocupada en el mes que se consulte.
+**¿Cuánta gente hay hoy y mañana en cada municipio de Catalunya, y a qué playa
+conviene ir?** Eso es lo único que responde la aplicación. Se abre, se mira, se
+decide.
 
-![Coropleta de Catalunya con la costa en rojo y el interior en verde](https://img.shields.io/badge/municipios-947%2F947-brightgreen)
+## Qué muestra
 
-## ¿Qué muestra el mapa?
-
-- **Coropleta de los 947 municipios**, sin huecos: cada polígono tiene datos.
-- **Selector de mes**: la intensidad se recalcula para los 12 meses del año con
-  la estacionalidad real de cada marca turística. En agosto la costa se pone en
-  rojo; en enero solo Barcelona y el Pirineo mantienen presión.
-- **Ranking de los 8 municipios con más presión** en el mes seleccionado; al
-  hacer clic el mapa hace zoom sobre el municipio.
-- **Ficha por municipio**: plazas hoteleras, de camping y de turismo rural,
-  plazas por km², superficie y comarca.
+- **Hoy / Mañana**: dos pestañas, horizonte de 48 horas. Nada más.
+- **Coropleta de los 947 municipios**, coloreada por la afluencia prevista de
+  ese día.
+- **🏖️ Mejores playas**: los municipios costeros ordenados por buen tiempo y
+  poca gente. Es la respuesta directa a "¿a qué playa voy?".
+- **Más saturados**: dónde no ir ese día.
+- **Ficha por municipio**: previsión meteorológica, afluencia prevista y de qué
+  se compone.
 
 ## Arranque rápido
 
@@ -25,65 +22,95 @@ npm install
 npm run dev        # http://localhost:5173
 ```
 
-Los datos del mapa (`public/data/current.json`) están versionados, así que la
-aplicación funciona sin ejecutar ningún script previo.
+Los datos (`public/data/current.json`) están versionados: la aplicación
+funciona sin ejecutar ningún script previo. La previsión meteorológica se pide
+desde el navegador al abrir la página.
 
 ## Comandos
 
 | Comando | Qué hace |
 | --- | --- |
 | `npm run dev` | Servidor de desarrollo |
-| `npm run build` | Regenera los datos y compila a `dist/` |
-| `npm run preview` | Sirve el build de producción |
+| `npm run build` | Genera datos → verifica → promueve respaldo → compila |
 | `npm run data:build` | Regenera `public/data/current.json` desde los CSV del IDESCAT |
-| `npm run data:verify` | Comprueba que los datos cubren los 947 municipios (`npm run test:data`) |
+| `npm run data:verify` | Comprueba cobertura, costa y coherencia (`npm run test:data`) |
+| `npm run data:promote` | Copia `current.json` a `last-good.json` |
+| `npm test` | Todas las pruebas (señales, publicación, datos) |
+| `npm run collect:check` | Comprueba credenciales y permisos de Supabase |
+| `npm run collect` | Lanza los recolectores |
+| `npm run publish` | Publica en el snapshot lo que hayas aprobado |
 
-## De dónde salen los datos
+## Qué es dato y qué es estimación
 
-Todo el contenido del mapa procede de ficheros oficiales que están en el
-repositorio, en `dataidescat-csv/Capacidad hotelera/`:
+Esto importa: la aplicación mezcla una base estadística sólida con capas
+modeladas, y conviene saber cuál es cuál.
 
-| Fuente | Fichero | Qué aporta |
+| Capa | Origen | Solidez |
 | --- | --- | --- |
-| IDESCAT t6031 (2023) | `t6031mun202300.csv` | Plazas hoteleras por municipio |
-| IDESCAT t6036 (2024) | `t6036mun202400.csv` | Plazas de camping por municipio |
-| IDESCAT t6039 (2024) | `t6039mun202400.csv` | Plazas de turismo rural por municipio |
-| IDESCAT turhot | `idescat-turhot-*.csv` | Pernoctaciones mensuales por marca turística (2023-2025) |
-| ICGC / IDESCAT | `public/geojson/cat-municipis.json` | Límites municipales, comarca, provincia y superficie |
+| **Capacidad turística** por municipio | IDESCAT: plazas hoteleras (t6031, 2023), camping (t6036, 2024) y turismo rural (t6039, 2024) | 🟢 Dato oficial, 947/947 municipios |
+| **Estacionalidad** por marca turística | IDESCAT turhot: 207 periodos mensuales de pernoctaciones (2023-2025) | 🟢 Dato oficial |
+| **Geometría, comarca, superficie** | ICGC/IDESCAT (TopoJSON) | 🟢 Dato oficial |
+| **Municipios costeros** | Deducido de la topología (ver abajo) | 🟢 70 municipios, verificado |
+| **Meteorología de hoy y mañana** | Open-Meteo, en vivo desde el navegador | 🟢 Previsión real |
+| **Día de la semana y festivos** | Modelo propio; festivos de Catalunya con Pascua calculada | 🟡 Modelo documentado |
+| **Turismo de día (excursionistas)** | Modelo propio por distancia a núcleos urbanos | 🟠 Estimación |
 
-## Cómo se calcula la intensidad
+### La limitación importante
 
-No hay población oficial por municipio en el repositorio, así que el índice se
-apoya en dos magnitudes que sí son verificables:
+El IDESCAT solo publica **plazas de alojamiento**, es decir, turismo que
+pernocta. Para "¿a qué playa voy hoy?" eso se queda corto: Montgat o
+Castelldefels apenas tienen hoteles y un sábado de agosto están llenas de gente
+que va y vuelve desde Barcelona en el mismo día.
 
-1. **Densidad** — plazas turísticas por km². Es lo que mide la saturación real
-   del territorio (Salou: 2.452 plazas/km²).
-2. **Volumen** — plazas turísticas totales. Evita que Barcelona quede
-   infravalorada por su superficie (82.470 plazas).
-
-Ambas se escalan logarítmicamente contra anclas **absolutas** —no contra el
-máximo observado— para que el índice siga significando lo mismo cuando el
-IDESCAT publique datos nuevos:
-
-```
-intensidad = 0,62 × log(plazas/km², 1→800) + 0,38 × log(plazas totales, 50→25.000)
-```
-
-La **estacionalidad** se aplica antes de escalar, como tasa de ocupación: las
-plazas existen todo el año, lo que cambia es cuántas están ocupadas. La
-ocupación de cada mes sale de las pernoctaciones reales de su marca turística,
-normalizadas contra su propio mes punta:
+Si solo mirásemos plazas hoteleras, esas playas saldrían como vacías, que es
+justo lo contrario de la realidad. Por eso hay una capa de **turismo de día**
+estimada a partir de la distancia a los grandes núcleos urbanos. Es un modelo,
+no una medición, y la ficha de cada municipio muestra las dos cifras por
+separado para que se vea qué parte es qué:
 
 ```
-ocupación(marca, mes) = pernoctaciones(mes) / pernoctaciones(mes punta) × 0,85
+Pernocta 100% (IDESCAT) · excursión 21% (estimado)
 ```
 
-Por eso Val d'Aran alcanza su máximo en enero y febrero (esquí) mientras la
-Costa Daurada lo hace en agosto.
+Tampoco hay **población municipal** en el repositorio, así que el índice usa
+densidad de plazas por km² en lugar de plazas por habitante, que sería el
+indicador estándar de presión turística.
 
-Cada municipio se asigna a una de las **9 marcas turísticas oficiales** según su
-comarca (`scripts/lib/comarques.js`). Barcelona ciudad es marca propia, igual
-que en las estadísticas del IDESCAT.
+## Cómo se calcula la afluencia
+
+```
+afluencia = máx( turismo que pernocta , turismo de día )
+```
+
+**Turismo que pernocta** — capacidad real modulada por la ocupación esperada:
+
+```
+ocupación(día) = curva estacional de la marca  ×  factor de calendario  ×  factor meteorológico
+
+intensidad = 0,62 × log(plazas/km²  × ocupación, 1→800)
+           + 0,38 × log(plazas totales × ocupación, 50→25.000)
+```
+
+Las escalas logarítmicas van contra anclas **absolutas**, no contra el máximo
+observado, para que el índice siga significando lo mismo cuando el IDESCAT
+publique datos nuevos.
+
+**Curva estacional**: los valores mensuales de pernoctaciones se anclan a
+mediados de mes y se interpolan de forma continua, cerrando el círculo entre
+diciembre y enero. Por eso Val d'Aran alcanza su máximo en enero y febrero
+(esquí) mientras la Costa Daurada lo hace en agosto.
+
+**Factor de calendario**: pesos por día de la semana normalizados para que la
+media semanal sea exactamente 1 (no infla ni desinfla la ocupación anual del
+IDESCAT), más los festivos de Catalunya. La Pascua se calcula con el algoritmo
+de Meeus en vez de escribirse a mano, así que el calendario no caduca.
+
+**Factor meteorológico**: un día de sol y 28° llena las playas; uno de lluvia y
+viento las vacía. Sale de la previsión diaria de Open-Meteo.
+
+**Turismo de día**: decae exponencialmente con la distancia a Barcelona
+(dominante), Tarragona-Reus y Girona, y se modula con la misma estacionalidad y
+el mismo tiempo. En enero nadie va a la playa aunque viva al lado.
 
 ### Niveles
 
@@ -98,22 +125,54 @@ que en las estadísticas del IDESCAT.
 La mayor parte de Catalunya sale en el nivel más bajo, y es correcto: la
 capacidad turística está muy concentrada en el litoral y en el Pirineo.
 
+## Detección de municipios costeros
+
+No hay ningún campo "es costero" en el TopoJSON, así que se deduce en dos pasos
+(`scripts/lib/coastline.js`):
+
+1. Un arco que pertenece a **un solo** municipio es frontera exterior de
+   Catalunya. Los compartidos por dos son fronteras interiores.
+2. De esas fronteras exteriores, la costa es la **envolvente oriental** del
+   territorio. La frontera francesa se descarta porque queda al norte de
+   Portbou (42,44 N), el punto costero más septentrional.
+
+La distancia se mide **punto a segmento**, no punto a vértice: es lo que hace
+que Cambrils cuente como costero, porque su litoral queda retranqueado respecto
+al saliente de Salou y el vértice más cercano está a 7 km.
+
+Resultado: **70 municipios costeros**, sin falsos positivos ni ausencias.
+`npm run data:verify` lo comprueba en cada build.
+
 ## Estructura
 
 ```
 src/
-  main.js                  arranque, panel lateral, selector de mes
+  main.js                  arranque, panel, pestañas hoy/mañana
+  lib/pressure.js          fórmula de intensidad (la comparten build y navegador)
+  lib/calendar.js          festivos de Catalunya y día de la semana
   data/fetchData.js        carga con respaldo y validación de formato
-  map/municipalityLayer.js coropleta Leaflet + paleta + fichas
+  data/weather.js          cliente de Open-Meteo y derivadas
+  map/municipalityLayer.js coropleta Leaflet
+  lib/signals.js           cómo un dato real corrige una estimación
+  review.js                lógica de la página de revisión
   style.css                estilos
+openclaw/tourism-alarm/    skill lista para OpenClaw (SKILL.md + .ps1)
+revisar.html               página privada de revisión (login Supabase)
 scripts/
+  collect/lib.js           marco de recolectores
+  collect/run-all.js       orquestador que llama el cron
+  collect/check.js         comprobación de conexión
+  collect/template.js      plantilla para una fuente nueva
+  publish-snapshot.js      aprobadas → snapshot
   build-map-data.js        genera public/data/current.json
-  verify-map-data.js       valida cobertura y coherencia de los datos
+  verify-map-data.js       valida cobertura, costa y coherencia
+  promote-fallback.js      current.json → last-good.json
   lib/comarques.js         comarcas, provincias y marcas turísticas
   lib/idescat-csv.js       lectores de los CSV del IDESCAT
+  lib/coastline.js         detección de municipios costeros
 public/
   data/current.json        datos que consume el mapa (versionados)
-  data/last-good.json      copia de respaldo
+  data/last-good.json      última versión que pasó la verificación
   geojson/cat-municipis.json  geometría de los 947 municipios
 ```
 
@@ -124,11 +183,166 @@ provincia de Barcelona pierden el cero inicial (`080193` → `80193`). Todo el
 código normaliza los identificadores con `normalizeId()` antes de cruzarlos;
 saltarse ese paso deja el mapa sin colorear.
 
-## Pipelines auxiliares
+## Señales: cómo un dato real corrige una estimación
 
-`agents/` y el resto de `scripts/` contienen experimentos de enriquecimiento con
-LLM y snapshots diarios. **No alimentan el mapa**: la aplicación solo lee
-`public/data/current.json`, que genera `scripts/build-map-data.js`.
+El mapa parte de una base estimada. Cuando un agente trae una medición de
+verdad, esa señal la corrige — pero sin que se pierda de vista qué parte es
+medición y qué parte sigue siendo modelo.
+
+**Reglas** (`src/lib/signals.js`, 26 pruebas en `npm run test:signals`):
+
+1. Una ocupación **medida sustituye a la ocupación estimada**, no a la
+   intensidad final. Así la fórmula sigue aplicando densidad y volumen igual
+   para todos y las cifras siguen siendo comparables.
+2. Una medición **envejece**. La de esta mañana manda del todo; a partir de
+   6 h se va mezclando con la base, y a las 48 h conserva un peso mínimo. Una
+   medición de anteayer sobre hoy no es una medición, es un pronóstico.
+3. Los **eventos suman**, no sustituyen, y con tope (+0,35 como mucho entre
+   todos). Un concierto se añade a lo que ya hubiera.
+4. **Prioridad**: medido > derivado > estimado. A igual método, gana el más
+   reciente.
+5. Cada resultado dice de qué está hecho: 🟢 Medido, 🟡 Mixto, ⚪ Estimado, con
+   enlace a la fuente.
+
+### Absoluto frente a "lo normal"
+
+El color del mapa mide **saturación absoluta**. Si un agente mide que Salou
+está al 30% cuando el modelo esperaba 74%, el municipio *sigue* saliendo en
+rojo: 30% de Salou son 736 plazas ocupadas por km², más que muchos pueblos al
+100%. Para decidir a qué playa ir, lo que importa es que estará lleno.
+
+"Está más vacío de lo normal" es una pregunta distinta, y se responde aparte,
+en la ficha:
+
+```
+Ocupación medida 30% · por debajo de lo normal (el modelo esperaba 74%)
+🟢 Medido — ajuntament-salou
+```
+
+Mezclar las dos en un solo número estropearía las dos.
+
+### Límite conocido de la escala
+
+Los destinos más densos **saturan el índice**. Salou (2.452 plazas/km²) llega
+al tope del término de densidad en cuanto pasa del 33% de ocupación, y del de
+volumen sobre el 67%. Es decir: entre "Salou al 70%" y "Salou al 100%" el color
+apenas cambia.
+
+Subir los topes lo mejora poco —satura por las dos vías— y a cambio baja los
+municipios en nivel crítico de 22 a 10 en agosto, debilitando la alarma para
+todos los demás. Por eso se mantiene la calibración actual y la desviación
+respecto a lo normal se muestra por separado.
+
+## Base de datos (Supabase)
+
+Los agentes escriben en Supabase; **el mapa público no la lee nunca** — lee el
+snapshot estático. Por eso no hay ningún acceso anónimo: todas las tablas son
+solo para el usuario autenticado.
+
+| Tabla | Para qué |
+| --- | --- |
+| `sources` | Fuentes registradas y su solidez (`measured`/`derived`/`estimated`) |
+| `signals` | Cola de señales con procedencia y estado `pending`/`approved`/`rejected` |
+| `agent_runs` | Ejecuciones de agentes: alimenta el "ver a los agentes trabajar" |
+| `run_requests` | Buzón para el botón "Lanzar ahora" de la página privada |
+
+La regla "sin procedencia no hay señal" está impuesta **en el esquema**, no por
+convenio:
+
+```sql
+constraint signals_need_provenance
+  check (method = 'derived' or source_url is not null)
+```
+
+La base de datos rechaza una cifra medida sin enlace a su fuente, un valor
+fuera de 0..1, un `method` inventado o un duplicado. No depende de que ningún
+agente se porte bien.
+
+`signals.baseline_value` guarda lo que predecía el modelo cuando llegó la
+señal. Acumulado, es lo que permitirá recalibrar las capas estimadas con datos
+reales en vez de con suposiciones.
+
+## Recolección de datos con agentes
+
+Los agentes corren en el ordenador de casa (OpenClaw), no en CI: desde una IP
+doméstica los portales bloquean mucho menos, y así hay control manual.
+
+```
+agente (PC) → recoge con su fuente → Supabase: estado "pendiente"
+                                          ↓
+                    página privada /revisar.html: dato + enlace a la fuente
+                                          ↓
+                                  apruebas / rechazas
+                                          ↓
+              publish-snapshot.js → current.json → mapa público (estático)
+```
+
+### Puesta en marcha
+
+```bash
+cp .env.example .env          # y rellena SUPABASE_SERVICE_KEY
+npm run collect:check         # comprueba credenciales, tablas y permisos
+npm run collect               # lanza los recolectores
+npm run publish               # lo aprobado pasa al snapshot
+```
+
+Para entrar en `/revisar.html` hace falta un usuario: Supabase → Authentication
+→ Add user.
+
+### Escribir un recolector
+
+Copia `scripts/collect/template.js` con otro nombre en el mismo directorio;
+`run-all.js` lo encuentra solo. Tiene que exportar `SOURCE_ID` y `collect()`, y
+el `SOURCE_ID` debe existir en la tabla `sources`.
+
+**Los recolectores son scripts, no turnos del LLM.** Para APIs y páginas
+estáticas sale más barato, rápido y controlable. Si un LLM interviene, es solo
+para normalizar texto que ya existe ("Festa Major, 12-15 agost" → fechas
+estructuradas), nunca para producir un número que la fuente no diga.
+
+### Disparo manual
+
+La página de revisión y los agentes no pueden hablarse directamente (una está
+en Vercel, los otros en casa). El botón "Lanzar ahora" deja una fila en
+`run_requests`; el cron la recoge en su siguiente pasada y la marca como
+atendida.
+
+### Integración con OpenClaw
+
+En `openclaw/tourism-alarm/` hay una skill lista: `SKILL.md` con las
+instrucciones y la entrada de `cron/jobs.json`, más `run-collectors.ps1`.
+
+A diferencia del patrón habitual de este sistema, la credencial **no va dentro
+del script**: es la `service_role` de Supabase, que salta todas las políticas
+de seguridad, así que vive en `.env` (ignorado por git) y no en un fichero que
+pueda acabar publicado.
+
+## Por qué los agentes de `agents/` no alimentan el mapa
+
+`agents/daily-occupation-agent.js` le pide a Gemini que **estime** la ocupación
+de cada zona. El modelo no tiene datos: se inventa la cifra y le añade una
+justificación que suena creíble. En `data/daily-snapshots/latest.json` quedó
+así:
+
+```json
+"occupation_percentage": 25,
+"weather_impact": 0,
+"reasoning": "Es noviembre, temporada baja... el clima no tiene impacto significativo."
+```
+
+Ese 25% no salió de ninguna parte, y `weather_impact: 0` porque no consultó
+ningún parte meteorológico. Es el mismo mecanismo que llenó el mapa de
+municipios inventados.
+
+Esos scripts se conservan como referencia histórica, pero no tocan
+`public/data/current.json`. La cola de señales existe precisamente para que eso
+no pueda repetirse.
+
+## Siguiente paso
+
+Cuando haya semanas de mediciones acumuladas, `signals.baseline_value` permite
+comparar lo que predijo el modelo con lo que pasó de verdad, y sustituir las
+capas estimadas —el factor de calendario y el turismo de día— por datos.
 
 ## Licencia
 

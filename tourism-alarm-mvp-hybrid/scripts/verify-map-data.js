@@ -11,6 +11,7 @@ import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import * as topojson from 'topojson-client';
 import { normalizeId } from './lib/comarques.js';
+import { intensityFor, occupancyOnDay } from '../src/lib/pressure.js';
 
 const GEOJSON_PATH = 'public/geojson/cat-municipis.json';
 const DATA_PATHS = ['public/data/current.json', 'public/data/last-good.json'];
@@ -18,9 +19,14 @@ const DATA_PATHS = ['public/data/current.json', 'public/data/last-good.json'];
 const problems = [];
 const warnings = [];
 
+// El fichero principal es bloqueante. El de respaldo solo genera avisos: la
+// aplicación únicamente cae en él si el principal falla, y `npm run build` lo
+// regenera al final del proceso.
+let strict = true;
+
 function check(condition, message) {
   if (condition) return true;
-  problems.push(message);
+  (strict ? problems : warnings).push(message);
   return false;
 }
 
@@ -72,6 +78,30 @@ async function verifyFile(path, geoIds) {
   });
   check(badIntensity.length === 0, `${path}: ${badIntensity.length} municipios con intensidad mensual ausente o fuera de [0,1]`);
 
+  // 3b. La aplicación calcula el día en el navegador: hacen falta la curva de
+  //     ocupación por marca y los puntos de previsión meteorológica.
+  check(
+    data.occupancy_by_brand && Object.keys(data.occupancy_by_brand).length >= 9,
+    `${path}: falta la ocupación mensual de alguna marca turística`
+  );
+  check(
+    Array.isArray(data.weather_points) && data.weather_points.length > 0,
+    `${path}: faltan los puntos de previsión meteorológica`
+  );
+
+  const coastal = municipalities.filter(m => m.coastal);
+  console.log(`   municipios costeros: ${coastal.length}`);
+  check(coastal.length >= 60 && coastal.length <= 80,
+    `${path}: ${coastal.length} municipios costeros, se esperaban ~70`);
+
+  const knownBeaches = ['Salou', 'Lloret de Mar', 'Sitges', 'Cambrils', 'Cadaqués', 'Castelldefels'];
+  const missingBeaches = knownBeaches.filter(name => !coastal.some(m => m.name === name));
+  check(missingBeaches.length === 0, `${path}: no marca como costeros a ${missingBeaches.join(', ')}`);
+
+  const knownInland = ['Girona', 'Vic', 'Lleida', 'Manresa', 'Olot'];
+  const wrongInland = knownInland.filter(name => coastal.some(m => m.name === name));
+  check(wrongInland.length === 0, `${path}: marca como costeros a ${wrongInland.join(', ')}`);
+
   // 4. Cordura: los destinos con más plazas deben salir arriba en agosto.
   const august = [...municipalities]
     .sort((a, b) => (b.monthly_intensity?.[8] ?? 0) - (a.monthly_intensity?.[8] ?? 0))
@@ -86,7 +116,18 @@ async function verifyFile(path, geoIds) {
     `${path}: el top de agosto no incluye ${expected.filter(n => !found.includes(n)).join(', ')}`
   );
 
-  // 5. Variación estacional real: agosto debe superar a enero en la costa.
+  // 5. La curva diaria debe reproducir la estacionalidad: en la Costa Daurada,
+  //    un día de agosto tiene que dar mucho más que uno de enero.
+  const salouDaily = municipalities.find(m => m.name === 'Salou');
+  if (salouDaily && data.occupancy_by_brand) {
+    const curve = data.occupancy_by_brand[salouDaily.brand];
+    const winter = intensityFor(salouDaily, occupancyOnDay(curve, 20));
+    const summer = intensityFor(salouDaily, occupancyOnDay(curve, 227));
+    console.log(`   Salou (curva diaria): 20 ene ${(winter * 100).toFixed(0)}% → 15 ago ${(summer * 100).toFixed(0)}%`);
+    check(summer > winter, `${path}: la curva diaria de Salou no sube en verano`);
+  }
+
+  // 6. Variación estacional real: agosto debe superar a enero en la costa.
   const salou = municipalities.find(m => m.name === 'Salou');
   if (salou?.monthly_intensity) {
     const jan = salou.monthly_intensity[1] ?? salou.monthly_intensity['1'];
@@ -107,6 +148,7 @@ async function main() {
   console.log(`\n🗺️  TopoJSON: ${geoIds.size} municipios`);
 
   for (const path of DATA_PATHS) {
+    strict = path === DATA_PATHS[0];
     await verifyFile(path, geoIds);
   }
 
