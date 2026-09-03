@@ -12,25 +12,13 @@
 //      marca turística (estacionalidad real, 2023-2025)
 //
 // El identificador de cada municipio es el mismo que el del TopoJSON, así que
-// la coropleta casa 947/947 por construcción: no hay municipios sin color ni
-// nombres inventados.
+// la coropleta casa 947/947 por construcción.
 //
-// ── Cómo se calcula la intensidad ───────────────────────────────────────────
-//
-// No disponemos de población oficial por municipio, así que el índice se apoya
-// en dos magnitudes que sí son reales y verificables:
-//
-//   · densidad = plazas turísticas / km²  → mide saturación del territorio
-//   · volumen  = plazas turísticas totales → mide el peso absoluto del destino
-//
-// Ambas se escalan logarítmicamente contra anclas ABSOLUTAS (no contra el
-// máximo observado) para que el índice siga significando lo mismo cuando el
-// IDESCAT publique datos nuevos.
-//
-// La estacionalidad se aplica ANTES de escalar, como una tasa de ocupación:
-// las plazas existen todo el año, lo que cambia es cuántas están ocupadas.
-// La ocupación de cada mes sale de las pernoctaciones reales de su marca
-// turística, normalizadas contra su propio mes punta.
+// La aplicación muestra HOY y MAÑANA, así que este script NO congela una
+// intensidad: publica la capacidad real de cada municipio y la curva de
+// ocupación de su marca turística, y el navegador calcula la cifra del día
+// aplicando calendario y meteorología. La fórmula vive en src/lib/pressure.js
+// y la comparten generador y navegador.
 
 import { writeFile, mkdir, readFile } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
@@ -38,6 +26,17 @@ import * as topojson from 'topojson-client';
 
 import { getComarca, getBrand, normalizeId, PROVINCIES } from './lib/comarques.js';
 import { readCapacityCsv, readMonthlyStaysByBrand } from './lib/idescat-csv.js';
+import { detectCoastalMunicipalities } from './lib/coastline.js';
+import {
+  PEAK_OCCUPANCY,
+  MIN_OCCUPANCY,
+  clamp,
+  round,
+  intensityFor,
+  categorize,
+  occupancyOnDay,
+  daytripAccess
+} from '../src/lib/pressure.js';
 
 const GEOJSON_PATH = 'public/geojson/cat-municipis.json';
 const OUTPUT_PATH = 'public/data/current.json';
@@ -47,29 +46,6 @@ const CAPACITY_SOURCES = {
   camping: 't6036mun202400.csv',
   rural: 't6039mun202400.csv'
 };
-
-// Pesos del índice: la densidad manda (es lo que sufre el residente), pero el
-// volumen absoluto evita que Barcelona quede infravalorada por su superficie.
-const WEIGHT_DENSITY = 0.62;
-const WEIGHT_VOLUME = 0.38;
-
-// Anclas absolutas de las escalas logarítmicas.
-const DENSITY_FLOOR = 1;      // 1 plaza/km² -> 0
-const DENSITY_CEILING = 800;  // 800 plazas/km² -> 1 (Salou real: ~2.450)
-const VOLUME_FLOOR = 50;      // 50 plazas -> 0
-const VOLUME_CEILING = 25000; // 25.000 plazas -> 1 (Barcelona real: 82.470)
-
-// Ocupación del mes punta de cada marca. El resto de meses se escala contra él.
-const PEAK_OCCUPANCY = 0.85;
-const MIN_OCCUPANCY = 0.05;
-
-const round = (n, d = 3) => Number(n.toFixed(d));
-const clamp = (n, lo, hi) => Math.min(hi, Math.max(lo, n));
-
-function logScore(value, floor, ceiling) {
-  if (!(value > floor)) return 0;
-  return clamp(Math.log10(value / floor) / Math.log10(ceiling / floor), 0, 1);
-}
 
 // Centroide del anillo exterior con más superficie (los municipios con islas o
 // enclaves tienen varios polígonos).
@@ -117,20 +93,52 @@ function buildOccupancy(stays) {
     occupancy[brand] = {};
     for (let month = 1; month <= 12; month++) {
       const value = monthly[month] ?? 0;
-      const ratio = clamp(value / peak, MIN_OCCUPANCY, 1);
-      occupancy[brand][month] = round(ratio * PEAK_OCCUPANCY);
+      occupancy[brand][month] = round(clamp(value / peak, MIN_OCCUPANCY, 1) * PEAK_OCCUPANCY);
     }
   }
 
   return occupancy;
 }
 
-export function categorize(intensity) {
-  if (intensity > 0.8) return 'critica';
-  if (intensity > 0.6) return 'alta';
-  if (intensity > 0.4) return 'media';
-  if (intensity > 0.2) return 'moderada';
-  return 'baja';
+/**
+ * Puntos para los que se pedirá la previsión meteorológica.
+ *
+ * Los municipios costeros llevan punto propio: son los que responden a "¿a qué
+ * playa voy?" y ahí el tiempo importa al detalle. Los del interior comparten el
+ * punto de su comarca, porque la meteorología es un fenómeno regional y así una
+ * sola petición cubre todo el mapa.
+ */
+function buildWeatherPoints(municipalities) {
+  const points = [];
+  const comarcaPoint = new Map();
+
+  for (const m of municipalities) {
+    if (m.lat === null || m.lng === null) continue;
+
+    if (m.coastal) {
+      m.weather_point = points.length;
+      points.push({ lat: m.lat, lng: m.lng, label: m.name, coastal: true });
+      continue;
+    }
+
+    if (!comarcaPoint.has(m.comarca)) {
+      comarcaPoint.set(m.comarca, { index: points.length, sum: [0, 0], count: 0 });
+      points.push({ lat: m.lat, lng: m.lng, label: m.comarca, coastal: false });
+    }
+    const entry = comarcaPoint.get(m.comarca);
+    entry.sum[0] += m.lat;
+    entry.sum[1] += m.lng;
+    entry.count++;
+    m.weather_point = entry.index;
+  }
+
+  // El punto de cada comarca pasa a ser el centro de sus municipios.
+  for (const entry of comarcaPoint.values()) {
+    points[entry.index].lat = round(entry.sum[0] / entry.count, 5);
+    points[entry.index].lng = round(entry.sum[1] / entry.count, 5);
+  }
+
+  return points;
 }
 
 async function main() {
@@ -138,8 +146,12 @@ async function main() {
 
   // ---------------------------------------------------------------- geografía
   const topo = JSON.parse(await readFile(resolve(GEOJSON_PATH), 'utf-8'));
-  const collection = topojson.feature(topo, topo.objects.municipis);
+  const objectName = Object.keys(topo.objects)[0];
+  const collection = topojson.feature(topo, topo.objects[objectName]);
   console.log(`📍 Municipios en el TopoJSON: ${collection.features.length}`);
+
+  const { coastal } = detectCoastalMunicipalities(topo, objectName);
+  console.log(`🏖️  Municipios costeros detectados: ${coastal.size}`);
 
   // ---------------------------------------------------------------- capacidad
   const [hotels, campings, rural] = await Promise.all([
@@ -181,97 +193,113 @@ async function main() {
 
     const areaKm2 = Number(props.sup) || 0;
     const density = areaKm2 > 0 ? totalPlaces / areaKm2 : 0;
-    const brandOccupancy = occupancy[brand] || {};
-
-    // Intensidad de los 12 meses: el frontend puede recorrer el año sin
-    // volver a pedir datos.
-    const monthly = {};
-    for (let month = 1; month <= 12; month++) {
-      const rate = brandOccupancy[month] ?? PEAK_OCCUPANCY;
-      const densityScore = logScore(density * rate, DENSITY_FLOOR, DENSITY_CEILING);
-      const volumeScore = logScore(totalPlaces * rate, VOLUME_FLOOR, VOLUME_CEILING);
-      monthly[month] = round(clamp(WEIGHT_DENSITY * densityScore + WEIGHT_VOLUME * volumeScore, 0, 1));
-    }
+    const centroid = centroidOf(feature.geometry);
+    const isCoastal = coastal.has(String(feature.id));
 
     municipalities.push({
       id,
       name: props.nom,
-      ...centroidOf(feature.geometry),
+      ...centroid,
       comarca: comarca.name,
       provincia: PROVINCIES[props.provincia] || null,
       brand,
+      coastal: isCoastal,
+      // Solo tiene sentido para playas: mide lo fácil que es llegar y volver
+      // en el día desde los grandes núcleos urbanos.
+      daytrip_access: isCoastal ? round(daytripAccess(centroid.lat, centroid.lng)) : 0,
       area_km2: areaKm2,
       hotel_places: hotelPlaces,
       camping_places: campingPlaces,
       rural_places: ruralPlaces,
       total_places: totalPlaces,
       places_per_km2: round(density, 2),
-      has_real_data: inCapacityTables && totalPlaces > 0,
-      monthly_intensity: monthly
+      has_real_data: inCapacityTables && totalPlaces > 0
     });
   }
 
   console.log(`🔗 Municipios cruzados con IDESCAT: ${matched}/${municipalities.length}`);
-  console.log(`   Con plazas turísticas registradas: ${municipalities.filter(m => m.has_real_data).length}\n`);
+  console.log(`   Con plazas turísticas registradas: ${municipalities.filter(m => m.has_real_data).length}`);
+  console.log(`   Costeros: ${municipalities.filter(m => m.coastal).length}\n`);
 
   if (matched < municipalities.length) {
     console.warn(`⚠️  ${municipalities.length - matched} municipios sin fila en los CSV de capacidad`);
   }
 
-  // ------------------------------------------------------------------- salida
-  const now = new Date();
-  const currentMonth = now.getMonth() + 1;
+  const weatherPoints = buildWeatherPoints(municipalities);
+  console.log(`🌤️  Puntos de previsión meteorológica: ${weatherPoints.length}`);
 
+  // Intensidad mensual de referencia: sin calendario ni meteorología. Sirve de
+  // red de seguridad si el navegador no puede calcular nada más.
   for (const m of municipalities) {
-    m.tourism_intensity = m.monthly_intensity[currentMonth];
-    m.categoria = categorize(m.tourism_intensity);
+    const brandOccupancy = occupancy[m.brand] || {};
+    m.monthly_intensity = {};
+    for (let month = 1; month <= 12; month++) {
+      m.monthly_intensity[month] = intensityFor(m, brandOccupancy[month] ?? PEAK_OCCUPANCY);
+    }
   }
 
+  // ------------------------------------------------------------------- salida
+  const now = new Date();
+  const today = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / 86400000);
+
   const distribution = municipalities.reduce((acc, m) => {
-    acc[m.categoria] = (acc[m.categoria] || 0) + 1;
+    const key = categorize(intensityFor(m, occupancyOnDay(occupancy[m.brand], today)));
+    acc[key] = (acc[key] || 0) + 1;
     return acc;
   }, {});
 
   const output = {
     metadata: {
       generated_at: now.toISOString(),
-      reference_month: currentMonth,
       total_municipalities: municipalities.length,
+      coastal_municipalities: municipalities.filter(m => m.coastal).length,
       with_real_data: municipalities.filter(m => m.has_real_data).length,
       visualization: 'choropleth',
-      version: '3.0',
+      version: '4.0',
+      horizon: 'hoy y mañana',
       sources: [
         'IDESCAT — Places hoteleres per municipis (t6031, 2023)',
         'IDESCAT — Places de càmpings per municipis (t6036, 2024)',
         'IDESCAT — Places de turisme rural per municipis (t6039, 2024)',
         'IDESCAT — Pernoctacions hoteleres mensuals per marca turística (turhot, 2023-2025)',
-        'ICGC/IDESCAT — Límits municipals (TopoJSON)'
+        'ICGC/IDESCAT — Límits municipals (TopoJSON)',
+        'Open-Meteo — previsión de hoy y mañana (en vivo, desde el navegador)'
       ],
       method: {
-        density: `log(plazas/km²) entre ${DENSITY_FLOOR} y ${DENSITY_CEILING}, peso ${WEIGHT_DENSITY}`,
-        volume: `log(plazas totales) entre ${VOLUME_FLOOR} y ${VOLUME_CEILING}, peso ${WEIGHT_VOLUME}`,
-        seasonality: `ocupación estimada = pernoctaciones del mes / mes punta de la marca, × ${PEAK_OCCUPANCY}`
+        capacity: 'plazas hoteleras + camping + turismo rural por municipio (IDESCAT)',
+        seasonality: `ocupación = pernoctaciones del mes / mes punta de la marca, × ${PEAK_OCCUPANCY}`,
+        calendar: 'día de la semana y festivos de Catalunya (modelo, media semanal = 1)',
+        weather: 'previsión diaria de Open-Meteo (en vivo)'
       }
     },
     distribution,
+    // Señales aprobadas que corrigen la estimación. Lo rellena
+    // scripts/publish-snapshot.js con lo que haya pasado la revisión; vacío
+    // significa "solo modelo", que es un estado válido y honesto.
+    signals: { as_of: null, days: {} },
     occupancy_by_brand: occupancy,
+    weather_points: weatherPoints,
     municipalities
   };
 
   await mkdir(dirname(resolve(OUTPUT_PATH)), { recursive: true });
   await writeFile(resolve(OUTPUT_PATH), JSON.stringify(output), 'utf-8');
 
-  console.log(`📊 Distribución del mes ${currentMonth}:`);
+  console.log('\n📊 Distribución de hoy (sin calendario ni meteorología):');
   for (const key of ['critica', 'alta', 'media', 'moderada', 'baja']) {
     console.log(`   ${key.padEnd(9)} ${String(distribution[key] || 0).padStart(4)}`);
   }
 
-  const top = [...municipalities].sort((a, b) => b.tourism_intensity - a.tourism_intensity).slice(0, 10);
-  console.log('\n🔝 Top 10 este mes:');
-  for (const m of top) {
+  const top = [...municipalities]
+    .map(m => ({ m, i: intensityFor(m, occupancyOnDay(occupancy[m.brand], today)) }))
+    .sort((a, b) => b.i - a.i)
+    .slice(0, 8);
+
+  console.log('\n🔝 Mayor presión hoy:');
+  for (const { m, i } of top) {
     console.log(
-      `   ${m.name.padEnd(26)} ${(m.tourism_intensity * 100).toFixed(0).padStart(3)}%` +
-      `  ${String(m.total_places).padStart(6)} plazas  ${String(m.places_per_km2).padStart(7)}/km²  ${m.brand}`
+      `   ${m.name.padEnd(24)} ${(i * 100).toFixed(0).padStart(3)}%` +
+      `  ${String(m.total_places).padStart(6)} plazas  ${m.coastal ? '🏖️ ' : '   '}${m.brand}`
     );
   }
 

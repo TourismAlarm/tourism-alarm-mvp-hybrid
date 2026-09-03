@@ -2,11 +2,12 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tourism Alarm Catalunya — Mapa de saturación turística</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#f4f6f8" />
+    <title>Tourism Alarm Catalunya — Saturación turística hoy y mañana</title>
     <meta
       name="description"
-      content="Mapa de presión turística de los 947 municipios de Catalunya a partir de datos oficiales del IDESCAT."
+      content="Cuánta gente hay hoy y mañana en cada municipio de Catalunya, y a qué playa ir: datos del IDESCAT y previsión de Open-Meteo."
     />
     <link rel="icon" href="/assets/favicon.svg" />
   </head>
@@ -14,81 +15,95 @@
     <div id="app">
       <div id="map"></div>
 
-      <!-- Aviso de carga / error -->
       <div class="status" id="status" role="status" aria-live="polite">
         <span class="spinner" aria-hidden="true"></span>
         <span id="status-text">Cargando…</span>
       </div>
 
-      <!-- Controles -->
       <div class="controls">
         <button id="btn-refresh" type="button" title="Volver a cargar los datos">🔄 Actualizar</button>
         <button id="btn-reset" type="button" title="Volver a la vista de Catalunya">🗺️ Catalunya</button>
       </div>
 
-      <!-- Panel principal -->
-      <aside class="panel info-panel">
+      <aside class="panel info-panel" id="info-panel" data-sheet="peek">
+        <!-- En móvil el panel es una hoja inferior: el asa la despliega para
+             leerlo entero y la repliega para recuperar el mapa. En escritorio
+             está oculta. -->
+        <button
+          class="sheet-handle"
+          id="sheet-handle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="info-panel"
+        >
+          <span class="grabber" aria-hidden="true"></span>
+          <span class="sr-only">Desplegar el panel</span>
+        </button>
+
         <header>
           <span class="mark" aria-hidden="true">🚨</span>
           <h2>Tourism Alarm</h2>
         </header>
-        <p class="subtitle">Presión turística por municipio · Catalunya</p>
+        <p class="subtitle">Cuánta gente hay en Catalunya, hoy y mañana</p>
 
-        <section class="section" style="border-top: none; padding-top: 0; margin-top: 0;">
-          <h3>Mes de referencia</h3>
-          <div class="month-control">
-            <input
-              id="month-slider"
-              type="range"
-              min="1"
-              max="12"
-              step="1"
-              value="1"
-              aria-label="Mes de referencia"
-            />
-            <span class="month-name" id="month-name">—</span>
-          </div>
-          <span class="season-badge" id="season-badge">—</span>
-          <p class="season-note" id="season-note"></p>
+        <div class="day-tabs" role="tablist" aria-label="Día">
+          <button class="day-tab active" type="button" role="tab" data-day="0" aria-selected="true">Hoy</button>
+          <button class="day-tab" type="button" role="tab" data-day="1" aria-selected="false">Mañana</button>
+        </div>
+        <p class="day-date" id="day-date">—</p>
+        <p class="day-note" id="day-note"></p>
+
+        <!-- Buscador: son 947 municipios y el mapa solo deja llegar a los que
+             se ven. Es la vía para "¿cómo está mi pueblo hoy?". -->
+        <div class="search">
+          <input
+            id="search-input"
+            type="search"
+            class="search-input"
+            placeholder="Buscar un municipio…"
+            aria-label="Buscar un municipio"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+            maxlength="60"
+          />
+          <div class="search-results" id="search-results" role="listbox" aria-label="Municipios encontrados" hidden></div>
+        </div>
+
+        <section class="section">
+          <h3>🏖️ Mejores playas</h3>
+          <div class="rank-list" id="beach-list"></div>
+          <p class="hint" id="beach-note"></p>
         </section>
 
         <section class="section">
-          <h3>Resumen</h3>
-          <div class="stat-row">
-            <span class="label">Municipios</span>
-            <span class="value" id="stat-total">—</span>
-          </div>
-          <div class="stat-row">
-            <span class="label">Con plazas turísticas</span>
-            <span class="value" id="stat-with-data">—</span>
-          </div>
-          <div class="stat-row">
-            <span class="label">Plazas registradas</span>
-            <span class="value" id="stat-places">—</span>
-          </div>
-          <div class="stat-row">
-            <span class="label">Presión media</span>
-            <span class="value" id="stat-average">—</span>
-          </div>
+          <h3>Más saturados</h3>
+          <div class="rank-list" id="busiest-list"></div>
+        </section>
+
+        <section class="section">
           <div class="stat-row">
             <span class="label">En nivel crítico</span>
             <span class="value" id="stat-critical">—</span>
           </div>
-        </section>
-
-        <section class="section">
-          <h3>Mayor presión este mes</h3>
-          <div class="top-list" id="top-list"></div>
+          <div class="stat-row">
+            <span class="label">Afluencia media</span>
+            <span class="value" id="stat-average">—</span>
+          </div>
+          <div class="stat-row">
+            <span class="label">Municipios con playa</span>
+            <span class="value" id="stat-coastal">—</span>
+          </div>
         </section>
       </aside>
 
-      <!-- Leyenda -->
-      <aside class="panel legend">
-        <h3>Nivel de saturación</h3>
+      <aside class="panel legend" id="legend">
+        <h3>Afluencia prevista</h3>
         <div id="legend-items"></div>
         <div class="legend-footer">
           <div id="legend-coverage">—</div>
-          <div>Datos IDESCAT · <span id="legend-updated">—</span></div>
+          <div id="weather-status">—</div>
+          <div class="freshness" id="freshness">—</div>
         </div>
       </aside>
     </div>
