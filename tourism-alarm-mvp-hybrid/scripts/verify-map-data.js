@@ -89,6 +89,60 @@ async function verifyFile(path, geoIds) {
     `${path}: faltan los puntos de previsión meteorológica`
   );
 
+  // 3c. Cada municipio tiene que llevar su propia curva de ocupación, con los
+  //     doce meses y en tanto por uno. Sin ella el navegador no puede calcular
+  //     el día.
+  const badCurve = municipalities.filter(m => {
+    if (!m.occupancy) return true;
+    for (let month = 1; month <= 12; month++) {
+      const value = m.occupancy[month] ?? m.occupancy[String(month)];
+      if (typeof value !== 'number' || value < 0 || value > 1) return true;
+    }
+    return false;
+  });
+  check(badCurve.length === 0,
+    `${path}: ${badCurve.length} municipios sin curva de ocupación completa ` +
+    `(${badCurve.slice(0, 5).map(m => m.name).join(', ')}…)`);
+
+  // 3d. De dónde sale esa curva. Que la mayoría venga del INE es el objetivo;
+  //     que TODO venga del proxy de pernoctaciones significa que la descarga
+  //     de datos oficiales no se ha hecho.
+  const sources = municipalities.reduce((acc, m) => {
+    const key = m.occupancy_source || 'desconocido';
+    acc[key] = (acc[key] || 0) + 1;
+    return acc;
+  }, {});
+  console.log(`   ocupación: ${Object.entries(sources).map(([k, v]) => `${v} ${k}`).join(', ')}`);
+
+  const measured = (sources.municipio || 0) + (sources.marca || 0);
+  if (measured === 0) {
+    warnings.push(
+      `${path}: ningún municipio usa la ocupación medida del INE; ` +
+      'ejecuta `npm run data:official` (workflow "Datos oficiales", modo fetch)'
+    );
+  } else {
+    check(measured >= municipalities.length * 0.9,
+      `${path}: solo ${measured}/${municipalities.length} municipios con ocupación del INE`);
+    check((sources.municipio || 0) >= 15,
+      `${path}: solo ${sources.municipio || 0} municipios con ocupación propia medida, se esperaban ~26`);
+  }
+
+  // 3e. Población del padró: es la que da plazas por habitante.
+  const withPopulation = municipalities.filter(m => typeof m.population === 'number' && m.population > 0);
+  console.log(`   con población: ${withPopulation.length}/${municipalities.length}`);
+  if (withPopulation.length) {
+    check(withPopulation.length >= municipalities.length * 0.95,
+      `${path}: solo ${withPopulation.length} municipios con población`);
+
+    const total = withPopulation.reduce((sum, m) => sum + m.population, 0);
+    check(total > 7_800_000 && total < 8_600_000,
+      `${path}: la población total suma ${total}, fuera de lo razonable para Catalunya`);
+
+    const barcelona = municipalities.find(m => m.name === 'Barcelona');
+    check(barcelona?.population > 1_500_000,
+      `${path}: Barcelona figura con ${barcelona?.population} habitantes`);
+  }
+
   const coastal = municipalities.filter(m => m.coastal);
   console.log(`   municipios costeros: ${coastal.length}`);
   check(coastal.length >= 60 && coastal.length <= 80,
