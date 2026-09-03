@@ -79,7 +79,29 @@ las pernoctaciones se movieran igual que la ocupación, y ese 0,85 era una
 constante puesta a mano.
 
 El INE publica el **grado de ocupación medido** cada mes, y ahora es eso lo que
-usa el mapa. Cada municipio recibe su curva por este orden:
+usa el mapa.
+
+#### Ojo: el grado de ocupación solo cuenta lo abierto
+
+Es la trampa de esta estadística. El INE mide la ocupación **sobre los
+establecimientos abiertos ese mes**. En enero, Salou tiene casi toda su planta
+hotelera cerrada y el INE dice 24,7%: no significa que Salou esté a un cuarto,
+sino que los pocos hoteles que abren lo están. Usar esa cifra tal cual ponía a
+Salou al 91% en enero.
+
+La corrección la publica el propio INE, en la misma tabla: *Número de plazas
+estimadas* es la capacidad abierta de cada mes.
+
+```
+afluencia(mes) = ocupación(mes) × plazas abiertas(mes) / plazas del mes punta
+```
+
+Los dos términos son medición del INE; no se añade ninguna constante. En
+`data/official/occupancy.json` se guardan también los dos por separado
+(`brands_raw`, `municipalities_raw`) para poder revisar la corrección sin
+volver a descargar nada.
+
+Cada municipio recibe su curva por este orden:
 
 1. **La suya**, si el INE lo trata como punto turístico. Son los destinos que
    más importan: Salou, Lloret de Mar, Barcelona, Sitges, Cambrils, Blanes,
