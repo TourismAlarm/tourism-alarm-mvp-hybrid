@@ -14,10 +14,10 @@
 name: Datos oficiales
 
 on:
+  # Sin filtro de rutas: lo que decide es la etiqueta del mensaje del commit,
+  # y así un commit vacío con [fetch] sirve para pedir una descarga. El job
+  # se salta enseguida si el mensaje no lo pide.
   push:
-    paths:
-      - 'tourism-alarm-mvp-hybrid/scripts/official/**'
-      - '.github/workflows/official-data.yml'
   workflow_dispatch:
     inputs:
       mode:
@@ -43,8 +43,14 @@ env:
 
 jobs:
   run:
-    # Los commits del propio bot no deben volver a lanzar el workflow.
-    if: github.actor != 'github-actions[bot]'
+    # Solo corre si alguien lo pide: la etiqueta [probe] o [fetch] en el
+    # mensaje del commit, el botón de Actions, o el cron semanal. Y nunca en
+    # respuesta a los commits que el propio workflow deja.
+    if: >-
+      github.actor != 'github-actions[bot]' &&
+      (github.event_name != 'push' ||
+       contains(github.event.head_commit.message, '[probe]') ||
+       contains(github.event.head_commit.message, '[fetch]'))
     runs-on: ubuntu-latest
     defaults:
       run:
