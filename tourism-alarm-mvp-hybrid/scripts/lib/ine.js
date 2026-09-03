@@ -107,11 +107,14 @@ const OCCUPANCY_CONCEPTS = [
   /^grado de ocupacion por parcelas$/
 ];
 
-const isOccupancy = serie => {
-  const concept = meta(serie, 'Concepto');
-  const name = normalizeName(concept?.Nombre);
-  return OCCUPANCY_CONCEPTS.some(re => re.test(name));
-};
+// Capacidad ABIERTA ese mes. Es la otra mitad de la historia: ver más abajo
+// por qué el grado de ocupación a secas no sirve para medir afluencia.
+const CAPACITY_CONCEPT = /^numero de plazas estimadas$/;
+
+const conceptName = serie => normalizeName(meta(serie, 'Concepto')?.Nombre);
+
+const isOccupancy = serie => OCCUPANCY_CONCEPTS.some(re => re.test(conceptName(serie)));
+const isCapacity = serie => CAPACITY_CONCEPT.test(conceptName(serie));
 
 /**
  * Media por mes del año de una lista de observaciones mensuales.
@@ -119,7 +122,7 @@ const isOccupancy = serie => {
  * tienen al menos una observación: un mes sin dato es un mes sin dato, no un
  * cero.
  */
-function monthlyAverage(points) {
+function monthlyAverage(points, scale = 'percent') {
   const buckets = new Map();
 
   for (const point of points) {
@@ -133,7 +136,8 @@ function monthlyAverage(points) {
   const curve = {};
   for (const [month, values] of buckets) {
     const mean = values.reduce((sum, v) => sum + v, 0) / values.length;
-    curve[month] = Number((mean / 100).toFixed(4)); // el INE da porcentaje
+    // El grado de ocupación viene en porcentaje; las plazas, en unidades.
+    curve[month] = scale === 'percent' ? Number((mean / 100).toFixed(4)) : Math.round(mean);
   }
   return curve;
 }
@@ -147,11 +151,12 @@ export const monthsCovered = curve => Object.keys(curve || {}).length;
  *
  * @returns {Map<string, {curve: object, samples: number, zone: string}>}
  */
-export function occupancyByBrand(series) {
+export function occupancyByBrand(series, { concept = 'occupancy' } = {}) {
+  const matches = concept === 'capacity' ? isCapacity : isOccupancy;
   const result = new Map();
 
   for (const serie of series) {
-    if (!isOccupancy(serie)) continue;
+    if (!matches(serie)) continue;
 
     const zone = meta(serie, 'ZONA')?.Nombre;
     const brand = brandOfZone(zone);
@@ -160,7 +165,7 @@ export function occupancyByBrand(series) {
     const points = (serie.Data || []).filter(p => typeof p.Valor === 'number');
     if (!points.length) continue;
 
-    const curve = monthlyAverage(points);
+    const curve = monthlyAverage(points, concept === 'capacity' ? 'count' : 'percent');
     if (!monthsCovered(curve)) continue;
 
     // Una marca puede tener más de una serie candidata (definiciones viejas
@@ -206,11 +211,12 @@ export function resolvePoint(serie, { byIneCode, byName }) {
  * @param index       { byIneCode, byName } → id IDESCAT
  * @returns {Map<string, {curve: object, samples: number, point: string}>}
  */
-export function occupancyByMunicipality(series, index) {
+export function occupancyByMunicipality(series, index, { concept = 'occupancy' } = {}) {
+  const matches = concept === 'capacity' ? isCapacity : isOccupancy;
   const result = new Map();
 
   for (const serie of series) {
-    if (!isOccupancy(serie)) continue;
+    if (!matches(serie)) continue;
 
     const id = resolvePoint(serie, index);
     if (!id) continue;
@@ -218,7 +224,7 @@ export function occupancyByMunicipality(series, index) {
     const points = (serie.Data || []).filter(p => typeof p.Valor === 'number');
     if (!points.length) continue;
 
-    const curve = monthlyAverage(points);
+    const curve = monthlyAverage(points, concept === 'capacity' ? 'count' : 'percent');
     if (!monthsCovered(curve)) continue;
 
     const previous = result.get(id);
@@ -248,6 +254,46 @@ export function buildMunicipalityIndex(municipalities) {
 
   return { byIneCode, byName };
 }
+
+/**
+ * Afluencia real a partir del grado de ocupación y de la capacidad abierta.
+ *
+ * ESTO IMPORTA. El "grado de ocupación" del INE se mide solo sobre los
+ * establecimientos ABIERTOS ese mes. En enero, Salou tiene casi toda su planta
+ * hotelera cerrada, y el INE dice 24,7%: no significa que Salou esté a un
+ * cuarto, sino que los pocos hoteles que abren están a un cuarto. Usar esa
+ * cifra tal cual ponía a Salou al 91% en enero, que es sencillamente falso.
+ *
+ * La corrección la publica el propio INE: "Número de plazas estimadas" es la
+ * capacidad abierta cada mes. Dividida por el máximo del año da qué parte del
+ * municipio está siquiera en funcionamiento:
+ *
+ *   afluencia(mes) = grado de ocupación(mes) × plazas abiertas(mes) / plazas en el mes punta
+ *
+ * Las dos mitades son medición del INE; no se añade ninguna constante.
+ *
+ * @param occupancy  { mes: 0..1 }  grado de ocupación
+ * @param capacity   { mes: plazas } capacidad abierta
+ */
+export function effectiveOccupancy(occupancy, capacity) {
+  if (!monthsCovered(occupancy)) return {};
+  if (!monthsCovered(capacity)) return { ...occupancy };
+
+  const peak = Math.max(...Object.values(capacity));
+  if (!(peak > 0)) return { ...occupancy };
+
+  const result = {};
+  for (const [month, rate] of Object.entries(occupancy)) {
+    const open = capacity[month];
+    // Un mes sin capacidad publicada pero con ocupación: no se puede corregir,
+    // se deja como está en vez de inventar un cierre.
+    const ratio = typeof open === 'number' ? open / peak : 1;
+    result[month] = Number((rate * clamp01(ratio)).toFixed(4));
+  }
+  return result;
+}
+
+const clamp01 = value => Math.min(1, Math.max(0, value));
 
 /**
  * Mezcla las curvas de los distintos tipos de alojamiento según la capacidad

@@ -28,7 +28,7 @@ import { resolve, dirname } from 'node:path';
 
 import {
   occupancyByBrand, occupancyByMunicipality, buildMunicipalityIndex,
-  readPopulationCsv, monthsCovered, normalizeId
+  readPopulationCsv, monthsCovered, normalizeId, effectiveOccupancy
 } from '../lib/ine.js';
 
 const INE = 'https://servicios.ine.es/wstempus/js/ES';
@@ -104,6 +104,9 @@ async function main() {
   console.log('🏷️  Ocupación por zona turística (INE):');
   const brands = {};
   const brandZones = {};
+  // Se guarda también el desglose sin corregir: si mañana hay que revisar la
+  // corrección, los dos términos están ahí y no hay que volver a descargar.
+  const brandRaw = {};
 
   for (const [type, table] of Object.entries(ZONE_TABLES)) {
     const series = await optional(`${INE}/DATOS_TABLA/${table}?nult=${MONTHS}&tip=AM`, {
@@ -111,9 +114,15 @@ async function main() {
     });
     if (!series) continue;
 
+    // El grado de ocupación solo cuenta lo abierto; la capacidad abierta de
+    // cada mes es lo que lo convierte en afluencia. Ver effectiveOccupancy().
+    const capacity = occupancyByBrand(series, { concept: 'capacity' });
+
     for (const [brand, entry] of occupancyByBrand(series)) {
-      (brands[brand] ??= {})[type] = entry.curve;
+      const open = capacity.get(brand)?.curve || {};
+      (brands[brand] ??= {})[type] = effectiveOccupancy(entry.curve, open);
       (brandZones[brand] ??= {})[type] = entry.zone;
+      (brandRaw[brand] ??= {})[type] = { occupancy: entry.curve, open_places: open };
     }
   }
 
@@ -131,6 +140,7 @@ async function main() {
   // ── ocupación por municipio ──
   console.log('\n📍 Ocupación por punto turístico (INE):');
   const byMunicipality = {};
+  const municipalityRaw = {};
 
   for (const [type, table] of Object.entries(POINT_TABLES)) {
     const series = await optional(`${INE}/DATOS_TABLA/${table}?nult=${MONTHS}&tip=AM`, {
@@ -139,10 +149,13 @@ async function main() {
     if (!series) continue;
 
     const found = occupancyByMunicipality(series, index);
+    const capacity = occupancyByMunicipality(series, index, { concept: 'capacity' });
     console.log(`      ${type.padEnd(10)} ${found.size} municipios`);
 
     for (const [id, entry] of found) {
-      (byMunicipality[id] ??= { name: nameOf.get(id) })[type] = entry.curve;
+      const open = capacity.get(id)?.curve || {};
+      (byMunicipality[id] ??= { name: nameOf.get(id) })[type] = effectiveOccupancy(entry.curve, open);
+      (municipalityRaw[id] ??= {})[type] = { occupancy: entry.curve, open_places: open };
     }
   }
 
@@ -194,13 +207,18 @@ async function main() {
       'IDESCAT — Padró municipal d\'habitants (població a 1 de gener)'
     ],
     method: {
-      occupancy: 'media por mes del año de los últimos 36 meses publicados, en tanto por uno',
+      occupancy: 'afluencia = grado de ocupación × plazas abiertas del mes / plazas del mes punta; ' +
+        'media por mes del año de los últimos 36 meses publicados, en tanto por uno',
+      why: 'el grado de ocupación del INE se mide solo sobre lo abierto: en enero Salou tiene ' +
+        'la planta hotelera cerrada y un 25% de lo poco abierto no es un 25% del municipio',
       brands: 'zona turística del INE ↔ marca turística del IDESCAT',
       municipalities: 'punto turístico del INE ↔ municipio, por código INE o nombre'
     },
     brand_zones: brandZones,
     brands,
+    brands_raw: brandRaw,
     municipalities: byMunicipality,
+    municipalities_raw: municipalityRaw,
     population: Object.fromEntries(population)
   };
 

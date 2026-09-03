@@ -9,7 +9,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import {
   normalizeName, ineCodeOf, brandOfZone, occupancyByBrand,
   occupancyByMunicipality, buildMunicipalityIndex, blendByCapacity,
-  readPopulationCsv, monthsCovered
+  readPopulationCsv, monthsCovered, effectiveOccupancy
 } from './lib/ine.js';
 
 let passed = 0;
@@ -187,6 +187,54 @@ if (has(CAMPINGS) && has(CURRENT)) {
     const names = [...found.keys()].map(id => byId.get(id)?.name);
     assert(names.includes('Torroella de Montgrí'), 'falta Montgrí');
     assert(!names.includes('Torroella de Fluvià'), 'Fluvià no es punto turístico del INE');
+  });
+}
+
+// ────────────────────────────────── capacidad abierta y afluencia ─────────
+
+console.log('\n🧪 Corrección por capacidad abierta');
+
+test('un mes con todo abierto no se toca', () => {
+  const out = effectiveOccupancy({ 8: 0.87 }, { 8: 1000 });
+  equal(out[8], 0.87);
+});
+
+test('un mes con la mitad cerrada vale la mitad', () => {
+  const out = effectiveOccupancy({ 1: 0.8, 8: 0.8 }, { 1: 500, 8: 1000 });
+  equal(out[1], 0.4, 'enero, mitad de la planta abierta');
+  equal(out[8], 0.8, 'agosto, todo abierto');
+});
+
+test('sin capacidad publicada deja la ocupación como está', () => {
+  equal(effectiveOccupancy({ 7: 0.6 }, {})[7], 0.6);
+  equal(effectiveOccupancy({ 7: 0.6 }, { 7: 0 }), { 7: 0.6 }, 'un pico de cero no divide por cero');
+});
+
+test('el resultado nunca se sale de 0..1', () => {
+  const out = effectiveOccupancy({ 5: 0.9 }, { 5: 4000, 6: 1000 });
+  assert(out[5] >= 0 && out[5] <= 1, `fuera de rango: ${out[5]}`);
+});
+
+if (has(ZONES)) {
+  test('con datos reales, el invierno de la Costa Daurada deja de parecer verano', () => {
+    const series = json(ZONES);
+    const occupancy = occupancyByBrand(series).get('Costa Daurada').curve;
+    const capacity = occupancyByBrand(series, { concept: 'capacity' }).get('Costa Daurada').curve;
+    const effective = effectiveOccupancy(occupancy, capacity);
+
+    // La prueba solo puede mirar los meses que trae el fichero de sondeo.
+    for (const month of Object.keys(effective)) {
+      assert(effective[month] <= occupancy[month] + 1e-9,
+        `mes ${month}: la corrección no puede subir la ocupación`);
+    }
+    assert(monthsCovered(effective) === monthsCovered(occupancy), 'no se pierde ningún mes');
+  });
+
+  test('la capacidad abierta se lee en plazas, no en porcentaje', () => {
+    const capacity = occupancyByBrand(json(ZONES), { concept: 'capacity' }).get('Costa Daurada').curve;
+    const values = Object.values(capacity);
+    assert(values.every(v => Number.isInteger(v) && v > 1000),
+      `se esperaban plazas en unidades: ${JSON.stringify(capacity)}`);
   });
 }
 
