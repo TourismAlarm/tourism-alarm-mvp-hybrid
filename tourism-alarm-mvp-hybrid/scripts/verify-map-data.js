@@ -119,8 +119,8 @@ async function verifyFile(path, geoIds) {
   // 5. La curva diaria debe reproducir la estacionalidad: en la Costa Daurada,
   //    un día de agosto tiene que dar mucho más que uno de enero.
   const salouDaily = municipalities.find(m => m.name === 'Salou');
-  if (salouDaily && data.occupancy_by_brand) {
-    const curve = data.occupancy_by_brand[salouDaily.brand];
+  if (salouDaily) {
+    const curve = salouDaily.occupancy || data.occupancy_by_brand?.[salouDaily.brand];
     const winter = intensityFor(salouDaily, occupancyOnDay(curve, 20));
     const summer = intensityFor(salouDaily, occupancyOnDay(curve, 227));
     console.log(`   Salou (curva diaria): 20 ene ${(winter * 100).toFixed(0)}% → 15 ago ${(summer * 100).toFixed(0)}%`);
