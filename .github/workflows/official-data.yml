@@ -86,4 +86,18 @@ jobs:
             exit 0
           fi
           git commit -m "data: $MODE de fuentes oficiales ($(date -u +%Y-%m-%d)) [skip ci]"
-          git push
+
+          # La descarga tarda minutos y la rama puede haberse movido mientras
+          # tanto. Se rebasa sobre lo que haya y se reintenta en vez de fallar
+          # y perder los datos recién traídos.
+          for attempt in 1 2 3 4 5; do
+            if git push; then
+              echo "Publicado en el intento $attempt."
+              exit 0
+            fi
+            echo "Push rechazado (intento $attempt); rebasando sobre origin."
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || exit 1
+            sleep $((attempt * 5))
+          done
+          echo '::error::No se pudo publicar el resultado tras 5 intentos.'
+          exit 1
