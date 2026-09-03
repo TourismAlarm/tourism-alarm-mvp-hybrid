@@ -1,38 +1,32 @@
 #!/usr/bin/env node
-// 🔎 Sondeo de fuentes oficiales.
+// 🔎 Sondeo de fuentes oficiales — ronda 2.
 //
-// Pregunta a cada fuente candidata qué devuelve de verdad (código, tipo,
-// tamaño, primeras líneas) y guarda el cuerpo en data/official/probe/ para
-// poder escribir los lectores contra respuestas reales y no contra lo que
-// dice una documentación.
+// La ronda 1 (data/official/probe/) confirmó: INE Tempus3 responde (ocupación
+// por puntos turísticos: tablas 75198 hoteles, 75193 apartamentos, 75196
+// campings), IDESCAT sirve CSV de población y plazas por municipio, y las
+// tablas de móviles del INE se niegan por volumen. Esta ronda busca:
+//   · ocupación mensual por ZONAS turísticas (INE), para las marcas;
+//   · una vía de acceso a los turistas por municipio (móviles) con filtros.
 //
-// Corre en GitHub Actions: desde el entorno de desarrollo estas webs están
-// bloqueadas por el proxy de salida.
+// Corre en GitHub Actions y en el build de Vercel; desde el entorno de
+// desarrollo estas webs están bloqueadas.
 
 import { writeFile, mkdir } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
-// En Vercel el resultado se sirve con el sitio (public/), para poder leerlo
-// desde fuera sin necesidad de un commit.
-const OUT_DIR = process.env.PROBE_OUT || (process.env.VERCEL ? 'public/data/official-probe' : 'data/official/probe');
+const OUT_DIR = process.env.PROBE_OUT || (process.env.VERCEL ? 'public/data/official-probe' : 'data/official/probe2');
 const DEFAULT_CAP = 400 * 1024;
-const TIMEOUT_MS = 20000;
-
+const TIMEOUT_MS = 25000;
 const UA = 'TourismAlarm/1.0 (+https://github.com/TourismAlarm/tourism-alarm-mvp-hybrid; sondeo de fuentes oficiales)';
+const INE = 'https://servicios.ine.es/wstempus/js/ES';
 
 const summary = [];
 
-/** Descarga con tope de bytes: algunas tablas del INE pesan decenas de MB. */
-async function fetchCapped(url, { cap = DEFAULT_CAP, headers = {} } = {}) {
+async function fetchCapped(url, { cap = DEFAULT_CAP } = {}) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
   try {
-    const response = await fetch(url, {
-      signal: controller.signal,
-      redirect: 'follow',
-      headers: { 'User-Agent': UA, Accept: 'application/json, text/csv, text/plain, */*', ...headers }
-    });
-
+    const response = await fetch(url, { signal: controller.signal, redirect: 'follow', headers: { 'User-Agent': UA, Accept: 'application/json, text/csv, text/plain, */*' } });
     const chunks = [];
     let received = 0;
     let truncated = false;
@@ -42,145 +36,95 @@ async function fetchCapped(url, { cap = DEFAULT_CAP, headers = {} } = {}) {
         const { done, value } = await reader.read();
         if (done) break;
         received += value.length;
-        if (received > cap) {
-          chunks.push(value.subarray(0, value.length - (received - cap)));
-          truncated = true;
-          await reader.cancel();
-          break;
-        }
+        if (received > cap) { chunks.push(value.subarray(0, value.length - (received - cap))); truncated = true; await reader.cancel(); break; }
         chunks.push(value);
       }
     }
-
-    return {
-      status: response.status,
-      type: response.headers.get('content-type') || '',
-      finalUrl: response.url,
-      body: Buffer.concat(chunks).toString('utf-8'),
-      bytes: received,
-      truncated
-    };
+    return { status: response.status, type: response.headers.get('content-type') || '', body: Buffer.concat(chunks).toString('utf-8'), bytes: received, truncated };
   } finally {
     clearTimeout(timer);
   }
 }
 
-function slug(name) {
-  return name.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '').toLowerCase();
-}
+const slug = name => name.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '').toLowerCase();
+const parseJson = text => { try { return JSON.parse(text); } catch { return null; } };
 
 async function probe(name, url, options = {}) {
   const started = Date.now();
   const entry = { name, url };
   try {
     const result = await fetchCapped(url, options);
-    Object.assign(entry, {
-      status: result.status,
-      type: result.type,
-      bytes: result.bytes,
-      truncated: result.truncated,
-      ms: Date.now() - started,
-      head: result.body.slice(0, 600).replace(/\s+/g, ' ')
-    });
+    Object.assign(entry, { status: result.status, type: result.type, bytes: result.bytes, truncated: result.truncated, ms: Date.now() - started, head: result.body.slice(0, 600).replace(/\s+/g, ' ') });
     const ext = /json/.test(result.type) ? 'json' : /csv/.test(result.type) ? 'csv' : /html/.test(result.type) ? 'html' : 'txt';
-    const file = `${slug(name)}.${ext}`;
-    await writeFile(resolve(OUT_DIR, file), result.body, 'utf-8');
-    entry.file = file;
-    console.log(`${String(result.status).padStart(3)}  ${name.padEnd(34)} ${result.type.split(';')[0].padEnd(24)} ${String(result.bytes).padStart(9)} B${result.truncated ? ' (cortado)' : ''}  ${entry.ms} ms`);
-    console.log(`     ${entry.head.slice(0, 420)}`);
+    entry.file = `${slug(name)}.${ext}`;
+    await writeFile(resolve(OUT_DIR, entry.file), result.body, 'utf-8');
+    console.log(`${String(result.status).padStart(3)}  ${name.padEnd(36)} ${result.type.split(';')[0].padEnd(24)} ${String(result.bytes).padStart(9)} B${result.truncated ? ' (cortado)' : ''}  ${entry.ms} ms`);
+    console.log(`     ${entry.head.slice(0, 380)}`);
     return result;
   } catch (error) {
     entry.error = error.message;
-    console.log(`ERR  ${name.padEnd(34)} ${error.message}`);
+    console.log(`ERR  ${name.padEnd(36)} ${error.message}`);
     return null;
   } finally {
     summary.push(entry);
   }
 }
 
-const parseJson = text => { try { return JSON.parse(text); } catch { return null; } };
-
 async function main() {
   await mkdir(resolve(OUT_DIR), { recursive: true });
-  console.log(`Sondeo de fuentes oficiales — ${new Date().toISOString()}\n`);
+  console.log(`Sondeo de fuentes oficiales, ronda 2 — ${new Date().toISOString()}\n`);
 
-  // ───────────────────────────────────────────────────────────── INE ────
-  console.log('── INE (servicios.ine.es, API Tempus3) ──');
-  const ops = await probe('ine-operaciones', 'https://servicios.ine.es/wstempus/js/ES/OPERACIONES_DISPONIBLES');
-  const operations = ops ? parseJson(ops.body) : null;
-
-  if (Array.isArray(operations)) {
-    const interesting = operations.filter(op =>
-      /ocupaci.n hotelera/i.test(op.Nombre) ||
-      /tel.fon|m.vil|TMOV/i.test(op.Nombre) ||
-      /apartamentos tur|campings|turismo rural/i.test(op.Nombre)
-    );
-    console.log(`   operaciones de interés: ${interesting.map(o => `${o.Id}:${o.Nombre}`).join(' | ')}`);
-
-    for (const op of interesting) {
-      const tablesResult = await probe(`ine-tablas-${op.Id}`, `https://servicios.ine.es/wstempus/js/ES/TABLAS_OPERACION/${op.Id}`, { cap: 2 * 1024 * 1024 });
-      const tables = tablesResult ? parseJson(tablesResult.body) : null;
-      if (!Array.isArray(tables)) continue;
-
-      const wanted = tables.filter(t => /puntos tur/i.test(t.Nombre) || /municipio de destino/i.test(t.Nombre));
-      console.log(`   ${op.Nombre}: ${tables.length} tablas, ${wanted.length} por puntos turísticos / municipio:`);
-      for (const t of wanted) console.log(`      ${t.Id}  ${t.Nombre}  [${t.Periodicidad?.Nombre || t.FK_Periodicidad || '?'}]`);
-
-      // Ocupación por plazas en puntos turísticos: la tabla que de verdad
-      // interesa. Se baja con los dos últimos periodos para ver la estructura.
-      for (const t of wanted.filter(t => /ocupaci.n/i.test(t.Nombre) && /plazas/i.test(t.Nombre))) {
-        await probe(`ine-datos-${t.Id}`, `https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/${t.Id}?nult=2&tip=AM`, { cap: 3 * 1024 * 1024 });
-      }
-      // Turistas por municipio de destino (móviles): solo estructura.
-      for (const t of wanted.filter(t => /municipio de destino/i.test(t.Nombre)).slice(0, 2)) {
-        await probe(`ine-datos-${t.Id}`, `https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/${t.Id}?nult=1&tip=AM`, { cap: 1536 * 1024 });
-      }
+  // ── INE: ocupación por zonas turísticas (hoteles 238, apartamentos 239,
+  //    campings 240, turismo rural 241) ──
+  console.log('── INE: tablas por zonas turísticas ──');
+  for (const op of [238, 239, 240, 241]) {
+    const result = await probe(`ine-tablas-${op}`, `${INE}/TABLAS_OPERACION/${op}`, { cap: 2 * 1024 * 1024 });
+    const tables = result ? parseJson(result.body) : null;
+    if (!Array.isArray(tables)) continue;
+    const zones = tables.filter(t => /zonas? tur/i.test(t.Nombre));
+    console.log(`   op ${op}: ${zones.length} tablas por zonas turísticas`);
+    for (const t of zones) console.log(`      ${t.Id}  ${t.Nombre}`);
+    for (const t of zones.filter(t => /ocupaci/i.test(t.Nombre)).slice(0, 2)) {
+      await probe(`ine-zonas-${t.Id}`, `${INE}/DATOS_TABLA/${t.Id}?nult=1&tip=AM`, { cap: 3 * 1024 * 1024 });
     }
   }
 
-  // ─────────────────────────────────────────────────────────── IDESCAT ──
-  console.log('\n── IDESCAT ──');
-  await probe('idescat-taules-v2', 'https://api.idescat.cat/taules/v2?lang=ca');
-  await probe('idescat-taules-turhot', 'https://api.idescat.cat/taules/v2/turhot?lang=ca');
-  await probe('idescat-taules-turall', 'https://api.idescat.cat/taules/v2/turall?lang=ca');
-  await probe('idescat-taules-pmh', 'https://api.idescat.cat/taules/v2/pmh?lang=ca');
-  await probe('idescat-emex-salou', 'https://api.idescat.cat/emex/v1/dades.json?id=431713&lang=ca');
-  await probe('idescat-emex-nodes', 'https://api.idescat.cat/emex/v1/nodes.json?lang=ca', { cap: 200 * 1024 });
+  // ── INE: turistas por municipio de destino (móviles). Las tablas enteras
+  //    se niegan por volumen; se prueba a filtrar por municipio y el volcado
+  //    CSV. ──
+  console.log('\n── INE: móviles por municipio (53464 interno, 52048 receptor) ──');
+  for (const table of [53464, 52048]) {
+    const vars = await probe(`ine-variables-${table}`, `${INE}/VARIABLES_TABLA/${table}`);
+    const variables = vars ? parseJson(vars.body) : null;
+    if (!Array.isArray(variables)) continue;
+    console.log(`   variables: ${variables.map(v => `${v.Id}:${v.Nombre}`).join(' | ')}`);
+    const muni = variables.find(v => /municipio/i.test(v.Nombre));
+    if (!muni) continue;
 
-  // Indicadors de conjuntura (turhot): 10292 es pernoctacions per marques. Los
-  // vecinos deberían ser viatgers y grau d'ocupació.
-  for (const n of [10289, 10290, 10291, 10292, 10293, 10294]) {
-    await probe(`idescat-conj-${n}`, `https://www.idescat.cat/indicadors/?id=conj&n=${n}&f=csv&lang=ca`, { cap: 64 * 1024 });
+    const values = await probe(`ine-valores-${table}-${muni.Id}`, `${INE}/VALORES_VARIABLETABLA/${muni.Id}/${table}`, { cap: 6 * 1024 * 1024 });
+    const list = values ? parseJson(values.body) : null;
+    if (!Array.isArray(list)) continue;
+    const catalan = list.filter(v => /^(08|17|25|43)\d{3}$/.test(String(v.Codigo)));
+    console.log(`   municipios en la tabla: ${list.length}; de Catalunya: ${catalan.length}; ejemplo: ${JSON.stringify(list[0])}`);
+    const salou = list.find(v => /^salou$/i.test(v.Nombre)) || catalan[0];
+    if (salou) {
+      await probe(`ine-datos-${table}-salou`, `${INE}/DATOS_TABLA/${table}?tv=${muni.Id}:${salou.Id}&nult=3&tip=AM`, { cap: 2 * 1024 * 1024 });
+    }
   }
-  await probe('idescat-indicadors-api', 'https://api.idescat.cat/indicadors/v1/dades.json?i=10292&lang=ca');
+  await probe('ine-csv-53464', 'https://servicios.ine.es/wstempus/csv_bdsc/ES/DATOS_TABLA/53464?nult=1', { cap: 2 * 1024 * 1024 });
 
-  // Capacidad por municipio, ediciones más recientes que las del repositorio.
-  for (const [n, year] of [[6031, 2024], [6031, 2025], [6036, 2025], [6039, 2025]]) {
-    await probe(`idescat-turall-${n}-${year}`, `https://www.idescat.cat/pub/?id=turall&n=${n}&geo=mun&t=${year}00&f=csv&lang=ca`);
+  // ── AMB: la ocupación seguía "SENSE_INFORMACIO" el 2 de septiembre; se
+  //    vuelve a mirar por si es cuestión de hora. ──
+  console.log('\n── AMB ──');
+  const amb = await probe('amb-estat-platja', 'https://opendata.amb.cat/dades_estat_platja/search');
+  const items = amb ? parseJson(amb.body)?.items : null;
+  if (Array.isArray(items)) {
+    const counts = items.reduce((acc, it) => { acc[it.ocupacio] = (acc[it.ocupacio] || 0) + 1; return acc; }, {});
+    console.log(`   ocupacio: ${JSON.stringify(counts)}`);
   }
-
-  // Población: padró municipal, todos los municipios.
-  await probe('idescat-pmh-pub-csv', 'https://www.idescat.cat/pub/?id=pmh&n=446&by=mun&f=csv&lang=ca');
-  await probe('idescat-pmh-taula-mun', 'https://api.idescat.cat/taules/v2/pmh/446/mun?lang=ca');
-
-  // ─────────────────────────────────────── playas en tiempo real ─────────
-  console.log('\n── Playas (tiempo real) ──');
-  await probe('amb-help', 'https://opendata.amb.cat/help.html');
-  await probe('amb-estat-platja', 'https://opendata.amb.cat/dades_estat_platja/search');
-  await probe('amb-estat-platja-json', 'https://opendata.amb.cat/dades_estat_platja/search?format=json', { headers: { Accept: 'application/json' } });
-  await probe('amb-platges', 'https://opendata.amb.cat/platges/search');
-  await probe('salou-platges', 'https://platges.salou.cat/');
-  await probe('bcn-opendata-platges', 'https://opendata-ajuntament.barcelona.cat/data/api/3/action/package_search?q=platges&rows=20');
-
-  // ────────────────────────────────────────────────────── meteorología ───
-  console.log('\n── Open-Meteo ──');
-  await probe('open-meteo', 'https://api.open-meteo.com/v1/forecast?latitude=41.0763&longitude=1.1417&daily=weather_code,temperature_2m_max&forecast_days=2&timezone=Europe%2FMadrid');
 
   await writeFile(resolve(OUT_DIR, 'summary.json'), JSON.stringify(summary, null, 2), 'utf-8');
   console.log(`\n${summary.length} sondeos. Resumen en ${OUT_DIR}/summary.json`);
 }
 
-main().catch(error => {
-  console.error('❌ Sondeo fallido:', error);
-  process.exit(1);
-});
+main().catch(error => { console.error('❌ Sondeo fallido:', error); process.exit(1); });
