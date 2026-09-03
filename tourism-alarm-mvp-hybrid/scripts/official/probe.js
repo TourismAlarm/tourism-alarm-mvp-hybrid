@@ -12,9 +12,11 @@
 import { writeFile, mkdir } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
-const OUT_DIR = 'data/official/probe';
+// En Vercel el resultado se sirve con el sitio (public/), para poder leerlo
+// desde fuera sin necesidad de un commit.
+const OUT_DIR = process.env.PROBE_OUT || (process.env.VERCEL ? 'public/data/official-probe' : 'data/official/probe');
 const DEFAULT_CAP = 400 * 1024;
-const TIMEOUT_MS = 45000;
+const TIMEOUT_MS = 20000;
 
 const UA = 'TourismAlarm/1.0 (+https://github.com/TourismAlarm/tourism-alarm-mvp-hybrid; sondeo de fuentes oficiales)';
 
@@ -78,14 +80,14 @@ async function probe(name, url, options = {}) {
       bytes: result.bytes,
       truncated: result.truncated,
       ms: Date.now() - started,
-      head: result.body.slice(0, 300).replace(/\s+/g, ' ')
+      head: result.body.slice(0, 600).replace(/\s+/g, ' ')
     });
     const ext = /json/.test(result.type) ? 'json' : /csv/.test(result.type) ? 'csv' : /html/.test(result.type) ? 'html' : 'txt';
     const file = `${slug(name)}.${ext}`;
     await writeFile(resolve(OUT_DIR, file), result.body, 'utf-8');
     entry.file = file;
     console.log(`${String(result.status).padStart(3)}  ${name.padEnd(34)} ${result.type.split(';')[0].padEnd(24)} ${String(result.bytes).padStart(9)} B${result.truncated ? ' (cortado)' : ''}  ${entry.ms} ms`);
-    console.log(`     ${entry.head.slice(0, 160)}`);
+    console.log(`     ${entry.head.slice(0, 420)}`);
     return result;
   } catch (error) {
     entry.error = error.message;

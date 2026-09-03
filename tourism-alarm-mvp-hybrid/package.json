@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run data:build && npm run data:verify && npm run data:promote && vite build",
+    "build": "npm run data:build && npm run data:verify && npm run data:promote && (npm run data:probe || echo \"sondeo fallido\") && vite build",
     "preview": "vite preview",
     "test": "npm run test:signals && npm run test:publish && npm run test:data",
     "test:signals": "node scripts/test-signals.js",
@@ -33,7 +33,8 @@
     "daily:compare": "node scripts/compare-historical.js",
     "daily:full": "node scripts/daily-full-update.js",
     "daily": "node scripts/daily-update.js --limit=50",
-    "daily:big": "node scripts/daily-update.js --limit=100"
+    "daily:big": "node scripts/daily-update.js --limit=100",
+    "data:probe": "node scripts/official/probe.js"
   },
   "devDependencies": {
     "prettier": "^3.6.2",
