@@ -30,3 +30,4 @@ agents/*.json
 *.njsproj
 *.sln
 *.sw?
+public/data/official-probe/

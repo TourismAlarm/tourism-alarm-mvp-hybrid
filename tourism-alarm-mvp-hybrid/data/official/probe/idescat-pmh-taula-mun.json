@@ -1,0 +1,7 @@
+{
+  "version" : "2.0",
+  "class" : "error",
+  "status" : "400",
+  "id" : "03",
+  "label" : "Identificador de taula incorrecte."
+}

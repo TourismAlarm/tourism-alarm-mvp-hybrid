@@ -27,6 +27,7 @@ import * as topojson from 'topojson-client';
 import { getComarca, getBrand, normalizeId, PROVINCIES } from './lib/comarques.js';
 import { readCapacityCsv, readMonthlyStaysByBrand } from './lib/idescat-csv.js';
 import { detectCoastalMunicipalities } from './lib/coastline.js';
+import { blendByCapacity, monthsCovered } from './lib/ine.js';
 import {
   PEAK_OCCUPANCY,
   MIN_OCCUPANCY,
@@ -40,6 +41,11 @@ import {
 
 const GEOJSON_PATH = 'public/geojson/cat-municipis.json';
 const OUTPUT_PATH = 'public/data/current.json';
+
+// Ocupación oficial del INE y población del IDESCAT, descargadas por
+// scripts/official/fetch.js. Si el fichero no está, el mapa se genera igual
+// con la estacionalidad deducida de las pernoctaciones: peor, pero funciona.
+const OFFICIAL_PATH = 'data/official/occupancy.json';
 
 const CAPACITY_SOURCES = {
   hotel: 't6031mun202300.csv',
@@ -80,6 +86,83 @@ function centroidOf(geometry) {
   }
 
   return best ? { lng: round(best[0], 5), lat: round(best[1], 5) } : { lng: null, lat: null };
+}
+
+/**
+ * Lee la ocupación oficial del INE, si se ha descargado.
+ *
+ * No se genera en el build porque el INE puede estar caído o lento y el mapa
+ * no puede depender de eso: el fichero está versionado y se refresca desde
+ * el workflow "Datos oficiales".
+ */
+async function readOfficial() {
+  try {
+    const raw = await readFile(resolve(OFFICIAL_PATH), 'utf-8');
+    const data = JSON.parse(raw);
+    if (!data?.brands || !Object.keys(data.brands).length) return null;
+    return data;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Curva de ocupación de un municipio, mes a mes.
+ *
+ * El INE no publica los meses en que un establecimiento está cerrado, así que
+ * casi ninguna serie tiene los doce: los campings de la Costa Brava cubren de
+ * mayo a septiembre y Salou publica de abril a octubre. Descartar esas series
+ * por incompletas sería tirar la mejor medición que hay para el verano, que es
+ * justo cuando importa.
+ *
+ * Por eso las capas se rellenan mes a mes, cogiendo para cada uno la mejor
+ * disponible:
+ *   1. la del propio municipio, si el INE lo trata como punto turístico
+ *      (Salou, Lloret, Barcelona…);
+ *   2. la de su marca turística, mezclando hotel/camping/rural según las
+ *      plazas que ese municipio tiene de cada tipo — un pueblo de campings no
+ *      sigue la ocupación de los hoteles;
+ *   3. la estacionalidad deducida de las pernoctaciones, que sí tiene los doce
+ *      meses y tapa cualquier hueco.
+ */
+function occupancyForMunicipality(municipality, official, fallback) {
+  const places = {
+    hotel: municipality.hotel_places,
+    camping: municipality.camping_places,
+    rural: municipality.rural_places
+  };
+
+  const blend = entry => entry
+    ? blendByCapacity(
+      { hotel: entry.hotel || {}, camping: entry.camping || {}, rural: entry.rural || {} },
+      places
+    )
+    : {};
+
+  const layers = [
+    ['municipio', blend(official?.municipalities?.[municipality.id])],
+    ['marca', blend(official?.brands?.[municipality.brand])],
+    ['pernoctaciones', fallback[municipality.brand] || {}]
+  ];
+
+  const curve = {};
+  const months = {};
+
+  for (let month = 1; month <= 12; month++) {
+    for (const [name, values] of layers) {
+      const value = values[month];
+      if (typeof value !== 'number') continue;
+      curve[month] = round(value);
+      months[name] = (months[name] || 0) + 1;
+      break;
+    }
+  }
+
+  // El origen que se enseña es el de la mayoría de los meses. Un municipio con
+  // medición propia solo en agosto no puede anunciarse como "medido aquí".
+  const source = Object.entries(months).sort((a, b) => b[1] - a[1])[0]?.[0] || 'pernoctaciones';
+
+  return { curve, source, months };
 }
 
 // Tasa de ocupación estimada por marca y mes, a partir de pernoctaciones reales.
@@ -166,14 +249,28 @@ async function main() {
   // ------------------------------------------------------------ estacionalidad
   const { stays, filesRead, periodsRead } = await readMonthlyStaysByBrand();
   const occupancy = buildOccupancy(stays);
-  console.log(`📅 Estacionalidad: ${Object.keys(occupancy).length} marcas turísticas`);
-  console.log(`   (${periodsRead} periodos mensuales en ${filesRead} ficheros)\n`);
+  console.log(`📅 Estacionalidad de respaldo: ${Object.keys(occupancy).length} marcas turísticas`);
+  console.log(`   (${periodsRead} periodos mensuales en ${filesRead} ficheros)`);
+
+  // ------------------------------------------------------ ocupación oficial
+  const official = await readOfficial();
+  if (official) {
+    console.log(`📊 Ocupación oficial del INE (${official.generated_at.slice(0, 10)}):`);
+    console.log(`   ${Object.keys(official.brands).length} marcas, ` +
+      `${Object.keys(official.municipalities || {}).length} municipios con dato propio, ` +
+      `${Object.keys(official.population || {}).length} con población\n`);
+  } else {
+    console.warn('⚠️  Sin data/official/occupancy.json: la ocupación sale de las');
+    console.warn('   pernoctaciones (proxy). Ejecuta `npm run data:official`.\n');
+  }
 
   if (!Object.keys(occupancy).length) {
     throw new Error('No se ha podido leer la estacionalidad de ningún CSV de turhot');
   }
 
   // ------------------------------------------------------------------ cruce
+  const population = new Map(Object.entries(official?.population || {}));
+
   const municipalities = [];
   let matched = 0;
 
@@ -213,6 +310,13 @@ async function main() {
       rural_places: ruralPlaces,
       total_places: totalPlaces,
       places_per_km2: round(density, 2),
+      // Población del padró (IDESCAT). Plazas por habitante es el indicador
+      // estándar de presión turística; el índice del mapa sigue usando
+      // densidad y volumen, pero la ficha ya puede enseñar la cifra estándar.
+      population: population.get(id) ?? null,
+      places_per_capita: population.get(id) > 0
+        ? round(totalPlaces / population.get(id), 2)
+        : null,
       has_real_data: inCapacityTables && totalPlaces > 0
     });
   }
@@ -228,22 +332,44 @@ async function main() {
   const weatherPoints = buildWeatherPoints(municipalities);
   console.log(`🌤️  Puntos de previsión meteorológica: ${weatherPoints.length}`);
 
-  // Intensidad mensual de referencia: sin calendario ni meteorología. Sirve de
-  // red de seguridad si el navegador no puede calcular nada más.
+  // Curva de ocupación de cada municipio y, con ella, la intensidad mensual de
+  // referencia (sin calendario ni meteorología: eso lo aplica el navegador).
+  const bySource = {};
+
+  let measuredMonths = 0;
+
   for (const m of municipalities) {
-    const brandOccupancy = occupancy[m.brand] || {};
+    const { curve, source, months } = occupancyForMunicipality(m, official, occupancy);
+    m.occupancy = curve;
+    m.occupancy_source = source;
+    // Cuántos de los doce meses vienen de una medición del propio municipio:
+    // la ficha lo dice, para no vender como medido lo que es de la marca.
+    m.occupancy_own_months = months.municipio || 0;
+    bySource[source] = (bySource[source] || 0) + 1;
+    measuredMonths += (months.municipio || 0) + (months.marca || 0);
+
     m.monthly_intensity = {};
     for (let month = 1; month <= 12; month++) {
-      m.monthly_intensity[month] = intensityFor(m, brandOccupancy[month] ?? PEAK_OCCUPANCY);
+      m.monthly_intensity[month] = intensityFor(m, curve[month] ?? PEAK_OCCUPANCY);
     }
   }
+
+  console.log('📈 Origen de la ocupación de cada municipio:');
+  for (const [source, count] of Object.entries(bySource).sort((a, b) => b[1] - a[1])) {
+    console.log(`   ${source.padEnd(16)} ${String(count).padStart(4)}`);
+  }
+  const totalMonths = municipalities.length * 12;
+  console.log(`   ${((measuredMonths / totalMonths) * 100).toFixed(1)}% de los meses-municipio salen de una medición del INE`);
+
+  const ownMeasured = municipalities.filter(m => m.occupancy_own_months > 0);
+  console.log(`   ${ownMeasured.length} municipios con algún mes medido en el propio municipio`);
 
   // ------------------------------------------------------------------- salida
   const now = new Date();
   const today = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / 86400000);
 
   const distribution = municipalities.reduce((acc, m) => {
-    const key = categorize(intensityFor(m, occupancyOnDay(occupancy[m.brand], today)));
+    const key = categorize(intensityFor(m, occupancyOnDay(m.occupancy, today)));
     acc[key] = (acc[key] || 0) + 1;
     return acc;
   }, {});
@@ -257,17 +383,21 @@ async function main() {
       visualization: 'choropleth',
       version: '4.0',
       horizon: 'hoy y mañana',
+      occupancy_sources: bySource,
+      official_data_at: official?.generated_at || null,
       sources: [
         'IDESCAT — Places hoteleres per municipis (t6031, 2023)',
         'IDESCAT — Places de càmpings per municipis (t6036, 2024)',
         'IDESCAT — Places de turisme rural per municipis (t6039, 2024)',
-        'IDESCAT — Pernoctacions hoteleres mensuals per marca turística (turhot, 2023-2025)',
+        ...(official ? official.sources : ['IDESCAT — Pernoctacions hoteleres mensuals per marca turística (turhot, 2023-2025)']),
         'ICGC/IDESCAT — Límits municipals (TopoJSON)',
         'Open-Meteo — previsión de hoy y mañana (en vivo, desde el navegador)'
       ],
       method: {
         capacity: 'plazas hoteleras + camping + turismo rural por municipio (IDESCAT)',
-        seasonality: `ocupación = pernoctaciones del mes / mes punta de la marca, × ${PEAK_OCCUPANCY}`,
+        occupancy: official
+          ? 'grado de ocupación medido del INE, por municipio si lo publica y si no por marca turística, mezclando hotel/camping/rural según las plazas de cada municipio'
+          : `proxy: pernoctaciones del mes / mes punta de la marca, × ${PEAK_OCCUPANCY}`,
         calendar: 'día de la semana y festivos de Catalunya (modelo, media semanal = 1)',
         weather: 'previsión diaria de Open-Meteo (en vivo)'
       }
@@ -291,7 +421,7 @@ async function main() {
   }
 
   const top = [...municipalities]
-    .map(m => ({ m, i: intensityFor(m, occupancyOnDay(occupancy[m.brand], today)) }))
+    .map(m => ({ m, i: intensityFor(m, occupancyOnDay(m.occupancy, today)) }))
     .sort((a, b) => b.i - a.i)
     .slice(0, 8);
 

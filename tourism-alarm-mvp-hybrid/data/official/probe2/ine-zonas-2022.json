@@ -1,0 +1,2071 @@
+[{"COD":"EOT8341", "Nombre":"Nacional. Número de plazas estimadas. Andalucía: Costa De Almería.", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9908, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Andalucía: Costa De Almería", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":12651.0}
+]
+}
+,{"COD":"EOT8342", "Nombre":"Nacional. Número de apartamentos estimados. Andalucía: Costa De Almería.", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9908, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Andalucía: Costa De Almería", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":3193.0}
+]
+}
+,{"COD":"EOT8343", "Nombre":"Nacional. Grado de ocupación por plazas. Andalucía: Costa De Almería.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9908, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Andalucía: Costa De Almería", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":57.18}
+]
+}
+,{"COD":"EOT8344", "Nombre":"Nacional. Grado de ocupación por apartamentos. Andalucía: Costa De Almería.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9908, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Andalucía: Costa De Almería", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":69.36}
+]
+}
+,{"COD":"EOT14881", "Nombre":"Nacional. Apartamentos turísticos. Grado de ocupación por apartamentos en fin de semana. Andalucía: Costa De Almería.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9908, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Andalucía: Costa De Almería", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":72.98}
+]
+}
+,{"COD":"EOT8345", "Nombre":"Nacional. Personal empleado. Andalucía: Costa De Almería.", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9908, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Andalucía: Costa De Almería", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":640.0}
+]
+}
+,{"COD":"EOT22574", "Nombre":"Número de plazas estimadas. Total categorías. Andalucía: Costa De La Luz (Huelva). Dato. ", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9910, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Andalucía: Costa De La Luz (Huelva)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":5453.0}
+]
+}
+,{"COD":"EOT22566", "Nombre":"Número de apartamentos estimados. Total categorías. Andalucía: Costa De La Luz (Huelva). Dato. ", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9910, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Andalucía: Costa De La Luz (Huelva)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":1268.0}
+]
+}
+,{"COD":"EOT22558", "Nombre":"Grado de ocupación por plazas. Total categorías. Andalucía: Costa De La Luz (Huelva). Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9910, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Andalucía: Costa De La Luz (Huelva)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":48.69}
+]
+}
+,{"COD":"EOT22550", "Nombre":"Grado de ocupación por apartamentos. Total categorías. Andalucía: Costa De La Luz (Huelva). Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9910, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Andalucía: Costa De La Luz (Huelva)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":67.88}
+]
+}
+,{"COD":"EOT22542", "Nombre":"Grado de ocupación por apartamentos en fin de semana. Total categorías. Andalucía: Costa De La Luz (Huelva). Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9910, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Andalucía: Costa De La Luz (Huelva)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":72.8}
+]
+}
+,{"COD":"EOT22534", "Nombre":"Personal empleado. Total categorías. Andalucía: Costa De La Luz (Huelva). Dato. ", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9910, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Andalucía: Costa De La Luz (Huelva)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":232.0}
+]
+}
+,{"COD":"EOT8346", "Nombre":"Nacional. Número de plazas estimadas. Andalucía: Costa De La Luz De Cádiz.", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9909, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Andalucía: Costa De La Luz De Cádiz", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":9170.0}
+]
+}
+,{"COD":"EOT8347", "Nombre":"Nacional. Número de apartamentos estimados. Andalucía: Costa De La Luz De Cádiz.", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9909, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Andalucía: Costa De La Luz De Cádiz", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":2423.0}
+]
+}
+,{"COD":"EOT8348", "Nombre":"Nacional. Grado de ocupación por plazas. Andalucía: Costa De La Luz De Cádiz.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9909, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Andalucía: Costa De La Luz De Cádiz", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":53.01}
+]
+}
+,{"COD":"EOT8349", "Nombre":"Nacional. Grado de ocupación por apartamentos. Andalucía: Costa De La Luz De Cádiz.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9909, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Andalucía: Costa De La Luz De Cádiz", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":72.79}
+]
+}
+,{"COD":"EOT14888", "Nombre":"Nacional. Apartamentos turísticos. Grado de ocupación por apartamentos en fin de semana. Andalucía: Costa De La Luz De Cádiz.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9909, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Andalucía: Costa De La Luz De Cádiz", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":77.41}
+]
+}
+,{"COD":"EOT8350", "Nombre":"Nacional. Personal empleado. Andalucía: Costa De La Luz De Cádiz.", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9909, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Andalucía: Costa De La Luz De Cádiz", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":790.0}
+]
+}
+,{"COD":"EOT8351", "Nombre":"Nacional. Número de plazas estimadas. Andalucía: Costa Del Sol (Málaga).", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9911, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Andalucía: Costa Del Sol (Málaga)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":42589.0}
+]
+}
+,{"COD":"EOT8352", "Nombre":"Nacional. Número de apartamentos estimados. Andalucía: Costa Del Sol (Málaga).", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9911, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Andalucía: Costa Del Sol (Málaga)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":12575.0}
+]
+}
+,{"COD":"EOT8353", "Nombre":"Nacional. Grado de ocupación por plazas. Andalucía: Costa Del Sol (Málaga).", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9911, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Andalucía: Costa Del Sol (Málaga)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":57.19}
+]
+}
+,{"COD":"EOT8354", "Nombre":"Nacional. Grado de ocupación por apartamentos. Andalucía: Costa Del Sol (Málaga).", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9911, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Andalucía: Costa Del Sol (Málaga)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":67.31}
+]
+}
+,{"COD":"EOT14895", "Nombre":"Nacional. Apartamentos turísticos. Grado de ocupación por apartamentos en fin de semana. Andalucía: Costa Del Sol (Málaga).", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9911, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Andalucía: Costa Del Sol (Málaga)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":69.34}
+]
+}
+,{"COD":"EOT8355", "Nombre":"Nacional. Personal empleado. Andalucía: Costa Del Sol (Málaga).", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9911, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Andalucía: Costa Del Sol (Málaga)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":3238.0}
+]
+}
+,{"COD":"EOT22573", "Nombre":"Número de plazas estimadas. Total categorías. Andalucía: Costa Tropical (Granada). Dato. ", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9912, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Andalucía: Costa Tropical (Granada)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":1915.0}
+]
+}
+,{"COD":"EOT22565", "Nombre":"Número de apartamentos estimados. Total categorías. Andalucía: Costa Tropical (Granada). Dato. ", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9912, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Andalucía: Costa Tropical (Granada)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":420.0}
+]
+}
+,{"COD":"EOT22557", "Nombre":"Grado de ocupación por plazas. Total categorías. Andalucía: Costa Tropical (Granada). Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9912, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Andalucía: Costa Tropical (Granada)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":44.38}
+]
+}
+,{"COD":"EOT22549", "Nombre":"Grado de ocupación por apartamentos. Total categorías. Andalucía: Costa Tropical (Granada). Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9912, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Andalucía: Costa Tropical (Granada)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":60.58}
+]
+}
+,{"COD":"EOT22541", "Nombre":"Grado de ocupación por apartamentos en fin de semana. Total categorías. Andalucía: Costa Tropical (Granada). Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9912, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Andalucía: Costa Tropical (Granada)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":64.42}
+]
+}
+,{"COD":"EOT22533", "Nombre":"Personal empleado. Total categorías. Andalucía: Costa Tropical (Granada). Dato. ", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9912, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Andalucía: Costa Tropical (Granada)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":161.0}
+]
+}
+,{"COD":"EOT8356", "Nombre":"Nacional. Número de plazas estimadas. Asturias (Principado De): Costa Verde.", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9913, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Asturias (Principado De): Costa Verde", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":4579.0}
+]
+}
+,{"COD":"EOT8357", "Nombre":"Nacional. Número de apartamentos estimados. Asturias (Principado De): Costa Verde.", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9913, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Asturias (Principado De): Costa Verde", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":1234.0}
+]
+}
+,{"COD":"EOT8358", "Nombre":"Nacional. Grado de ocupación por plazas. Asturias (Principado De): Costa Verde.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9913, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Asturias (Principado De): Costa Verde", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":52.91}
+]
+}
+,{"COD":"EOT8359", "Nombre":"Nacional. Grado de ocupación por apartamentos. Asturias (Principado De): Costa Verde.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9913, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Asturias (Principado De): Costa Verde", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":67.32}
+]
+}
+,{"COD":"EOT14902", "Nombre":"Nacional. Apartamentos turísticos. Grado de ocupación por apartamentos en fin de semana. Asturias (Principado De): Costa Verde.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9913, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Asturias (Principado De): Costa Verde", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":67.79}
+]
+}
+,{"COD":"EOT8360", "Nombre":"Nacional. Personal empleado. Asturias (Principado De): Costa Verde.", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9913, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Asturias (Principado De): Costa Verde", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":305.0}
+]
+}
+,{"COD":"EOT8361", "Nombre":"Nacional. Número de plazas estimadas. Baleares (Illes): Isla De Mallorca.", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9914, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Baleares (Illes): Isla De Mallorca", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":30060.0}
+]
+}
+,{"COD":"EOT8362", "Nombre":"Nacional. Número de apartamentos estimados. Baleares (Illes): Isla De Mallorca.", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9914, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Baleares (Illes): Isla De Mallorca", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":10123.0}
+]
+}
+,{"COD":"EOT8363", "Nombre":"Nacional. Grado de ocupación por plazas. Baleares (Illes): Isla De Mallorca.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9914, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Baleares (Illes): Isla De Mallorca", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":78.85}
+]
+}
+,{"COD":"EOT8364", "Nombre":"Nacional. Grado de ocupación por apartamentos. Baleares (Illes): Isla De Mallorca.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9914, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Baleares (Illes): Isla De Mallorca", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":87.63}
+]
+}
+,{"COD":"EOT14909", "Nombre":"Nacional. Apartamentos turísticos. Grado de ocupación por apartamentos en fin de semana. Baleares (Illes): Isla De Mallorca.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9914, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Baleares (Illes): Isla De Mallorca", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":88.97}
+]
+}
+,{"COD":"EOT8365", "Nombre":"Nacional. Personal empleado. Baleares (Illes): Isla De Mallorca.", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9914, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Baleares (Illes): Isla De Mallorca", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":3231.0}
+]
+}
+,{"COD":"EOT8376", "Nombre":"Nacional. Número de plazas estimadas. Canarias: Isla De Fuerteventura.", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9918, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De Fuerteventura", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":11187.0}
+]
+}
+,{"COD":"EOT8377", "Nombre":"Nacional. Número de apartamentos estimados. Canarias: Isla De Fuerteventura.", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9918, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De Fuerteventura", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":3452.0}
+]
+}
+,{"COD":"EOT8378", "Nombre":"Nacional. Grado de ocupación por plazas. Canarias: Isla De Fuerteventura.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9918, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De Fuerteventura", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":58.91}
+]
+}
+,{"COD":"EOT8379", "Nombre":"Nacional. Grado de ocupación por apartamentos. Canarias: Isla De Fuerteventura.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9918, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De Fuerteventura", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":74.86}
+]
+}
+,{"COD":"EOT14930", "Nombre":"Nacional. Apartamentos turísticos. Grado de ocupación por apartamentos en fin de semana. Canarias: Isla De Fuerteventura.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9918, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De Fuerteventura", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":75.46}
+]
+}
+,{"COD":"EOT8380", "Nombre":"Nacional. Personal empleado. Canarias: Isla De Fuerteventura.", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9918, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De Fuerteventura", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":946.0}
+]
+}
+,{"COD":"EOT8366", "Nombre":"Nacional. Número de plazas estimadas. Canarias: Isla De Gran Canaria.", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9919, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De Gran Canaria", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":47312.0}
+]
+}
+,{"COD":"EOT8367", "Nombre":"Nacional. Número de apartamentos estimados. Canarias: Isla De Gran Canaria.", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9919, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De Gran Canaria", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":14677.0}
+]
+}
+,{"COD":"EOT8368", "Nombre":"Nacional. Grado de ocupación por plazas. Canarias: Isla De Gran Canaria.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9919, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De Gran Canaria", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":52.87}
+]
+}
+,{"COD":"EOT8369", "Nombre":"Nacional. Grado de ocupación por apartamentos. Canarias: Isla De Gran Canaria.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9919, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De Gran Canaria", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":67.96}
+]
+}
+,{"COD":"EOT14916", "Nombre":"Nacional. Apartamentos turísticos. Grado de ocupación por apartamentos en fin de semana. Canarias: Isla De Gran Canaria.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9919, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De Gran Canaria", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":70.36}
+]
+}
+,{"COD":"EOT8370", "Nombre":"Nacional. Personal empleado. Canarias: Isla De Gran Canaria.", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9919, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De Gran Canaria", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":3984.0}
+]
+}
+,{"COD":"EOT8396", "Nombre":"Nacional. Número de plazas estimadas. Canarias: Isla De Hierro.", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9920, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De Hierro", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":489.0}
+]
+}
+,{"COD":"EOT8397", "Nombre":"Nacional. Número de apartamentos estimados. Canarias: Isla De Hierro.", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9920, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De Hierro", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":150.0}
+]
+}
+,{"COD":"EOT8398", "Nombre":"Nacional. Grado de ocupación por plazas. Canarias: Isla De Hierro.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9920, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De Hierro", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":40.81}
+]
+}
+,{"COD":"EOT8399", "Nombre":"Nacional. Grado de ocupación por apartamentos. Canarias: Isla De Hierro.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9920, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De Hierro", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":49.22}
+]
+}
+,{"COD":"EOT14958", "Nombre":"Nacional. Apartamentos turísticos. Grado de ocupación por apartamentos en fin de semana. Canarias: Isla De Hierro.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9920, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De Hierro", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":50.92}
+]
+}
+,{"COD":"EOT8400", "Nombre":"Nacional. Personal empleado. Canarias: Isla De Hierro.", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9920, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De Hierro", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":40.0}
+]
+}
+,{"COD":"EOT8386", "Nombre":"Nacional. Número de plazas estimadas. Canarias: Isla De La Gomera.", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9921, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De La Gomera", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":2917.0}
+]
+}
+,{"COD":"EOT8387", "Nombre":"Nacional. Número de apartamentos estimados. Canarias: Isla De La Gomera.", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9921, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De La Gomera", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":980.0}
+]
+}
+,{"COD":"EOT8388", "Nombre":"Nacional. Grado de ocupación por plazas. Canarias: Isla De La Gomera.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9921, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De La Gomera", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":35.07}
+]
+}
+,{"COD":"EOT8389", "Nombre":"Nacional. Grado de ocupación por apartamentos. Canarias: Isla De La Gomera.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9921, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De La Gomera", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":47.75}
+]
+}
+,{"COD":"EOT14944", "Nombre":"Nacional. Apartamentos turísticos. Grado de ocupación por apartamentos en fin de semana. Canarias: Isla De La Gomera.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9921, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De La Gomera", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":52.77}
+]
+}
+,{"COD":"EOT8390", "Nombre":"Nacional. Personal empleado. Canarias: Isla De La Gomera.", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9921, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De La Gomera", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":278.0}
+]
+}
+,{"COD":"EOT8391", "Nombre":"Nacional. Número de plazas estimadas. Canarias: Isla De La Palma.", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9922, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De La Palma", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":2455.0}
+]
+}
+,{"COD":"EOT8392", "Nombre":"Nacional. Número de apartamentos estimados. Canarias: Isla De La Palma.", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9922, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De La Palma", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":758.0}
+]
+}
+,{"COD":"EOT8393", "Nombre":"Nacional. Grado de ocupación por plazas. Canarias: Isla De La Palma.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9922, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De La Palma", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":48.29}
+]
+}
+,{"COD":"EOT8394", "Nombre":"Nacional. Grado de ocupación por apartamentos. Canarias: Isla De La Palma.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9922, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De La Palma", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":67.99}
+]
+}
+,{"COD":"EOT14951", "Nombre":"Nacional. Apartamentos turísticos. Grado de ocupación por apartamentos en fin de semana. Canarias: Isla De La Palma.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9922, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De La Palma", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":68.66}
+]
+}
+,{"COD":"EOT8395", "Nombre":"Nacional. Personal empleado. Canarias: Isla De La Palma.", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9922, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De La Palma", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":241.0}
+]
+}
+,{"COD":"EOT8371", "Nombre":"Nacional. Número de plazas estimadas. Canarias: Isla De Lanzarote.", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9923, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De Lanzarote", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":31077.0}
+]
+}
+,{"COD":"EOT8372", "Nombre":"Nacional. Número de apartamentos estimados. Canarias: Isla De Lanzarote.", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9923, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De Lanzarote", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":9237.0}
+]
+}
+,{"COD":"EOT8373", "Nombre":"Nacional. Grado de ocupación por plazas. Canarias: Isla De Lanzarote.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9923, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De Lanzarote", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":64.12}
+]
+}
+,{"COD":"EOT8374", "Nombre":"Nacional. Grado de ocupación por apartamentos. Canarias: Isla De Lanzarote.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9923, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De Lanzarote", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":85.52}
+]
+}
+,{"COD":"EOT14923", "Nombre":"Nacional. Apartamentos turísticos. Grado de ocupación por apartamentos en fin de semana. Canarias: Isla De Lanzarote.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9923, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De Lanzarote", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":85.41}
+]
+}
+,{"COD":"EOT8375", "Nombre":"Nacional. Personal empleado. Canarias: Isla De Lanzarote.", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9923, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De Lanzarote", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":3268.0}
+]
+}
+,{"COD":"EOT8381", "Nombre":"Nacional. Número de plazas estimadas. Canarias: Isla De Tenerife.", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9924, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De Tenerife", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":42182.0}
+]
+}
+,{"COD":"EOT8382", "Nombre":"Nacional. Número de apartamentos estimados. Canarias: Isla De Tenerife.", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9924, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De Tenerife", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":12564.0}
+]
+}
+,{"COD":"EOT8383", "Nombre":"Nacional. Grado de ocupación por plazas. Canarias: Isla De Tenerife.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9924, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De Tenerife", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":61.46}
+]
+}
+,{"COD":"EOT8384", "Nombre":"Nacional. Grado de ocupación por apartamentos. Canarias: Isla De Tenerife.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9924, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De Tenerife", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":76.15}
+]
+}
+,{"COD":"EOT14937", "Nombre":"Nacional. Apartamentos turísticos. Grado de ocupación por apartamentos en fin de semana. Canarias: Isla De Tenerife.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9924, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De Tenerife", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":77.96}
+]
+}
+,{"COD":"EOT8385", "Nombre":"Nacional. Personal empleado. Canarias: Isla De Tenerife.", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9924, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Isla De Tenerife", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":4202.0}
+]
+}
+,{"COD":"EOT46520", "Nombre":"Canarias: Frontera. Número de plazas estimadas. Total categorías. Dato. ", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":417752, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Frontera", "Codigo":""}
+,{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":348.0}
+]
+}
+,{"COD":"EOT46521", "Nombre":"Canarias: Frontera. Número de apartamentos estimados. Total categorías. Dato. ", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":417752, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Frontera", "Codigo":""}
+,{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":100.0}
+]
+}
+,{"COD":"EOT46524", "Nombre":"Canarias: Frontera. Grado de ocupación por plazas. Total categorías. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":417752, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Frontera", "Codigo":""}
+,{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":42.84}
+]
+}
+,{"COD":"EOT46523", "Nombre":"Canarias: Frontera. Grado de ocupación por apartamentos. Total categorías. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":417752, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Frontera", "Codigo":""}
+,{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":50.44}
+]
+}
+,{"COD":"EOT46522", "Nombre":"Canarias: Frontera. Grado de ocupación por apartamentos en fin de semana. Total categorías. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":417752, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Frontera", "Codigo":""}
+,{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":54.86}
+]
+}
+,{"COD":"EOT46525", "Nombre":"Canarias: Frontera. Personal empleado. Total categorías. Dato. ", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":417752, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Canarias: Frontera", "Codigo":""}
+,{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":27.0}
+]
+}
+,{"COD":"EOT8401", "Nombre":"Nacional. Número de plazas estimadas. Cataluña: Costa De Barcelona.", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9929, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Barcelona", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":3885.0}
+]
+}
+,{"COD":"EOT8402", "Nombre":"Nacional. Número de apartamentos estimados. Cataluña: Costa De Barcelona.", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9929, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Barcelona", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":934.0}
+]
+}
+,{"COD":"EOT8403", "Nombre":"Nacional. Grado de ocupación por plazas. Cataluña: Costa De Barcelona.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9929, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Barcelona", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":57.38}
+]
+}
+,{"COD":"EOT8404", "Nombre":"Nacional. Grado de ocupación por apartamentos. Cataluña: Costa De Barcelona.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9929, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Barcelona", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":78.82}
+]
+}
+,{"COD":"EOT14965", "Nombre":"Nacional. Apartamentos turísticos. Grado de ocupación por apartamentos en fin de semana. Cataluña: Costa De Barcelona.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9929, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Barcelona", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":81.48}
+]
+}
+,{"COD":"EOT8405", "Nombre":"Nacional. Personal empleado. Cataluña: Costa De Barcelona.", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9929, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Barcelona", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":261.0}
+]
+}
+,{"COD":"EOT22571", "Nombre":"Número de plazas estimadas. Total categorías. Cataluña: Cataluña Central. Dato. ", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":284067, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Cataluña Central", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT22563", "Nombre":"Número de apartamentos estimados. Total categorías. Cataluña: Cataluña Central. Dato. ", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":284067, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Cataluña Central", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT22555", "Nombre":"Grado de ocupación por plazas. Total categorías. Cataluña: Cataluña Central. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":284067, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Cataluña Central", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT22547", "Nombre":"Grado de ocupación por apartamentos. Total categorías. Cataluña: Cataluña Central. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":284067, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Cataluña Central", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT22539", "Nombre":"Grado de ocupación por apartamentos en fin de semana. Total categorías. Cataluña: Cataluña Central. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":284067, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Cataluña Central", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT22531", "Nombre":"Personal empleado. Total categorías. Cataluña: Cataluña Central. Dato. ", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":284067, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Cataluña Central", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT21260", "Nombre":"Total Nacional, Apartamentos turísticos, Número de plazas estimadas, Total categorías, Cataluña: Costa  Barcelona, Total , Dato base", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":23223, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa  Barcelona", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT21258", "Nombre":"Total Nacional, Apartamentos turísticos, Número de apartamentos estimados, Total categorías, Cataluña: Costa  Barcelona, Total , Dato base", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":23223, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa  Barcelona", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT21256", "Nombre":"Total Nacional, Apartamentos turísticos, Grado de ocupación por plazas, Total categorías, Cataluña: Costa  Barcelona, Total , Dato base", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":23223, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa  Barcelona", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT21254", "Nombre":"Total Nacional, Apartamentos turísticos, Grado de ocupación por apartamentos, Total categorías, Cataluña: Costa  Barcelona, Total , Dato base", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":23223, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa  Barcelona", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT21252", "Nombre":"Total Nacional, Apartamentos turísticos, Grado de ocupación por apartamentos en fin de semana, Total categorías, Cataluña: Costa  Barcelona, Total , Dato base", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":23223, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa  Barcelona", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT21250", "Nombre":"Total Nacional, Apartamentos turísticos, Personal empleado, Total categorías, Cataluña: Costa  Barcelona, Total , Dato base", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":23223, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa  Barcelona", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT24720", "Nombre":"Cataluña: Costa  Barcelona 2015. Número de plazas estimadas. Total categorías. Dato. ", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":292667, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa  Barcelona 2015", "Codigo":""}
+,{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT24722", "Nombre":"Cataluña: Costa  Barcelona 2015. Número de apartamentos estimados. Total categorías. Dato. ", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":292667, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa  Barcelona 2015", "Codigo":""}
+,{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT24719", "Nombre":"Cataluña: Costa  Barcelona 2015. Grado de ocupación por plazas. Total categorías. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":292667, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa  Barcelona 2015", "Codigo":""}
+,{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT24718", "Nombre":"Cataluña: Costa  Barcelona 2015. Grado de ocupación por apartamentos. Total categorías. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":292667, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa  Barcelona 2015", "Codigo":""}
+,{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT24717", "Nombre":"Cataluña: Costa  Barcelona 2015. Grado de ocupación por apartamentos en fin de semana. Total categorías. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":292667, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa  Barcelona 2015", "Codigo":""}
+,{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT24721", "Nombre":"Cataluña: Costa  Barcelona 2015. Personal empleado. Total categorías. Dato. ", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":292667, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa  Barcelona 2015", "Codigo":""}
+,{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT38515", "Nombre":"Cataluña: Costa  Barcelona 2016. Número de plazas estimadas. Total categorías. Dato. ", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":298992, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa  Barcelona 2016", "Codigo":""}
+,{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT38514", "Nombre":"Cataluña: Costa  Barcelona 2016. Número de apartamentos estimados. Total categorías. Dato. ", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":298992, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa  Barcelona 2016", "Codigo":""}
+,{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT38518", "Nombre":"Cataluña: Costa  Barcelona 2016. Grado de ocupación por plazas. Total categorías. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":298992, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa  Barcelona 2016", "Codigo":""}
+,{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT38517", "Nombre":"Cataluña: Costa  Barcelona 2016. Grado de ocupación por apartamentos. Total categorías. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":298992, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa  Barcelona 2016", "Codigo":""}
+,{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT38516", "Nombre":"Cataluña: Costa  Barcelona 2016. Grado de ocupación por apartamentos en fin de semana. Total categorías. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":298992, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa  Barcelona 2016", "Codigo":""}
+,{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT38513", "Nombre":"Cataluña: Costa  Barcelona 2016. Personal empleado. Total categorías. Dato. ", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":298992, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa  Barcelona 2016", "Codigo":""}
+,{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT48020", "Nombre":"Cataluña: Costa Barcelona 2026. Número de plazas estimadas. Total categorías. Dato. ", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":446604, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa Barcelona 2026", "Codigo":""}
+,{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":5354.0}
+]
+}
+,{"COD":"EOT48019", "Nombre":"Cataluña: Costa Barcelona 2026. Número de apartamentos estimados. Total categorías. Dato. ", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":446604, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa Barcelona 2026", "Codigo":""}
+,{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":1709.0}
+]
+}
+,{"COD":"EOT48018", "Nombre":"Cataluña: Costa Barcelona 2026. Grado de ocupación por plazas. Total categorías. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":446604, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa Barcelona 2026", "Codigo":""}
+,{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":54.46}
+]
+}
+,{"COD":"EOT48017", "Nombre":"Cataluña: Costa Barcelona 2026. Grado de ocupación por apartamentos. Total categorías. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":446604, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa Barcelona 2026", "Codigo":""}
+,{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":85.1}
+]
+}
+,{"COD":"EOT48016", "Nombre":"Cataluña: Costa Barcelona 2026. Grado de ocupación por apartamentos en fin de semana. Total categorías. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":446604, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa Barcelona 2026", "Codigo":""}
+,{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":85.34}
+]
+}
+,{"COD":"EOT48015", "Nombre":"Cataluña: Costa Barcelona 2026. Personal empleado. Total categorías. Dato. ", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":446604, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa Barcelona 2026", "Codigo":""}
+,{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":268.0}
+]
+}
+,{"COD":"EOT8411", "Nombre":"Nacional. Número de plazas estimadas. Cataluña: Costa Brava.", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9927, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa Brava", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":35218.0}
+]
+}
+,{"COD":"EOT8412", "Nombre":"Nacional. Número de apartamentos estimados. Cataluña: Costa Brava.", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9927, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa Brava", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":7471.0}
+]
+}
+,{"COD":"EOT8413", "Nombre":"Nacional. Grado de ocupación por plazas. Cataluña: Costa Brava.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9927, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa Brava", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":44.06}
+]
+}
+,{"COD":"EOT8414", "Nombre":"Nacional. Grado de ocupación por apartamentos. Cataluña: Costa Brava.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9927, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa Brava", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":62.96}
+]
+}
+,{"COD":"EOT14979", "Nombre":"Nacional. Apartamentos turísticos. Grado de ocupación por apartamentos en fin de semana. Cataluña: Costa Brava.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9927, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa Brava", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":64.81}
+]
+}
+,{"COD":"EOT8415", "Nombre":"Nacional. Personal empleado. Cataluña: Costa Brava.", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9927, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa Brava", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":950.0}
+]
+}
+,{"COD":"EOT8416", "Nombre":"Nacional. Número de plazas estimadas. Cataluña: Costa Daurada.", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9928, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa Daurada", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":19909.0}
+]
+}
+,{"COD":"EOT8417", "Nombre":"Nacional. Número de apartamentos estimados. Cataluña: Costa Daurada.", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9928, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa Daurada", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":4172.0}
+]
+}
+,{"COD":"EOT8418", "Nombre":"Nacional. Grado de ocupación por plazas. Cataluña: Costa Daurada.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9928, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa Daurada", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":56.96}
+]
+}
+,{"COD":"EOT8419", "Nombre":"Nacional. Grado de ocupación por apartamentos. Cataluña: Costa Daurada.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9928, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa Daurada", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":72.61}
+]
+}
+,{"COD":"EOT14986", "Nombre":"Nacional. Apartamentos turísticos. Grado de ocupación por apartamentos en fin de semana. Cataluña: Costa Daurada.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9928, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa Daurada", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":75.02}
+]
+}
+,{"COD":"EOT8420", "Nombre":"Nacional. Personal empleado. Cataluña: Costa Daurada.", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9928, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa Daurada", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":634.0}
+]
+}
+,{"COD":"EOT8406", "Nombre":"Nacional. Número de plazas estimadas. Cataluña: Costa Del Garraf.", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9930, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa Del Garraf", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT8407", "Nombre":"Nacional. Número de apartamentos estimados. Cataluña: Costa Del Garraf.", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9930, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa Del Garraf", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT8408", "Nombre":"Nacional. Grado de ocupación por plazas. Cataluña: Costa Del Garraf.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9930, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa Del Garraf", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT8409", "Nombre":"Nacional. Grado de ocupación por apartamentos. Cataluña: Costa Del Garraf.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9930, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa Del Garraf", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT14972", "Nombre":"Nacional. Apartamentos turísticos. Grado de ocupación por apartamentos en fin de semana. Cataluña: Costa Del Garraf.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9930, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa Del Garraf", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT8410", "Nombre":"Nacional. Personal empleado. Cataluña: Costa Del Garraf.", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9930, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Costa Del Garraf", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT22572", "Nombre":"Número de plazas estimadas. Total categorías. Cataluña: Terres de l'Ebre. Dato. ", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":284065, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Terres de l'Ebre", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":null}
+]
+}
+,{"COD":"EOT22564", "Nombre":"Número de apartamentos estimados. Total categorías. Cataluña: Terres de l'Ebre. Dato. ", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":284065, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Terres de l'Ebre", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":null}
+]
+}
+,{"COD":"EOT22556", "Nombre":"Grado de ocupación por plazas. Total categorías. Cataluña: Terres de l'Ebre. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":284065, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Terres de l'Ebre", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":null}
+]
+}
+,{"COD":"EOT22548", "Nombre":"Grado de ocupación por apartamentos. Total categorías. Cataluña: Terres de l'Ebre. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":284065, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Terres de l'Ebre", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":null}
+]
+}
+,{"COD":"EOT22540", "Nombre":"Grado de ocupación por apartamentos en fin de semana. Total categorías. Cataluña: Terres de l'Ebre. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":284065, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Terres de l'Ebre", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":null}
+]
+}
+,{"COD":"EOT22532", "Nombre":"Personal empleado. Total categorías. Cataluña: Terres de l'Ebre. Dato. ", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":284065, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Terres de l'Ebre", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":null}
+]
+}
+,{"COD":"EOT44748", "Nombre":"Cataluña: Terres de Lleida. Número de plazas estimadas. Total categorías. Dato. ", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":284066, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Terres de Lleida", "Codigo":""}
+,{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":null}
+]
+}
+,{"COD":"EOT44753", "Nombre":"Cataluña: Terres de Lleida. Número de apartamentos estimados. Total categorías. Dato. ", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":284066, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Terres de Lleida", "Codigo":""}
+,{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":null}
+]
+}
+,{"COD":"EOT44758", "Nombre":"Cataluña: Terres de Lleida. Grado de ocupación por plazas. Total categorías. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":284066, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Terres de Lleida", "Codigo":""}
+,{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":null}
+]
+}
+,{"COD":"EOT44763", "Nombre":"Cataluña: Terres de Lleida. Grado de ocupación por apartamentos. Total categorías. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":284066, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Terres de Lleida", "Codigo":""}
+,{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":null}
+]
+}
+,{"COD":"EOT44768", "Nombre":"Cataluña: Terres de Lleida. Grado de ocupación por apartamentos en fin de semana. Total categorías. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":284066, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Terres de Lleida", "Codigo":""}
+,{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":null}
+]
+}
+,{"COD":"EOT44773", "Nombre":"Cataluña: Terres de Lleida. Personal empleado. Total categorías. Dato. ", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":284066, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Cataluña: Terres de Lleida", "Codigo":""}
+,{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":null}
+]
+}
+,{"COD":"EOT8426", "Nombre":"Nacional. Número de plazas estimadas. Comunitat Valenciana: Costa Azahar.", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9932, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Comunitat Valenciana: Costa Azahar", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT8427", "Nombre":"Nacional. Número de apartamentos estimados. Comunitat Valenciana: Costa Azahar.", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9932, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Comunitat Valenciana: Costa Azahar", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT8428", "Nombre":"Nacional. Grado de ocupación por plazas. Comunitat Valenciana: Costa Azahar.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9932, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Comunitat Valenciana: Costa Azahar", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT8429", "Nombre":"Nacional. Grado de ocupación por apartamentos. Comunitat Valenciana: Costa Azahar.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9932, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Comunitat Valenciana: Costa Azahar", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT15000", "Nombre":"Nacional. Apartamentos turísticos. Grado de ocupación por apartamentos en fin de semana. Comunitat Valenciana: Costa Azahar.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9932, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Comunitat Valenciana: Costa Azahar", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT8430", "Nombre":"Nacional. Personal empleado. Comunitat Valenciana: Costa Azahar.", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9932, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Comunitat Valenciana: Costa Azahar", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT8421", "Nombre":"Nacional. Número de plazas estimadas. Comunitat Valenciana: Costa Blanca.", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9933, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Comunitat Valenciana: Costa Blanca", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":82561.0}
+]
+}
+,{"COD":"EOT8422", "Nombre":"Nacional. Número de apartamentos estimados. Comunitat Valenciana: Costa Blanca.", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9933, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Comunitat Valenciana: Costa Blanca", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":18045.0}
+]
+}
+,{"COD":"EOT8423", "Nombre":"Nacional. Grado de ocupación por plazas. Comunitat Valenciana: Costa Blanca.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9933, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Comunitat Valenciana: Costa Blanca", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":49.72}
+]
+}
+,{"COD":"EOT8424", "Nombre":"Nacional. Grado de ocupación por apartamentos. Comunitat Valenciana: Costa Blanca.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9933, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Comunitat Valenciana: Costa Blanca", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":64.7}
+]
+}
+,{"COD":"EOT14993", "Nombre":"Nacional. Apartamentos turísticos. Grado de ocupación por apartamentos en fin de semana. Comunitat Valenciana: Costa Blanca.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9933, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Comunitat Valenciana: Costa Blanca", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":66.04}
+]
+}
+,{"COD":"EOT8425", "Nombre":"Nacional. Personal empleado. Comunitat Valenciana: Costa Blanca.", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9933, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Comunitat Valenciana: Costa Blanca", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":3412.0}
+]
+}
+,{"COD":"EOT21259", "Nombre":"Total Nacional, Apartamentos turísticos, Número de plazas estimadas, Total categorías, Comunitat Valenciana: Costa de Castellón, Total , Dato base", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":23224, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Comunitat Valenciana: Costa de Castellón", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":21987.0}
+]
+}
+,{"COD":"EOT21257", "Nombre":"Total Nacional, Apartamentos turísticos, Número de apartamentos estimados, Total categorías, Comunitat Valenciana: Costa de Castellón, Total , Dato base", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":23224, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Comunitat Valenciana: Costa de Castellón", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":4353.0}
+]
+}
+,{"COD":"EOT21255", "Nombre":"Total Nacional, Apartamentos turísticos, Grado de ocupación por plazas, Total categorías, Comunitat Valenciana: Costa de Castellón, Total , Dato base", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":23224, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Comunitat Valenciana: Costa de Castellón", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":51.39}
+]
+}
+,{"COD":"EOT21253", "Nombre":"Total Nacional, Apartamentos turísticos, Grado de ocupación por apartamentos, Total categorías, Comunitat Valenciana: Costa de Castellón, Total , Dato base", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":23224, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Comunitat Valenciana: Costa de Castellón", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":72.83}
+]
+}
+,{"COD":"EOT21251", "Nombre":"Total Nacional, Apartamentos turísticos, Grado de ocupación por apartamentos en fin de semana, Total categorías, Comunitat Valenciana: Costa de Castellón, Total , Dato base", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":23224, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Comunitat Valenciana: Costa de Castellón", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":72.66}
+]
+}
+,{"COD":"EOT21249", "Nombre":"Total Nacional, Apartamentos turísticos, Personal empleado, Total categorías, Comunitat Valenciana: Costa de Castellón, Total , Dato base", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":23224, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Comunitat Valenciana: Costa de Castellón", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":589.0}
+]
+}
+,{"COD":"EOT8431", "Nombre":"Nacional. Número de plazas estimadas. Comunitat Valenciana: Costa Valencia.", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9934, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Comunitat Valenciana: Costa Valencia", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":17117.0}
+]
+}
+,{"COD":"EOT8432", "Nombre":"Nacional. Número de apartamentos estimados. Comunitat Valenciana: Costa Valencia.", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9934, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Comunitat Valenciana: Costa Valencia", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":3400.0}
+]
+}
+,{"COD":"EOT8433", "Nombre":"Nacional. Grado de ocupación por plazas. Comunitat Valenciana: Costa Valencia.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9934, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Comunitat Valenciana: Costa Valencia", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":29.49}
+]
+}
+,{"COD":"EOT8434", "Nombre":"Nacional. Grado de ocupación por apartamentos. Comunitat Valenciana: Costa Valencia.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9934, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Comunitat Valenciana: Costa Valencia", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":51.05}
+]
+}
+,{"COD":"EOT15007", "Nombre":"Nacional. Apartamentos turísticos. Grado de ocupación por apartamentos en fin de semana. Comunitat Valenciana: Costa Valencia.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9934, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Comunitat Valenciana: Costa Valencia", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":51.88}
+]
+}
+,{"COD":"EOT8435", "Nombre":"Nacional. Personal empleado. Comunitat Valenciana: Costa Valencia.", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9934, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Comunitat Valenciana: Costa Valencia", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":259.0}
+]
+}
+,{"COD":"EOT24832", "Nombre":"Extremadura: Norte de Extremadura. Número de plazas estimadas. Total categorías. Dato. ", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":298020, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Extremadura: Norte de Extremadura", "Codigo":""}
+,{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":3293.0}
+]
+}
+,{"COD":"EOT24831", "Nombre":"Extremadura: Norte de Extremadura. Número de apartamentos estimados. Total categorías. Dato. ", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":298020, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Extremadura: Norte de Extremadura", "Codigo":""}
+,{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":780.0}
+]
+}
+,{"COD":"EOT24830", "Nombre":"Extremadura: Norte de Extremadura. Grado de ocupación por plazas. Total categorías. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":298020, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Extremadura: Norte de Extremadura", "Codigo":""}
+,{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":28.46}
+]
+}
+,{"COD":"EOT24829", "Nombre":"Extremadura: Norte de Extremadura. Grado de ocupación por apartamentos. Total categorías. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":298020, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Extremadura: Norte de Extremadura", "Codigo":""}
+,{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":49.38}
+]
+}
+,{"COD":"EOT24828", "Nombre":"Extremadura: Norte de Extremadura. Grado de ocupación por apartamentos en fin de semana. Total categorías. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":298020, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Extremadura: Norte de Extremadura", "Codigo":""}
+,{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":59.81}
+]
+}
+,{"COD":"EOT24827", "Nombre":"Extremadura: Norte de Extremadura. Personal empleado. Total categorías. Dato. ", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":298020, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Extremadura: Norte de Extremadura", "Codigo":""}
+,{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":334.0}
+]
+}
+,{"COD":"EOT22568", "Nombre":"Número de plazas estimadas. Total categorías. Galicia: Costa A Mariña Lucense (Lugo). Dato. ", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9935, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Galicia: Costa A Mariña Lucense (Lugo)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":1516.0}
+]
+}
+,{"COD":"EOT22560", "Nombre":"Número de apartamentos estimados. Total categorías. Galicia: Costa A Mariña Lucense (Lugo). Dato. ", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9935, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Galicia: Costa A Mariña Lucense (Lugo)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":375.0}
+]
+}
+,{"COD":"EOT22552", "Nombre":"Grado de ocupación por plazas. Total categorías. Galicia: Costa A Mariña Lucense (Lugo). Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9935, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Galicia: Costa A Mariña Lucense (Lugo)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":62.49}
+]
+}
+,{"COD":"EOT22544", "Nombre":"Grado de ocupación por apartamentos. Total categorías. Galicia: Costa A Mariña Lucense (Lugo). Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9935, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Galicia: Costa A Mariña Lucense (Lugo)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":75.36}
+]
+}
+,{"COD":"EOT22536", "Nombre":"Grado de ocupación por apartamentos en fin de semana. Total categorías. Galicia: Costa A Mariña Lucense (Lugo). Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9935, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Galicia: Costa A Mariña Lucense (Lugo)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":80.98}
+]
+}
+,{"COD":"EOT22528", "Nombre":"Personal empleado. Total categorías. Galicia: Costa A Mariña Lucense (Lugo). Dato. ", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9935, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Galicia: Costa A Mariña Lucense (Lugo)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":110.0}
+]
+}
+,{"COD":"EOT44747", "Nombre":"Galicia: Costa Da Morte (A Coruña). Número de plazas estimadas. Total categorías. Dato. ", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":9936, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Galicia: Costa Da Morte (A Coruña)", "Codigo":""}
+,{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":1356.0}
+]
+}
+,{"COD":"EOT44752", "Nombre":"Galicia: Costa Da Morte (A Coruña). Número de apartamentos estimados. Total categorías. Dato. ", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":9936, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Galicia: Costa Da Morte (A Coruña)", "Codigo":""}
+,{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":374.0}
+]
+}
+,{"COD":"EOT44757", "Nombre":"Galicia: Costa Da Morte (A Coruña). Grado de ocupación por plazas. Total categorías. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":9936, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Galicia: Costa Da Morte (A Coruña)", "Codigo":""}
+,{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":41.74}
+]
+}
+,{"COD":"EOT44762", "Nombre":"Galicia: Costa Da Morte (A Coruña). Grado de ocupación por apartamentos. Total categorías. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":9936, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Galicia: Costa Da Morte (A Coruña)", "Codigo":""}
+,{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":63.16}
+]
+}
+,{"COD":"EOT44767", "Nombre":"Galicia: Costa Da Morte (A Coruña). Grado de ocupación por apartamentos en fin de semana. Total categorías. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":9936, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Galicia: Costa Da Morte (A Coruña)", "Codigo":""}
+,{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":68.56}
+]
+}
+,{"COD":"EOT44772", "Nombre":"Galicia: Costa Da Morte (A Coruña). Personal empleado. Total categorías. Dato. ", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":9936, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Galicia: Costa Da Morte (A Coruña)", "Codigo":""}
+,{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":107.0}
+]
+}
+,{"COD":"EOT44746", "Nombre":"Galicia: Lugo central. Número de plazas estimadas. Total categorías. Dato. ", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":417750, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Galicia: Lugo central", "Codigo":""}
+,{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":897.0}
+]
+}
+,{"COD":"EOT44751", "Nombre":"Galicia: Lugo central. Número de apartamentos estimados. Total categorías. Dato. ", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":417750, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Galicia: Lugo central", "Codigo":""}
+,{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":265.0}
+]
+}
+,{"COD":"EOT44756", "Nombre":"Galicia: Lugo central. Grado de ocupación por plazas. Total categorías. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":417750, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Galicia: Lugo central", "Codigo":""}
+,{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":24.15}
+]
+}
+,{"COD":"EOT44761", "Nombre":"Galicia: Lugo central. Grado de ocupación por apartamentos. Total categorías. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":417750, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Galicia: Lugo central", "Codigo":""}
+,{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":38.04}
+]
+}
+,{"COD":"EOT44766", "Nombre":"Galicia: Lugo central. Grado de ocupación por apartamentos en fin de semana. Total categorías. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":417750, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Galicia: Lugo central", "Codigo":""}
+,{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":44.91}
+]
+}
+,{"COD":"EOT44771", "Nombre":"Galicia: Lugo central. Personal empleado. Total categorías. Dato. ", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":417750, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Galicia: Lugo central", "Codigo":""}
+,{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":70.0}
+]
+}
+,{"COD":"EOT22570", "Nombre":"Número de plazas estimadas. Total categorías. Galicia: Rías Altas (A Coruña). Dato. ", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9937, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Galicia: Rías Altas (A Coruña)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":844.0}
+]
+}
+,{"COD":"EOT22562", "Nombre":"Número de apartamentos estimados. Total categorías. Galicia: Rías Altas (A Coruña). Dato. ", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9937, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Galicia: Rías Altas (A Coruña)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":263.0}
+]
+}
+,{"COD":"EOT22554", "Nombre":"Grado de ocupación por plazas. Total categorías. Galicia: Rías Altas (A Coruña). Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9937, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Galicia: Rías Altas (A Coruña)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":49.49}
+]
+}
+,{"COD":"EOT22546", "Nombre":"Grado de ocupación por apartamentos. Total categorías. Galicia: Rías Altas (A Coruña). Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9937, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Galicia: Rías Altas (A Coruña)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":69.02}
+]
+}
+,{"COD":"EOT22538", "Nombre":"Grado de ocupación por apartamentos en fin de semana. Total categorías. Galicia: Rías Altas (A Coruña). Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9937, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Galicia: Rías Altas (A Coruña)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":69.84}
+]
+}
+,{"COD":"EOT22530", "Nombre":"Personal empleado. Total categorías. Galicia: Rías Altas (A Coruña). Dato. ", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9937, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Galicia: Rías Altas (A Coruña)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":68.0}
+]
+}
+,{"COD":"EOT22569", "Nombre":"Número de plazas estimadas. Total categorías. Galicia: Rías Baixas (Pontevedra  y  A Coruña). Dato. ", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9938, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Galicia: Rías Baixas (Pontevedra  y  A Coruña)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":6190.0}
+]
+}
+,{"COD":"EOT22561", "Nombre":"Número de apartamentos estimados. Total categorías. Galicia: Rías Baixas (Pontevedra  y  A Coruña). Dato. ", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9938, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Galicia: Rías Baixas (Pontevedra  y  A Coruña)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":1523.0}
+]
+}
+,{"COD":"EOT22553", "Nombre":"Grado de ocupación por plazas. Total categorías. Galicia: Rías Baixas (Pontevedra  y  A Coruña). Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9938, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Galicia: Rías Baixas (Pontevedra  y  A Coruña)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":48.94}
+]
+}
+,{"COD":"EOT22545", "Nombre":"Grado de ocupación por apartamentos. Total categorías. Galicia: Rías Baixas (Pontevedra  y  A Coruña). Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9938, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Galicia: Rías Baixas (Pontevedra  y  A Coruña)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":62.45}
+]
+}
+,{"COD":"EOT22537", "Nombre":"Grado de ocupación por apartamentos en fin de semana. Total categorías. Galicia: Rías Baixas (Pontevedra  y  A Coruña). Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9938, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Galicia: Rías Baixas (Pontevedra  y  A Coruña)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":65.45}
+]
+}
+,{"COD":"EOT22529", "Nombre":"Personal empleado. Total categorías. Galicia: Rías Baixas (Pontevedra  y  A Coruña). Dato. ", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9938, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Galicia: Rías Baixas (Pontevedra  y  A Coruña)", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":481.0}
+]
+}
+,{"COD":"EOT8436", "Nombre":"Nacional. Número de plazas estimadas. Murcia (Región De): Costa Cálida.", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9939, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Murcia (Región De): Costa Cálida", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":6712.0}
+]
+}
+,{"COD":"EOT8437", "Nombre":"Nacional. Número de apartamentos estimados. Murcia (Región De): Costa Cálida.", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9939, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Murcia (Región De): Costa Cálida", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":1476.0}
+]
+}
+,{"COD":"EOT8438", "Nombre":"Nacional. Grado de ocupación por plazas. Murcia (Región De): Costa Cálida.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9939, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Murcia (Región De): Costa Cálida", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":53.1}
+]
+}
+,{"COD":"EOT8439", "Nombre":"Nacional. Grado de ocupación por apartamentos. Murcia (Región De): Costa Cálida.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9939, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Murcia (Región De): Costa Cálida", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":76.78}
+]
+}
+,{"COD":"EOT15014", "Nombre":"Nacional. Apartamentos turísticos. Grado de ocupación por apartamentos en fin de semana. Murcia (Región De): Costa Cálida.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9939, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Murcia (Región De): Costa Cálida", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":79.6}
+]
+}
+,{"COD":"EOT8440", "Nombre":"Nacional. Personal empleado. Murcia (Región De): Costa Cálida.", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9939, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Murcia (Región De): Costa Cálida", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":238.0}
+]
+}
+,{"COD":"EOT44745", "Nombre":"Pais Vasco: Costa Bizkaia. Número de plazas estimadas. Total categorías. Dato. ", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":9941, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pais Vasco: Costa Bizkaia", "Codigo":""}
+,{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":473.0}
+]
+}
+,{"COD":"EOT44750", "Nombre":"Pais Vasco: Costa Bizkaia. Número de apartamentos estimados. Total categorías. Dato. ", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":9941, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pais Vasco: Costa Bizkaia", "Codigo":""}
+,{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":158.0}
+]
+}
+,{"COD":"EOT44755", "Nombre":"Pais Vasco: Costa Bizkaia. Grado de ocupación por plazas. Total categorías. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":9941, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pais Vasco: Costa Bizkaia", "Codigo":""}
+,{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":55.65}
+]
+}
+,{"COD":"EOT44760", "Nombre":"Pais Vasco: Costa Bizkaia. Grado de ocupación por apartamentos. Total categorías. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":9941, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pais Vasco: Costa Bizkaia", "Codigo":""}
+,{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":82.87}
+]
+}
+,{"COD":"EOT44765", "Nombre":"Pais Vasco: Costa Bizkaia. Grado de ocupación por apartamentos en fin de semana. Total categorías. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":9941, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pais Vasco: Costa Bizkaia", "Codigo":""}
+,{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":83.11}
+]
+}
+,{"COD":"EOT44770", "Nombre":"Pais Vasco: Costa Bizkaia. Personal empleado. Total categorías. Dato. ", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":9941, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pais Vasco: Costa Bizkaia", "Codigo":""}
+,{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":26.0}
+]
+}
+,{"COD":"EOT22567", "Nombre":"Número de plazas estimadas. Total categorías. Pais Vasco: Costa Guipuzkoa. Dato. ", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9940, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pais Vasco: Costa Guipuzkoa", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":2835.0}
+]
+}
+,{"COD":"EOT22559", "Nombre":"Número de apartamentos estimados. Total categorías. Pais Vasco: Costa Guipuzkoa. Dato. ", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9940, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pais Vasco: Costa Guipuzkoa", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":930.0}
+]
+}
+,{"COD":"EOT22551", "Nombre":"Grado de ocupación por plazas. Total categorías. Pais Vasco: Costa Guipuzkoa. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9940, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pais Vasco: Costa Guipuzkoa", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":55.77}
+]
+}
+,{"COD":"EOT22543", "Nombre":"Grado de ocupación por apartamentos. Total categorías. Pais Vasco: Costa Guipuzkoa. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9940, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pais Vasco: Costa Guipuzkoa", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":74.06}
+]
+}
+,{"COD":"EOT22535", "Nombre":"Grado de ocupación por apartamentos en fin de semana. Total categorías. Pais Vasco: Costa Guipuzkoa. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9940, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pais Vasco: Costa Guipuzkoa", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":74.82}
+]
+}
+,{"COD":"EOT22527", "Nombre":"Personal empleado. Total categorías. Pais Vasco: Costa Guipuzkoa. Dato. ", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9940, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pais Vasco: Costa Guipuzkoa", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":234.0}
+]
+}
+,{"COD":"EOT8441", "Nombre":"Nacional. Número de plazas estimadas. Pirineo Aragonés.", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9942, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pirineo Aragonés", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":4961.0}
+]
+}
+,{"COD":"EOT8442", "Nombre":"Nacional. Número de apartamentos estimados. Pirineo Aragonés.", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9942, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pirineo Aragonés", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":1164.0}
+]
+}
+,{"COD":"EOT8443", "Nombre":"Nacional. Grado de ocupación por plazas. Pirineo Aragonés.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9942, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pirineo Aragonés", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":40.99}
+]
+}
+,{"COD":"EOT8444", "Nombre":"Nacional. Grado de ocupación por apartamentos. Pirineo Aragonés.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9942, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pirineo Aragonés", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":56.6}
+]
+}
+,{"COD":"EOT15021", "Nombre":"Nacional. Apartamentos turísticos. Grado de ocupación por apartamentos en fin de semana. Pirineo Aragonés.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9942, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pirineo Aragonés", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":71.52}
+]
+}
+,{"COD":"EOT8445", "Nombre":"Nacional. Personal empleado. Pirineo Aragonés.", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9942, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pirineo Aragonés", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":350.0}
+]
+}
+,{"COD":"EOT8446", "Nombre":"Nacional. Número de plazas estimadas. Pirineo Catalán.", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9943, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pirineo Catalán", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT8447", "Nombre":"Nacional. Número de apartamentos estimados. Pirineo Catalán.", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9943, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pirineo Catalán", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT8448", "Nombre":"Nacional. Grado de ocupación por plazas. Pirineo Catalán.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9943, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pirineo Catalán", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT8449", "Nombre":"Nacional. Grado de ocupación por apartamentos. Pirineo Catalán.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9943, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pirineo Catalán", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT15028", "Nombre":"Nacional. Apartamentos turísticos. Grado de ocupación por apartamentos en fin de semana. Pirineo Catalán.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9943, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pirineo Catalán", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT8450", "Nombre":"Nacional. Personal empleado. Pirineo Catalán.", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9943, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pirineo Catalán", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[]
+}
+,{"COD":"EOT18417", "Nombre":"Nacional. Apartamentos turísticos. Número de plazas estimadas. Pirineo Navarro.", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9944, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pirineo Navarro", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":770.0}
+]
+}
+,{"COD":"EOT18418", "Nombre":"Nacional. Apartamentos turísticos. Número de apartamentos estimados. Pirineo Navarro.", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9944, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pirineo Navarro", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":213.0}
+]
+}
+,{"COD":"EOT18419", "Nombre":"Nacional. Apartamentos turísticos. Grado de ocupación por plazas. Pirineo Navarro.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9944, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pirineo Navarro", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":49.46}
+]
+}
+,{"COD":"EOT18420", "Nombre":"Nacional. Apartamentos turísticos. Grado de ocupación por apartamentos. Pirineo Navarro.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9944, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pirineo Navarro", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":60.65}
+]
+}
+,{"COD":"EOT18421", "Nombre":"Nacional. Apartamentos turísticos. Grado de ocupación por apartamentos en fin de semana. Pirineo Navarro.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9944, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pirineo Navarro", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":68.18}
+]
+}
+,{"COD":"EOT18422", "Nombre":"Nacional. Apartamentos turísticos. Personal empleado. Pirineo Navarro.", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9944, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pirineo Navarro", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":138.0}
+]
+}
+,{"COD":"EOT22878", "Nombre":"Número de plazas estimadas. Total categorías. Pirineo Vasco. Dato. ", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9945, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pirineo Vasco", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":398.0}
+]
+}
+,{"COD":"EOT22876", "Nombre":"Número de apartamentos estimados. Total categorías. Pirineo Vasco. Dato. ", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9945, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pirineo Vasco", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":108.0}
+]
+}
+,{"COD":"EOT22874", "Nombre":"Grado de ocupación por plazas. Total categorías. Pirineo Vasco. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9945, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pirineo Vasco", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":56.51}
+]
+}
+,{"COD":"EOT22872", "Nombre":"Grado de ocupación por apartamentos. Total categorías. Pirineo Vasco. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9945, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pirineo Vasco", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":78.88}
+]
+}
+,{"COD":"EOT22870", "Nombre":"Grado de ocupación por apartamentos en fin de semana. Total categorías. Pirineo Vasco. Dato. ", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9945, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pirineo Vasco", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":79.43}
+]
+}
+,{"COD":"EOT22868", "Nombre":"Personal empleado. Total categorías. Pirineo Vasco. Dato. ", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":9945, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pirineo Vasco", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":59.0}
+]
+}
+,{"COD":"EOT18411", "Nombre":"Nacional. Apartamentos turísticos. Número de plazas estimadas. Pirineus-Prepirineus.", "T3_Unidad":"Plazas", "T3_Escala":" ", "MetaData":[{"Id":10013, "T3_Variable":"Concepto turístico", "Nombre":"Número de plazas estimadas", "Codigo":"2"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":23085, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pirineus", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":2160.0}
+]
+}
+,{"COD":"EOT18412", "Nombre":"Nacional. Apartamentos turísticos. Número de apartamentos estimados. Pirineus-Prepirineus.", "T3_Unidad":"Apartamentos", "T3_Escala":" ", "MetaData":[{"Id":10017, "T3_Variable":"Concepto turístico", "Nombre":"Número de apartamentos estimados", "Codigo":"I"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":23085, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pirineus", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":486.0}
+]
+}
+,{"COD":"EOT18413", "Nombre":"Nacional. Apartamentos turísticos. Grado de ocupación por plazas. Pirineus-Prepirineus.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10014, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por plazas", "Codigo":"4"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":23085, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pirineus", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":25.0}
+]
+}
+,{"COD":"EOT18414", "Nombre":"Nacional. Apartamentos turísticos. Grado de ocupación por apartamentos. Pirineus-Prepirineus.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10016, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos", "Codigo":"8"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":23085, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pirineus", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":39.65}
+]
+}
+,{"COD":"EOT18415", "Nombre":"Nacional. Apartamentos turísticos. Grado de ocupación por apartamentos en fin de semana. Pirineus-Prepirineus.", "T3_Unidad":"Porcentaje", "T3_Escala":" ", "MetaData":[{"Id":10024, "T3_Variable":"Concepto turístico", "Nombre":"Grado de ocupación por apartamentos en fin de semana", "Codigo":"9"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":23085, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pirineus", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":52.38}
+]
+}
+,{"COD":"EOT18416", "Nombre":"Nacional. Apartamentos turísticos. Personal empleado. Pirineus-Prepirineus.", "T3_Unidad":"Personas", "T3_Escala":" ", "MetaData":[{"Id":10018, "T3_Variable":"Concepto turístico", "Nombre":"Personal empleado", "Codigo":"A"}
+,{"Id":9834, "T3_Variable":"TIPO DE CATEGORIA", "Nombre":"Total categorías", "Codigo":""}
+,{"Id":23085, "T3_Variable":"ZONAS TURÍSTICAS", "Nombre":"Pirineus", "Codigo":""}
+,{"Id":72, "T3_Variable":"Tipo de dato", "Nombre":"Dato", "Codigo":"0"}
+]
+, "Data":[{"Fecha":"2026-07-01T00:00:00.000+02:00", "T3_TipoDato":"Provisional", "T3_Periodo":"M07", "Anyo":2026, "Valor":124.0}
+]
+}
+]

@@ -95,7 +95,12 @@ function computeIntensities() {
   state.confidence = new Map();
 
   for (const municipality of data.municipalities) {
-    const seasonal = occupancyOnDay(data.occupancy_by_brand?.[municipality.brand], doy);
+    // Curva propia del municipio: el INE la publica para los destinos
+    // grandes y, para el resto, sale de su marca mezclada según las plazas
+    // que tiene de cada tipo. `occupancy_by_brand` queda de respaldo para
+    // snapshots antiguos.
+    const curve = municipality.occupancy || data.occupancy_by_brand?.[municipality.brand];
+    const seasonal = occupancyOnDay(curve, doy);
     const weather = weatherFor(municipality, day);
     const dayFactor = calendar.factor * crowdFactor(weather);
 
@@ -437,6 +442,12 @@ function popupHtml(municipality) {
     ? `<dl>
         <dt>Plazas turísticas</dt><dd>${integer.format(municipality.total_places)}</dd>
         <dt>Plazas por km²</dt><dd>${decimal.format(municipality.places_per_km2)}</dd>
+        ${municipality.places_per_capita !== null && municipality.places_per_capita !== undefined
+          ? `<dt>Plazas por habitante</dt><dd>${decimal.format(municipality.places_per_capita)}</dd>`
+          : ''}
+        ${municipality.population
+          ? `<dt>Habitantes</dt><dd>${integer.format(municipality.population)}</dd>`
+          : ''}
        </dl>`
     : '<p class="no-data">Sin plazas de alojamiento en el IDESCAT.</p>';
 
@@ -476,8 +487,18 @@ function popupHtml(municipality) {
     }
   }
 
+  // De dónde sale la curva de ocupación: medida para este municipio, para su
+  // marca turística, o deducida de las pernoctaciones.
+  const OCCUPANCY_ORIGIN = {
+    municipio: 'Base: ocupación que mide el INE en este municipio',
+    marca: `Base: ocupación que mide el INE en ${municipality.brand}`,
+    pernoctaciones: 'Base: ocupación deducida de las pernoctaciones (IDESCAT)'
+  };
+  const origin = OCCUPANCY_ORIGIN[municipality.occupancy_source];
+
   const provenance = `
     ${delta}
+    ${origin ? `<p class="provenance">${origin}</p>` : ''}
     <p class="provenance" title="${badge.note}">
       ${badge.icon} ${badge.label}${sources ? ` — ${sources}` : ''}
     </p>`;

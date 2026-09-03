@@ -45,8 +45,10 @@ desde el navegador al abrir la página.
 | `npm run build` | Genera datos → verifica → promueve respaldo → compila |
 | `npm run data:build` | Regenera `public/data/current.json` desde los CSV del IDESCAT |
 | `npm run data:verify` | Comprueba cobertura, costa y coherencia (`npm run test:data`) |
+| `npm run data:official` | Descarga ocupación del INE y población del IDESCAT |
+| `npm run data:probe` | Sondea las fuentes oficiales y guarda sus respuestas |
 | `npm run data:promote` | Copia `current.json` a `last-good.json` |
-| `npm test` | Todas las pruebas (señales, publicación, datos) |
+| `npm test` | Todas las pruebas (INE, señales, publicación, datos) |
 | `npm run collect:check` | Comprueba credenciales y permisos de Supabase |
 | `npm run collect` | Lanza los recolectores |
 | `npm run publish` | Publica en el snapshot lo que hayas aprobado |
@@ -58,13 +60,64 @@ modeladas, y conviene saber cuál es cuál.
 
 | Capa | Origen | Solidez |
 | --- | --- | --- |
-| **Capacidad turística** por municipio | IDESCAT: plazas hoteleras (t6031, 2023), camping (t6036, 2024) y turismo rural (t6039, 2024) | 🟢 Dato oficial, 947/947 municipios |
-| **Estacionalidad** por marca turística | IDESCAT turhot: 207 periodos mensuales de pernoctaciones (2023-2025) | 🟢 Dato oficial |
+| **Capacidad turística** por municipio | IDESCAT: plazas hoteleras (t6031), camping (t6036) y turismo rural (t6039) | 🟢 Dato oficial, 947/947 municipios |
+| **Ocupación** por municipio | INE, Encuesta de Ocupación: grado de ocupación por puntos turísticos (75198 hoteles, 75196 campings, 75193 apartamentos) | 🟢 Medición oficial, ~30 municipios |
+| **Ocupación** por marca turística | INE, las mismas encuestas por zonas turísticas (2013, 2049, 2005, 2022) | 🟢 Medición oficial, 9/9 marcas |
+| **Población** por municipio | IDESCAT, padró municipal d'habitants | 🟢 Dato oficial, 947/947 |
 | **Geometría, comarca, superficie** | ICGC/IDESCAT (TopoJSON) | 🟢 Dato oficial |
 | **Municipios costeros** | Deducido de la topología (ver abajo) | 🟢 70 municipios, verificado |
 | **Meteorología de hoy y mañana** | Open-Meteo, en vivo desde el navegador | 🟢 Previsión real |
 | **Día de la semana y festivos** | Modelo propio; festivos de Catalunya con Pascua calculada | 🟡 Modelo documentado |
 | **Turismo de día (excursionistas)** | Modelo propio por distancia a núcleos urbanos | 🟠 Estimación |
+
+### La ocupación es una medición, no un proxy
+
+Hasta hace poco la ocupación se **deducía**: se cogían las pernoctaciones
+mensuales del IDESCAT, se normalizaban contra el mes punta de cada marca y se
+multiplicaban por 0,85. Funcionaba, pero la forma de la curva dependía de que
+las pernoctaciones se movieran igual que la ocupación, y ese 0,85 era una
+constante puesta a mano.
+
+El INE publica el **grado de ocupación medido** cada mes, y ahora es eso lo que
+usa el mapa.
+
+#### Ojo: el grado de ocupación solo cuenta lo abierto
+
+Es la trampa de esta estadística. El INE mide la ocupación **sobre los
+establecimientos abiertos ese mes**. En enero, Salou tiene casi toda su planta
+hotelera cerrada y el INE dice 24,7%: no significa que Salou esté a un cuarto,
+sino que los pocos hoteles que abren lo están. Usar esa cifra tal cual ponía a
+Salou al 91% en enero.
+
+La corrección la publica el propio INE, en la misma tabla: *Número de plazas
+estimadas* es la capacidad abierta de cada mes.
+
+```
+afluencia(mes) = ocupación(mes) × plazas abiertas(mes) / plazas del mes punta
+```
+
+Los dos términos son medición del INE; no se añade ninguna constante. En
+`data/official/occupancy.json` se guardan también los dos por separado
+(`brands_raw`, `municipalities_raw`) para poder revisar la corrección sin
+volver a descargar nada.
+
+Cada municipio recibe su curva por este orden:
+
+1. **La suya**, si el INE lo trata como punto turístico. Son los destinos que
+   más importan: Salou, Lloret de Mar, Barcelona, Sitges, Cambrils, Blanes,
+   Roses, Castell-Platja d'Aro, Sant Pere Pescador, Torroella de Montgrí,
+   Malgrat de Mar, Castelldefels, Girona, Tarragona, Vielha e Mijaran…
+2. **La de su marca turística**, mezclando hotel, camping y turismo rural
+   según las plazas que ese municipio tiene de cada tipo. Un pueblo de
+   campings deja de seguir la ocupación de los hoteles.
+3. La estacionalidad de las pernoctaciones, solo como respaldo si el fichero
+   de datos oficiales no está descargado.
+
+La ficha de cada municipio dice cuál de los tres le ha tocado.
+
+Los datos viven en `data/official/occupancy.json`, versionado, y los refresca
+el workflow **Datos oficiales** (`npm run data:official`). El mapa no depende
+de que el INE responda en cada despliegue.
 
 ### La limitación importante
 
@@ -83,9 +136,27 @@ separado para que se vea qué parte es qué:
 Pernocta 100% (IDESCAT) · excursión 21% (estimado)
 ```
 
-Tampoco hay **población municipal** en el repositorio, así que el índice usa
-densidad de plazas por km² en lugar de plazas por habitante, que sería el
-indicador estándar de presión turística.
+### Lo que sigue sin poder medirse
+
+- **Afluencia de playa en tiempo real.** Salou y Lloret de Mar tienen sensores
+  y publican la ocupación de sus playas en sus propias webs, pero ninguno
+  ofrece una API abierta. El canal de datos abiertos del AMB tiene el campo
+  `ocupacio` para 45 playas metropolitanas y lo devuelve
+  `SENSE_INFORMACIO` en todas: existe el hueco, no el dato.
+- **Turistas por municipio a partir de móviles.** El INE los publica
+  (tablas 52048 y 53464), pero la API responde *«No puede mostrarse por
+  restricciones de volumen»* y el filtro por municipio no está disponible en
+  esas tablas. Es la vía más prometedora para medir el turismo de día; hoy
+  requiere descargar el fichero completo a mano.
+
+Mientras tanto el turismo de día sigue siendo un modelo, y se muestra por
+separado en la ficha para que se vea qué parte es medición y qué parte no.
+
+La **población** ya no falta: entra del padró municipal del IDESCAT y la ficha
+enseña plazas por habitante, el indicador estándar de presión turística. El
+índice del mapa mantiene densidad y volumen, que están calibrados contra
+anclas absolutas; la población queda disponible para recalibrarlo cuando se
+decida, no de tapadillo.
 
 ## Cómo se calcula la afluencia
 
@@ -170,6 +241,9 @@ src/
 openclaw/tourism-alarm/    skill lista para OpenClaw (SKILL.md + .ps1)
 revisar.html               página privada de revisión (login Supabase)
 scripts/
+  official/fetch.js        descarga ocupación del INE y población del IDESCAT
+  official/probe.js        sondeo de fuentes: guarda lo que devuelven de verdad
+  lib/ine.js               lectores de la API Tempus3 del INE
   collect/lib.js           marco de recolectores
   collect/run-all.js       orquestador que llama el cron
   collect/check.js         comprobación de conexión
@@ -232,17 +306,39 @@ Ocupación medida 30% · por debajo de lo normal (el modelo esperaba 74%)
 
 Mezclar las dos en un solo número estropearía las dos.
 
-### Límite conocido de la escala
+### Límite conocido de la escala, y la decisión pendiente
 
 Los destinos más densos **saturan el índice**. Salou (2.452 plazas/km²) llega
-al tope del término de densidad en cuanto pasa del 33% de ocupación, y del de
-volumen sobre el 67%. Es decir: entre "Salou al 70%" y "Salou al 100%" el color
-apenas cambia.
+al tope del término de densidad enseguida, así que entre "Salou al 70%" y
+"Salou al 100%" el color apenas cambia.
 
-Subir los topes lo mejora poco —satura por las dos vías— y a cambio baja los
-municipios en nivel crítico de 22 a 10 en agosto, debilitando la alarma para
-todos los demás. Por eso se mantiene la calibración actual y la desviación
-respecto a lo normal se muestra por separado.
+Con la ocupación ya medida se ve el otro extremo del mismo problema. En enero,
+la Costa Daurada tiene un 3% de afluencia real —el 24% de ocupación que publica
+el INE, sobre el 14% de la planta que abre— y el índice todavía pinta a Salou
+al 59%:
+
+| Municipio | Ocupación enero | Índice enero | Ocupación agosto | Índice agosto |
+| --- | --- | --- | --- | --- |
+| Salou | 3% | 59% | 87% | 100% |
+| Lloret de Mar | 6% | 57% | 90% | 98% |
+| Sant Pere Pescador | 2% | 38% | 68% | 89% |
+| Barcelona | 53% | 94% | 78% | 98% |
+| Naut Aran | 59% | 44% | 27% | 32% |
+
+La escala logarítmica contra anclas absolutas (1→800 plazas/km²) comprime tanto
+que 74 plazas ocupadas por km² ya puntúan 0,66. El índice mide **saturación
+del territorio**, no "cuánta gente hay respecto a lo normal", y con esa lectura
+la cifra es coherente: Salou en enero sigue teniendo más plaza turística por km²
+que casi toda Catalunya en agosto.
+
+Aun así, para responder "¿está lleno?" probablemente convenga recalibrar, y
+ahora por fin se puede: **la población está disponible** y plazas por habitante
+es el indicador estándar. Es una decisión de producto —mueve todos los números
+del mapa— así que se deja escrita en vez de aplicarse de tapadillo.
+
+Subir los topes actuales no lo arregla: satura por las dos vías y a cambio baja
+los municipios en nivel crítico de 22 a 10 en agosto, debilitando la alarma para
+todos los demás.
 
 ## Base de datos (Supabase)
 

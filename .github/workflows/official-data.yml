@@ -1,0 +1,103 @@
+# Datos oficiales — sondeo y descarga.
+#
+# Las fuentes (INE, IDESCAT, AMB…) son APIs públicas sin clave. Se consultan
+# desde un runner de GitHub y el resultado se guarda en el repositorio: al
+# hacer push, Vercel vuelve a desplegar el mapa con los datos nuevos. No hace
+# falta ningún ordenador encendido en casa ni ningún secreto.
+#
+# Cómo se lanza:
+#   · Un push que toque scripts/official/ o este fichero, o cuyo mensaje
+#     lleve [probe] o [fetch]. (workflow_dispatch solo funciona cuando el
+#     fichero está en la rama por defecto.)
+#   · A mano desde la pestaña Actions, eligiendo el modo.
+#   · Cada lunes de madrugada, en modo fetch, una vez esté en main.
+name: Datos oficiales
+
+on:
+  # Sin filtro de rutas: lo que decide es la etiqueta del mensaje del commit,
+  # y así un commit vacío con [fetch] sirve para pedir una descarga. El job
+  # se salta enseguida si el mensaje no lo pide.
+  push:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'probe = sondear fuentes; fetch = descargar y regenerar'
+        required: true
+        default: fetch
+        type: choice
+        options: [probe, fetch]
+  schedule:
+    - cron: '17 4 * * 1'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: official-data-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  # workflow_dispatch → lo que se elija; schedule → fetch; push → según el
+  # mensaje del commit, y probe si no dice nada.
+  MODE: ${{ inputs.mode || (github.event_name == 'schedule' && 'fetch') || (contains(github.event.head_commit.message, '[fetch]') && 'fetch') || 'probe' }}
+
+jobs:
+  run:
+    # Solo corre si alguien lo pide: la etiqueta [probe] o [fetch] en el
+    # mensaje del commit, el botón de Actions, o el cron semanal. Y nunca en
+    # respuesta a los commits que el propio workflow deja.
+    if: >-
+      github.actor != 'github-actions[bot]' &&
+      (github.event_name != 'push' ||
+       contains(github.event.head_commit.message, '[probe]') ||
+       contains(github.event.head_commit.message, '[fetch]'))
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tourism-alarm-mvp-hybrid
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: tourism-alarm-mvp-hybrid/package-lock.json
+
+      - run: npm ci
+
+      - name: Sondear fuentes
+        if: env.MODE == 'probe'
+        run: node scripts/official/probe.js
+
+      - name: Descargar datos y regenerar el mapa
+        if: env.MODE == 'fetch'
+        run: npm run data:official
+
+      - name: Guardar el resultado en la rama
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A data/official public/data
+          if git diff --cached --quiet; then
+            echo 'Sin cambios.'
+            exit 0
+          fi
+          git commit -m "data: $MODE de fuentes oficiales ($(date -u +%Y-%m-%d)) [skip ci]"
+
+          # La descarga tarda minutos y la rama puede haberse movido mientras
+          # tanto. Se rebasa sobre lo que haya y se reintenta en vez de fallar
+          # y perder los datos recién traídos.
+          for attempt in 1 2 3 4 5; do
+            if git push; then
+              echo "Publicado en el intento $attempt."
+              exit 0
+            fi
+            echo "Push rechazado (intento $attempt); rebasando sobre origin."
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || exit 1
+            sleep $((attempt * 5))
+          done
+          echo '::error::No se pudo publicar el resultado tras 5 intentos.'
+          exit 1

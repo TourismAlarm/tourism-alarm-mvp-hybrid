@@ -1,0 +1,141 @@
+{
+  "class" : "collection",
+  "href" : "https://api.idescat.cat/taules/v2?lang=ca",
+  "label" : "Estadístiques disponibles",
+  "link" : {
+    "item" : [ {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/afi?lang=ca",
+      "label" : "Afiliats i afiliacions a la Seguretat Social segons residència padronal de l'afiliat"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/censph?lang=ca",
+      "label" : "Cens de població i habitatges"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/comest?lang=ca",
+      "label" : "Comerç amb l'estranger"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/comtec?lang=ca",
+      "label" : "Comerç amb l'estranger segons contingut tecnològic"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/pibt?lang=ca",
+      "label" : "Comptabilitat trimestral"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/piba?lang=ca",
+      "label" : "Comptes econòmics anuals de Catalunya"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/ee?lang=ca",
+      "label" : "Empreses i establiments"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/eulp?lang=ca",
+      "label" : "Enquesta d'usos lingüístics de la població"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/eut?lang=ca",
+      "label" : "Enquesta de l'ús del temps"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/ceph?lang=ca",
+      "label" : "Estadística de característiques essencials de la població i els habitatges"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/fee?lang=ca",
+      "label" : "Estadística de filials d'empreses estrangeres"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/afic?lang=ca",
+      "label" : "Estadística de l'ocupació assalariada i autònoma segons afiliacions a la Seguretat Social"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/covid?lang=ca",
+      "label" : "Estadística de la covid-19"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/ilgu?lang=ca",
+      "label" : "Estadística de la inserció laboral de graduats i graduades universitaris"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/e02?lang=ca",
+      "label" : "Estadística de salaris territorial"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/degurba?lang=ca",
+      "label" : "Estadística del grau d'urbanització"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/eep?lang=ca",
+      "label" : "Estadística dels estudis de la població"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/ecl?lang=ca",
+      "label" : "Estadístiques de cost laboral i vacants"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/ep?lang=ca",
+      "label" : "Estimacions de població"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/e03?lang=ca",
+      "label" : "Estimació mensual de la població activa"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/irpf?lang=ca",
+      "label" : "Impost sobre la renda de les persones físiques"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/ispat?lang=ca",
+      "label" : "Indicadors dels sectors i productes d'alta tecnologia"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/phre?lang=ca",
+      "label" : "Padró d'habitants residents a l'estranger"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/pmh?lang=ca",
+      "label" : "Padró municipal d'habitants"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/pibc?lang=ca",
+      "label" : "Producte interior brut territorial"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/projl?lang=ca",
+      "label" : "Projeccions de llars"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/proj?lang=ca",
+      "label" : "Projeccions de població"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/projpa?lang=ca",
+      "label" : "Projeccions de població activa"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/projm?lang=ca",
+      "label" : "Projeccions de població municipals"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/rfdbc?lang=ca",
+      "label" : "Renda disponible bruta de les llars territorial"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/e04?lang=ca",
+      "label" : "Renda disponible de les llars trimestral"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/e01?lang=ca",
+      "label" : "Índex de confiança del consumidor"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/ist?lang=ca",
+      "label" : "Índex socioeconòmic territorial"
+    } ]
+  },
+  "version" : "2.0"
+}

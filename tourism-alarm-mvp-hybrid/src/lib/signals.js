@@ -183,10 +183,18 @@ export function applySignals(municipality, baseOccupancy, signals = [], now = Da
   };
 }
 
+// Estas etiquetas hablan del DÍA concreto, no de la base estadística. La base
+// es una ocupación medida por el INE, pero mensual; que no haya señal de hoy
+// no la vuelve inventada. Decir "Estimado" al lado de "medida por el INE" se
+// leía como una contradicción, así que se nombra lo que de verdad falta.
 export const CONFIDENCE_LABELS = {
-  measured: { label: 'Medido', icon: '🟢', note: 'Dato observado de una fuente publicada' },
-  partial: { label: 'Mixto', icon: '🟡', note: 'Estimación corregida con datos reales' },
-  estimated: { label: 'Estimado', icon: '⚪', note: 'Solo modelo: IDESCAT, calendario y meteorología' }
+  measured: { label: 'Medido hoy', icon: '🟢', note: 'Una fuente ha publicado la ocupación de este día' },
+  partial: { label: 'Corregido con dato de hoy', icon: '🟡', note: 'La previsión se ha ajustado con una medición del día' },
+  estimated: {
+    label: 'Previsión del día',
+    icon: '⚪',
+    note: 'Ocupación oficial del mes, ajustada por calendario y meteorología. Sin medición de hoy.'
+  }
 };
 
 /** Agrupa señales aprobadas por municipio para un día concreto. */

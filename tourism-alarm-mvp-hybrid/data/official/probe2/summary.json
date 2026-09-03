@@ -1,0 +1,156 @@
+[
+  {
+    "name": "ine-tablas-238",
+    "url": "https://servicios.ine.es/wstempus/js/ES/TABLAS_OPERACION/238",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "bytes": 11166,
+    "truncated": false,
+    "ms": 1741,
+    "head": "[{\"Id\":2009, \"Nombre\":\"Viajeros y pernoctaciones por categorías\", \"Codigo\":\"NAC\", \"FK_Periodicidad\":1, \"FK_Publicacion\":1, \"FK_Periodo_ini\":1, \"Anyo_Periodo_ini\":\"1999\", \"FechaRef_fin\":\"null\", \"Ultima_Modificacion\":1787295600000} ,{\"Id\":2941, \"Nombre\":\"Viajeros, pernoctaciones por tipo de alojamiento por comunidades y ciudades autónomas\", \"Codigo\":\"NAC-CCAA\", \"FK_Periodicidad\":1, \"FK_Publicacion\":2, \"FK_Periodo_ini\":1, \"Anyo_Periodo_ini\":\"2001\", \"FechaRef_fin\":\"null\", \"Ultima_Modificacion\":1787832900000} ,{\"Id\":3149, \"Nombre\":\"Viajeros, pernoctaciones por tipo de alojamiento por comunidades y ",
+    "file": "ine-tablas-238.json"
+  },
+  {
+    "name": "ine-zonas-2013",
+    "url": "https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/2013?nult=1&tip=AM",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "bytes": 223672,
+    "truncated": false,
+    "ms": 5004,
+    "head": "[{\"COD\":\"EOT433\", \"Nombre\":\"Nacional. Número de establecimientos abiertos estimados. Andalucía: Costa De Almería.\", \"T3_Unidad\":\"Establecimientos\", \"T3_Escala\":\" \", \"MetaData\":[{\"Id\":10020, \"T3_Variable\":\"Concepto turístico\", \"Nombre\":\"Número de establecimientos abiertos estimados\", \"Codigo\":\"1\"} ,{\"Id\":9834, \"T3_Variable\":\"TIPO DE CATEGORIA\", \"Nombre\":\"Total categorías\", \"Codigo\":\"\"} ,{\"Id\":9908, \"T3_Variable\":\"ZONAS TURÍSTICAS\", \"Nombre\":\"Andalucía: Costa De Almería\", \"Codigo\":\"\"} ,{\"Id\":72, \"T3_Variable\":\"Tipo de dato\", \"Nombre\":\"Dato\", \"Codigo\":\"0\"} ] , \"Data\":[{\"Fecha\":\"2026-07-01T00:00:0",
+    "file": "ine-zonas-2013.json"
+  },
+  {
+    "name": "ine-tablas-239",
+    "url": "https://servicios.ine.es/wstempus/js/ES/TABLAS_OPERACION/239",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "bytes": 10699,
+    "truncated": false,
+    "ms": 843,
+    "head": "[{\"Id\":1993, \"Nombre\":\"Viajeros y pernoctaciones por comunidades autónomas\", \"Codigo\":\"CCAA\", \"FK_Periodicidad\":1, \"FK_Publicacion\":2, \"FK_Periodo_ini\":1, \"Anyo_Periodo_ini\":\"2000\", \"FechaRef_fin\":\"null\", \"Ultima_Modificacion\":1787832900000} ,{\"Id\":2941, \"Nombre\":\"Viajeros, pernoctaciones por tipo de alojamiento por comunidades y ciudades autónomas\", \"Codigo\":\"NAC-CCAA\", \"FK_Periodicidad\":1, \"FK_Publicacion\":2, \"FK_Periodo_ini\":1, \"Anyo_Periodo_ini\":\"2001\", \"FechaRef_fin\":\"null\", \"Ultima_Modificacion\":1787832900000} ,{\"Id\":3149, \"Nombre\":\"Viajeros, pernoctaciones por tipo de alojamiento por co",
+    "file": "ine-tablas-239.json"
+  },
+  {
+    "name": "ine-zonas-2022",
+    "url": "https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/2022?nult=1&tip=AM",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "bytes": 175999,
+    "truncated": false,
+    "ms": 646,
+    "head": "[{\"COD\":\"EOT8341\", \"Nombre\":\"Nacional. Número de plazas estimadas. Andalucía: Costa De Almería.\", \"T3_Unidad\":\"Plazas\", \"T3_Escala\":\" \", \"MetaData\":[{\"Id\":10013, \"T3_Variable\":\"Concepto turístico\", \"Nombre\":\"Número de plazas estimadas\", \"Codigo\":\"2\"} ,{\"Id\":9834, \"T3_Variable\":\"TIPO DE CATEGORIA\", \"Nombre\":\"Total categorías\", \"Codigo\":\"\"} ,{\"Id\":9908, \"T3_Variable\":\"ZONAS TURÍSTICAS\", \"Nombre\":\"Andalucía: Costa De Almería\", \"Codigo\":\"\"} ,{\"Id\":72, \"T3_Variable\":\"Tipo de dato\", \"Nombre\":\"Dato\", \"Codigo\":\"0\"} ] , \"Data\":[{\"Fecha\":\"2026-07-01T00:00:00.000+02:00\", \"T3_TipoDato\":\"Provisional\", \"T3_",
+    "file": "ine-zonas-2022.json"
+  },
+  {
+    "name": "ine-tablas-240",
+    "url": "https://servicios.ine.es/wstempus/js/ES/TABLAS_OPERACION/240",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "bytes": 11204,
+    "truncated": false,
+    "ms": 823,
+    "head": "[{\"Id\":2015, \"Nombre\":\"Viajeros y pernoctaciones por categorías\", \"Codigo\":\"NAC\", \"FK_Periodicidad\":1, \"FK_Publicacion\":2, \"FK_Periodo_ini\":1, \"Anyo_Periodo_ini\":\"1999\", \"FechaRef_fin\":\"null\", \"Ultima_Modificacion\":1787832900000} ,{\"Id\":2941, \"Nombre\":\"Viajeros, pernoctaciones por tipo de alojamiento por comunidades y ciudades autónomas\", \"Codigo\":\"NAC-CCAA\", \"FK_Periodicidad\":1, \"FK_Publicacion\":2, \"FK_Periodo_ini\":1, \"Anyo_Periodo_ini\":\"2001\", \"FechaRef_fin\":\"null\", \"Ultima_Modificacion\":1787832900000} ,{\"Id\":3149, \"Nombre\":\"Viajeros, pernoctaciones por tipo de alojamiento por comunidades y ",
+    "file": "ine-tablas-240.json"
+  },
+  {
+    "name": "ine-zonas-2049",
+    "url": "https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/2049?nult=1&tip=AM",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "bytes": 237402,
+    "truncated": false,
+    "ms": 4728,
+    "head": "[{\"COD\":\"EOT8221\", \"Nombre\":\"Nacional. Número de establecimientos. Andalucía: Costa De Almería.\", \"T3_Unidad\":\"Establecimientos\", \"T3_Escala\":\" \", \"MetaData\":[{\"Id\":10020, \"T3_Variable\":\"Concepto turístico\", \"Nombre\":\"Número de establecimientos abiertos estimados\", \"Codigo\":\"1\"} ,{\"Id\":9834, \"T3_Variable\":\"TIPO DE CATEGORIA\", \"Nombre\":\"Total categorías\", \"Codigo\":\"\"} ,{\"Id\":9908, \"T3_Variable\":\"ZONAS TURÍSTICAS\", \"Nombre\":\"Andalucía: Costa De Almería\", \"Codigo\":\"\"} ,{\"Id\":72, \"T3_Variable\":\"Tipo de dato\", \"Nombre\":\"Dato\", \"Codigo\":\"0\"} ] , \"Data\":[{\"Fecha\":\"2026-07-01T00:00:00.000+02:00\", \"T3_",
+    "file": "ine-zonas-2049.json"
+  },
+  {
+    "name": "ine-tablas-241",
+    "url": "https://servicios.ine.es/wstempus/js/ES/TABLAS_OPERACION/241",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "bytes": 9782,
+    "truncated": false,
+    "ms": 695,
+    "head": "[{\"Id\":1995, \"Nombre\":\"Viajeros y pernoctaciones por comunidades y ciudades autónomas\", \"Codigo\":\"NAC-CCAA\", \"FK_Periodicidad\":1, \"FK_Publicacion\":2, \"FK_Periodo_ini\":1, \"Anyo_Periodo_ini\":\"2001\", \"FechaRef_fin\":\"null\", \"Ultima_Modificacion\":1787832900000} ,{\"Id\":2941, \"Nombre\":\"Viajeros, pernoctaciones por tipo de alojamiento por comunidades y ciudades autónomas\", \"Codigo\":\"NAC-CCAA\", \"FK_Periodicidad\":1, \"FK_Publicacion\":2, \"FK_Periodo_ini\":1, \"Anyo_Periodo_ini\":\"2001\", \"FechaRef_fin\":\"null\", \"Ultima_Modificacion\":1787832900000} ,{\"Id\":3149, \"Nombre\":\"Viajeros, pernoctaciones por tipo de alo",
+    "file": "ine-tablas-241.json"
+  },
+  {
+    "name": "ine-zonas-2005",
+    "url": "https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/2005?nult=1&tip=AM",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "bytes": 313487,
+    "truncated": false,
+    "ms": 5132,
+    "head": "[{\"COD\":\"EOT45910\", \"Nombre\":\"Andalucía: Costa De Almería. Número de establecimientos abiertos estimados. Total categorías. Dato. \", \"T3_Unidad\":\"Establecimientos\", \"T3_Escala\":\" \", \"MetaData\":[{\"Id\":9908, \"T3_Variable\":\"ZONAS TURÍSTICAS\", \"Nombre\":\"Andalucía: Costa De Almería\", \"Codigo\":\"\"} ,{\"Id\":10020, \"T3_Variable\":\"Concepto turístico\", \"Nombre\":\"Número de establecimientos abiertos estimados\", \"Codigo\":\"1\"} ,{\"Id\":9834, \"T3_Variable\":\"TIPO DE CATEGORIA\", \"Nombre\":\"Total categorías\", \"Codigo\":\"\"} ,{\"Id\":72, \"T3_Variable\":\"Tipo de dato\", \"Nombre\":\"Dato\", \"Codigo\":\"0\"} ] , \"Data\":[{\"Fecha\":\"2",
+    "file": "ine-zonas-2005.json"
+  },
+  {
+    "name": "ine-variables-53464",
+    "url": "https://servicios.ine.es/wstempus/js/ES/VARIABLES_TABLA/53464",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "bytes": 163,
+    "truncated": false,
+    "ms": 420,
+    "head": "[{\"Id\" : 111554, \"Nombre\" : \"Concepto turístico\"}, {\"Id\" : 111555, \"Nombre\" : \"CCAA y provincia de origen\"}, {\"Id\" : 111556, \"Nombre\" : \"Municipio de destino\"}] ",
+    "file": "ine-variables-53464.json"
+  },
+  {
+    "name": "ine-valores-53464-111556",
+    "url": "https://servicios.ine.es/wstempus/js/ES/VALORES_VARIABLETABLA/111556/53464",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "bytes": 57,
+    "truncated": false,
+    "ms": 171,
+    "head": "La operación indicada no existe (VALORES_VARIABLETABLA) ",
+    "file": "ine-valores-53464-111556.json"
+  },
+  {
+    "name": "ine-variables-52048",
+    "url": "https://servicios.ine.es/wstempus/js/ES/VARIABLES_TABLA/52048",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "bytes": 156,
+    "truncated": false,
+    "ms": 470,
+    "head": "[{\"Id\" : 111342, \"Nombre\" : \"Concepto turístico\"}, {\"Id\" : 111344, \"Nombre\" : \"País de residencia\"}, {\"Id\" : 111343, \"Nombre\" : \"Municipio de destino\"}] ",
+    "file": "ine-variables-52048.json"
+  },
+  {
+    "name": "ine-valores-52048-111343",
+    "url": "https://servicios.ine.es/wstempus/js/ES/VALORES_VARIABLETABLA/111343/52048",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "bytes": 57,
+    "truncated": false,
+    "ms": 172,
+    "head": "La operación indicada no existe (VALORES_VARIABLETABLA) ",
+    "file": "ine-valores-52048-111343.json"
+  },
+  {
+    "name": "ine-csv-53464",
+    "url": "https://servicios.ine.es/wstempus/csv_bdsc/ES/DATOS_TABLA/53464?nult=1",
+    "status": 404,
+    "type": "text/html",
+    "bytes": 17903,
+    "truncated": false,
+    "ms": 178,
+    "head": "<!DOCTYPE html> <html lang=\"es\"> <head> <title>404</title> <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"> <meta http-equiv=\"content-script-type\" content=\"text/javascript\" > <meta http-equiv=\"content-style-type\" content=\"text/css\" > <meta http-equiv=\"content-type\" content=\"text/html; charset=ISO-8859-15\" > <link rel=\"shortcut icon\" href=\"/menus/img/favicon.ico\" type=\"image/x-icon\"> <meta name=\"description\" content=\"INE. Instituto Nacional de Estad&#237;stica. National Statistics Institute. Spanish Statistical Office. El INE elabora y distribuye estadisticas de Espana. Este se",
+    "file": "ine-csv-53464.html"
+  },
+  {
+    "name": "amb-estat-platja",
+    "url": "https://opendata.amb.cat/dades_estat_platja/search",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "bytes": 14534,
+    "truncated": false,
+    "ms": 1107,
+    "head": "{\"collection\":\"dades_estat_platja\",\"num\":45,\"count\":45,\"items\":[{\"_id\":\"5464f32de57214ab3e84125d\",\"meduses\":false,\"data_report_ocupacio\":\"\",\"estat_aigua\":\"DESCONEGUT\",\"municipi\":\"montgat\",\"platja\":\"platja_montgat.platja_dels_toldos\",\"bandera\":\"DESCONEGUT\",\"aspecte_aigua\":\"DESCONEGUT\",\"lang\":\"ca_ES\",\"ocupacio\":\"SENSE_INFORMACIO\",\"disponible\":false,\"date_updated\":\"2023-06-12T17:53:19.938Z\"},{\"_id\":\"5464f32de57214ab3e84125e\",\"meduses\":false,\"data_report_ocupacio\":\"\",\"estat_aigua\":\"DESCONEGUT\",\"municipi\":\"montgat\",\"platja\":\"platja_montgat.platja_de_can_tano\",\"bandera\":\"DESCONEGUT\",\"aspecte_aigua\":",
+    "file": "amb-estat-platja.json"
+  }
+]

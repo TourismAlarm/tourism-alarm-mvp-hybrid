@@ -1,0 +1,85 @@
+{
+  "class" : "collection",
+  "href" : "https://api.idescat.cat/taules/v2/pmh?lang=ca",
+  "label" : "Padró municipal d'habitants",
+  "link" : {
+    "item" : [ {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/pmh/446?lang=ca",
+      "label" : "Població a 1 de gener. Per sexe"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/pmh/1180?lang=ca",
+      "label" : "Població a 1 de gener. Per sexe i edat any a any"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/pmh/9548?lang=ca",
+      "label" : "Població a 1 de gener. Per sexe i edat quinquennal"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/pmh/13312?lang=ca",
+      "label" : "Població a 1 de gener. Per sexe, edat quinquennal i regions sanitàries"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/pmh/672?lang=ca",
+      "label" : "Població a 1 de gener. Per sexe i generacions"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/pmh/14699?lang=ca",
+      "label" : "Població a 1 de gener. Per sexe i grandària del municipi"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/pmh/14700?lang=ca",
+      "label" : "Població a 1 de gener. Per sexe, edat en grans grups i grandària del municipi"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/pmh/674?lang=ca",
+      "label" : "Població a 1 de gener. Per lloc de naixement. Totals"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/pmh/8284?lang=ca",
+      "label" : "Població a 1 de gener. Per lloc de naixement i sexe"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/pmh/677?lang=ca",
+      "label" : "Població a 1 de gener. Per lloc de naixement, sexe i edat quinquennal"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/pmh/14701?lang=ca",
+      "label" : "Població a 1 de gener. Per lloc de naixement i grandària del municipi"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/pmh/676?lang=ca",
+      "label" : "Població a 1 de gener. Per lloc de naixement (CA i estranger) i sexe"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/pmh/678?lang=ca",
+      "label" : "Població a 1 de gener. Per lloc de naixement (CA i estranger) i edat quinquennal"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/pmh/9145?lang=ca",
+      "label" : "Població a 1 de gener. Per nacionalitat, sexe i edat any a any"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/pmh/14683?lang=ca",
+      "label" : "Població a 1 de gener. Per nacionalitat, sexe i edat quinquennal"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/pmh/14702?lang=ca",
+      "label" : "Població a 1 de gener. Per nacionalitat, sexe i grandària del municipi"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/pmh/680?lang=ca",
+      "label" : "Població a 1 de gener. Per nacionalitat (continents) i sexe"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/pmh/681?lang=ca",
+      "label" : "Població a 1 de gener. Per nacionalitat (continents), sexe i edat quinquennal"
+    }, {
+      "class" : "collection",
+      "href" : "https://api.idescat.cat/taules/v2/pmh/682?lang=ca",
+      "label" : "Població a 1 de gener. Per nacionalitat (continents) i lloc de naixement"
+    } ]
+  },
+  "version" : "2.0"
+}
