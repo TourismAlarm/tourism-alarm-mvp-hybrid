@@ -1,0 +1,1 @@
+{"latitude":41.125,"longitude":1.125,"generationtime_ms":0.0985860824584961,"utc_offset_seconds":7200,"timezone":"Europe/Madrid","timezone_abbreviation":"GMT+2","elevation":7.0,"daily_units":{"time":"iso8601","weather_code":"wmo code","temperature_2m_max":"°C"},"daily":{"time":["2026-09-03","2026-09-04"],"weather_code":[2,2],"temperature_2m_max":[30.9,31.6]}}

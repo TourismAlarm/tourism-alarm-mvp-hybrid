@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ca-ES" class="js">
+	<head>
+		<title>Documentaci&oacute; API Opendata - &Agrave;rea Metropolitana de Barcelona</title>
+
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<meta name="description" content="">
+	    <meta name="viewport" content="width=device-width">
+		<!-- Styles --> 
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900:latin" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="/css/FW_estils.css">
+		<link rel="stylesheet" type="text/css" href="/css/slider.css">
+
+	</head>	
+	<body>
+		<div id="wrapper">
+			<header>
+				<h1>
+					<a accesskey="4" href="http://www.amb.cat/">
+						<img alt=" AMB - &Agrave;rea Metropolitana de Barcelona - www.amb.cat" src="/img/amb_logo.png">
+					</a>
+				</h1>
+				<ul class="list menu inline eines lang onright">
+					<li class="active">
+						<a href="help.html" role="button" class="cat icon lang">
+							<span class="literal-lang" data-lang="CAT">Català</span>
+						</a>
+					</li>						
+					<li>
+						<a href="help_es.html" role="button" class="cat icon lang">
+							<span class="literal-lang" data-lang="CAS">Castellano</span>
+						</a>
+					</li>						
+					<li>
+						<a href="help_en.html" role="button" class="cat icon lang">
+							<span class="literal-lang" data-lang="ENG">English</span>
+						</a>
+					</li>
+				</ul>
+
+			</header>
+			<div id="mainContent">
+				<header class="FW_bTitol">
+					<h2><span class="title">Documentaci&oacute; de l'API Opendata</span></h2>
+					<span class="onright returnbutton">
+						<a href="http://www.amb.cat/web/area-metropolitana/dades-obertes" class="icon-backarrow">
+							<strong>Tornar</strong>
+						</a>
+					</span>
+				</header>
+				<div class="help-content">
+					<div class="title-section-init">
+						<h2>Sobre el portal Opendata de l'AMB</h2>
+					</div>
+					<div class="text-section">
+						<p>
+							La finalitat d'aquest portal &eacute;s la d'oferir p&uacute;blicament un conjunt de dades sobre l'AMB per tal de permetre la seva explotaci&oacute; mitjan&ccedil;ant la utilitzaci&oacute; de la pr&ograve;pia API.
+						</p>
+						<p>
+							En aquesta p&agrave;gina s'explicar&agrave; com utilitzar l'API d'opendata per cercar i recuperar les dades de les diferents fonts disponibles dins el portal de l'AMB. 
+						</p>
+					</div>
+					<div class="title-section">
+						<h2>Estructuraci&oacute; de la informaci&oacute;</h2>
+					</div>
+					<div class="text-section">
+						<p>
+							El portal d'Opendata ofereix la informaci&oacute; agrupada per <strong>col&middot;leccions</strong> (collections). Per cada col&middot;lecci&oacute; es podr&agrave; realitzar cerques pels seus camps o utilitzar la cerca de text lliure. El resultat de les consultes es podran obtenir en diferents formats per tal de facilitar la seva utilitzaci&oacute;. Per accedir a les dades d'una col&middot;lecci&oacute; es far&agrave; mitjan&ccedil;ant la URL:
+						</p>
+						<div class="text-highlight">
+							 
+<code>http://opendata.amb.cat/<strong>{{collection}}</strong>/search</code>
+							 
+						</div>
+						<p>
+							on <strong>{{collection}}</strong> ser&agrave; el nom de la col&middot;lecci&oacute;. Un cop hi accedim ens mostrar&agrave; totes les dades disponibles per la col&middot;lecci&oacute;. <br/>
+							Actualment es disposen dades sobre les seg&uuml;ents col&middot;leccions:
+						</p>
+						<p>
+							<ul class="list arrow">
+								<li class="block">
+									<p><a href="/activitats/search" target="_blank"><strong>Activitats: </strong></a></p>
+									<p>http://opendata.amb.cat/activitats/search</p>
+								</li>
+								<li class="block">
+									<p><a href="/noticies/search" target="_blank"><strong>Not&iacute;cies: </strong></a></p>
+									<p>http://opendata.amb.cat/noticies/search</p>
+								</li>
+								<li class="block">
+									<p><a href="/municipis/search" target="_blank"><strong>Municipis: </strong></a></p>
+									<p>http://opendata.amb.cat/municipis/search</p>
+								</li>
+								<li class="block">
+									<p><a href="/publicacions/search" target="_blank"><strong>Publicacions: </strong></a></p>
+									<p>http://opendata.amb.cat/publicacions/search</p>
+								</li>
+								<li class="block">
+									<p><a href="/estudis/search" target="_blank"><strong>Estudis: </strong></a></p>
+									<p>http://opendata.amb.cat/estudis/search</p>
+								</li>
+								<li class="block">
+									<p><a href="/estudis/search?tipus_estudi=Mobilitat" target="_blank"><strong>Estudis de mobilitat: </strong></a></p>
+									<p>http://opendata.amb.cat/estudis/search/?tipus_estudi=Mobilitat</p>
+								</li>								
+								<li class="block">
+									<p><a href="/estudis/search?rows=15&tipus_estudi=metropolitans" target="_blank"><strong>Estudis metropolitans: </strong></a></p>
+									<p>http://opendata.amb.cat/estudis/search?rows=15&tipus_estudi=metropolitans</p> 
+								</li>
+								<li class="block">
+									<p><a href="/estudis/search?rows=15&tipus_estudi=sostenibilitat" target="_blank"><strong>Estudis de sostenibilitat: </strong></a></p>
+									<p>http://opendata.amb.cat/estudis/search?rows=15&tipus_estudi=sostenibilitat</p> 
+								</li>
+								<li class="block">
+									<p><a href="/projectes_obres/search" target="_blank"><strong>Projectes i obres: </strong></a></p>
+									<p>http://opendata.amb.cat/projectes_obres/search</p>
+								</li>
+								<li class="block">
+									<p><a href="/infraestructures/search" target="_blank"><strong>Infraestructures: </strong></a></p>
+									<p>http://opendata.amb.cat/infraestructures/search</p>
+								</li>
+								<li class="block">
+									<p><a href="/tramits/search" target="_blank"><strong>Tr&agrave;mits: </strong></a></p>
+									<p>http://opendata.amb.cat/tramits/search</p>
+								</li>
+								<li class="block">
+									<p><a href="/cooperacio/search" target="_blank"><strong>Projectes de cooperaci&oacute;: </strong></a></p>
+									<p>http://opendata.amb.cat/cooperacio/search</p>
+								</li>
+								<li class="block">
+									<p><a href="/equipaments/search" target="_blank"><strong>Equipaments: </strong></a></p>
+									<p>http://opendata.amb.cat/equipaments/search</p>
+								</li>
+								<li class="block">
+									<p><a href="/equipaments_platja/search" target="_blank"><strong>Platges: </strong></a></p>
+									<p>http://opendata.amb.cat/equipaments_platja/search</p>
+								</li>
+								<li class="block">
+									<p><a href="/equipaments/search?subambit=Parcs" target="_blank"><strong>Parcs: </strong></a></p>
+									<p>http://opendata.amb.cat/equipaments/search?subambit=Parcs</p>
+								</li>
+								<li class="block">
+									<p><a href="/pla_urbanistic/search" target="_blank"><strong>Plans urban&iacute;stics: </strong></a></p>
+									<p>http://opendata.amb.cat/pla_urbanistic/search</p>
+								</li>
+								<li class="block">
+									<p><a href="/datasets/search" target="_blank"><strong>Datasets: </strong></a></p>
+									<p>http://opendata.amb.cat/datasets/search</p>
+								</li>
+								<li class="block">
+									<p><a href="/perfil_contractant_procediment_obert/search" target="_blank"><strong>Perfil del contractant - procediments oberts: </strong></a></p>
+									<p>http://opendata.amb.cat/perfil_contractant_procediment_obert/search</p>
+								</li>
+								<li class="block">
+									<p><a href="/perfil_contractant_procediment_negociat/search" target="_blank"><strong>Perfil del contractant - procediments negociats: </strong></a></p>
+									<p>http://opendata.amb.cat/perfil_contractant_procediment_negociat/search</p>
+								</li>
+								<li class="block">
+									<p><a href="/activitats_taxi/search" target="_blank"><strong>Activitats del taxi: </strong></a></p>
+									<p>http://opendata.amb.cat/activitats_taxi/search</p>
+								</li>								
+								<li class="block">
+									<p><a href="/noticies_taxi/search" target="_blank"><strong>Not&iacute;cies del taxi: </strong></a></p>
+									<p>http://opendata.amb.cat/noticies_taxi/search</p>
+								</li>
+								<li class="block">
+									<p><a href="/notes_premsa/search" target="_blank"><strong>Notes de premsa: </strong></a></p>
+									<p>http://opendata.amb.cat/notes_premsa/search</p>
+								</li>
+								<li class="block">
+									<p><a href="/dades_meteorologiques/search" target="_blank"><strong>Dades meteorològiques de les platges: </strong></a></p>
+									<p>http://opendata.amb.cat/dades_meteorologiques/search</p>
+								</li>
+								<li class="block">
+									<p><a href="/dades_estat_platja/search" target="_blank"><strong>Dades de l'estat de les platges: </strong></a></p>
+									<p>http://opendata.amb.cat/dades_estat_platja/search</p>
+								</li>
+								
+								<li class="block">
+									<p><a href="/serveis_platges/search?platja_key=platja_prat" target="_blank"><strong>Instal·lacions de la platja del Prat de Llobregat</strong></a></p>
+									<p>http://opendata.amb.cat/serveis_platges/search?platja_key=platja_prat</p>
+								</li>
+								
+								<li class="block">
+									<p><a href="/serveis_platges/search?platja_key=platja_montgat" target="_blank"><strong>Instal·lacions de la platja de Montgat</strong></a></p>
+									<p>http://opendata.amb.cat/serveis_platges/search?platja_key=platja_montgat</p>
+								</li>
+								
+								<li class="block">
+									<p><a href="/serveis_platges/search?platja_key=platja_gava" target="_blank"><strong>Instal·lacions de la platja de Gavà</strong></a></p>
+									<p>http://opendata.amb.cat/serveis_platges/search?platja_key=platja_gava</p>
+								</li>
+								
+								<li class="block">
+									<p><a href="/serveis_platges/search?platja_key=platja_castelldefels" target="_blank"><strong>Instal·lacions de la platja de Castelldefels</strong></a></p>
+									<p>http://opendata.amb.cat/serveis_platges/search?platja_key=platja_castelldefels</p>
+								</li>
+								
+								<li class="block">
+									<p><a href="/serveis_platges/search?platja_key=platja_barcelona" target="_blank"><strong>Instal·lacions de la platja de Barcelona</strong></a></p>
+									<p>http://opendata.amb.cat/serveis_platges/search?platja_key=platja_barcelona</p>
+								</li>
+								
+								<li class="block">
+									<p><a href="/serveis_platges/search?platja_key=platja_badalona" target="_blank"><strong>Instal·lacions de la platja de Badalona</strong></a></p>
+									<p>http://opendata.amb.cat/serveis_platges/search?platja_key=platja_badalona</p>
+								</li>
+								
+								<li class="block">
+									<p><a href="/serveis_platges/search?platja_key=platja_viladecans" target="_blank"><strong>Instal·lacions de la platja de Viladecans</strong></a></p>
+									<p>http://opendata.amb.cat/serveis_platges/search?platja_key=platja_viladecans</p>
+								</li>
+								
+								<li class="block">
+									<p><a href="/serveis_platges/search?platja_key=platja_sadria" target="_blank"><strong>Instal·lacions de la platja de Sant Adrià de Besòs</strong></a></p>
+									<p>http://opendata.amb.cat/serveis_platges/search?platja_key=platja_sadria</p>
+								</li>
+								
+								<li class="block">
+									<p><a href="/serveis_empreses/search" target="_blank"><strong>Serveis per a empreses: </strong></a></p>
+									<p>http://opendata.amb.cat/serveis_empreses/search</p>
+								</li>
+								<li class="block">
+									<p><a href="/prestador_serveis/search" target="_blank"><strong>Prestador de serveis: </strong></a></p>
+									<p>http://opendata.amb.cat/prestador_serveis/search</p>
+								</li>
+								<li class="block">
+									<p><a href="/workshops_pdu/search" target="_blank"><strong>Workshops del PDU: </strong></a></p>
+									<p>http://opendata.amb.cat/workshops_pdu/search</p>
+								</li>
+								<li class="block">
+									<p><a href="/vehicles_taxi/search" target="_blank"><strong>Vehicles del taxi: </strong></a></p>
+									<p>http://opendata.amb.cat/vehicles_taxi/search</p>
+								</li>
+								<li class="block">
+									<p><a href="/directori_taxi/search" target="_blank"><strong>Directori del taxi: </strong></a></p>
+									<p>http://opendata.amb.cat/directori_taxi/search</p>
+								</li>
+								<li class="block">
+									<p><a href="/parades_taxi/search" target="_blank"><strong>Parades de taxi: </strong></a></p>
+									<p>http://opendata.amb.cat/parades_taxi/search</p>
+								</li>
+								<li class="block">
+									<p><a href="/punts_interes/search" target="_blank"><strong>Punts d'inter&egrave;s: </strong></a></p>
+									<p>http://opendata.amb.cat/punts_interes/search</p>
+								</li>
+								<li class="block">
+									<p><a href="/serveis_parcs/search" target="_blank"><strong>Serveis dels parcs: </strong></a></p>
+									<p>http://opendata.amb.cat/serveis_parcs/search</p>
+								</li>
+								<li class="block">
+									<p><a href="/ocupacio_publica/search" target="_blank"><strong>Ocupaci&oacute; p&uacute;blica: </strong></a></p>
+									<p>http://opendata.amb.cat/ocupacio_publica/search</p>
+								</li>
+								<li class="block">
+									<p><a href="/projectes_oberts/search" target="_blank"><strong>Projectes oberts: </strong></a></p>
+									<p>http://opendata.amb.cat/projectes_oberts/search</p>
+								</li>
+								<li class="block">
+									<p><a href="/publicacions_taxi/search" target="_blank"><strong>Publicacions taxi: </strong></a></p>
+									<p>http://opendata.amb.cat/publicacions_taxi/search</p>
+								</li>
+								<li class="block">
+									<p><a href="/punts_serveis/search" target="_blank"><strong>Punts serveis: </strong></a></p>
+									<p>http://opendata.amb.cat/punts_serveis/search</p>
+								</li>
+								<li class="block">
+									<p><a href="/serveis_platges/search" target="_blank"><strong>Serveis platges: </strong></a></p>
+									<p>http://opendata.amb.cat/serveis_platges/search</p>
+								</li>
+								<li class="block">
+									<p><a href="/workshops_oberts/search" target="_blank"><strong>Workshops oberts: </strong></a></p>
+									<p>http://opendata.amb.cat/workshops_oberts/search</p>
+								</li>
+								<li class="block">
+									<p><a href="/workshops_passatges/search" target="_blank"><strong>Workshops passatges: </strong></a></p>
+									<p>http://opendata.amb.cat/workshops_passatges/search</p>
+								</li>
+								<li class="block">
+									<p><a href="/contactes/search" target="_blank"><strong>Contactes: </strong></a></p>
+									<p>http://opendata.amb.cat/contactes/search</p>
+								</li>
+								<li class="block">
+									<p><a href="/menu_site/search" target="_blank"><strong>Menú site: </strong></a></p>
+									<p>http://opendata.amb.cat/menu_site/search</p>
+								</li>
+							</ul>
+						</p>
+						<p>
+							Cada col&middot;lecci&oacute; est&agrave; associada a un <strong>esquema</strong> (schema) on es defineixen els tipus de camps i l'estructura que tindran els seus continguts. Per consultar l'esquema d'una col&middot;lecci&oacute; es far&agrave; mitjan&ccedil;ant la URL:
+						</p>
+						<div class="text-highlight">
+							 
+<code>http://opendata.amb.cat/{{collection}}/schema</code>
+							 
+						</div>
+						<p>
+							Si, per exemple, consultem l'esquema de not&iacute;cies obtindrem la seg&uuml;ent informaci&oacute;:
+						</p>
+						<div class="text-highlight">
+							 
+{
+    num: 1,
+    count: 1,
+    items: {
+        _id: "54533d61e57214ab3e8411cc",
+        collectionName: "noticies",
+        schema: {
+            _id: "String",
+            text: "String",
+            entradeta: "String",
+            imatge_principal: {
+                imatge_principal_alternatiu: "String",
+                imatge_principal_peu: "String",
+                imatge_principal_nom: "String",
+                imatge_principal_fitxer: "String",
+                imatge_principal_autor: "String"
+            },
+            subambit: "String",
+            autor: "String",
+            destacat_titol: "String",
+            tema: "String",
+            lang: "String",
+            ambit: "String",
+            enllacos_relacionats: [
+                {
+                    enllacos_relacionats_descripcio: "String",
+                    enllacos_relacionats_extern: "String",
+                    enllacos_relacionats_intern: "String",
+                    enllacos_relacionats_nom: "String"
+                }
+            ],
+            titol: "String",
+            documents_relacionats: [
+                {
+                    documents_relacionats_fitxer: "String",
+                    documents_relacionats_nom: "String",
+                    documents_relacionats_descripcio: "String"
+                }
+            ],
+            destacat_entradeta: "String",
+            imatges_relacionades: [
+                {
+                    imatges_relacionades_peu: "String",
+                    imatges_relacionades_autor: "String",
+                    imatges_relacionades_fitxer: "String",
+                    imatges_relacionades_nom: "String",
+                    imatges_relacionades_alternatiu: "String"
+                }
+            ],
+            video: {
+                video_alternatiu: "String",
+                video_codi_youtube: "String",
+                video_autor: "String",
+                video_fitxer: "String",
+                video_nom: "String"
+            },
+            data_noticia: "Date",
+            date_updated: "Date"
+        },
+        date_updated: "2014-10-31T07:42:25.263Z"
+    }
+}
+							 
+						</div>
+					</div>
+					<div class="title-section">
+						<h2>Cerques sobre les col&middot;leccions</h2>
+					</div>
+					<div class="text-section">
+						<h3>Cerques espec&iacute;fiques per camps</h3>
+						<p>
+							L'API permet realitzar cerques pels diferents camps d'una col&middot;lecci&oacute;. Les crides es faran de la seg&uuml;ent manera:
+						</p>
+						<div class="text-highlight">
+							 
+<code>http://opendata.amb.cat/<strong>{{collection}}</strong>/search?<strong>{{camp1}}</strong>=<strong>{{valor}}</strong>&amp;<strong>{{camp2}}</strong>=<strong>{{valor}}</strong>&amp;<strong>{{camp3}}</strong>=<strong>{{valor}}</strong></code>
+							 
+						</div>
+						<p>
+							on els camps <strong>camp1, camp2, camp3</strong> seran els noms dels camps de la col&middot;lecci&oacute;. Si, per exemple, volem filtrar els resultats per el camp <strong>t&iacute;tol</strong> de <strong>not&iacute;cies</strong>, farem la seg&uuml;ent consulta:
+						</p>
+						<div class="text-highlight">
+							 
+<code>http://opendata.amb.cat/noticies/search?titol=metropolitans</code>
+							 
+						</div>
+						<p>
+							Si el camp que necessitem filtrar &eacute;s un camp anidat (es troba dins d'un altre node), el nom del camp ser&agrave; la concatenaci&oacute; de tots els seus nodes pares amb un "." i el nom del propi camp. Si, per exemple, necessitem cercar per el camp <strong>enllacos_relacionats_nom</strong> farem la seg&uuml;ent crida:
+						</p>
+						<div class="text-highlight">
+							 
+<code>http://opendata.amb.cat/noticies/search?enllacos_relacionats.enllacos_relacionats_nom=premsa&amp;titol=metropolitans</code>
+							 
+						</div>
+						<h3>Cerques per text lliure</h3>
+						<p>
+							Tamb&eacute; &eacute;s possible realitzar cerques per text lliure pels camps de tipus text de cada col&middot;lecci&oacute;. Aquesta cerca es fa utilitzant el camp <code>q</code> en la URL. Per exemple, la seg&uuml;ent consulta cercar&agrave; el mot <strong>mobilitat</strong> dins els camps de la col&middot;lecci&oacute;:
+						</p>
+						<div class="text-highlight">
+							 
+<code>http://opendata.amb.cat/noticies/search?q=mobilitat</code>
+							 
+						</div>
+						<p>
+							Aquest tipus de cerca la podrem combinar amb la cerca espec&iacute;fica per els camps. Un exemple seria el seg&uuml;ent:
+						</p>
+						<div class="text-highlight">
+							 
+<code>http://opendata.amb.cat/noticies/search?enllacos_relacionats.enllacos_relacionats_nom=premsa&amp;titol=metropolitans&amp;q=mobilitat</code>
+							 
+						</div>
+						<h3>Cerques per camps de tiups Date</h3>
+						<p>
+							Les cerques per els camps de tipus <strong>Date</strong> es fan seguint la nomenclatura <code>dd/mm/yyyy</code>. Un exemple seria la seg&uuml;ent crida:
+						</p>
+						<div class="text-highlight">
+							 
+<code>http://opendata.amb.cat/noticies/search?enllacos_relacionats.enllacos_relacionats_nom=premsa&amp;titol=metropolitans&amp;q=mobilitat&amp;data_noticia=25/09/2014</code>
+							 
+						</div>
+						<p>
+							Tamb&eacute; es permet realitzar cerques per rang de dates utilitzant els s&iacute;mbols <code><,>,=</code> dins el valor del camp. Si, per exemple, necessitem recuperar les not&iacute;tices on la seva data ha de ser m&eacute;s grant que la <strong>25/09/2014</strong>, farem la seg&uuml;ent crida:
+						</p>
+						<div class="text-highlight">
+							 
+<code>http://opendata.amb.cat/noticies/search?enllacos_relacionats.enllacos_relacionats_nom=premsa&amp;titol=metropolitans&amp;q=mobilitat&amp;data_noticia=>25/09/2014</code>
+							 
+						</div>
+						<h3>Paginaci&oacute;</h3>
+						<p>
+							Per defecte, en totes les cerques que realitzem, l'aplicaci&oacute; ens retorna els resultats agrupats en <strong>500</strong> elements. Si ens fixem en la cap&ccedil;alera dels resultats d'una cerca podem identificar els diferents elements:<br>
+							<strong>num</strong>: N&uacute;mero d'elements que es mostren en la cerca.<br>
+							<strong>count</strong>: N&uacute;mero total d'elements que hi ha en la cerca.<br>
+							<strong>start</strong>: Primer element del llistat que es mostra<br>
+						</p>
+						<p>
+							Per poder aplicar la paginaci&oacute; en l'api haurem d'indicar el número d'elements que volem recuperar (<strong>rows</strong>) i a partir de quin element volem recuperar els resultats (<strong>start</strong>):
+						</p>
+						<div class="text-highlight">
+<code>http://opendata.amb.cat/parades_taxi/search?rows=500&amp;start=1000</code>
+						</div>
+						<h3>Ordenaci&oacute;</h3>
+						<p>
+							L'api permet odrdenar els resultats per un camp en concret de forma ascendent o descendent. En la crida haurem d'especificar per quin camp volem ordenar i la direcci&oacute; <strong>sort={{camp}},{{asc/desc}}</strong>.
+						</p>
+						<div class="text-highlight">
+<code>http://opendata.amb.cat/noticies/search?titol=metropolitans&amp;sort=autor,asc</code>
+						</div>
+						<h3>Retornar camps espec&iacute;fics en la resposta</h3>
+						<p>
+							L'api permet filtrar els camps retornats en els &iacute;tems de la resposta. D'aquesta manera podem redu&iuml;r de manera considerable la informaci&oacute; de la cerca. Si, per exemple, necessitem nom&eacute;s els camps <strong>entradeta</strong> i <strong>autor</strong>, ho farem mitjan&ccedil;ant el par&agrave;metre <strong>getFields</strong>:
+						</p>
+						<div class="text-highlight">
+<code>http://opendata.amb.cat/noticies/search?q=mobilitat&getFields=entradeta,autor</code>
+						</div>
+						<p>
+							Aquesta funcionalitat nom&eacute;s &eacute;s v&agrave;lida per als camps de primer nivell, &eacute;s a dir, aquells que provenen directament de l'arrel de l'&iacute;tem.
+						</p>
+						<h3>Cerca per diferents valors en un mateix camp</h3>
+						<p>
+							Podem realitzar cerques per un camp on el seu valor coincideixi amb algun dels especificats dins el camp de la cerca. Per poder-ho fer hem de separar cada valor per el s&iacute;mbol <strong>|</strong>:
+						</p>
+						<div class="text-highlight">
+<code>http://opendata.amb.cat/activitats/search?subambit=Residus|Sostenibilitat|Aigua</code>
+						</div>
+						<p>
+							En l'exemple ens cercar&agrave; tots aquells continguts on el camp <strong>subambit</strong> coincideixi amb algun dels valors de la query.<br/>
+							Hem de tenir en compte que els valors del par&agrave;metre han de ser exactes als valors que cerquem (han de coincidir maj&uacute;scules, accents, signes de putnuaci&oacute;, ...).
+						</p>
+					</div>
+					<div class="title-section">
+						<h2>Formats de les dades</h2>
+					</div>
+					<div class="text-section">
+						<p>
+							Per defecte l'API serveix els resultats en format <strong>JSON</strong>. Tamb&eacute; &eacute;s possible obtenir la informaci&oacute; de les cerques en format <strong>XML, KML, KMZ i CSV</strong>. Les crides es faran de la seg&uuml;ent manera:
+						</p>
+						<div class="text-highlight">
+							 
+<code>http://opendata.amb.cat/{{collection}}/search/<strong>{{format}}</strong>?{{camp1}}={{valor}}&amp;{{camp2}}={{valor}}&amp;{{camp3}}={{valor}}</code>
+							 
+						</div>
+						<p>
+							on el camp <strong>{{format}}</strong> ser&agrave; el tipus de format que necessitem. Una cerca per format <strong>XML</strong> seria de la seg&uuml;ent manera: 
+						</p>
+						<div class="text-highlight">
+							 
+<code>http://opendata.amb.cat/noticies/xml/search?enllacos_relacionats.enllacos_relacionats_nom=premsa&amp;titol=metropolitans&amp;q=mobilitat</code>
+							 
+						</div>
+					</div>
+					<div class="title-section">
+						<h2>Altres utilitats de cerca</h2>
+					</div>
+					<div class="text-section">
+						<h3>Obtenir els camps relacionats</h3>
+						<p>
+							Algunes col&middot;leccions tenen continguts que estan relacionats amb continguts d'altres col&middot;leccions. Per exemple, la col&middot;lecci&oacute; d'activitats t&eacute; continguts relacionats amb equipaments o publicacions. Per poder veure aquesta relació hem d'afegir a la query el par&agrave;metre <strong>getRelatedArticles=true</strong>:
+						</p>
+						<div class="text-highlight">
+<code>http://opendata.amb.cat/activitats/search?tema=residus&getRelatedArticles=true</code>
+						</div>
+						<p>
+							Amb la cerca anterior obtindrem els continguts relacionats de cada ítem. Si ens fixem en el seg&uuml;ent codi veurem com ens apareix el camp <strong>related_articles</strong> on ens indicar&agrave; que un contingut t&eacute; una relació amb dos continguts de <strong>publicacions</strong> i 8 continguts de <strong>equipaments_platja</strong>.
+						</p>
+						<div class="text-highlight">
+related_articles: {
+	publicacions: [
+		{
+			articleId: "754258"
+		},
+		{
+			articleId: "754270"
+		}
+	],
+	equipaments_platja: [
+		{
+			articleId: "421174"
+		},
+		{
+			articleId: "452516"
+		},
+		{
+			articleId: "452423"
+		},
+		{
+			articleId: "493853"
+		},
+		{
+			articleId: "421165"
+		},
+		{
+			articleId: "452101"
+		},
+		{
+			articleId: "452113"
+		},
+		{
+			articleId: "452451"
+		}
+	]
+}
+						</div>
+						<p>
+							Si volgu&eacute;ssim veure un contingut relacionat haur&iacute;em de cercar pel camp <strong>articleId</strong> dins la col&middot;lecci&oacute; corresponent.
+						</p>
+					</div>
+				</div>
+			</div>
+			<footer>
+				<ul>
+					<li><a href="http://www.amb.cat">&copy; &Agrave;rea Metropolitana de Barcelona</a></li>
+				</ul>
+			</footer>
+		</div>
+		<div class="gboxline">
+			<div class="gbox">
+				<article class="gboxcontent" itemtype="http://microformats.org/profile/hcard" itemscope>
+				</article>
+				<p class="closegbox"><a href="#">Tanca</a></p>
+			</div>
+		</div>
+		<script src="https://www.amb.cat/js/vendor/cookiesjs/cookies-js-v0.3.0.js"></script>
+		<avis-cookies estils="aviscookies-AMB" gtag="GTM-MJBF4P8" gatrack="UA-13237972-1" nomsite="Documentaci&oacute; API Opendata - &Agrave;rea Metropolitana de Barcelona" ></avis-cookies>
+	</body>
+</html>
