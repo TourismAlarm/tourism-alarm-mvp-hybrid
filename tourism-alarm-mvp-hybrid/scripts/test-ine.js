@@ -211,6 +211,20 @@ test('sin capacidad conocida cae a la curva hotelera', () => {
   equal(blendByCapacity(curves, { hotel: 0, camping: 0, rural: 0 })[7], 0.42);
 });
 
+test('el respaldo elige la curva que tiene datos, no la primera vacía', () => {
+  // El INE solo publica turismo rural en Paisatges Barcelona. Con `||` a
+  // secas se devolvía el objeto vacío de hoteles —que es truthy— y 36
+  // municipios acababan en el proxy de pernoctaciones sin hacer falta.
+  const curves = { hotel: {}, camping: {}, rural: { 7: 0.39 } };
+  equal(blendByCapacity(curves, { hotel: 0, camping: 0, rural: 0 })[7], 0.39);
+  equal(blendByCapacity(curves, { hotel: 28, camping: 0, rural: 0 })[7], 0.39,
+    'un municipio con plazas de un tipo sin curva usa la que sí existe');
+});
+
+test('sin ninguna curva devuelve vacío, no basura', () => {
+  equal(blendByCapacity({ hotel: {}, camping: {}, rural: {} }, { hotel: 10 }), {});
+});
+
 test('un mes sin dato en una curva no arrastra a las demás', () => {
   const curves = { hotel: { 7: 0.8 }, camping: { 8: 0.6 }, rural: {} };
   const blended = blendByCapacity(curves, { hotel: 100, camping: 100, rural: 0 });

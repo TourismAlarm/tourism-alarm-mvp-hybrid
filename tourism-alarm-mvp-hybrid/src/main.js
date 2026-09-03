@@ -490,9 +490,9 @@ function popupHtml(municipality) {
   // De dónde sale la curva de ocupación: medida para este municipio, para su
   // marca turística, o deducida de las pernoctaciones.
   const OCCUPANCY_ORIGIN = {
-    municipio: 'Ocupación medida por el INE en este municipio',
-    marca: `Ocupación medida por el INE en ${municipality.brand}`,
-    pernoctaciones: 'Ocupación deducida de las pernoctaciones (IDESCAT)'
+    municipio: 'Base: ocupación que mide el INE en este municipio',
+    marca: `Base: ocupación que mide el INE en ${municipality.brand}`,
+    pernoctaciones: 'Base: ocupación deducida de las pernoctaciones (IDESCAT)'
   };
   const origin = OCCUPANCY_ORIGIN[municipality.occupancy_source];
 

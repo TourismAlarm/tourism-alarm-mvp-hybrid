@@ -107,15 +107,23 @@ async function readOfficial() {
 }
 
 /**
- * Curva de ocupación de un municipio.
+ * Curva de ocupación de un municipio, mes a mes.
  *
- * Por orden de preferencia:
- *   1. la del propio municipio, si el INE lo publica como punto turístico
- *      (Salou, Lloret, Barcelona… los destinos que más importan);
+ * El INE no publica los meses en que un establecimiento está cerrado, así que
+ * casi ninguna serie tiene los doce: los campings de la Costa Brava cubren de
+ * mayo a septiembre y Salou publica de abril a octubre. Descartar esas series
+ * por incompletas sería tirar la mejor medición que hay para el verano, que es
+ * justo cuando importa.
+ *
+ * Por eso las capas se rellenan mes a mes, cogiendo para cada uno la mejor
+ * disponible:
+ *   1. la del propio municipio, si el INE lo trata como punto turístico
+ *      (Salou, Lloret, Barcelona…);
  *   2. la de su marca turística, mezclando hotel/camping/rural según las
- *      plazas que ese municipio tiene de cada tipo — un pueblo de campings
- *      no sigue la ocupación de los hoteles;
- *   3. la estacionalidad deducida de las pernoctaciones, como hasta ahora.
+ *      plazas que ese municipio tiene de cada tipo — un pueblo de campings no
+ *      sigue la ocupación de los hoteles;
+ *   3. la estacionalidad deducida de las pernoctaciones, que sí tiene los doce
+ *      meses y tapa cualquier hueco.
  */
 function occupancyForMunicipality(municipality, official, fallback) {
   const places = {
@@ -124,25 +132,37 @@ function occupancyForMunicipality(municipality, official, fallback) {
     rural: municipality.rural_places
   };
 
-  const own = official?.municipalities?.[municipality.id];
-  if (own) {
-    const curve = blendByCapacity(
-      { hotel: own.hotel || {}, camping: own.camping || {}, rural: own.rural || {} },
+  const blend = entry => entry
+    ? blendByCapacity(
+      { hotel: entry.hotel || {}, camping: entry.camping || {}, rural: entry.rural || {} },
       places
-    );
-    if (monthsCovered(curve) >= 10) return { curve, source: 'municipio' };
+    )
+    : {};
+
+  const layers = [
+    ['municipio', blend(official?.municipalities?.[municipality.id])],
+    ['marca', blend(official?.brands?.[municipality.brand])],
+    ['pernoctaciones', fallback[municipality.brand] || {}]
+  ];
+
+  const curve = {};
+  const months = {};
+
+  for (let month = 1; month <= 12; month++) {
+    for (const [name, values] of layers) {
+      const value = values[month];
+      if (typeof value !== 'number') continue;
+      curve[month] = round(value);
+      months[name] = (months[name] || 0) + 1;
+      break;
+    }
   }
 
-  const brand = official?.brands?.[municipality.brand];
-  if (brand) {
-    const curve = blendByCapacity(
-      { hotel: brand.hotel || {}, camping: brand.camping || {}, rural: brand.rural || {} },
-      places
-    );
-    if (monthsCovered(curve) >= 10) return { curve, source: 'marca' };
-  }
+  // El origen que se enseña es el de la mayoría de los meses. Un municipio con
+  // medición propia solo en agosto no puede anunciarse como "medido aquí".
+  const source = Object.entries(months).sort((a, b) => b[1] - a[1])[0]?.[0] || 'pernoctaciones';
 
-  return { curve: fallback[municipality.brand] || {}, source: 'pernoctaciones' };
+  return { curve, source, months };
 }
 
 // Tasa de ocupación estimada por marca y mes, a partir de pernoctaciones reales.
@@ -316,11 +336,17 @@ async function main() {
   // referencia (sin calendario ni meteorología: eso lo aplica el navegador).
   const bySource = {};
 
+  let measuredMonths = 0;
+
   for (const m of municipalities) {
-    const { curve, source } = occupancyForMunicipality(m, official, occupancy);
+    const { curve, source, months } = occupancyForMunicipality(m, official, occupancy);
     m.occupancy = curve;
     m.occupancy_source = source;
+    // Cuántos de los doce meses vienen de una medición del propio municipio:
+    // la ficha lo dice, para no vender como medido lo que es de la marca.
+    m.occupancy_own_months = months.municipio || 0;
     bySource[source] = (bySource[source] || 0) + 1;
+    measuredMonths += (months.municipio || 0) + (months.marca || 0);
 
     m.monthly_intensity = {};
     for (let month = 1; month <= 12; month++) {
@@ -332,6 +358,11 @@ async function main() {
   for (const [source, count] of Object.entries(bySource).sort((a, b) => b[1] - a[1])) {
     console.log(`   ${source.padEnd(16)} ${String(count).padStart(4)}`);
   }
+  const totalMonths = municipalities.length * 12;
+  console.log(`   ${((measuredMonths / totalMonths) * 100).toFixed(1)}% de los meses-municipio salen de una medición del INE`);
+
+  const ownMeasured = municipalities.filter(m => m.occupancy_own_months > 0);
+  console.log(`   ${ownMeasured.length} municipios con algún mes medido en el propio municipio`);
 
   // ------------------------------------------------------------------- salida
   const now = new Date();

@@ -265,9 +265,14 @@ export function blendByCapacity(curves, places) {
   ].filter(([type, count]) => count > 0 && monthsCovered(curves[type]));
 
   if (!weights.length) {
-    // Sin capacidad conocida o sin curva de su tipo: la de hoteles es la que
-    // más cobertura tiene.
-    return curves.hotel || curves.camping || curves.rural || {};
+    // El municipio no tiene plazas registradas, o no hay curva para los tipos
+    // que sí tiene (el INE solo publica turismo rural en Paisatges Barcelona,
+    // por ejemplo). Se coge la primera curva que traiga meses de verdad: sigue
+    // siendo una ocupación medida de esa zona, y eso vale más que el proxy.
+    //
+    // Ojo con el `||` a secas: `{}` es truthy, así que devolvía la curva vacía
+    // de hoteles y el municipio acababa cayendo al proxy sin necesidad.
+    return [curves.hotel, curves.camping, curves.rural].find(monthsCovered) || {};
   }
 
   const blended = {};
