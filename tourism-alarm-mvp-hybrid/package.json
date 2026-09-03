@@ -36,7 +36,8 @@
     "daily:big": "node scripts/daily-update.js --limit=100",
     "data:probe": "node scripts/official/probe.js",
     "data:official": "node scripts/official/fetch.js",
-    "test:ine": "node scripts/test-ine.js"
+    "test:ine": "node scripts/test-ine.js",
+    "collect:weather": "node agents-v2/collect-weather.js"
   },
   "devDependencies": {
     "prettier": "^3.6.2",
