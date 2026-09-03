@@ -306,17 +306,39 @@ Ocupación medida 30% · por debajo de lo normal (el modelo esperaba 74%)
 
 Mezclar las dos en un solo número estropearía las dos.
 
-### Límite conocido de la escala
+### Límite conocido de la escala, y la decisión pendiente
 
 Los destinos más densos **saturan el índice**. Salou (2.452 plazas/km²) llega
-al tope del término de densidad en cuanto pasa del 33% de ocupación, y del de
-volumen sobre el 67%. Es decir: entre "Salou al 70%" y "Salou al 100%" el color
-apenas cambia.
+al tope del término de densidad enseguida, así que entre "Salou al 70%" y
+"Salou al 100%" el color apenas cambia.
 
-Subir los topes lo mejora poco —satura por las dos vías— y a cambio baja los
-municipios en nivel crítico de 22 a 10 en agosto, debilitando la alarma para
-todos los demás. Por eso se mantiene la calibración actual y la desviación
-respecto a lo normal se muestra por separado.
+Con la ocupación ya medida se ve el otro extremo del mismo problema. En enero,
+la Costa Daurada tiene un 3% de afluencia real —el 24% de ocupación que publica
+el INE, sobre el 14% de la planta que abre— y el índice todavía pinta a Salou
+al 59%:
+
+| Municipio | Ocupación enero | Índice enero | Ocupación agosto | Índice agosto |
+| --- | --- | --- | --- | --- |
+| Salou | 3% | 59% | 87% | 100% |
+| Lloret de Mar | 6% | 57% | 90% | 98% |
+| Sant Pere Pescador | 2% | 38% | 68% | 89% |
+| Barcelona | 53% | 94% | 78% | 98% |
+| Naut Aran | 59% | 44% | 27% | 32% |
+
+La escala logarítmica contra anclas absolutas (1→800 plazas/km²) comprime tanto
+que 74 plazas ocupadas por km² ya puntúan 0,66. El índice mide **saturación
+del territorio**, no "cuánta gente hay respecto a lo normal", y con esa lectura
+la cifra es coherente: Salou en enero sigue teniendo más plaza turística por km²
+que casi toda Catalunya en agosto.
+
+Aun así, para responder "¿está lleno?" probablemente convenga recalibrar, y
+ahora por fin se puede: **la población está disponible** y plazas por habitante
+es el indicador estándar. Es una decisión de producto —mueve todos los números
+del mapa— así que se deja escrita en vez de aplicarse de tapadillo.
+
+Subir los topes actuales no lo arregla: satura por las dos vías y a cambio baja
+los municipios en nivel crítico de 22 a 10 en agosto, debilitando la alarma para
+todos los demás.
 
 ## Base de datos (Supabase)
 
