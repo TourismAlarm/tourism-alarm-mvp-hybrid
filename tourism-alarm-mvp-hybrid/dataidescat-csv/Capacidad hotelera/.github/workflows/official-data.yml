@@ -4,17 +4,30 @@
 # desde un runner de GitHub y el resultado se guarda en el repositorio: al
 # hacer push, Vercel vuelve a desplegar el mapa con los datos nuevos. No hace
 # falta ningún ordenador encendido en casa ni ningún secreto.
+#
+# Cómo se lanza:
+#   · Un push que toque scripts/official/ o este fichero, o cuyo mensaje
+#     lleve [probe] o [fetch]. (workflow_dispatch solo funciona cuando el
+#     fichero está en la rama por defecto.)
+#   · A mano desde la pestaña Actions, eligiendo el modo.
+#   · Cada lunes de madrugada, en modo fetch, una vez esté en main.
 name: Datos oficiales
 
 on:
+  push:
+    paths:
+      - 'tourism-alarm-mvp-hybrid/scripts/official/**'
+      - '.github/workflows/official-data.yml'
   workflow_dispatch:
     inputs:
       mode:
         description: 'probe = sondear fuentes; fetch = descargar y regenerar'
         required: true
-        default: probe
+        default: fetch
         type: choice
         options: [probe, fetch]
+  schedule:
+    - cron: '17 4 * * 1'
 
 permissions:
   contents: write
@@ -23,8 +36,15 @@ concurrency:
   group: official-data-${{ github.ref }}
   cancel-in-progress: false
 
+env:
+  # workflow_dispatch → lo que se elija; schedule → fetch; push → según el
+  # mensaje del commit, y probe si no dice nada.
+  MODE: ${{ inputs.mode || (github.event_name == 'schedule' && 'fetch') || (contains(github.event.head_commit.message, '[fetch]') && 'fetch') || 'probe' }}
+
 jobs:
   run:
+    # Los commits del propio bot no deben volver a lanzar el workflow.
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -43,11 +63,11 @@ jobs:
       - run: npm ci
 
       - name: Sondear fuentes
-        if: inputs.mode == 'probe'
+        if: env.MODE == 'probe'
         run: node scripts/official/probe.js
 
       - name: Descargar datos y regenerar el mapa
-        if: inputs.mode == 'fetch'
+        if: env.MODE == 'fetch'
         run: npm run data:official
 
       - name: Guardar el resultado en la rama
@@ -59,5 +79,5 @@ jobs:
             echo 'Sin cambios.'
             exit 0
           fi
-          git commit -m "data: ${{ inputs.mode }} de fuentes oficiales ($(date -u +%Y-%m-%d))"
+          git commit -m "data: $MODE de fuentes oficiales ($(date -u +%Y-%m-%d)) [skip ci]"
           git push
