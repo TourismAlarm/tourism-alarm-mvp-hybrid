@@ -8,9 +8,14 @@
 // toca. Conectarlo es una decisión posterior, cuando exista el motor de
 // baseline.
 //
+// Escribe dos cosas:
+//   · data/signals/weather-latest.json   la foto de ahora (se sobrescribe)
+//   · data/signals/weather/YYYY-MM.ndjson  el histórico (solo crece)
+//
 //   node agents-v2/collect-weather.js
 //   node agents-v2/collect-weather.js --days=3
-//   node agents-v2/collect-weather.js --dry-run   # enseña la tabla, no escribe
+//   node agents-v2/collect-weather.js --dry-run     # enseña la tabla, no escribe
+//   node agents-v2/collect-weather.js --no-archive  # solo el fichero -latest
 //
 // Por qué por ZONA y no por municipio: la unidad del histórico es la zona
 // turística. El CSV de 2006-2025 (data/dataidescat-csvhistorical-*.csv) trae
@@ -21,8 +26,8 @@
 // 112 puntos, para la ficha de cada municipio. Son cosas distintas: aquella es
 // efímera y de detalle; esta es de zona y está pensada para acumularse.
 
-import { writeFile, mkdir, readFile } from 'node:fs/promises';
-import { resolve, dirname } from 'node:path';
+import { writeFile, mkdir, readFile, appendFile } from 'node:fs/promises';
+import { resolve, dirname, join } from 'node:path';
 
 // Se reutiliza el cliente del mapa en vez de escribir otro: así la previsión y
 // los factores derivados se calculan igual en el navegador y aquí.
@@ -34,6 +39,7 @@ import { COMARQUES } from '../scripts/lib/comarques.js';
 
 const CURRENT_PATH = 'public/data/current.json';
 const OUTPUT_PATH = 'data/signals/weather-latest.json';
+const ARCHIVE_DIR = 'data/signals/weather';
 const BARCELONA_CITY_ID = '80193';
 
 /**
@@ -133,6 +139,90 @@ export function describeDay(day) {
   };
 }
 
+// ─────────────────────────────────────────────────────────── archivo ──────
+//
+// `weather-latest.json` se machaca en cada ejecución, así que por sí solo no
+// acumula nada. El histórico va aparte, en un registro que solo crece:
+//
+//   data/signals/weather/YYYY-MM.ndjson   (una línea por zona, día y ejecución)
+//
+// Por qué NDJSON y no un JSON por día:
+//   · Solo se añade al final. En git eso son diffs de puras altas, sin tocar
+//     jamás lo ya escrito: el histórico no se puede corromper por accidente.
+//   · Una línea por (zona, día, antelación) se lee con un grep.
+//   · Un fichero al mes mantiene el directorio manejable.
+//
+// El campo `lead` es el que hará falta luego: 0 es la previsión del mismo día
+// —la más ajustada, la que vale como "lo que pasó"— y 1 la de la víspera, que
+// sirve para medir cómo de bien acierta la previsión. Guardar las dos permite
+// esa comparación; guardar solo una la haría imposible.
+
+export function archivePath(when = new Date()) {
+  const month = `${when.getFullYear()}-${String(when.getMonth() + 1).padStart(2, '0')}`;
+  return join(ARCHIVE_DIR, `${month}.ndjson`);
+}
+
+/** Aplana la salida a una fila por zona y día previsto. */
+export function archiveRows(output) {
+  const rows = [];
+  for (const [zone, data] of Object.entries(output.zones)) {
+    data.days.forEach((day, lead) => {
+      rows.push({
+        run: output.generated_at,
+        zone,
+        date: day.date,
+        lead,
+        code: day.code,
+        temp_max: day.temp_max,
+        rain_mm: day.rain_mm,
+        rain_chance: day.rain_chance,
+        wind_kmh: day.wind_kmh,
+        sunshine_hours: day.sunshine_hours,
+        crowd_factor: day.crowd_factor,
+        beach_score: day.beach_score
+      });
+    });
+  }
+  return rows;
+}
+
+const rowKey = row => `${row.zone}|${row.date}|${row.lead}`;
+
+/** Todo menos la marca de tiempo: dos ejecuciones seguidas suelen dar esto igual. */
+const fingerprint = ({ run, ...rest }) => JSON.stringify(rest);
+
+/**
+ * Última huella conocida de cada (zona, día, antelación) en el fichero del mes.
+ *
+ * Sirve para no repetir líneas idénticas: si el colector se lanza cada hora,
+ * la previsión de la mayoría de las zonas no habrá cambiado y no tiene sentido
+ * escribirla doce veces al día. Solo se anota lo que de verdad cambia.
+ */
+export async function lastFingerprints(path) {
+  let text;
+  try {
+    text = await readFile(resolve(path), 'utf-8');
+  } catch {
+    return new Map(); // primer día del mes
+  }
+
+  const last = new Map();
+  for (const line of text.split('\n')) {
+    if (!line.trim()) continue;
+    try {
+      const row = JSON.parse(line);
+      last.set(rowKey(row), fingerprint(row));
+    } catch {
+      // Una línea corrupta no invalida el resto del histórico.
+    }
+  }
+  return last;
+}
+
+export function changedRows(rows, known) {
+  return rows.filter(row => known.get(rowKey(row)) !== fingerprint(row));
+}
+
 function parseArgs(argv = process.argv.slice(2)) {
   const args = {};
   for (const arg of argv) {
@@ -211,14 +301,34 @@ async function main() {
       `  playa ${today.beach_score === null ? '—' : today.beach_score}`);
   }
 
+  const rows = archiveRows(output);
+
   if (dryRun) {
-    console.log('\n🔎 Simulación: no se ha escrito nada.');
+    console.log(`\n🔎 Simulación: no se ha escrito nada (${rows.length} filas de archivo omitidas).`);
     return;
   }
 
   await mkdir(dirname(resolve(OUTPUT_PATH)), { recursive: true });
   await writeFile(resolve(OUTPUT_PATH), JSON.stringify(output, null, 2), 'utf-8');
   console.log(`\n✅ Escrito ${OUTPUT_PATH} · ${output.zones_resolved}/${output.zones_expected} zonas`);
+
+  if (args['no-archive']) {
+    console.log('📁 Archivo histórico omitido (--no-archive).');
+    return;
+  }
+
+  const path = archivePath();
+  const known = await lastFingerprints(path);
+  const changed = changedRows(rows, known);
+
+  if (!changed.length) {
+    console.log(`📁 ${path}: sin novedades, no se añade ninguna línea.`);
+    return;
+  }
+
+  await mkdir(dirname(resolve(path)), { recursive: true });
+  await appendFile(resolve(path), changed.map(row => JSON.stringify(row)).join('\n') + '\n', 'utf-8');
+  console.log(`📁 ${path}: +${changed.length} líneas (de ${rows.length}; el resto no había cambiado).`);
 }
 
 main().catch(error => {
