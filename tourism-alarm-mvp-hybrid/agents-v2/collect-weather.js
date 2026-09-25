@@ -26,8 +26,10 @@
 // 112 puntos, para la ficha de cada municipio. Son cosas distintas: aquella es
 // efímera y de detalle; esta es de zona y está pensada para acumularse.
 
-import { writeFile, mkdir, readFile, appendFile } from 'node:fs/promises';
-import { resolve, dirname, join } from 'node:path';
+import { writeFile, mkdir, readFile } from 'node:fs/promises';
+import { resolve, dirname } from 'node:path';
+
+import { appendChanged } from './lib/archive.js';
 
 // Se reutiliza el cliente del mapa en vez de escribir otro: así la previsión y
 // los factores derivados se calculan igual en el navegador y aquí.
@@ -157,11 +159,6 @@ export function describeDay(day) {
 // sirve para medir cómo de bien acierta la previsión. Guardar las dos permite
 // esa comparación; guardar solo una la haría imposible.
 
-export function archivePath(when = new Date()) {
-  const month = `${when.getFullYear()}-${String(when.getMonth() + 1).padStart(2, '0')}`;
-  return join(ARCHIVE_DIR, `${month}.ndjson`);
-}
-
 /** Aplana la salida a una fila por zona y día previsto. */
 export function archiveRows(output) {
   const rows = [];
@@ -186,42 +183,8 @@ export function archiveRows(output) {
   return rows;
 }
 
-const rowKey = row => `${row.zone}|${row.date}|${row.lead}`;
-
-/** Todo menos la marca de tiempo: dos ejecuciones seguidas suelen dar esto igual. */
-const fingerprint = ({ run, ...rest }) => JSON.stringify(rest);
-
-/**
- * Última huella conocida de cada (zona, día, antelación) en el fichero del mes.
- *
- * Sirve para no repetir líneas idénticas: si el colector se lanza cada hora,
- * la previsión de la mayoría de las zonas no habrá cambiado y no tiene sentido
- * escribirla doce veces al día. Solo se anota lo que de verdad cambia.
- */
-export async function lastFingerprints(path) {
-  let text;
-  try {
-    text = await readFile(resolve(path), 'utf-8');
-  } catch {
-    return new Map(); // primer día del mes
-  }
-
-  const last = new Map();
-  for (const line of text.split('\n')) {
-    if (!line.trim()) continue;
-    try {
-      const row = JSON.parse(line);
-      last.set(rowKey(row), fingerprint(row));
-    } catch {
-      // Una línea corrupta no invalida el resto del histórico.
-    }
-  }
-  return last;
-}
-
-export function changedRows(rows, known) {
-  return rows.filter(row => known.get(rowKey(row)) !== fingerprint(row));
-}
+/** Clave de cruce de una fila: zona, día previsto y antelación. */
+export const weatherKey = row => `${row.zone}|${row.date}|${row.lead}`;
 
 function parseArgs(argv = process.argv.slice(2)) {
   const args = {};
@@ -317,18 +280,10 @@ async function main() {
     return;
   }
 
-  const path = archivePath();
-  const known = await lastFingerprints(path);
-  const changed = changedRows(rows, known);
-
-  if (!changed.length) {
-    console.log(`📁 ${path}: sin novedades, no se añade ninguna línea.`);
-    return;
-  }
-
-  await mkdir(dirname(resolve(path)), { recursive: true });
-  await appendFile(resolve(path), changed.map(row => JSON.stringify(row)).join('\n') + '\n', 'utf-8');
-  console.log(`📁 ${path}: +${changed.length} líneas (de ${rows.length}; el resto no había cambiado).`);
+  const { path, added, total } = await appendChanged(ARCHIVE_DIR, rows, { key: weatherKey });
+  console.log(added
+    ? `📁 ${path}: +${added} líneas (de ${total}; el resto no había cambiado).`
+    : `📁 ${path}: sin novedades, no se añade ninguna línea.`);
 }
 
 main().catch(error => {
