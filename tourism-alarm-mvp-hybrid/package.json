@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "npm run data:build && npm run data:verify && npm run data:promote && vite build",
     "preview": "vite preview",
-    "test": "npm run test:ine && npm run test:signals && npm run test:publish && npm run test:data",
+    "test": "npm run test:ine && npm run test:baseline && npm run test:nowcast && npm run test:signals && npm run test:publish && npm run test:data",
     "test:signals": "node scripts/test-signals.js",
     "test:publish": "node scripts/test-publish.js",
     "test:data": "node scripts/verify-map-data.js",
@@ -36,7 +36,12 @@
     "daily:big": "node scripts/daily-update.js --limit=100",
     "data:probe": "node scripts/official/probe.js",
     "data:official": "node scripts/official/fetch.js",
-    "test:ine": "node scripts/test-ine.js"
+    "test:ine": "node scripts/test-ine.js",
+    "collect:weather": "node agents-v2/collect-weather.js",
+    "baseline:build": "node agents-v2/build-baseline.js",
+    "test:baseline": "node scripts/test-baseline.js",
+    "nowcast:build": "node agents-v2/build-nowcast.js",
+    "test:nowcast": "node scripts/test-nowcast.js"
   },
   "devDependencies": {
     "prettier": "^3.6.2",
